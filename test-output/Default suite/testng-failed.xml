@@ -5,8 +5,8 @@
     <classes>
       <class name="com.affilomnia.leadbaskets.FormLbTest">
         <methods>
+          <include name="LoginAsSellerAndSendLead"/>
           <include name="before"/>
-          <include name="login"/>
         </methods>
       </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
     </classes>

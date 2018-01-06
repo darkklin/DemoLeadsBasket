@@ -11,6 +11,7 @@ public class AdminPage {
 	@Inject
 	public AdminPage() {
 		Configuration.browser = "chrome";
+		
 		page(this);
 	}
 	private SelenideElement sellerPage = $("a[ng-class*='sellers']");

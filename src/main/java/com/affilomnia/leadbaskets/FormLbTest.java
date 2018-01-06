@@ -4,15 +4,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.google.inject.Inject;
+
+import Pages.FormLbPage;
 import Pages.LoginPage;
 import Pages.SellerPage;
-import static com.codeborne.selenide.Selectors.*;
-import com.codeborne.selenide.commands.ShouldBe.*;
-import static com.codeborne.selenide.Selenide.*;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 
+import static com.codeborne.selenide.Selenide.*;
 
 @Guice
 public class FormLbTest {
@@ -20,25 +23,24 @@ public class FormLbTest {
 	LoginPage loginPage;
 	@Inject
 	SellerPage sellerPage;
-	
+	@Inject
+	FormLbPage formLbPage;
 	@BeforeClass
 	public void before(){
-		Configuration.startMaximized = false;
-		Configuration.screenshots = false;
-		Configuration.driverManagerEnabled = true;
-		Configuration.fastSetValue = true;
-		Configuration.savePageSource = false;
+		Configuration.startMaximized = true;
+		Configuration.screenshots = true;
+		Configuration.headless =true;
+		Configuration.holdBrowserOpen = true;
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 	}
-
-	@Test
-	public void login() throws Exception {
+	@Epic("Allure examples")
+	@Feature("Testng support")
+	@Severity(SeverityLevel.CRITICAL)
+	@Test (description = "seller send one lead thought offer 543 ")
+	public void LoginAsSellerAndSendLead() throws Exception {
 		open("");
 		loginPage.login("kirilk+webdriver@affilomania.com", "Test123456@");
-		sellerPage.liveOffer.click();
-		$(byText("selenium Webdriver(don't use!!!)")).click();
-
-		
-		
+		sellerPage.OpenOfferlink();	
+		formLbPage.regLead();
 	}
 }

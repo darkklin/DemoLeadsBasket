@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5163" started-at="2018-01-04T15:49:17Z" finished-at="2018-01-04T15:49:22Z">
+  <suite name="Regression TestSuite" duration-ms="15730" started-at="2018-01-06T22:45:15Z" finished-at="2018-01-06T22:45:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5163" started-at="2018-01-04T15:49:17Z" finished-at="2018-01-04T15:49:22Z">
+    <test name="LeadsBaskets Test" duration-ms="15730" started-at="2018-01-06T22:45:15Z" finished-at="2018-01-06T22:45:30Z">
       <class name="com.affilomnia.leadbaskets.FormLbTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@162be91c]" name="before" is-config="true" duration-ms="5" started-at="2018-01-04T17:49:17Z" finished-at="2018-01-04T17:49:17Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@24134cbc]" name="before" is-config="true" duration-ms="18" started-at="2018-01-07T00:45:15Z" finished-at="2018-01-07T00:45:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@162be91c]" name="login" duration-ms="5147" started-at="2018-01-04T17:49:17Z" finished-at="2018-01-04T17:49:22Z">
+        <test-method status="PASS" signature="LoginAsSellerAndSendLead()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@24134cbc]" name="LoginAsSellerAndSendLead" duration-ms="15595" started-at="2018-01-07T00:45:15Z" description="seller send one lead thought offer 543 " finished-at="2018-01-07T00:45:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
+        </test-method> <!-- LoginAsSellerAndSendLead -->
       </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- LeadsBaskets Test -->
+  </suite> <!-- Regression TestSuite -->
 </testng-results>
