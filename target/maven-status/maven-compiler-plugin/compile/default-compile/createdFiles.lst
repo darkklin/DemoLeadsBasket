@@ -1,0 +1,7 @@
+com\affilomnia\leadbaskets\BuyerTest.class
+Pages\FormLbPage.class
+Pages\BuyerPage.class
+Pages\LoginPage.class
+Pages\AdminPage.class
+com\affilomnia\leadbaskets\FormLbTest.class
+Pages\SellerPage.class

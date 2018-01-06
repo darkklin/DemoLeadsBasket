@@ -1,0 +1,10 @@
+<suite name="Regression TestSuite">
+<test name="LeadsBaskets Test">
+	<classes>
+		<class name="com.affilomnia.leadbaskets.FormLbTest"></class>
+				
+	</classes>
+</test>
+</suite>
+
+

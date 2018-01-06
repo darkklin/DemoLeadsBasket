@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Regression TestSuite]">
+  <test name="LeadsBaskets Test(failed)">
+    <classes>
+      <class name="com.affilomnia.leadbaskets.FormLbTest">
+        <methods>
+          <include name="LoginAsSellerAndSendLead"/>
+          <include name="before"/>
+        </methods>
+      </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
+    </classes>
+  </test> <!-- LeadsBaskets Test(failed) -->
+</suite> <!-- Failed suite [Regression TestSuite] -->
