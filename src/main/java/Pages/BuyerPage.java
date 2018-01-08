@@ -21,18 +21,22 @@ public class BuyerPage {
 	}
 	
 	private SelenideElement LeadListPage = $("a[ui-sref='leads_list']");
+	private ElementsCollection leadStatus = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[12]"));
 	private ElementsCollection leadCollection = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[5]"));
-	private SelenideElement tableName = $(byText("Language"));
+	private SelenideElement perPage200 = $("a[ng-click='perPage=200']");
+	private SelenideElement likes = $("a[ng-click='likeClicked(lead)']");
+
 	
 	public void calcTotalSpentAndTotalLead() throws Exception
 	{
 		LeadListPage.click();
-		leadCollection.shouldHaveSize(leadCollection.size());
-		$("div[class='loader']").shouldNot(Condition.visible);
-		for (int i = 0; i < leadCollection.size(); i++) {
-			
-			leadCollection.get(i).shouldBe(Condition.visible);
-			System.out.println(leadCollection.get(i).getText());
+		perPage200.click();
+		likes.shouldBe(Condition.visible);
+		for (int i = 0; i < leadCollection.size(); i++) {			
+			if(leadStatus.get(i).getText() == "")
+			{
+				
+			}
 			
 		}
 	}
