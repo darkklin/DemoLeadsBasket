@@ -30,9 +30,13 @@ public class BuyerTest {
 	@Test
 	public void LoginAsAbuyerAndTestkStatistic() throws Exception {
 		open("");
+		Float totalBuyCpl, numberLeads;
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");
-		buyerPage.calcTotalSpentAndTotalLead();
-
+		Float result[] = buyerPage.calcTotalSpentAndTotalLead();
+		numberLeads = result[1];  
+		totalBuyCpl = result[0];
+		
+		
 	}
 
 }
