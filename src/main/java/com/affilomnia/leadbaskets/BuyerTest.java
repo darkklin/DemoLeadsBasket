@@ -32,10 +32,11 @@ public class BuyerTest {
 		open("");
 		Float totalBuyCpl, numberLeads;
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");
+		
 		Float result[] = buyerPage.calcTotalSpentAndTotalLead();
 		numberLeads = result[1];  
 		totalBuyCpl = result[0];
-		
+		buyerPage.checkStatisticOnDashboard(numberLeads, totalBuyCpl);
 		
 	}
 
