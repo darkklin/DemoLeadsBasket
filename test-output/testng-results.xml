@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11474" started-at="2018-01-11T15:22:06Z" finished-at="2018-01-11T15:22:17Z">
+  <suite name="Default suite" duration-ms="12586" started-at="2018-01-11T22:31:37Z" finished-at="2018-01-11T22:31:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11474" started-at="2018-01-11T15:22:06Z" finished-at="2018-01-11T15:22:17Z">
+    <test name="Default test" duration-ms="12586" started-at="2018-01-11T22:31:37Z" finished-at="2018-01-11T22:31:49Z">
       <class name="com.affilomnia.leadbaskets.BuyerTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@57186526]" name="before" is-config="true" duration-ms="16" started-at="2018-01-11T17:22:06Z" finished-at="2018-01-11T17:22:06Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@50598a1a]" name="before" is-config="true" duration-ms="1143" started-at="2018-01-12T00:31:37Z" finished-at="2018-01-12T00:31:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="LoginAsAbuyerAndTestkStatistic()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@57186526]" name="LoginAsAbuyerAndTestkStatistic" duration-ms="11370" started-at="2018-01-11T17:22:06Z" finished-at="2018-01-11T17:22:17Z">
+        <test-method status="PASS" signature="LoginAsAbuyerAndTestkStatistic()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@50598a1a]" name="LoginAsAbuyerAndTestkStatistic" duration-ms="11329" started-at="2018-01-12T00:31:38Z" finished-at="2018-01-12T00:31:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginAsAbuyerAndTestkStatistic -->

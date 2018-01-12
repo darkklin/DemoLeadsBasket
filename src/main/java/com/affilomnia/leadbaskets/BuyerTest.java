@@ -24,19 +24,15 @@ public class BuyerTest {
 		Configuration.screenshots = true;
 		Configuration.headless =true;
 		Configuration.holdBrowserOpen = true;
-		Configuration.baseUrl = "https://test_app.leadsbasket.com";
+		open("https://test_app.leadsbasket.com");
 	}
 
 	@Test
 	public void LoginAsAbuyerAndTestkStatistic() throws Exception {
-		open("");
-		Float totalBuyCpl, numberLeads;
-		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");
-		
+		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");		
 		Float result[] = buyerPage.calcTotalSpentAndTotalLead();
-		numberLeads = result[1];  
-		totalBuyCpl = result[0];
-		buyerPage.checkStatisticOnDashboard(numberLeads, totalBuyCpl);
+		buyerPage.checkTotalSpentAndTotalLeads(result[1], result[0]);
+		
 		
 	}
 
