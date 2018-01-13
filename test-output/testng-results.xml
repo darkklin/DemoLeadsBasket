@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12586" started-at="2018-01-11T22:31:37Z" finished-at="2018-01-11T22:31:49Z">
+  <suite name="Default suite" duration-ms="18457" started-at="2018-01-13T21:44:55Z" finished-at="2018-01-13T21:45:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12586" started-at="2018-01-11T22:31:37Z" finished-at="2018-01-11T22:31:49Z">
+    <test name="Default test" duration-ms="18457" started-at="2018-01-13T21:44:55Z" finished-at="2018-01-13T21:45:14Z">
       <class name="com.affilomnia.leadbaskets.BuyerTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@50598a1a]" name="before" is-config="true" duration-ms="1143" started-at="2018-01-12T00:31:37Z" finished-at="2018-01-12T00:31:38Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@61394494]" name="before" is-config="true" duration-ms="17" started-at="2018-01-13T23:44:55Z" finished-at="2018-01-13T23:44:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="LoginAsAbuyerAndTestkStatistic()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@50598a1a]" name="LoginAsAbuyerAndTestkStatistic" duration-ms="11329" started-at="2018-01-12T00:31:38Z" finished-at="2018-01-12T00:31:49Z">
+        <test-method status="PASS" signature="testLoginTotalSpentAndLeads()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@61394494]" name="testLoginTotalSpentAndLeads" duration-ms="18334" started-at="2018-01-13T23:44:55Z" finished-at="2018-01-13T23:45:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginAsAbuyerAndTestkStatistic -->
+        </test-method> <!-- testLoginTotalSpentAndLeads -->
       </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

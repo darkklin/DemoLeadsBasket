@@ -27,7 +27,6 @@ public class LoginPage {
 		email.sendKeys(useremail);
 		password.sendKeys(userpassword);
 		submit.pressEnter();
-		welcomMassage.shouldHave(Condition.visible);
 	}
 
 }

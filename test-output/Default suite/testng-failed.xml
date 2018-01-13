@@ -6,7 +6,7 @@
       <class name="com.affilomnia.leadbaskets.BuyerTest">
         <methods>
           <include name="before"/>
-          <include name="LoginAsAbuyerAndTestkStatistic"/>
+          <include name="testLoginTotalSpentAndLeads"/>
         </methods>
       </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </classes>
