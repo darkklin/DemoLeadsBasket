@@ -1,0 +1,506 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" ng-app="leadsBasket" class="ng-scope"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top &gt; .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top &gt; .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top &gt; .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom &gt; .tooltip-arrow,[uib-popover-popup].popover.top-left &gt; .arrow,[uib-popover-popup].popover.top-right &gt; .arrow,[uib-popover-popup].popover.bottom-left &gt; .arrow,[uib-popover-popup].popover.bottom-right &gt; .arrow,[uib-popover-popup].popover.left-top &gt; .arrow,[uib-popover-popup].popover.left-bottom &gt; .arrow,[uib-popover-popup].popover.right-top &gt; .arrow,[uib-popover-popup].popover.right-bottom &gt; .arrow,[uib-popover-html-popup].popover.top-left &gt; .arrow,[uib-popover-html-popup].popover.top-right &gt; .arrow,[uib-popover-html-popup].popover.bottom-left &gt; .arrow,[uib-popover-html-popup].popover.bottom-right &gt; .arrow,[uib-popover-html-popup].popover.left-top &gt; .arrow,[uib-popover-html-popup].popover.left-bottom &gt; .arrow,[uib-popover-html-popup].popover.right-top &gt; .arrow,[uib-popover-html-popup].popover.right-bottom &gt; .arrow,[uib-popover-template-popup].popover.top-left &gt; .arrow,[uib-popover-template-popup].popover.top-right &gt; .arrow,[uib-popover-template-popup].popover.bottom-left &gt; .arrow,[uib-popover-template-popup].popover.bottom-right &gt; .arrow,[uib-popover-template-popup].popover.left-top &gt; .arrow,[uib-popover-template-popup].popover.left-bottom &gt; .arrow,[uib-popover-template-popup].popover.right-top &gt; .arrow,[uib-popover-template-popup].popover.right-bottom &gt; .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<base href="/" />
+<meta charset="UTF-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>LeadsBasket</title>
+<link type="image/png" href="../assets/common/images/favicons/favicon-16.png" rel="icon" sizes="16x16" />
+<link type="image/png" href="../assets/common/images/favicons/favicon-32.png" rel="icon" sizes="32x32" />
+<link rel="stylesheet" href="./assets/common/style.min.css" />
+<link rel="stylesheet" href="../assets/common/style.admin.min.css" />
+<link rel="stylesheet" href="../node_modules/angular-bootstrap-colorpicker/css/colorpicker.min.css" />
+<link data-require="intl-tel-input@*" rel="stylesheet" href="https://rawgit.com/Bluefieldscom/intl-tel-input/master/build/css/intlTelInput.css" />
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyA3IhAdRYyd9x5IqlanlbM2AiOlJ5AyP_A"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/5/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/5/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/5/stats.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttps%3A%2F%2Ftest_app.leadsbasket.com%2Fleads-list&amp;4sAIzaSyA3IhAdRYyd9x5IqlanlbM2AiOlJ5AyP_A&amp;callback=_xdc_._e9egfv&amp;token=110408"></script></head>
+<body ng-controller="controllerCtrl" class="ng-scope">
+<!-- uiView: --><ui-view class="ng-scope" style=""><div class="wrapper dashboard ng-scope" ng-class="loggedAs ? 'logged_as' : ''">
+<!-- ngIf: loggedAs -->
+<header>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<nav class="navbar navbar-inverse primary-navbar">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" ng-click="toggleMenu('menu')">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="question mobile" ui-sref="faq" href="/faq"></a>
+<div class="wrap_notification mobile">
+<a class="notification" href="" ng-click="toggleMenu('notification')">
+<span ng-show="count" class="ng-binding ng-hide">0</span>
+</a>
+<div class="notifacation_mobile_menu collapse" ng-class="toggleMobilMenuNotification ? 'in' : ''">
+<div class="mobile title_mobile_menu">Notifications</div>
+<ul>
+<!-- ngRepeat: ntf in notification.data | limitTo: 4 -->
+</ul>
+</div>
+</div>
+<a ui-sref="dashboard_empty" class="navbar-brand desktop" href="/">
+<img src="./assets/common/images/logo.png" alt="LeadsBasket" width="220" height="50" />
+</a>
+<div class="wrap_mobil_navbar_brand mobile ng-binding">
+<a href="/" class="navbar-brand ">
+<img src="./assets/common/images/logo_only_buyer.png" alt="LeadsBasket" />
+</a>
+Dashboard
+</div>
+</div>
+<div class="collapse navbar-collapse" id="primary-collapse-menu" ng-class="toggleMobilMenu ? 'in' : ''" style="">
+<div class="mobile title_mobile_menu">Menu</div>
+<div class="menu-main-menu-container">
+<ul id="primary-menu" class="navbar-left">
+
+<li is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" ui-sref="dashboard.month" ng-class="{active: states['dashboard']}" href="/dashboard-month" class="active" style="">Dashboard</a></li>
+<li is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" ui-sref="campaigns.month" ng-class="{active: states['campaigns'] || states['campaign_item']}" href="/campaigns/month">Campaigns</a></li>
+<li is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" ui-sref="leads_list" ng-class="{active: states['leads_list']}" href="/leads-list" class="" style="">Leads List</a></li>
+<li is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" class="btn_red" ui-sref="create_campaigns" ui-sref-active="active" href="/create-campaigns">Create Campaign</a></li>
+
+<li is-granted="ROLE_EXT_SELLER" style="display: none;"><a ng-click="toggleMenu('menu')" ui-sref="dashboardSeller.month" ng-class="{active: states['dashboardSeller']}" href="/dashboard/month">Dashboard</a></li>
+<li is-granted="ROLE_EXT_SELLER" style="display: none;"><a ng-click="toggleMenu('menu')" ui-sref="offers_basket" ng-class="{active: states['offers_basket'] || states['item_offer']}" href="/offers-basket">Offers Basket</a></li>
+<li is-granted="ROLE_EXT_SELLER" style="display: none;"><a ng-click="toggleMenu('menu')" ui-sref="live_offers" ng-class="{active: states['live_offers'] || states['item_live_offer']}" href="/live-offers">Live Offers</a></li>
+<li is-granted="ROLE_EXT_SELLER" style="display: none;"><a ng-click="toggleMenu('menu')" ui-sref="accounting" ng-class="{active: states['accounting'] || states['accounting.edit']}" href="/accounting">Accounting</a></li>
+<li class="mobile"><hr /></li>
+<li class="mobile"><a ng-click="toggleMenu('menu')" class="profile_ico" ui-sref="users-profile" ui-sref-active="active" href="/user/profile">Profile Info</a></li>
+<li class="mobile" is-granted="ROLE_EXT_SELLER" style="display: none;"><a ng-click="toggleMenu('menu')" class="platform_ico" ui-sref="reports({idOffer: null, nameOffer: null })" ui-sref-active="active" href="/user/reports">Reports</a></li>
+
+
+
+<li class="mobile" is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" class="platform_ico" ui-sref="integration" ui-sref-active="active" href="/integration-setting">Integration Settings</a></li>
+<li class="mobile" is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" class="billing_ico" ui-sref="users-billing" ui-sref-active="active" href="/user/billing">Billing</a></li>
+<li class="mobile" is-granted="ROLE_EXT_BUYER"><a ng-click="toggleMenu('menu')" class="payment_ico" ui-sref="payment" ui-sref-active="active" href="/payment-method">Payment Method</a></li>
+<li class="mobile"><a class="logout_ico" ng-click="signOut()">Log Out</a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<div class="mobile_sub_menu desktop">
+<ul class="navbar-right dashboard_nav_bar">
+<li is-granted="ROLE_EXT_BUYER">
+<a class="btn_red" ui-sref="create_campaigns" href="/create-campaigns">Create Campaign</a>
+</li>
+<li>
+<div class="wrap_notification ng-isolate-scope" drop-down="drop_notification" document-click="true">
+<a class="notification" href="#">
+<span ng-show="notifications.length" class="ng-binding ng-hide">0</span>
+</a>
+<div class="drop_down drop_notification">
+<div class="title">Notifications</div>
+<div class="no-notifications ng-hide" ng-hide="!notification.length">
+You don't have notifications
+</div>
+<ul class="list-unstyled list-notifications">
+<!-- ngRepeat: ntf in notifications -->
+</ul>
+</div>
+</div>
+</li>
+<li class="hidden"><a class="question" href="/faq" ui-sref="faq"></a></li>
+<li>
+<div class="header_profile ng-isolate-scope" drop-down="drop_userInfo" document-click="true">
+<a class="profile" href="">
+<img class="avatar" src="/assets/common/images/logos/default-users-avatar.png" alt="bidder" />
+<span class="ng-binding">Hi, bidder</span>
+</a>
+<div class="drop_down drop_userInfo">
+<div class="title">Menu</div>
+<ul>
+<li>
+<a class="profile_ico" ui-sref="users-profile" ui-sref-active="active" href="/user/profile">Profile Info</a>
+</li>
+<li is-granted="ROLE_EXT_SELLER" style="display: none;">
+<a class="platform_ico" ui-sref="reports({idOffer: null, nameOffer: null })" ui-sref-active="active" href="/user/reports">Reports</a>
+</li>
+
+
+
+<li is-granted="ROLE_EXT_BUYER">
+<a class="platform_ico" ui-sref="integration" ui-sref-active="active" href="/integration-setting">Integration Settings</a>
+</li>
+<li is-granted="ROLE_EXT_BUYER">
+<a class="billing_ico" ui-sref="users-billing" ui-sref-active="active" href="/user/billing">Billing</a>
+</li>
+<li is-granted="ROLE_EXT_BUYER">
+<a class="payment_ico" ui-sref="payment" ui-sref-active="active" href="/payment-method">Payment Method</a>
+</li>
+<li>
+<a class="logout_ico" ng-click="signOut()">Log Out</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+<!-- ngIf: toggleMobilMenu || toggleMobilMenuNotification -->
+<!-- uiView: --><ui-view class="ng-scope" style=""><div class="row back_line_user_side ng-scope">
+<div class="col-md-12">
+<ul class="dashboard_filter">
+<li><a ui-sref="dashboard.today" ui-sref-active="active" href="/dashboard-today">Today</a></li>
+<li><a ui-sref="dashboard.week" ui-sref-active="active" href="/dashboard-week">Week</a></li>
+<li><a ui-sref="dashboard.month" ui-sref-active="active" href="/dashboard-month" class="">Month</a></li>
+<li>
+<label>
+<div class="wrap_date_range">
+<input id="date_range" name="daterange" date-range-picker="" class="form-control date-picker ng-pristine ng-valid ng-isolate-scope ng-not-empty ng-touched" type="text" readonly="readonly" ng-model="datePicker.date" options="datePicker.options" placeholder="From Date - To Date" style="" />
+<div class="date_range"> </div>
+</div>
+</label>
+</li>
+</ul>
+</div>
+</div>
+<div class="container-fluid content ng-scope">
+<!-- uiView: --><div ui-view="" class="ng-scope" style=""><div class="statistic_data ng-scope">
+<div class="row">
+<div class="col-md-3 col-sm-6">
+<div class="block_diagram tl_leads_ico">
+<!-- ngIf: dataLoadingStatistic -->
+<h3>Total Leads</h3>
+<div class="total_value">
+<span class="value ng-scope" ng-count-to="74" value="0" duration="0" filter="number">74</span>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6">
+<div class="block_diagram ac_offers_ico">
+<!-- ngIf: dataLoadingStatistic -->
+<h3>Active Campaigns</h3>
+<div class="total_value">
+
+<span class="value ng-scope" ng-count-to="4" value="0" duration="0" filter="number">4</span>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6">
+<div class="block_diagram tl_spend_ico">
+<!-- ngIf: dataLoadingStatistic -->
+<h3>Total Spent</h3>
+<div class="total_value">
+<span class="value ng-scope" ng-count-to="2652" value="0" duration="0" filter="currency" params="$" fraction-size="2">$2,652.00</span>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+<div class="col-md-3 col-sm-6">
+<div class="block_diagram green_ico">
+<!-- ngIf: dataLoadingStatistic -->
+<h3>Total Revenues</h3>
+<div class="total_value">
+<span class="value ng-scope" ng-count-to="23.00" value="0" duration="0" filter="currency" params="$" fraction-size="2">$23.00</span>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8">
+<div class="row">
+<div class="col-md-12">
+<div id="spend_revenue" class="block_diagram wrap_chart">
+<!-- ngIf: dataLoadingStatistic -->
+<!-- ngIf: currentUser().integration.is_enabled --><h3 ng-if="currentUser().integration.is_enabled" class="ng-scope"><span class="spent"></span>Spend vs. Revenue<span class="revenue"></span></h3><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: !currentUser().integration.is_enabled -->
+<!-- ngIf: dashboardStatistic.spent_revenue.data.labels <= 0 ? true : false -->
+<div chart-data="dashboardStatistic.spent_revenue.data" class="ng-isolate-scope" style="visibility: visible;"><canvas tc-chartjs-line="" chart-options="spentRevenue.options" chart-data="spentRevenue.data" height="280" class="ng-isolate-scope" width="1099" style="width: 1099px; height: 280px;"></canvas></div>
+</div>
+</div>
+</div>
+<div class="row">
+ <div class="col-md-12">
+<div id="leads_sales" class="block_diagram wrap_chart">
+<!-- ngIf: dataLoadingStatistic -->
+<!-- ngIf: currentUser().integration.is_enabled --><h3 ng-if="currentUser().integration.is_enabled" class="ng-scope"><span class="leads"></span>Leads vs. Sales<span class="sales"></span></h3><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: !currentUser().integration.is_enabled -->
+<!-- ngIf: dashboardStatistic.leads_sale.data.labels <= 0 ? true : false -->
+<div chart-data="dashboardStatistic.leads_sale.data" class="ng-isolate-scope" style="visibility: visible;"><canvas tc-chartjs-line="" chart-options="leadsSales.options" chart-data="leadsSales.data" height="200" class="ng-isolate-scope" width="1099" style="width: 1099px; height: 200px;"></canvas></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="row">
+<div class="col-md-12">
+<div id="leads_country" class="block_diagram wrap_chart">
+<!-- ngIf: dataLoadingStatistic -->
+<h3>Leads by Countries</h3>
+<!-- ngIf: dashboardStatistic.leads_country.data <= 0 ? true : false -->
+<div chart-data="dashboardStatistic.leads_country.data" class="ng-isolate-scope" style="visibility: visible;"><canvas tc-chartjs-doughnut="" chart-options="leadsCountries.options" chart-data="leadsCountries.data" auto-legend="" width="161" height="161" class="ng-isolate-scope" style=""></canvas><ul class="tc-chart-js-legend text_country_uppercase"><li><span style="background-color:hsl(0, 100%, 50%)"></span>Israel (72)</li><li><span style="background-color:hsl(180, 100%, 50%)"></span>Russia (2)</li></ul></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div id="top_campaign" class="block_diagram wrap_chart">
+<!-- ngIf: dataLoadingStatistic -->
+<h3>Top 4 Running Campaigns</h3>
+<!-- ngIf: dashboardStatistic.top.data.labels <= 0 ? true : false -->
+<div chart-data="dashboardStatistic.top.data" class="ng-isolate-scope" style="visibility: visible;"><canvas tc-chartjs-bar="" chart-options="topCampaign.options" chart-data="topCampaign.data" auto-legend="" height="188" class="ng-isolate-scope" width="554" style="width: 554px; height: 188px;"></canvas><ul class="tc-chart-js-legend"><li><span style="background-color:rgba(5,191,221,1)"></span>Leads</li><li><span style="background-color:rgba(13,209,116,1)"></span>Avg. CPL</li></ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="block_diagram  wrap_table table_with_top_title">
+<!-- ngIf: dataLoadingTable -->
+<div class="col-md-12 top_line">
+<div class="title">Recently Updated Campaigns</div>
+<div class="wrap_filters only_filters">
+<div class="active">
+<div class="select_wrap">
+<div class="ui-select-container select2 select2-container ng-empty ng-invalid ng-invalid-required" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="orderBySelect" theme="select2" ng-disabled="disabled" required="required" name="location" close-on-select="true" title="Order By" on-select="onSelectedOrderBy($item)"><a class="select2-choice ui-select-match ng-scope select2-default" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Order By select" placeholder="Order By"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding">Order By</span> <span ng-hide="$select.isEmpty()" class="select2-chosen ng-hide" ng-transclude=""><span class="ng-binding ng-scope"></span></span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-1" aria-label="Order By" aria-activedescendant="ui-select-choices-row-1-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search" /></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="field in sortField | filter: $select.search"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-1" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: field in $select.items --></ul></li></ul></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-1" aria-label="Order By focus" aria-haspopup="true" role="button" /></div>
+</div>
+</div>
+<div class="search">
+<form ng-submit="searchBy(searchField)" class="ng-pristine ng-valid">
+<div class="form-group">
+<label>
+<input type="search" name="search" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Name" ng-model="searchField.s_title" />
+<button class="search_btn" type="submit"></button>
+</label>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="wrap_table_scroll">
+<table class="table">
+<thead>
+<tr>
+<th class="actions" width="62"><span></span></th>
+<th>Status</th>
+<th class="campaign-title">Campaign Name</th>
+<th>Max CPL</th>
+<th>Daily Budget</th>
+<th>Leads</th>
+<!-- ngIf: currentUser().integration.is_enabled --><th ng-if="currentUser().integration.is_enabled" class="ng-scope">Sales</th><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: currentUser().integration.is_enabled --><th ng-if="currentUser().integration.is_enabled" class="ng-scope">Conv. Rate</th><!-- end ngIf: currentUser().integration.is_enabled -->
+<th>Avg. CPL</th>
+<th>Spend</th>
+<!-- ngIf: currentUser().integration.is_enabled --><th ng-if="currentUser().integration.is_enabled" class="ng-scope">Revenue</th><!-- end ngIf: currentUser().integration.is_enabled -->
+<th>Start Date</th>
+</tr>
+</thead>
+<!-- ngIf: campaignsList.length && !dataLoadingTable --><tbody ng-if="campaignsList.length &amp;&amp; !dataLoadingTable" class="ng-scope" style="">
+<!-- ngRepeat: itm in campaignsList --><tr ng-repeat="itm in campaignsList" ng-class="{selected : itm.is_checked, update_single: arrayCampaigns == itm.id &amp;&amp; changedStatus, update_selected: itm.is_checked &amp;&amp; changedActions}" class="ng-scope">
+<td class="actions">
+<span class="actions Active" ng-class="itm.properties.status.title">
+<div class="wrap_tooltip">
+<span class="actions_tooltip">
+<!-- ngIf: itm.properties.status.id == 2 -->
+<!-- ngIf: itm.properties.status.id == 1 --><a class="pause ng-scope" href="" ng-click="changeStatusCampaign(itm.id, 2, 'Pause')" ng-if="itm.properties.status.id == 1">Pause</a><!-- end ngIf: itm.properties.status.id == 1 -->
+<a class="delete" href="" ng-click="deleteStatusCampaign(itm.id, 1)">Delete</a>
+<a class="edit" href="" ng-click="editCampaign(itm.id)">Edit</a>
+<a class="copy" href="" ng-click="copyCampaign(itm.id)">Duplicate</a>
+</span>
+</div>
+</span>
+</td>
+<td class="ng-binding">Active</td>
+<td><a ui-sref="campaign_item.month({ idCampaign: itm.id})" class="ng-binding" href="/campaign/133/month">biddertest</a></td>
+<td class="ng-binding">$36.00</td>
+<td class="ng-binding">$1,000.00</td>
+<td class="ng-binding">67</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0.00%</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.statistics.money_spent == 0 -->
+<!-- ngIf: itm.statistics.money_spent != 0 --><span ng-if="itm.statistics.money_spent != 0" class="ng-binding ng-scope">$36.00</span><!-- end ngIf: itm.statistics.money_spent != 0 -->
+</td>
+<td class="ng-binding">$2,412.00</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">$0.00</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.start_date -->
+<!-- ngIf: ! itm.start_date --><span ng-if=" ! itm.start_date" class="ng-binding ng-scope">
+18/12/2017
+</span><!-- end ngIf: ! itm.start_date -->
+</td>
+</tr><!-- end ngRepeat: itm in campaignsList --><tr ng-repeat="itm in campaignsList" ng-class="{selected : itm.is_checked, update_single: arrayCampaigns == itm.id &amp;&amp; changedStatus, update_selected: itm.is_checked &amp;&amp; changedActions}" class="ng-scope">
+<td class="actions">
+<span class="actions Active" ng-class="itm.properties.status.title">
+<div class="wrap_tooltip">
+<span class="actions_tooltip">
+<!-- ngIf: itm.properties.status.id == 2 -->
+<!-- ngIf: itm.properties.status.id == 1 --><a class="pause ng-scope" href="" ng-click="changeStatusCampaign(itm.id, 2, 'Pause')" ng-if="itm.properties.status.id == 1">Pause</a><!-- end ngIf: itm.properties.status.id == 1 -->
+<a class="delete" href="" ng-click="deleteStatusCampaign(itm.id, 1)">Delete</a>
+<a class="edit" href="" ng-click="editCampaign(itm.id)">Edit</a>
+<a class="copy" href="" ng-click="copyCampaign(itm.id)">Duplicate</a>
+</span>
+</div>
+</span>
+</td>
+<td class="ng-binding">Active</td>
+<td><a ui-sref="campaign_item.month({ idCampaign: itm.id})" class="ng-binding" href="/campaign/140/month">los angeles</a></td>
+<td class="ng-binding">$36.00</td>
+<td class="ng-binding">$10,000.00</td>
+<td class="ng-binding">4</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0.00%</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.statistics.money_spent == 0 -->
+<!-- ngIf: itm.statistics.money_spent != 0 --><span ng-if="itm.statistics.money_spent != 0" class="ng-binding ng-scope">$36.00</span><!-- end ngIf: itm.statistics.money_spent != 0 -->
+</td>
+<td class="ng-binding">$144.00</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">$0.00</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.start_date -->
+<!-- ngIf: ! itm.start_date --><span ng-if=" ! itm.start_date" class="ng-binding ng-scope">
+14/11/2017
+</span><!-- end ngIf: ! itm.start_date -->
+</td>
+</tr><!-- end ngRepeat: itm in campaignsList --><tr ng-repeat="itm in campaignsList" ng-class="{selected : itm.is_checked, update_single: arrayCampaigns == itm.id &amp;&amp; changedStatus, update_selected: itm.is_checked &amp;&amp; changedActions}" class="ng-scope">
+<td class="actions">
+<span class="actions Active" ng-class="itm.properties.status.title">
+<div class="wrap_tooltip">
+<span class="actions_tooltip">
+<!-- ngIf: itm.properties.status.id == 2 -->
+<!-- ngIf: itm.properties.status.id == 1 --><a class="pause ng-scope" href="" ng-click="changeStatusCampaign(itm.id, 2, 'Pause')" ng-if="itm.properties.status.id == 1">Pause</a><!-- end ngIf: itm.properties.status.id == 1 -->
+<a class="delete" href="" ng-click="deleteStatusCampaign(itm.id, 1)">Delete</a>
+<a class="edit" href="" ng-click="editCampaign(itm.id)">Edit</a>
+<a class="copy" href="" ng-click="copyCampaign(itm.id)">Duplicate</a>
+</span>
+</div>
+</span>
+</td>
+<td class="ng-binding">Active</td>
+<td><a ui-sref="campaign_item.month({ idCampaign: itm.id})" class="ng-binding" href="/campaign/141/month">russian - moskva</a></td>
+<td class="ng-binding">$36.00</td>
+<td class="ng-binding">$10,000.00</td>
+<td class="ng-binding">1</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0.00%</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.statistics.money_spent == 0 -->
+<!-- ngIf: itm.statistics.money_spent != 0 --><span ng-if="itm.statistics.money_spent != 0" class="ng-binding ng-scope">$36.00</span><!-- end ngIf: itm.statistics.money_spent != 0 -->
+</td>
+<td class="ng-binding">$36.00</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">$0.00</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.start_date -->
+<!-- ngIf: ! itm.start_date --><span ng-if=" ! itm.start_date" class="ng-binding ng-scope">
+15/11/2017
+</span><!-- end ngIf: ! itm.start_date -->
+</td>
+</tr><!-- end ngRepeat: itm in campaignsList --><tr ng-repeat="itm in campaignsList" ng-class="{selected : itm.is_checked, update_single: arrayCampaigns == itm.id &amp;&amp; changedStatus, update_selected: itm.is_checked &amp;&amp; changedActions}" class="ng-scope">
+<td class="actions">
+<span class="actions Active" ng-class="itm.properties.status.title">
+<div class="wrap_tooltip">
+<span class="actions_tooltip">
+<!-- ngIf: itm.properties.status.id == 2 -->
+<!-- ngIf: itm.properties.status.id == 1 --><a class="pause ng-scope" href="" ng-click="changeStatusCampaign(itm.id, 2, 'Pause')" ng-if="itm.properties.status.id == 1">Pause</a><!-- end ngIf: itm.properties.status.id == 1 -->
+<a class="delete" href="" ng-click="deleteStatusCampaign(itm.id, 1)">Delete</a>
+<a class="edit" href="" ng-click="editCampaign(itm.id)">Edit</a>
+<a class="copy" href="" ng-click="copyCampaign(itm.id)">Duplicate</a>
+</span>
+</div>
+</span>
+</td>
+<td class="ng-binding">Active</td>
+<td><a ui-sref="campaign_item.month({ idCampaign: itm.id})" class="ng-binding" href="/campaign/144/month">germmny</a></td>
+<td class="ng-binding">$29.00</td>
+<td class="ng-binding">$10,000.00</td>
+<td class="ng-binding">2</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">1</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">0.00%</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.statistics.money_spent == 0 -->
+<!-- ngIf: itm.statistics.money_spent != 0 --><span ng-if="itm.statistics.money_spent != 0" class="ng-binding ng-scope">$47.00</span><!-- end ngIf: itm.statistics.money_spent != 0 -->
+</td>
+<td class="ng-binding">$94.00</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">$23.00</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: itm.start_date -->
+<!-- ngIf: ! itm.start_date --><span ng-if=" ! itm.start_date" class="ng-binding ng-scope">
+15/11/2017
+</span><!-- end ngIf: ! itm.start_date -->
+</td>
+</tr><!-- end ngRepeat: itm in campaignsList -->
+</tbody><!-- end ngIf: campaignsList.length && !dataLoadingTable -->
+<!-- ngIf: campaignsList.length && !dataLoadingTable --><tfoot ng-if="campaignsList.length &amp;&amp; !dataLoadingTable" class="ng-scope">
+<tr>
+<td class="total" colspan="2">Total:</td>
+<td class="total_mobile">Total:</td>
+<td class="ng-binding">4 Campaign</td>
+<td></td>
+<td class="ng-binding">$31,000.00</td>
+<td class="ng-binding">74</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">1</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-scope"></td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td>
+<!-- ngIf: total.money_spent == 0 -->
+<!-- ngIf: total.money_spent != 0 --><span ng-if="total.money_spent != 0" class="ng-binding ng-scope">$36.30</span><!-- end ngIf: total.money_spent != 0 -->
+</td>
+<td class="ng-binding">$2,686.00</td>
+<!-- ngIf: currentUser().integration.is_enabled --><td ng-if="currentUser().integration.is_enabled" class="ng-binding ng-scope">$23.00</td><!-- end ngIf: currentUser().integration.is_enabled -->
+<td></td>
+</tr>
+</tfoot><!-- end ngIf: campaignsList.length && !dataLoadingTable -->
+</table>
+</div>
+<!-- ngIf: !campaignsList.length && !dataLoadingTable -->
+</div>
+<pagination pagination-data="pagi" change-page="pageChanged(numberPage)" change-per-page="perPageChanged(numPerPage)" class="ng-isolate-scope"><!-- ngIf: loadData && paginationData.totalCount > 0 --><ul class="pagination-sm pagination left item_per_page ng-scope" ng-if="loadData &amp;&amp; paginationData.totalCount &gt; 0" style="">
+<!-- ngRepeat: item in itemPerPage --><li ng-repeat="item in itemPerPage" class="ng-scope">
+<a ng-class="paginationData.numItemsPerPage === item.numPerPage ? 'active' : ' '" ng-click="selectPerPage($index)" ng-disabled=" paginationData.numItemsPerPage === item.numPerPage ? true : false" class="ng-binding active" disabled="disabled">50</a>
+</li><!-- end ngRepeat: item in itemPerPage --><li ng-repeat="item in itemPerPage" class="ng-scope">
+<a ng-class="paginationData.numItemsPerPage === item.numPerPage ? 'active' : ' '" ng-click="selectPerPage($index)" ng-disabled=" paginationData.numItemsPerPage === item.numPerPage ? true : false" class="ng-binding">100</a>
+</li><!-- end ngRepeat: item in itemPerPage --><li ng-repeat="item in itemPerPage" class="ng-scope">
+<a ng-class="paginationData.numItemsPerPage === item.numPerPage ? 'active' : ' '" ng-click="selectPerPage($index)" ng-disabled=" paginationData.numItemsPerPage === item.numPerPage ? true : false" class="ng-binding">150</a>
+</li><!-- end ngRepeat: item in itemPerPage --><li ng-repeat="item in itemPerPage" class="ng-scope">
+<a ng-class="paginationData.numItemsPerPage === item.numPerPage ? 'active' : ' '" ng-click="selectPerPage($index)" ng-disabled=" paginationData.numItemsPerPage === item.numPerPage ? true : false" class="ng-binding">200</a>
+</li><!-- end ngRepeat: item in itemPerPage -->
+</ul><!-- end ngIf: loadData && paginationData.totalCount > 0 -->
+<span style="line-height: 0;" ng-show="loadData &amp;&amp; paginationData.totalCount &gt; 0" class="ng-binding">Showing 1 - 4 of 4 items</span>
+<ul class="pagination-sm pagination ng-isolate-scope ng-valid ng-hide ng-not-empty" uib-pagination="" ng-show="loadData &amp;&amp; paginationData.numItemsPerPage &lt; paginationData.totalCount" boundary-link-numbers="true" rotate="false" total-items="paginationData.totalCount" max-size="maxSize" force-ellipses="true" ng-model="paginationData.current" ng-change="watchChangePage()" items-per-page="paginationData.numItemsPerPage" previous-text="‹" next-text="›" first-text="«" last-text="»" style="">
+  <!-- ngIf: ::boundaryLinks -->
+  <!-- ngIf: ::directionLinks --><li ng-if="::directionLinks" ng-class="{disabled: noPrevious()||ngDisabled}" class="pagination-prev ng-scope disabled"><a href="" ng-click="selectPage(page - 1, $event)" class="ng-binding">‹</a></li><!-- end ngIf: ::directionLinks -->
+  <!-- ngRepeat: page in pages track by $index --><li ng-repeat="page in pages track by $index" ng-class="{active: page.active,disabled: ngDisabled&amp;&amp;!page.active}" class="pagination-page ng-scope active"><a href="" ng-click="selectPage(page.number, $event)" class="ng-binding">1</a></li><!-- end ngRepeat: page in pages track by $index -->
+  <!-- ngIf: ::directionLinks --><li ng-if="::directionLinks" ng-class="{disabled: noNext()||ngDisabled}" class="pagination-next ng-scope disabled"><a href="" ng-click="selectPage(page + 1, $event)" class="ng-binding">›</a></li><!-- end ngIf: ::directionLinks -->
+  <!-- ngIf: ::boundaryLinks -->
+</ul>
+</pagination>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</ui-view>
+</div>
+</ui-view>
+<script src="dist/app/vendor.1515676623.min.js"></script>
+<script src="dist/app/all.1515676623.min.js"></script>
+
+<div class="daterangepicker dropdown-menu ltr show-calendar opensright" style="top: 118px; left: 186.766px; right: auto; display: none;"><div class="calendar left"><div class="daterangepicker_input"><input class="input-mini form-control active" type="text" name="daterangepicker_start" value="" /><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-chevron-left glyphicon glyphicon-chevron-left"></i></th><th colspan="5" class="month">Nov 2016</th><th></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off available" data-title="r0c0">30</td><td class="off available" data-title="r0c1">31</td><td class="available" data-title="r0c2">1</td><td class="available" data-title="r0c3">2</td><td class="available" data-title="r0c4">3</td><td class="available" data-title="r0c5">4</td><td class="weekend available" data-title="r0c6">5</td></tr><tr><td class="weekend available" data-title="r1c0">6</td><td class="available" data-title="r1c1">7</td><td class="available" data-title="r1c2">8</td><td class="available" data-title="r1c3">9</td><td class="available" data-title="r1c4">10</td><td class="available" data-title="r1c5">11</td><td class="weekend available" data-title="r1c6">12</td></tr><tr><td class="weekend active start-date available" data-title="r2c0">13</td><td class="in-range available" data-title="r2c1">14</td><td class="in-range available" data-title="r2c2">15</td><td class="in-range available" data-title="r2c3">16</td><td class="in-range available" data-title="r2c4">17</td><td class="in-range available" data-title="r2c5">18</td><td class="weekend in-range available" data-title="r2c6">19</td></tr><tr><td class="weekend in-range available" data-title="r3c0">20</td><td class="in-range available" data-title="r3c1">21</td><td class="in-range available" data-title="r3c2">22</td><td class="in-range available" data-title="r3c3">23</td><td class="in-range available" data-title="r3c4">24</td><td class="in-range available" data-title="r3c5">25</td><td class="weekend in-range available" data-title="r3c6">26</td></tr><tr><td class="weekend in-range available" data-title="r4c0">27</td><td class="in-range available" data-title="r4c1">28</td><td class="in-range available" data-title="r4c2">29</td><td class="in-range available" data-title="r4c3">30</td><td class="off in-range available" data-title="r4c4">1</td><td class="off in-range available" data-title="r4c5">2</td><td class="weekend off in-range available" data-title="r4c6">3</td></tr><tr><td class="weekend off in-range available" data-title="r5c0">4</td><td class="off in-range available" data-title="r5c1">5</td><td class="off in-range available" data-title="r5c2">6</td><td class="off in-range available" data-title="r5c3">7</td><td class="off in-range available" data-title="r5c4">8</td><td class="off in-range available" data-title="r5c5">9</td><td class="weekend off in-range available" data-title="r5c6">10</td></tr></tbody></table></div></div><div class="calendar right"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value="" /><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"><table class="table-condensed"><thead><tr><th></th><th colspan="5" class="month">Dec 2016</th><th class="next available"><i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="weekend off in-range available" data-title="r0c0">27</td><td class="off in-range available" data-title="r0c1">28</td><td class="off in-range available" data-title="r0c2">29</td><td class="off in-range available" data-title="r0c3">30</td><td class="in-range available" data-title="r0c4">1</td><td class="in-range available" data-title="r0c5">2</td><td class="weekend in-range available" data-title="r0c6">3</td></tr><tr><td class="weekend in-range available" data-title="r1c0">4</td><td class="in-range available" data-title="r1c1">5</td><td class="in-range available" data-title="r1c2">6</td><td class="in-range available" data-title="r1c3">7</td><td class="in-range available" data-title="r1c4">8</td><td class="in-range available" data-title="r1c5">9</td><td class="weekend in-range available" data-title="r1c6">10</td></tr><tr><td class="weekend in-range available" data-title="r2c0">11</td><td class="in-range available" data-title="r2c1">12</td><td class="in-range available" data-title="r2c2">13</td><td class="in-range available" data-title="r2c3">14</td><td class="in-range available" data-title="r2c4">15</td><td class="in-range available" data-title="r2c5">16</td><td class="weekend in-range available" data-title="r2c6">17</td></tr><tr><td class="weekend in-range available" data-title="r3c0">18</td><td class="in-range available" data-title="r3c1">19</td><td class="in-range available" data-title="r3c2">20</td><td class="in-range available" data-title="r3c3">21</td><td class="in-range available" data-title="r3c4">22</td><td class="in-range available" data-title="r3c5">23</td><td class="weekend in-range available" data-title="r3c6">24</td></tr><tr><td class="weekend in-range available" data-title="r4c0">25</td><td class="in-range available" data-title="r4c1">26</td><td class="in-range available" data-title="r4c2">27</td><td class="in-range available" data-title="r4c3">28</td><td class="in-range available" data-title="r4c4">29</td><td class="in-range available" data-title="r4c5">30</td><td class="weekend in-range available" data-title="r4c6">31</td></tr><tr><td class="weekend off in-range available" data-title="r5c0">1</td><td class="off in-range available" data-title="r5c1">2</td><td class="off in-range available" data-title="r5c2">3</td><td class="off in-range available" data-title="r5c3">4</td><td class="off in-range available" data-title="r5c4">5</td><td class="off in-range available" data-title="r5c5">6</td><td class="weekend off in-range available" data-title="r5c6">7</td></tr></tbody></table></div></div><div class="ranges"><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div></body></html>

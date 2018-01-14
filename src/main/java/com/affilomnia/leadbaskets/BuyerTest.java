@@ -28,17 +28,12 @@ public class BuyerTest {
 		Configuration.holdBrowserOpen = true;
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void testLoginTotalSpentAndLeads() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");	
 		buyerPage.calcTotalSpentAndTotalLead();
-//		Float result[] = buyerPage.calcTotalSpentAndTotalLead();
-//		System.out.println(result[1]+" "+result[0]);
-//		buyerPage.checkTotalSpentAndTotalLeads(result[1], result[0]);
-		buyerPage.logOut();
-		
-
+		buyerPage.logOut();		
 	}
 	@Test(enabled = false)
 	public void testTotalLeadTotalSpentAvgcplParCamp() throws Exception
@@ -46,6 +41,13 @@ public class BuyerTest {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");		
 		buyerPage.checkStatisticPerCamp();
+	}
+	@Test(enabled = true)
+	public void buyerRegistrtion() throws Exception
+	{
+		open("https://test_app.leadsbasket.com/register-industry");
+		buyerPage.chooseIndustryPage();
+		buyerPage.registerPage();
 	}
 
 }

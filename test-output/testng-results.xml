@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18457" started-at="2018-01-13T21:44:55Z" finished-at="2018-01-13T21:45:14Z">
+  <suite name="Default suite" duration-ms="6219" started-at="2018-01-14T16:55:12Z" finished-at="2018-01-14T16:55:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18457" started-at="2018-01-13T21:44:55Z" finished-at="2018-01-13T21:45:14Z">
+    <test name="Default test" duration-ms="6219" started-at="2018-01-14T16:55:12Z" finished-at="2018-01-14T16:55:18Z">
       <class name="com.affilomnia.leadbaskets.BuyerTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@61394494]" name="before" is-config="true" duration-ms="17" started-at="2018-01-13T23:44:55Z" finished-at="2018-01-13T23:44:55Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@543fe698]" name="before" is-config="true" duration-ms="14" started-at="2018-01-14T18:55:12Z" finished-at="2018-01-14T18:55:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="testLoginTotalSpentAndLeads()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@61394494]" name="testLoginTotalSpentAndLeads" duration-ms="18334" started-at="2018-01-13T23:44:55Z" finished-at="2018-01-13T23:45:14Z">
+        <test-method status="PASS" signature="buyerRegistrtion()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@543fe698]" name="buyerRegistrtion" duration-ms="6109" started-at="2018-01-14T18:55:12Z" finished-at="2018-01-14T18:55:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginTotalSpentAndLeads -->
+        </test-method> <!-- buyerRegistrtion -->
       </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
