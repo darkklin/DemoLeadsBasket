@@ -3,6 +3,8 @@ package Pages;
 import static com.codeborne.selenide.Selenide.*;
 
 import java.awt.Scrollbar;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
 
@@ -22,6 +24,7 @@ import static com.codeborne.selenide.Selectors.*;
 public class BuyerPage {
 	private SoftAssert softAssert;
 	private WaitAngularPageLoaded wait;
+
 	@Inject
 	public BuyerPage() {
 		Configuration.browser = "chrome";
@@ -29,8 +32,7 @@ public class BuyerPage {
 		wait = new WaitAngularPageLoaded();
 		page(this);
 	}
-	@Inject
-	LoginPage FormLbPage;
+
 	private SelenideElement openLeadListPage = $("a[ui-sref='leads_list']");
 	private SelenideElement perPage200 = $("a[ng-class='{ active: perPage == 200 }']");
 	private SelenideElement openDashBoardPage = $(byText("Dashboard"));
@@ -53,18 +55,14 @@ public class BuyerPage {
 	private ElementsCollection campaignLeadStatus = $$(By.xpath("//tr[@class='lead-row ng-scope']//td[10]"));
 	// -----------------------------------------------------------------------------------------------------
 	private SelenideElement industryField = $("a[placeholder*='Industry']");
-	private SelenideElement btnCreateAccount = $("button.btn");
+	private SelenideElement btnSubmit = $("button.btn");
 	private SelenideElement firstName = $("input[name='firstName']");
 	private SelenideElement lastName = $("input[name='lastName']");
 	private SelenideElement phoneNumber = $("input[id='tel-dc']");
-	private SelenideElement email = $("input[name='email']");
-
+	private SelenideElement email = $("input[placeholder*='Email']");
 	private SelenideElement password = $("input[name='pass']");
 	private SelenideElement confirmPassword = $("input[name='rePass']");
-
-	
-
-
+	private ElementsCollection checkBoxs = $$("label[class*='checkbox']");
 
 	/**
 	 * calculate buyer total spend and total lead parameters
@@ -111,9 +109,7 @@ public class BuyerPage {
 	}
 
 	/**
-	 * Check statistic par offer in buyer > dashboard > Recently Updated Campaigns
-	 * 
-	 * @throws Exception
+	 * Test total leads/total spent / avgCpl par offer in buyer > dashboard > Recently Updated Campaigns
 	 */
 	public void checkStatisticPerCamp() throws Exception {
 		String campName, campLeadStatus;
@@ -132,7 +128,6 @@ public class BuyerPage {
 			wait.waitUntilAngularPageLoaded();
 			Float totalLeads = (float) 0, totaleadBuyCpl = (float) 0;
 			Float avgCpl = (float) 0;
-
 			for (int j = 0; j < $$("tr[ng-repeat*='leadsCollection']").size(); j++) {
 				leadBuyCpl = convertWebElementToNm(campLeadBuyCpl.get(j));
 				campLeadStatus = campaignLeadStatus.get(j).getText();
@@ -174,46 +169,70 @@ public class BuyerPage {
 	}
 
 	public void logOut() {
-
 		profile.click();
 		logOut.shouldBe(Condition.visible).click();
 	}
-	
-	public void chooseIndustryPage()
-	{
+
+	/**
+	 * /register-industry, test titles,Test login Link ,Choose industry > press on create
+	 * account button
+	 */
+	public void IndustryPage() {
 		$("div.reg>h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
-		$("div.choose_industry_text").shouldHave(Condition.text("Get ready to be bombarded with some top quality leads!"));
-		$("a.link").shouldBe(Condition.visible).click();
-		confirm();
-		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));
-		back();
-		btnCreateAccount.shouldBe(Condition.disabled);
+		$("div.choose_industry_text")
+				.shouldHave(Condition.text("Get ready to be bombarded with some top quality leads!"));
+		$("a.link").shouldBe(Condition.visible).click();confirm();
+		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
+		btnSubmit.shouldBe(Condition.disabled);
 		industryField.click();
 		$(byText("IndustryQA")).click();
-		btnCreateAccount.shouldHave(Condition.text("Create Account")).click();
-	
+		btnSubmit.shouldHave(Condition.text("Create Account")).click();
+
 	}
-	public void registerPage() throws Exception
-	{
+
+	/**
+	 * /register, test titles , test "Terms of Service" page ,test login link> fill all field with valid info and press Continue button
+	 */
+	public void registerPage() {
 		FormLbPage rendom = new FormLbPage();
-		String text= rendom.generateEmail("abcdfddDd23%2", 8);
-		$("div.reg>h4").shouldHave(Condition.text("100% Self-service Platform for Quality Lead Generation"));
-		btnCreateAccount.shouldBe(Condition.disabled);
+		String text = rendom.generateEmail("abcdfddDd23%2", 8);
+		$("h4").shouldHave(Condition.text("100% Self-service Platform for Quality Lead Generation"));
+		btnSubmit.shouldBe(Condition.disabled);
 		$(byText("Terms of Service")).click();
 		switchTo().window(1);
 		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
-		switchTo().window(1).close();;
-		switchTo().window(0); 
+		switchTo().window(1).close();
+		switchTo().window(0);
+		$(byText("Login")).shouldBe(Condition.visible).click();confirm();
+		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
 		firstName.setValue("selenide");
 		lastName.setValue("automtic");
-		Thread.sleep(1000);
 		phoneNumber.setValue("0528895514");
-		email.setValue("lbdemo234+"+text+"@gmail.com");
-		password.setValue("D%"+text);
-		confirmPassword.setValue("D%"+text);
-		btnCreateAccount.shouldBe(Condition.visible).click();;
+		email.setValue("lbdemo234+" + text + "@gmail.com");
+		password.setValue("D%" + text);
+		confirmPassword.setValue("D%" + text);
+		btnSubmit.shouldBe(Condition.visible).click();
+	}
 
-
+	/**
+	 * Test /register/integration >test titles,test link "Integration with API",
+	 * click on "Via Email" check box,fill valid email,press on Continue
+	 * @throws Exception 
+	 */
+	public void integrationPage() throws Exception {
+//		$("h2").shouldHave(Condition.text("Connect To Your Platform"));
+//		$("div.reg>h4").shouldHave(Condition.text("Get Leads Directly To Your Email or Platform"));
+//		$("h2.h2_inside").shouldHave(Condition.text("Select how you wish to receive your leads"));
+//		btnSubmit.shouldBe(Condition.disabled);
+		File downloadedFile = $("a[href='/uploads/guides/Get_Leads_By_API.pdf']").download();
+		downloadedFile.getName();
+		$(byText("Integration with API")).download();
+//		switchTo().window(1);$(byText("Get leads by API")).shouldBe(Condition.visible);
+//		switchTo().window(1).close();switchTo().window(0);
+//		checkBoxs.get(0).click();
+//		email.setValue("test@test.com");
+//		btnSubmit.shouldBe(Condition.visible).click();
+//		$("h2").shouldHave(Condition.text("Billing Information"));
 	}
 
 }

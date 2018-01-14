@@ -2,7 +2,6 @@ package com.affilomnia.leadbaskets;
 
 import static com.codeborne.selenide.Selenide.open;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
@@ -43,11 +42,12 @@ public class BuyerTest {
 		buyerPage.checkStatisticPerCamp();
 	}
 	@Test(enabled = true)
-	public void buyerRegistrtion() throws Exception
+	public void testBuyerRegistrtion() throws Exception
 	{
-		open("https://test_app.leadsbasket.com/register-industry");
-		buyerPage.chooseIndustryPage();
-		buyerPage.registerPage();
+		open("https://test_app.leadsbasket.com/register/integration");
+//		buyerPage.IndustryPage();
+//		buyerPage.registerPage();
+		buyerPage.integrationPage();
 	}
 
 }
