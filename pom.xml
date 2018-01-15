@@ -59,7 +59,7 @@
 			<!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
 			<groupId>com.codeborne</groupId>
 			<artifactId>selenide</artifactId>
-			<version>4.9</version>
+			<version>4.10</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
 		<dependency>
@@ -79,6 +79,12 @@
 			<artifactId>allure-testng</artifactId>
 			<version>2.0-BETA19</version>
 		</dependency>
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>pdf-test</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
 	</dependencies>
 
 

@@ -5,12 +5,16 @@ import static com.codeborne.selenide.Selenide.*;
 import java.awt.Scrollbar;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Random;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 
+import com.codeborne.pdftest.PDF;
+import static com.codeborne.pdftest.PDF.*;
+import static org.junit.Assert.assertThat;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
@@ -31,6 +35,7 @@ public class BuyerPage {
 		this.softAssert = new SoftAssert();
 		wait = new WaitAngularPageLoaded();
 		page(this);
+		
 	}
 
 	private SelenideElement openLeadListPage = $("a[ui-sref='leads_list']");
@@ -62,7 +67,14 @@ public class BuyerPage {
 	private SelenideElement email = $("input[placeholder*='Email']");
 	private SelenideElement password = $("input[name='pass']");
 	private SelenideElement confirmPassword = $("input[name='rePass']");
-	private ElementsCollection checkBoxs = $$("label[class*='checkbox']");
+	private ElementsCollection integrationOption = $$("label[class*='checkbox']");
+	private SelenideElement companyName = $("input[name='companyName']");
+	private SelenideElement street1 = $("input[name='companyAddress']");
+	private SelenideElement city = $("input[name='city']");
+	private SelenideElement state  = $("input[name='state']");
+	private SelenideElement country = $("a[placeholder='Select Country']");
+	private SelenideElement zipCode = $("input[name='zip']");
+	private ElementsCollection chooseCountry = $$("li[role='option']");
 
 	/**
 	 * calculate buyer total spend and total lead parameters
@@ -177,7 +189,7 @@ public class BuyerPage {
 	 * /register-industry, test titles,Test login Link ,Choose industry > press on create
 	 * account button
 	 */
-	public void IndustryPage() {
+	public void industryPage() {
 		$("div.reg>h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
 		$("div.choose_industry_text")
 				.shouldHave(Condition.text("Get ready to be bombarded with some top quality leads!"));
@@ -201,17 +213,17 @@ public class BuyerPage {
 		$(byText("Terms of Service")).click();
 		switchTo().window(1);
 		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
-		switchTo().window(1).close();
-		switchTo().window(0);
+		switchTo().window(1).close();switchTo().window(0);
 		$(byText("Login")).shouldBe(Condition.visible).click();confirm();
 		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
 		firstName.setValue("selenide");
 		lastName.setValue("automtic");
 		phoneNumber.setValue("0528895514");
 		email.setValue("lbdemo234+" + text + "@gmail.com");
-		password.setValue("D%" + text);
-		confirmPassword.setValue("D%" + text);
+		password.setValue("D%1" + text);
+		confirmPassword.setValue("D%1" + text);
 		btnSubmit.shouldBe(Condition.visible).click();
+		
 	}
 
 	/**
@@ -219,20 +231,57 @@ public class BuyerPage {
 	 * click on "Via Email" check box,fill valid email,press on Continue
 	 * @throws Exception 
 	 */
-	public void integrationPage() throws Exception {
-//		$("h2").shouldHave(Condition.text("Connect To Your Platform"));
-//		$("div.reg>h4").shouldHave(Condition.text("Get Leads Directly To Your Email or Platform"));
-//		$("h2.h2_inside").shouldHave(Condition.text("Select how you wish to receive your leads"));
-//		btnSubmit.shouldBe(Condition.disabled);
-		File downloadedFile = $("a[href='/uploads/guides/Get_Leads_By_API.pdf']").download();
-		downloadedFile.getName();
+	public void integrationPage()  {
+		$("h2").shouldHave(Condition.text("Connect To Your Platform"));
+		$("div.reg>h4").shouldHave(Condition.text("Get Leads Directly To Your Email or Platform"));
+		$("h2.h2_inside").shouldHave(Condition.text("Select how you wish to receive your leads"));
+		btnSubmit.shouldBe(Condition.disabled);
+		integrationOption.get(0).click();
+		email.setValue("test@test.com");
+		btnSubmit.shouldBe(Condition.visible).click();
+		$("h2").shouldHave(Condition.text("Billing Information"));
+	}
+	/**
+	 * /register/billing, test title , TERMS OF USE , ,FILL THE FORM and press submit  
+	 */
+	public void billingPage()
+	{
+		Random rand = new Random();
+		int  countryIndex = rand.nextInt(239);
+		$("h2").shouldHave(Condition.text("Billing Information"));
+		$("h4").shouldHave(Condition.text("Enter Billing Information & Fund Your Account"));
+		$(byText("click here.")).click();		
+	    switchTo().window(1);
+		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
+		switchTo().window(1).close();switchTo().window(0);
+		companyName.setValue("Company Name");
+		street1.setValue("test steeen 234 -4 4333 1");
+		city.setValue("tel aviv");
+		btnSubmit.should(Condition.disabled);
+		state.setValue("israel");
+		country.click();
+		chooseCountry.get(countryIndex).click();
+		zipCode.setValue("464564");
+		email.setValue("test@test.com");
+		btnSubmit.should(Condition.enabled).click();
+	}
+	/**
+	 * /register/finish 
+	 */
+	public void finishPage()
+	{
+		$("h2").shouldHave(Condition.text("Congratulations!"));
+		$("h4").shouldHave(Condition.text("Done"));
+		$("p").shouldHave(Condition.text("You Can Start Creating Your Campaigns and Get Leads"));
+		$("[class*='finish_btn']").click();
+		$("h5").shouldHave(Condition.text("Please fill in all required entry setting fields and create new campaign."));
+	}
+
+	public void downalodPdf() throws Exception
+	{
 		$(byText("Integration with API")).download();
-//		switchTo().window(1);$(byText("Get leads by API")).shouldBe(Condition.visible);
-//		switchTo().window(1).close();switchTo().window(0);
-//		checkBoxs.get(0).click();
-//		email.setValue("test@test.com");
-//		btnSubmit.shouldBe(Condition.visible).click();
-//		$("h2").shouldHave(Condition.text("Billing Information"));
+		PDF pdf = new PDF($(byText("Integration with API")).download());
+	    assertThat(pdf, containsText("Get leads by API"));
 	}
 
 }

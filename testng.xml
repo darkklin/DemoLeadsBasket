@@ -1,10 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression TestSuite">
-<test name="LeadsBaskets Test">
-	<classes>
-		<class name="com.affilomnia.leadbaskets.FormLbTest"></class>
-				
-	</classes>
-</test>
+	<test name="LeadsBaskets Test">
+		<groups>
+			<run>
+				<include name="buyer statistic" />
+				<include name="BuyerReg" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
+		</classes>
+	</test>
 </suite>
 
 

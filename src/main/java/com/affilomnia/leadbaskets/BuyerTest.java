@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.codeborne.selenide.Configuration;
 import com.google.inject.Inject;
-
+import com.codeborne.selenide.WebDriverRunner;
 import Pages.BuyerPage;
 import Pages.LoginPage;
 
@@ -26,28 +26,41 @@ public class BuyerTest {
 		Configuration.headless =true;
 		Configuration.holdBrowserOpen = true;
 	}
-
-	@Test(enabled = false)
+	
+	@Test(enabled = true,description = "1", groups = { "buyer statistic" },priority=2)
 	public void testLoginTotalSpentAndLeads() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");	
 		buyerPage.calcTotalSpentAndTotalLead();
 		buyerPage.logOut();		
 	}
-	@Test(enabled = false)
+	@Test(enabled = true,description = "2", groups = { "buyer statistic" },priority=1)
 	public void testTotalLeadTotalSpentAvgcplParCamp() throws Exception
 	{
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");		
 		buyerPage.checkStatisticPerCamp();
+		buyerPage.logOut();		
+
+
 	}
-	@Test(enabled = true)
-	public void testBuyerRegistrtion() throws Exception
+	@Test(enabled = false,description = "3", groups = { "BuyerReg" },priority=1)
+	public void testBuyerRegistrtion() 
 	{
-		open("https://test_app.leadsbasket.com/register/integration");
-//		buyerPage.IndustryPage();
-//		buyerPage.registerPage();
+		open("https://test_app.leadsbasket.com/register-industry");
+		buyerPage.industryPage();
+		buyerPage.registerPage();
 		buyerPage.integrationPage();
+		buyerPage.billingPage();
+		buyerPage.finishPage();
 	}
+	@Test(enabled = true,description = "4", groups = { "BuyerReg" },priority=1)
+	public void testdownloadIntegrtionPDF() throws Exception
+	{
+		open("https://app.leadsbasket.com/register/integration");
+		buyerPage.downalodPdf();		
+	}
+	
+	
 
 }
