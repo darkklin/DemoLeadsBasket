@@ -33,8 +33,7 @@ public class FormLbTest {
 		Configuration.holdBrowserOpen = true;
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 	}
-	@Epic("Allure examples")
-	@Feature("Testng support")
+	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test (description = "seller send one lead thought offer 543 ")
 	public void LoginAsSellerAndSendLead() throws Exception {

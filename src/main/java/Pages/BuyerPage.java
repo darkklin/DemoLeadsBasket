@@ -48,7 +48,7 @@ public class BuyerPage {
 	private SelenideElement webTotalSpend = $("div.tl_spend_ico>div>span");
 	private SelenideElement webTotalLeads = $("div.tl_leads_ico>div>span");
 	private SelenideElement profile = $("a.profile");
-	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(6)>a");
+	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(5)>a");
 	private ElementsCollection leadStatusCollection = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[12]"));
 	private ElementsCollection buyCplParLead = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[5]"));
 	private ElementsCollection leadCollection = $$("tr[ng-repeat='lead in leadsCollection']");
@@ -87,7 +87,6 @@ public class BuyerPage {
 		openLeadListPage.click();
 		wait.waitUntilAngularPageLoaded();
 		perPage200.click();
-
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
 		System.out.println(leadCollection.size());
@@ -197,7 +196,7 @@ public class BuyerPage {
 		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
 		btnSubmit.shouldBe(Condition.disabled);
 		industryField.click();
-		$(byText("IndustryQA")).click();
+		$(byText("Zoo Industry")).click();
 		btnSubmit.shouldHave(Condition.text("Create Account")).click();
 
 	}
@@ -208,6 +207,8 @@ public class BuyerPage {
 	public void registerPage() {
 		FormLbPage rendom = new FormLbPage();
 		String text = rendom.generateEmail("abcdfddDd23%2", 8);
+		String rdBname = rendom.generateEmail("abcdfg", 4);
+
 		$("h4").shouldHave(Condition.text("100% Self-service Platform for Quality Lead Generation"));
 		btnSubmit.shouldBe(Condition.disabled);
 		$(byText("Terms of Service")).click();
@@ -216,8 +217,8 @@ public class BuyerPage {
 		switchTo().window(1).close();switchTo().window(0);
 		$(byText("Login")).shouldBe(Condition.visible).click();confirm();
 		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
-		firstName.setValue("selenide");
-		lastName.setValue("automtic");
+		firstName.setValue("selenide"+rdBname);
+		lastName.setValue("automtic"+rdBname);
 		phoneNumber.setValue("0528895514");
 		email.setValue("lbdemo234+" + text + "@gmail.com");
 		password.setValue("D%1" + text);
