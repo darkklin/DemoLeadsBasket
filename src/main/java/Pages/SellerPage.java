@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.asserts.SoftAssert;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -21,11 +22,13 @@ import libry.WaitAngularPageLoaded;
 
 public class SellerPage {
 	private WaitAngularPageLoaded wait;
+	private SoftAssert softAssert;
 
 	@Inject
 	public SellerPage() {
 		Configuration.browser = "chrome";
 		wait = new WaitAngularPageLoaded();
+		this.softAssert = new SoftAssert();
 		page(this);
 
 	}
@@ -36,17 +39,71 @@ public class SellerPage {
 	private SelenideElement Offer543 = $(byText("selenium Webdriver(don't use!!!)"));
 	private SelenideElement dataChar = $("div[chart-data*='offerStatistic']");
 	private SelenideElement perPage200 = $(byText("200"));
-			ElementsCollection saleCpl = $$(By.xpath("//tr[@class='ng-scope']//td[5]"));
-	 List<String> element1;
+	private ElementsCollection saleCpl = $$(By.xpath("//tr[@class='ng-scope']//td[5]"));
+	private ElementsCollection statusLead = $$(By.xpath("//tr[@class='ng-scope']//td[14]"));
+	private ElementsCollection webStastic =  $$("span[class*='value ng-scope']"); // idex 0 = total leads idex 1=  total revenue total idex 2 =actual avg cpl 
 
-	public void calculateCplAndLeads() 
+
+
+
+	public void calculteTotalRevenueLeadActualAvgCpl() 
 	{
-		$(byText("Reports")).click();
+		$(byText("Report")).click();
 		wait.waitUntilAngularPageLoaded();
 		buyerPage.selectDate("13/11/16");
 		perPage200.click();
-		wait.waitUntilAngularPageLoaded();				
-		convertWebElementToNm(element1);
+		wait.waitUntilAngularPageLoaded();
+		String element;
+		Float saleCpls = null;
+		Float actualAvgCpl = null;
+
+		Float totalRevenues = (float) 0;
+		Float buyerTotalLeads = (float) 0;
+		for (int i = 0; i < saleCpl.size(); i++) {
+			element = saleCpl.get(i).getText().replace("$", " ");
+			saleCpls = Float.parseFloat(element);
+			String leadStatus = statusLead.get(i).getText();
+			
+			if (leadStatus.equalsIgnoreCase("Paid") || leadStatus.equalsIgnoreCase("Dispute")
+					|| leadStatus.equalsIgnoreCase("Dispute Declined"))
+			{
+				totalRevenues += saleCpls;
+				buyerTotalLeads++;
+			}
+		}		
+		actualAvgCpl = totalRevenues / buyerTotalLeads; 
+		actualAvgCpl=(float) (Math.round(actualAvgCpl * 100.0) / 100.0);
+		totalRevenues= (float) (Math.round(totalRevenues * 100.0) / 100.0);
+		System.out.println(totalRevenues+"  "+buyerTotalLeads+""+actualAvgCpl);
+		checkStatisticOnDashBoard(buyerTotalLeads, totalRevenues, actualAvgCpl);
+		
+
+	}
+	public void checkStatisticOnDashBoard(Float buyerTotalLeads, Float totalRevenues ,Float actualAvgCpl)
+	{
+		$("a[ui-sref*='dashboardSeller']").click();
+		wait.waitUntilAngularPageLoaded();
+		buyerPage.selectDate("13/11/16");
+		wait.waitUntilAngularPageLoaded();
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(1)), buyerTotalLeads, "Total Leads");
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(3)), totalRevenues, "total Revenues");
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(5)), actualAvgCpl, "actual Avg Cpl");
+		softAssert.assertAll();
+		System.out.println("total Leads is correct " + buyerTotalLeads);
+		System.out.println("total revenue is correct " + totalRevenues);
+		System.out.println("Actual avg cpl  is correct " + actualAvgCpl);
+
+		
+	}
+	
+
+	public Float convertWebElementToNm(SelenideElement nm) {
+		String element;
+		Float result;
+		element = nm.getText();
+		element = element.replace("$", "").replace(",", "");
+		result = Float.parseFloat(element);
+		return result;
 	}
 	
 	public void OpenOfferlink() throws Exception {	
@@ -58,19 +115,4 @@ public class SellerPage {
 		open(offerlink);	
 		
 		}
-	public Float convertWebElementToNm(List<String> text) {
-		List<String> element = new ArrayList<String>();
-		float result = 0;
-		for (int i = 0; i < text.size(); i++) {
-			
-			element.add(text.get(i).replace("$", ""));
-			result = Float.parseFloat(element.get(i));
-			System.out.println(result);
-		}
-
-
-//		element = element.replace("$", "").replace(",", "");
-//		result = Float.parseFloat(element);
-		return result;
-	}
 }

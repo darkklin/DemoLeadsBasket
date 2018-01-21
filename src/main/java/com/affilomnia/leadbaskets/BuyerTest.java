@@ -41,7 +41,7 @@ public class BuyerTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "1", groups = { "buyer statistic" }, priority = 2)
+	@Test(enabled = false, description = "1", groups = { "buyer statistic" }, priority = 2)
 	public void testLoginTotalSpentAndLeads() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");
@@ -52,7 +52,7 @@ public class BuyerTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "2", groups = { "buyer statistic" }, priority = 1)
+	@Test(enabled = false, description = "2", groups = { "buyer statistic" }, priority = 1)
 	public void testTotalLeadTotalSpentAvgcplParCamp() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "Test123456@@");
@@ -80,7 +80,7 @@ public class BuyerTest {
 	@Epic("Allure examples")
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Download PDF ", groups = { "BuyerReg" }, priority = 2)
+	@Test(enabled = false, description = "Download PDF ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();

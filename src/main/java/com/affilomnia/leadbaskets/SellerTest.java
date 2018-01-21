@@ -39,12 +39,11 @@ public class SellerTest {
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = { "Seller Statistic" }, priority = 1)
-	public void testTotalLeadTotalCpl() 
+	public void testTotalLeadTotalCpl()  
 	{
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("kirilk+webdriver@affilomania.com", "Test123456@");
-		sellerTest.calculateCplAndLeads();
-		
+		loginPage.login("kirilk+webdriver@affilomania.com", "0546474985Ko");
+		sellerTest.calculteTotalRevenueLeadActualAvgCpl();
 		
 	}
 	

@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8262" started-at="2018-01-17T16:58:26Z" finished-at="2018-01-17T16:58:34Z">
+  <suite name="Default suite" duration-ms="14382" started-at="2018-01-21T17:21:49Z" finished-at="2018-01-21T17:22:03Z">
     <groups>
       <group name="Seller Statistic">
-        <method signature="SellerTest.testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@640d604]" name="testTotalLeadTotalCpl" class="com.affilomnia.leadbaskets.SellerTest"/>
+        <method signature="SellerTest.testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@463afa6e]" name="testTotalLeadTotalCpl" class="com.affilomnia.leadbaskets.SellerTest"/>
       </group> <!-- Seller Statistic -->
     </groups>
-    <test name="Default test" duration-ms="8262" started-at="2018-01-17T16:58:26Z" finished-at="2018-01-17T16:58:34Z">
+    <test name="Default test" duration-ms="14382" started-at="2018-01-21T17:21:49Z" finished-at="2018-01-21T17:22:03Z">
       <class name="com.affilomnia.leadbaskets.SellerTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@640d604]" name="before" is-config="true" duration-ms="15" started-at="2018-01-17T18:58:26Z" finished-at="2018-01-17T18:58:26Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@463afa6e]" name="before" is-config="true" duration-ms="12" started-at="2018-01-21T19:21:49Z" finished-at="2018-01-21T19:21:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@640d604]" name="testTotalLeadTotalCpl" duration-ms="7987" started-at="2018-01-17T18:58:26Z" description="How much seller have leads and Total CPl" finished-at="2018-01-17T18:58:34Z">
+        <test-method status="PASS" signature="testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@463afa6e]" name="testTotalLeadTotalCpl" duration-ms="14218" started-at="2018-01-21T19:21:49Z" description="How much seller have leads and Total CPl" finished-at="2018-01-21T19:22:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTotalLeadTotalCpl -->
