@@ -1,4 +1,5 @@
 package com.affilomnia.leadbaskets;
+
 import static com.codeborne.selenide.Selenide.open;
 
 import org.testng.annotations.BeforeClass;
@@ -25,8 +26,8 @@ public class SellerTest {
 	@Inject
 	LoginPage loginPage;
 	@Inject
-	SellerPage sellerTest;
-	
+	SellerPage sellerPage;
+
 	@BeforeClass
 	public void before() {
 		Configuration.startMaximized = true;
@@ -34,20 +35,31 @@ public class SellerTest {
 		Configuration.headless = true;
 		Configuration.holdBrowserOpen = true;
 	}
+
+	@Video
+	@Feature("Seller Statistic")
+	@Severity(SeverityLevel.CRITICAL)
+	@Test(enabled = false, description = "How much seller have leads and Total CPl", groups = {
+			"Seller Statistic" }, priority = 1)
+	public void testTotalLeadTotalCpl() throws Exception  {
+
+		open("https://test_app.leadsbasket.com");
+		loginPage.login("kirilk+webdriver@affilomania.com", "0546474985Ko");
+		Float statResult[] = sellerPage.calcTotalRevenueLeadActualAvgCpl();
+		sellerPage.checkStatisticOnDashBoard(statResult[0], statResult[1], statResult[2]);
+	
+	}
 	
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = { "Seller Statistic" }, priority = 1)
-	public void testTotalLeadTotalCpl()  
-	{
+	@Test(enabled = true, description = "Test Stats Par offer ", groups = {
+			"Seller Statistic" }, priority = 1)
+	public void teststatParOFFER() throws Exception  {
+
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver@affilomania.com", "0546474985Ko");
-		sellerTest.calculteTotalRevenueLeadActualAvgCpl();
-		
+		sellerPage.checkstatParOffer();
 	}
-	
-	
-
 
 }
