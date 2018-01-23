@@ -1,25 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 69.084 s <<< FAILURE! - in TestSuite
-testdownloadIntegrtionPDF(com.affilomnia.leadbaskets.BuyerTest)  Time elapsed: 6.399 s  <<< FAILURE!
-com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {by text: Integration with API2}
-Expected: visible
-	at com.affilomnia.leadbaskets.BuyerTest.testdownloadIntegrtionPDF(BuyerTest.java:86)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":".//*/text()[normalize-space(translate(string(.), '	
- ', '    ')) = "Integration with API2"]/parent::*"}
-  (Session info: chrome=63.0.3239.132)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'RG-W-KIRIL', ip: '192.168.10.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 63.0.3239.132, webStorageEnabled: true}
-Session ID: aad538eb8d04f56cdd707aa59f4ff46c
-*** Element info: {Using=xpath, value=.//*/text()[normalize-space(translate(string(.), '	
- ', '    ')) = "Integration with API2"]/parent::*}
-	at com.affilomnia.leadbaskets.BuyerTest.testdownloadIntegrtionPDF(BuyerTest.java:86)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 63.344 s - in TestSuite

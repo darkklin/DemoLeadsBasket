@@ -1,6 +1,7 @@
 com\affilomnia\leadbaskets\BuyerTest.class
 Pages\FormLbPage.class
 libry\VideoRecord.class
+com\affilomnia\leadbaskets\SellerTest.class
 libry\WaitAngularPageLoaded.class
 Pages\BuyerPage.class
 Pages\LoginPage.class

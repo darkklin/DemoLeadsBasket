@@ -5,8 +5,8 @@
     <classes>
       <class name="com.affilomnia.leadbaskets.SellerTest">
         <methods>
+          <include name="teststatParOFFER"/>
           <include name="before"/>
-          <include name="testTotalLeadTotalCpl"/>
         </methods>
       </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
     </classes>
