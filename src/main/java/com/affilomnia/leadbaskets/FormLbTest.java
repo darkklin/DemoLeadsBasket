@@ -38,7 +38,7 @@ public class FormLbTest {
 	@Test (description = "seller send one lead thought offer 543 ")
 	public void LoginAsSellerAndSendLead() throws Exception {
 		open("");
-		loginPage.login("kirilk+webdriver@affilomania.com", "Test123456@");
+		loginPage.login("kirilk+webdriver@affilomania.com", "0546474985Ko");
 		sellerPage.OpenOfferlink();	
 		formLbPage.regLead();
 	}
