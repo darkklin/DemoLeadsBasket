@@ -10,7 +10,7 @@ import com.google.inject.Inject;
 public class LoginPage {
 	@Inject
 	public LoginPage() {
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 		page(this);
 	}
 

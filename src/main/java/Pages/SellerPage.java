@@ -105,7 +105,7 @@ public class SellerPage {
 		$("a[ui-sref*='live_offers']").click();
 		wait.waitUntilAngularPageLoaded();
 
-		for (int i = 1; i <= $$("tr[ng-repeat*='liveOffersList']").size(); i++) {
+		for (int i = 1; i < $$("tr[ng-repeat*='liveOffersList']").size(); i++) {
 
 			offerName = $("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").getText();
 			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));

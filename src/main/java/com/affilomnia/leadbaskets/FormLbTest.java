@@ -27,9 +27,9 @@ public class FormLbTest {
 	FormLbPage formLbPage;
 	@BeforeClass
 	public void before(){
+		
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
-		Configuration.headless =true;
 		Configuration.holdBrowserOpen = true;
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 	}

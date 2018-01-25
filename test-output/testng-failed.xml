@@ -3,12 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.affilomnia.leadbaskets.SellerTest">
+      <class name="com.affilomnia.leadbaskets.BuyerTest">
         <methods>
-          <include name="teststatParOFFER"/>
+          <include name="testBuyerRegistrtion"/>
           <include name="before"/>
+          <include name="testLoginTotalSpentAndLeads"/>
+          <include name="testdownloadIntegrtionPDF"/>
+          <include name="testTotalLeadTotalSpentAvgcplParCamp"/>
         </methods>
-      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
+      </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

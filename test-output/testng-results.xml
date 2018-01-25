@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8123" started-at="2018-01-22T14:16:30Z" finished-at="2018-01-22T14:16:38Z">
+  <suite name="Default suite" duration-ms="13413" started-at="2018-01-25T13:50:36Z" finished-at="2018-01-25T13:50:50Z">
     <groups>
-      <group name="Seller Statistic">
-        <method signature="SellerTest.teststatParOFFER()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@6544899b]" name="teststatParOFFER" class="com.affilomnia.leadbaskets.SellerTest"/>
-      </group> <!-- Seller Statistic -->
     </groups>
-    <test name="Default test" duration-ms="8123" started-at="2018-01-22T14:16:30Z" finished-at="2018-01-22T14:16:38Z">
-      <class name="com.affilomnia.leadbaskets.SellerTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@6544899b]" name="before" is-config="true" duration-ms="13" started-at="2018-01-22T16:16:30Z" finished-at="2018-01-22T16:16:30Z">
+    <test name="Default test" duration-ms="13413" started-at="2018-01-25T13:50:36Z" finished-at="2018-01-25T13:50:50Z">
+      <class name="com.affilomnia.leadbaskets.FormLbTest">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@463afa6e]" name="before" is-config="true" duration-ms="14" started-at="2018-01-25T15:50:36Z" finished-at="2018-01-25T15:50:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="teststatParOFFER()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@6544899b]" name="teststatParOFFER" duration-ms="7851" started-at="2018-01-22T16:16:30Z" description="Test Stats Par offer " finished-at="2018-01-22T16:16:38Z">
+        <test-method status="PASS" signature="LoginAsSellerAndSendLead()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@463afa6e]" name="LoginAsSellerAndSendLead" duration-ms="13305" started-at="2018-01-25T15:50:36Z" description="seller send one lead thought offer 543 " finished-at="2018-01-25T15:50:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teststatParOFFER -->
-      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
+        </test-method> <!-- LoginAsSellerAndSendLead -->
+      </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

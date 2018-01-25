@@ -11,7 +11,9 @@
     <classes>
       <class name="com.affilomnia.leadbaskets.BuyerTest">
         <methods>
+          <include name="testBuyerRegistrtion"/>
           <include name="testLoginTotalSpentAndLeads"/>
+          <include name="testdownloadIntegrtionPDF"/>
           <include name="testTotalLeadTotalSpentAvgcplParCamp"/>
         </methods>
       </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->

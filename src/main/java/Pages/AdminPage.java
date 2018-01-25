@@ -10,7 +10,7 @@ public class AdminPage {
 	
 	@Inject
 	public AdminPage() {
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 		
 		page(this);
 	}

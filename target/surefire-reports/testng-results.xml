@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression TestSuite" duration-ms="57006" started-at="2018-01-23T11:42:02Z" finished-at="2018-01-23T11:42:59Z">
+  <suite name="Regression TestSuite" duration-ms="4311" started-at="2018-01-25T12:56:02Z" finished-at="2018-01-25T12:56:07Z">
     <groups>
       <group name="BuyerReg">
-        <method signature="BuyerTest.testBuyerRegistrtion()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testBuyerRegistrtion" class="com.affilomnia.leadbaskets.BuyerTest"/>
-        <method signature="BuyerTest.testdownloadIntegrtionPDF()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testdownloadIntegrtionPDF" class="com.affilomnia.leadbaskets.BuyerTest"/>
+        <method signature="BuyerTest.testdownloadIntegrtionPDF()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@5d71b500]" name="testdownloadIntegrtionPDF" class="com.affilomnia.leadbaskets.BuyerTest"/>
       </group> <!-- BuyerReg -->
-      <group name="buyer statistic">
-        <method signature="BuyerTest.testLoginTotalSpentAndLeads()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testLoginTotalSpentAndLeads" class="com.affilomnia.leadbaskets.BuyerTest"/>
-        <method signature="BuyerTest.testTotalLeadTotalSpentAvgcplParCamp()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testTotalLeadTotalSpentAvgcplParCamp" class="com.affilomnia.leadbaskets.BuyerTest"/>
-      </group> <!-- buyer statistic -->
     </groups>
-    <test name="LeadsBaskets Test" duration-ms="57006" started-at="2018-01-23T11:42:02Z" finished-at="2018-01-23T11:42:59Z">
+    <test name="LeadsBaskets Test" duration-ms="4311" started-at="2018-01-25T12:56:02Z" finished-at="2018-01-25T12:56:07Z">
       <class name="com.affilomnia.leadbaskets.BuyerTest">
-        <test-method status="PASS" signature="testBuyerRegistrtion()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testBuyerRegistrtion" duration-ms="14875" started-at="2018-01-23T13:42:02Z" description="3" finished-at="2018-01-23T13:42:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBuyerRegistrtion -->
-        <test-method status="PASS" signature="testTotalLeadTotalSpentAvgcplParCamp()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testTotalLeadTotalSpentAvgcplParCamp" duration-ms="26478" started-at="2018-01-23T13:42:17Z" description="2" finished-at="2018-01-23T13:42:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTotalLeadTotalSpentAvgcplParCamp -->
-        <test-method status="PASS" signature="testLoginTotalSpentAndLeads()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testLoginTotalSpentAndLeads" duration-ms="11386" started-at="2018-01-23T13:42:44Z" description="1" finished-at="2018-01-23T13:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLoginTotalSpentAndLeads -->
-        <test-method status="PASS" signature="testdownloadIntegrtionPDF()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@29962b2f]" name="testdownloadIntegrtionPDF" duration-ms="3687" started-at="2018-01-23T13:42:55Z" description="Download PDF " finished-at="2018-01-23T13:42:59Z">
+        <test-method status="PASS" signature="testdownloadIntegrtionPDF()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@5d71b500]" name="testdownloadIntegrtionPDF" duration-ms="4104" started-at="2018-01-25T14:56:02Z" description="Download PDF " finished-at="2018-01-25T14:56:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testdownloadIntegrtionPDF -->

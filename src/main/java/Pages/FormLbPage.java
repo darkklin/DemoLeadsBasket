@@ -14,7 +14,7 @@ public class FormLbPage {
 
 	@Inject
 	public FormLbPage() {
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 		
 		page(this);
 	}
