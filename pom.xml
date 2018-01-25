@@ -19,6 +19,7 @@
 				<version>2.20.1</version>
 				<inherited>true</inherited>
 				<configuration>
+					<useFile>false</useFile>
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
