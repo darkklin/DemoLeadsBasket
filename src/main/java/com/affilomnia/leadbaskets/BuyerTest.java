@@ -29,7 +29,7 @@ public class BuyerTest extends BaseTest {
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = { "buyer statistic" }, priority = 2)
-	public void testLoginTotalSpentAndLeads() throws Exception {
+	public void testLoginTotalSpentAndLeads()  {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
 		buyerPage.calcTotalSpentAndTotalLead();
@@ -39,7 +39,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test total leads/spent/avgcpl par offer ", groups = { "buyer statistic" }, priority = 1)
+	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = { "buyer statistic" }, priority = 1)
 	public void testTotalLeadTotalSpentAvgcplParCamp() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
@@ -51,7 +51,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Registration")
 	@Severity(SeverityLevel.BLOCKER)
-	@Test(enabled = false, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
+	@Test(enabled = true, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
 	public void testBuyerRegistrtion() {
 		open("https://test_app.leadsbasket.com/register-industry");
 		buyerPage.industryPage();

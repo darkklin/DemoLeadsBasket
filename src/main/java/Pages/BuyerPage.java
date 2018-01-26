@@ -80,7 +80,7 @@ public class BuyerPage {
 	 * calculate buyer total spend and total lead parameters
 	 * 
 	 */
-	public void calcTotalSpentAndTotalLead() throws Exception {
+	public void calcTotalSpentAndTotalLead() {
 		Float leadBuyCpl;
 		Float totalLeads = (float) 0;
 		Float totaleadBuyCpl = (float) 0;
@@ -107,10 +107,9 @@ public class BuyerPage {
 	/**
 	 * Buyer > DashBoard CHECK UI Total Spent and Total Leads is right?
 	 */
-	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads) throws Exception {
+	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads)  {
 		openDashBoardPage.click();
 		selectDate("13/11/16");
-		Thread.sleep(200);
 		loader.shouldBe(Condition.disappear);
 		softAssert.assertEquals(convertWebElementToNm(webTotalSpend), totalspent, "Totalspend");
 		softAssert.assertEquals(convertWebElementToNm(webTotalLeads), totalLeads, "TotalLeads");
