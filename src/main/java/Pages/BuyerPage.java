@@ -208,7 +208,6 @@ public class BuyerPage {
 		FormLbPage rendom = new FormLbPage();
 		String text = rendom.generateEmail("abcdfddDd23%2", 8);
 		String rdBname = rendom.generateEmail("abcdfg", 4);
-
 		$("h4").shouldHave(Condition.text("100% Self-service Platform for Quality Lead Generation"));
 		btnSubmit.shouldBe(Condition.disabled);
 		$(byText("Terms of Service")).click();
@@ -219,7 +218,7 @@ public class BuyerPage {
 		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
 		firstName.setValue("selenide"+rdBname);
 		lastName.setValue("automtic"+rdBname);
-		phoneNumber.setValue("0528895514");
+		phoneNumber.setValue(phoneNumber.getAttribute("placeholder"));
 		email.setValue("lbdemo234+" + text + "@gmail.com");
 		password.setValue("D%1" + text);
 		confirmPassword.setValue("D%1" + text);

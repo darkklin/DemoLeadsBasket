@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13413" started-at="2018-01-25T13:50:36Z" finished-at="2018-01-25T13:50:50Z">
+  <suite name="Default suite" duration-ms="46099" started-at="2018-01-26T21:14:32Z" finished-at="2018-01-26T21:15:18Z">
     <groups>
+      <group name="BuyerReg">
+        <method signature="BuyerTest.testBuyerRegistrtion()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="testBuyerRegistrtion" class="com.affilomnia.leadbaskets.BuyerTest"/>
+        <method signature="BuyerTest.testdownloadIntegrtionPDF()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="testdownloadIntegrtionPDF" class="com.affilomnia.leadbaskets.BuyerTest"/>
+      </group> <!-- BuyerReg -->
+      <group name="buyer statistic">
+        <method signature="BuyerTest.testTotalLeadTotalSpentAvgcplParCamp()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="testTotalLeadTotalSpentAvgcplParCamp" class="com.affilomnia.leadbaskets.BuyerTest"/>
+      </group> <!-- buyer statistic -->
     </groups>
-    <test name="Default test" duration-ms="13413" started-at="2018-01-25T13:50:36Z" finished-at="2018-01-25T13:50:50Z">
-      <class name="com.affilomnia.leadbaskets.FormLbTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@463afa6e]" name="before" is-config="true" duration-ms="14" started-at="2018-01-25T15:50:36Z" finished-at="2018-01-25T15:50:36Z">
+    <test name="Default test" duration-ms="46099" started-at="2018-01-26T21:14:32Z" finished-at="2018-01-26T21:15:18Z">
+      <class name="com.affilomnia.leadbaskets.BuyerTest">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="before" is-config="true" duration-ms="23" started-at="2018-01-26T23:14:32Z" finished-at="2018-01-26T23:14:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="LoginAsSellerAndSendLead()[pri:0, instance:com.affilomnia.leadbaskets.FormLbTest@463afa6e]" name="LoginAsSellerAndSendLead" duration-ms="13305" started-at="2018-01-25T15:50:36Z" description="seller send one lead thought offer 543 " finished-at="2018-01-25T15:50:50Z">
+        <test-method status="PASS" signature="testBuyerRegistrtion()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="testBuyerRegistrtion" duration-ms="16268" started-at="2018-01-26T23:14:32Z" description="Buyer Registration" finished-at="2018-01-26T23:14:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginAsSellerAndSendLead -->
-      </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
+        </test-method> <!-- testBuyerRegistrtion -->
+        <test-method status="PASS" signature="testTotalLeadTotalSpentAvgcplParCamp()[pri:1, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="testTotalLeadTotalSpentAvgcplParCamp" duration-ms="24359" started-at="2018-01-26T23:14:49Z" description="Test total leads/spent/avgcpl par offer " finished-at="2018-01-26T23:15:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTotalLeadTotalSpentAvgcplParCamp -->
+        <test-method status="PASS" signature="testdownloadIntegrtionPDF()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@578a5ce8]" name="testdownloadIntegrtionPDF" duration-ms="4970" started-at="2018-01-26T23:15:13Z" description="Download PDF integrtion API  " finished-at="2018-01-26T23:15:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testdownloadIntegrtionPDF -->
+      </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -2,6 +2,10 @@ package com.affilomnia.leadbaskets;
 
 import static com.codeborne.selenide.Selenide.open;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Listeners;
@@ -34,14 +38,15 @@ public class BuyerTest {
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;
-		Configuration.holdBrowserOpen = true;
+		Configuration.holdBrowserOpen = false;
+		System.out.println("before");
 
 	}
 
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = { "buyer statistic" }, priority = 2)
+	@Test(enabled = false, description = "Test total leads Total spent of buyer", groups = { "buyer statistic" }, priority = 2)
 	public void testLoginTotalSpentAndLeads() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
@@ -72,20 +77,18 @@ public class BuyerTest {
 		buyerPage.integrationPage();
 		buyerPage.billingPage();
 		buyerPage.finishPage();
-		WebDriverRunner.closeWebDriver();
+		buyerPage.logOut();
 
 	}
 
 	@Video
 	@Feature("Registration")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Download PDF ", groups = { "BuyerReg" }, priority = 2)
+	@Test(enabled = true, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
-		WebDriverRunner.closeWebDriver();
-		
 
 	}
-
+	
 }
