@@ -5,8 +5,9 @@
     <classes>
       <class name="com.affilomnia.leadbaskets.BuyerTest">
         <methods>
-          <include name="testBuyerRegistrtion"/>
-          <include name="before"/>
+          <include name="testdownloadIntegrtionPDF"/>
+          <include name="beforeTest"/>
+          <include name="video"/>
         </methods>
       </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </classes>
