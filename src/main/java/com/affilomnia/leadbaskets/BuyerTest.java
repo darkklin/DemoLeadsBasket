@@ -2,10 +2,6 @@ package com.affilomnia.leadbaskets;
 
 import static com.codeborne.selenide.Selenide.open;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Listeners;
@@ -15,10 +11,8 @@ import com.automation.remarks.testng.VideoListener;
 import com.automation.remarks.video.annotations.Video;
 import com.codeborne.selenide.Configuration;
 import com.google.inject.Inject;
-import com.codeborne.selenide.WebDriverRunner;
 import Pages.BuyerPage;
 import Pages.LoginPage;
-import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -46,7 +40,7 @@ public class BuyerTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test total leads Total spent of buyer", groups = { "buyer statistic" }, priority = 2)
+	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = { "buyer statistic" }, priority = 2)
 	public void testLoginTotalSpentAndLeads() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
@@ -88,7 +82,6 @@ public class BuyerTest {
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
-
 	}
 	
 }
