@@ -10,6 +10,7 @@ import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.codeborne.selenide.Condition;
@@ -111,6 +112,7 @@ public class SellerPage {
 			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));
 			avgCpl = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(9)"));
 			System.out.println(offerName+" "+leads+" "+avgCpl);
+			Reporter.log(offerName+" "+leads+" "+avgCpl,true);
 		}
 	}
 

@@ -10,7 +10,9 @@ import org.testng.annotations.Test;
 import com.automation.remarks.testng.VideoListener;
 import com.automation.remarks.video.annotations.Video;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.testng.annotations.Report;
 import com.google.inject.Inject;
+import com.codeborne.selenide.testng.TextReport;
 
 import Pages.LoginPage;
 import Pages.SellerPage;
@@ -18,23 +20,15 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import libry.BaseListener;
-
+@Report
 @Guice
-@Listeners({ BaseListener.class, VideoListener.class })
-
-public class SellerTest {
+@Listeners({TextReport.class, BaseListener.class, VideoListener.class })
+public class SellerTest extends BaseTest  {
 	@Inject
 	LoginPage loginPage;
 	@Inject
 	SellerPage sellerPage;
 
-	@BeforeClass
-	public void before() {
-		Configuration.startMaximized = true;
-		Configuration.screenshots = true;
-		Configuration.headless = true;
-		Configuration.holdBrowserOpen = true;
-	}
 
 	@Video
 	@Feature("Seller Statistic")

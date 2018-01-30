@@ -6,10 +6,12 @@
 			<run>
 				<include name="buyer statistic" />
 				<include name="BuyerReg" />
+				<include name="Seller Statistic" />
+
 			</run>
 		</groups>
 		<classes>
-			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
+			<class name="com.affilomnia.leadbaskets.SellerTest"></class>
 		</classes>
 	</test>
 </suite>
