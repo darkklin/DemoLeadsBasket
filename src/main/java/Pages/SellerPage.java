@@ -80,7 +80,7 @@ public class SellerPage {
 		actualAvgCpl = totalRevenues / buyerTotalLeads;
 		actualAvgCpl = (float) (Math.round(actualAvgCpl * 100.0) / 100.0);
 		totalRevenues = (float) (Math.round(totalRevenues * 100.0) / 100.0);
-		System.out.println(totalRevenues + "  " + buyerTotalLeads + "" + actualAvgCpl);
+		Reporter.log(totalRevenues + "  " + buyerTotalLeads + " " + actualAvgCpl + "\n", true);
 
 		return new Float[] { buyerTotalLeads, totalRevenues, actualAvgCpl };
 
@@ -111,8 +111,8 @@ public class SellerPage {
 			offerName = $("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").getText();
 			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));
 			avgCpl = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(9)"));
-			System.out.println(offerName+" "+leads+" "+avgCpl);
-			Reporter.log(offerName+" "+leads+" "+avgCpl,true);
+			System.out.println(offerName + " " + leads + " " + avgCpl);
+			Reporter.log(offerName + " " + leads + " " + avgCpl + "\n", true);
 		}
 	}
 

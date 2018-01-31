@@ -11,7 +11,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.affilomnia.leadbaskets.SellerTest"></class>
+			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
 		</classes>
 	</test>
 </suite>

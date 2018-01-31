@@ -15,7 +15,7 @@ import io.qameta.allure.Description;
 import libry.VideoRecord;
 
 public class BaseTest {
-	
+
 	@BeforeSuite(groups = { "Regression TestSuite" })
 	@Description("start")
 	public void beforeTest() {
@@ -26,22 +26,21 @@ public class BaseTest {
 		Configuration.fastSetValue = true;
 		Configuration.driverManagerEnabled = true;
 		TextReport.onSucceededTest = true;
-	    TextReport.onFailedTest = true;
+		TextReport.onFailedTest = true;
 	}
 
-	@AfterMethod(groups = { "BuyerReg","buyer statistic" })
-	public void video(ITestResult testResult) throws Exception {
+	@AfterMethod(groups = { "BuyerReg", "buyer statistic","Seller Statistic" })
+	public void logs(ITestResult testResult) throws Exception {
 		VideoRecord.attachment();
-        logOutput(Reporter.getOutput(testResult));
-
+		logOutput(Reporter.getOutput(testResult));
 
 	}
-	 
-	 @Attachment
-	    public String logOutput(List<String> outputList) {
-	        String output = "";
-	        for (String o : outputList)
-	            output += o + " ";
-	        return output;
-	    }
+
+	@Attachment(value = "Events Report", type = "text/html")
+	public String logOutput(List<String> outputList) {
+		String output = "";
+		for (String o : outputList)
+			output += o + " ";
+		return output;
+	}
 }

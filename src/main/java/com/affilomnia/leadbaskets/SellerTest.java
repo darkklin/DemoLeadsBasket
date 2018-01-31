@@ -12,7 +12,7 @@ import com.automation.remarks.video.annotations.Video;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.testng.annotations.Report;
 import com.google.inject.Inject;
-import com.codeborne.selenide.testng.TextReport;
+import libry.TextReport;
 
 import Pages.LoginPage;
 import Pages.SellerPage;
@@ -49,7 +49,7 @@ public class SellerTest extends BaseTest  {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test Stats Par offer ", groups = {
 			"Seller Statistic" }, priority = 1)
-	public void teststatParOFFER() throws Exception  {
+	public void testStatisticParOffer() throws Exception  {
 
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver@affilomania.com", "0546474985Ko");

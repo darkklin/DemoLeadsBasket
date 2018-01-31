@@ -2,14 +2,12 @@ package Pages;
 
 import static com.codeborne.selenide.Selenide.*;
 
-import java.awt.Scrollbar;
-import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.util.Random;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import org.openqa.selenium.By;
+import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.codeborne.pdftest.PDF;
@@ -35,7 +33,7 @@ public class BuyerPage {
 		this.softAssert = new SoftAssert();
 		wait = new WaitAngularPageLoaded();
 		page(this);
-		
+
 	}
 
 	private SelenideElement openLeadListPage = $("a[ui-sref='leads_list']");
@@ -71,7 +69,7 @@ public class BuyerPage {
 	private SelenideElement companyName = $("input[name='companyName']");
 	private SelenideElement street1 = $("input[name='companyAddress']");
 	private SelenideElement city = $("input[name='city']");
-	private SelenideElement state  = $("input[name='state']");
+	private SelenideElement state = $("input[name='state']");
 	private SelenideElement country = $("a[placeholder='Select Country']");
 	private SelenideElement zipCode = $("input[name='zip']");
 	private ElementsCollection chooseCountry = $$("li[role='option']");
@@ -89,7 +87,6 @@ public class BuyerPage {
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
-		System.out.println(leadCollection.size());
 		for (int i = 0; i < leadCollection.size(); i++) {
 			leadBuyCpl = convertWebElementToNm(buyCplParLead.get(i));
 			String leadstatus = leadStatusCollection.get(i).getText();
@@ -107,19 +104,20 @@ public class BuyerPage {
 	/**
 	 * Buyer > DashBoard CHECK UI Total Spent and Total Leads is right?
 	 */
-	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads)  {
+	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads) {
 		openDashBoardPage.click();
 		selectDate("13/11/16");
 		loader.shouldBe(Condition.disappear);
 		softAssert.assertEquals(convertWebElementToNm(webTotalSpend), totalspent, "Totalspend");
 		softAssert.assertEquals(convertWebElementToNm(webTotalLeads), totalLeads, "TotalLeads");
 		softAssert.assertAll();
-		System.out.println("total spent is correct " + totalspent);
-		System.out.println("total Leads is correct " + totalLeads);
+		Reporter.log("total spent is correct " + totalspent, true);
+		Reporter.log("total Leads is correct " + totalLeads, true);
 	}
 
 	/**
-	 * Test total leads/total spent / avgCpl par offer in buyer > dashboard > Recently Updated Campaigns
+	 * Test total leads/total spent / avgCpl par offer in buyer > dashboard >
+	 * Recently Updated Campaigns
 	 */
 	public void checkStatisticPerCamp() throws Exception {
 		String campName, campLeadStatus;
@@ -133,8 +131,7 @@ public class BuyerPage {
 			wait.waitUntilAngularPageLoaded();
 			campaignsName.get(i).click();
 			perPage200.click();
-			loader.shouldBe(Condition.visible);
-			loader.shouldNot(Condition.visible);
+
 			wait.waitUntilAngularPageLoaded();
 			Float totalLeads = (float) 0, totaleadBuyCpl = (float) 0;
 			Float avgCpl = (float) 0;
@@ -153,8 +150,8 @@ public class BuyerPage {
 			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName);
 			softAssert.assertEquals(webCampLeads, totalLeads, campName);
 			softAssert.assertEquals(webAvgCPL, avgCpl, campName);
-			System.out.println("campgns name : " + campName + "total spend : " + totaleadBuyCpl + "total leads: "
-					+ totalLeads + "avgCpl " + avgCpl);
+			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + "total leads: " + totalLeads
+					+ "avgCpl " + avgCpl, true);
 			openDashBoardPage.click();
 		}
 		softAssert.assertAll();
@@ -184,15 +181,17 @@ public class BuyerPage {
 	}
 
 	/**
-	 * /register-industry, test titles,Test login Link ,Choose industry > press on create
-	 * account button
+	 * /register-industry, test titles,Test login Link ,Choose industry > press on
+	 * create account button
 	 */
 	public void industryPage() {
 		$("div.reg>h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
 		$("div.choose_industry_text")
 				.shouldHave(Condition.text("Get ready to be bombarded with some top quality leads!"));
-		$("a.link").shouldBe(Condition.visible).click();confirm();
-		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
+		$("a.link").shouldBe(Condition.visible).click();
+		confirm();
+		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));
+		back();
 		btnSubmit.shouldBe(Condition.disabled);
 		industryField.click();
 		$(byText("Zoo Industry")).click();
@@ -201,7 +200,8 @@ public class BuyerPage {
 	}
 
 	/**
-	 * /register, test titles , test "Terms of Service" page ,test login link> fill all field with valid info and press Continue button
+	 * /register, test titles , test "Terms of Service" page ,test login link> fill
+	 * all field with valid info and press Continue button
 	 */
 	public void registerPage() {
 		FormLbPage rendom = new FormLbPage();
@@ -212,25 +212,30 @@ public class BuyerPage {
 		$(byText("Terms of Service")).click();
 		switchTo().window(1);
 		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
-		switchTo().window(1).close();switchTo().window(0);
-		$(byText("Login")).shouldBe(Condition.visible).click();confirm();
-		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));back();
-		firstName.setValue("selenide"+rdBname);
-		lastName.setValue("automtic"+rdBname);
+		switchTo().window(1).close();
+		switchTo().window(0);
+		$(byText("Login")).shouldBe(Condition.visible).click();
+		confirm();
+		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));
+		back();
+		wait.waitUntilAngularPageLoaded();
+		firstName.setValue("selenide" + rdBname);
+		lastName.setValue("automtic" + rdBname);
 		phoneNumber.setValue(phoneNumber.getAttribute("placeholder"));
 		email.setValue("lbdemo234+" + text + "@gmail.com");
 		password.setValue("D%1" + text);
 		confirmPassword.setValue("D%1" + text);
 		btnSubmit.shouldBe(Condition.visible).click();
-		
+
 	}
 
 	/**
 	 * Test /register/integration >test titles,test link "Integration with API",
 	 * click on "Via Email" check box,fill valid email,press on Continue
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
-	public void integrationPage()  {
+	public void integrationPage() {
 		$("h2").shouldHave(Condition.text("Connect To Your Platform"));
 		$("div.reg>h4").shouldHave(Condition.text("Get Leads Directly To Your Email or Platform"));
 		$("h2.h2_inside").shouldHave(Condition.text("Select how you wish to receive your leads"));
@@ -240,19 +245,21 @@ public class BuyerPage {
 		btnSubmit.shouldBe(Condition.visible).click();
 		$("h2").shouldHave(Condition.text("Billing Information"));
 	}
+
 	/**
-	 * /register/billing, test title , TERMS OF USE , ,FILL THE FORM and press submit  
+	 * /register/billing, test title , TERMS OF USE , ,FILL THE FORM and press
+	 * submit
 	 */
-	public void billingPage()
-	{
+	public void billingPage() {
 		Random rand = new Random();
-		int  countryIndex = rand.nextInt(239);
+		int countryIndex = rand.nextInt(239);
 		$("h2").shouldHave(Condition.text("Billing Information"));
 		$("h4").shouldHave(Condition.text("Enter Billing Information & Fund Your Account"));
-		$(byText("click here.")).click();		
-	    switchTo().window(1);
+		$(byText("click here.")).click();
+		switchTo().window(1);
 		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
-		switchTo().window(1).close();switchTo().window(0);
+		switchTo().window(1).close();
+		switchTo().window(0);
 		companyName.setValue("Company Name");
 		street1.setValue("test steeen 234 -4 4333 1");
 		city.setValue("tel aviv");
@@ -264,11 +271,11 @@ public class BuyerPage {
 		email.setValue("test@test.com");
 		btnSubmit.should(Condition.enabled).click();
 	}
+
 	/**
-	 * /register/finish 
+	 * /register/finish
 	 */
-	public void finishPage()
-	{
+	public void finishPage() {
 		$("h2").shouldHave(Condition.text("Congratulations!"));
 		$("h4").shouldHave(Condition.text("Done"));
 		$("p").shouldHave(Condition.text("You Can Start Creating Your Campaigns and Get Leads"));
@@ -276,11 +283,10 @@ public class BuyerPage {
 		$("h5").shouldHave(Condition.text("Please fill in all required entry setting fields and create new campaign."));
 	}
 
-	public void downalodPdf() throws Exception
-	{
+	public void downalodPdf() throws Exception {
 		$(byText("Integration with API")).download();
 		PDF pdf = new PDF($(byText("Integration with API")).download());
-	    assertThat(pdf, containsText("Get leads by API"));
+		assertThat(pdf, containsText("Get leads by API"));
 	}
 
 }

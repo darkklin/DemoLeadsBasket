@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.automation.remarks.testng.VideoListener;
 import com.automation.remarks.video.annotations.Video;
+import com.codeborne.selenide.testng.annotations.Report;
 import com.google.inject.Inject;
 import Pages.BuyerPage;
 import Pages.LoginPage;
@@ -15,9 +16,11 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import libry.BaseListener;
+import libry.TextReport;
 
+@Report
 @Guice
-@Listeners({ BaseListener.class, VideoListener.class })
+@Listeners({TextReport.class, BaseListener.class, VideoListener.class })
 public class BuyerTest extends BaseTest {
 
 	@Inject
