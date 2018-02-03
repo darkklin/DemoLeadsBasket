@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Regression_TestSuite">
-              <span class="suite-name border-passed">Regression TestSuite</span>
+              <span class="suite-name border-failed">Regression TestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Regression_TestSuite">
-                    <span>2 groups</span>
+                    <span>4 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">7 methods, 1 failed,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="hide-methods failed suite-Regression_TestSuite"> (hide)</a> <!-- hide-methods failed suite-Regression_TestSuite -->
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="show-methods failed suite-Regression_TestSuite"> (show)</a> <!-- show-methods failed suite-Regression_TestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-Regression_TestSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.SellerTest" hash-for-method="testStatisticParOffer">testStatisticParOffer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Regression_TestSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +116,22 @@
                     <div class="method-list-content passed suite-Regression_TestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.FormLbTest" hash-for-method="LoginAsSellerAndSendLead">LoginAsSellerAndSendLead</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.BuyerTest" hash-for-method="testBuyerRegistrtion">testBuyerRegistrtion</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.BuyerTest" hash-for-method="testLoginTotalSpentAndLeads">testLoginTotalSpentAndLeads</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.SellerTest" hash-for-method="testTotalLeadTotalCpl">testTotalLeadTotalCpl</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -132,6 +156,47 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Regression_TestSuite" class="panel Regression_TestSuite">
+          <div class="suite-Regression_TestSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.affilomnia.leadbaskets.SellerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStatisticParOffer">
+                  </a> <!-- testStatisticParOffer -->
+                  <span class="method-name">testStatisticParOffer</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	Epc per offer expected [31.49] but found [30.18],
+	Avg. EPC expected [29.970371] but found [29.97]
+	at Pages.SellerPage.checkstatParOffer(SellerPage.java:149)
+	at com.affilomnia.leadbaskets.SellerTest.testStatisticParOffer(SellerTest.java:55)
+... Removed 26 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Test Stats Par offer )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression_TestSuite-class-failed -->
+          <div class="suite-Regression_TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.affilomnia.leadbaskets.FormLbTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginAsSellerAndSendLead">
+                  </a> <!-- LoginAsSellerAndSendLead -->
+                  <span class="method-name">LoginAsSellerAndSendLead</span>
+                  <em>
+(seller send one lead thought offer 543 )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression_TestSuite-class-passed -->
           <div class="suite-Regression_TestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -176,6 +241,23 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Regression_TestSuite-class-passed -->
+          <div class="suite-Regression_TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.affilomnia.leadbaskets.SellerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTotalLeadTotalCpl">
+                  </a> <!-- testTotalLeadTotalCpl -->
+                  <span class="method-name">testTotalLeadTotalCpl</span>
+                  <em>
+(How much seller have leads and Total CPl)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression_TestSuite-class-passed -->
         </div> <!-- panel Regression_TestSuite -->
         <div panel-name="test-xml-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -189,13 +271,16 @@
   &lt;test name=&quot;LeadsBaskets Test&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
+        &lt;include name=&quot;create Lead&quot;/&gt;
         &lt;include name=&quot;buyer statistic&quot;/&gt;
-        &lt;include name=&quot;BuyerReg&quot;/&gt;
         &lt;include name=&quot;Seller Statistic&quot;/&gt;
+        &lt;include name=&quot;BuyerReg&quot;/&gt;
       &lt;/run&gt;
     &lt;/groups&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.affilomnia.leadbaskets.FormLbTest&quot;/&gt;
       &lt;class name=&quot;com.affilomnia.leadbaskets.BuyerTest&quot;/&gt;
+      &lt;class name=&quot;com.affilomnia.leadbaskets.SellerTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- LeadsBaskets Test --&gt;
 &lt;/suite&gt; &lt;!-- Regression TestSuite --&gt;
@@ -209,7 +294,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">LeadsBaskets Test (1 class)</span>
+                <span class="test-name">LeadsBaskets Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -232,6 +317,18 @@
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
             <div class="test-group">
+              <span class="test-group-name">Seller Statistic</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testStatisticParOffer</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testTotalLeadTotalCpl</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
               <span class="test-group-name">buyer statistic</span>
               <br/>
               <div class="method-in-group">
@@ -240,6 +337,14 @@
               </div> <!-- method-in-group -->
               <div class="method-in-group">
                 <span class="method-in-group-name">testTotalLeadTotalSpentAvgcplParCamp</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">create Lead</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">LoginAsSellerAndSendLead</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -259,23 +364,35 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testTotalLeadTotalSpentAvgcplParCamp')
-data.setCell(0, 2, 'com.affilomnia.leadbaskets.BuyerTest')
-data.setCell(0, 3, 25885);
+data.setCell(0, 1, 'testStatisticParOffer')
+data.setCell(0, 2, 'com.affilomnia.leadbaskets.SellerTest')
+data.setCell(0, 3, 23713);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testBuyerRegistrtion')
+data.setCell(1, 1, 'testTotalLeadTotalSpentAvgcplParCamp')
 data.setCell(1, 2, 'com.affilomnia.leadbaskets.BuyerTest')
-data.setCell(1, 3, 19568);
+data.setCell(1, 3, 22472);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testLoginTotalSpentAndLeads')
-data.setCell(2, 2, 'com.affilomnia.leadbaskets.BuyerTest')
-data.setCell(2, 3, 13269);
+data.setCell(2, 1, 'LoginAsSellerAndSendLead')
+data.setCell(2, 2, 'com.affilomnia.leadbaskets.FormLbTest')
+data.setCell(2, 3, 17641);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testdownloadIntegrtionPDF')
+data.setCell(3, 1, 'testBuyerRegistrtion')
 data.setCell(3, 2, 'com.affilomnia.leadbaskets.BuyerTest')
-data.setCell(3, 3, 7913);
+data.setCell(3, 3, 15079);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testTotalLeadTotalCpl')
+data.setCell(4, 2, 'com.affilomnia.leadbaskets.SellerTest')
+data.setCell(4, 3, 12131);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testLoginTotalSpentAndLeads')
+data.setCell(5, 2, 'com.affilomnia.leadbaskets.BuyerTest')
+data.setCell(5, 3, 11137);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testdownloadIntegrtionPDF')
+data.setCell(6, 2, 'com.affilomnia.leadbaskets.BuyerTest')
+data.setCell(6, 3, 4109);
 window.suiteTableData['Regression_TestSuite']= { tableData: data, tableDiv: 'times-div-Regression_TestSuite'}
 return data;
 }
@@ -298,204 +415,281 @@ return data;
 +------------------------------+----------------------------------------------------------------------+----------+----------+
 |Element                       |Subject                                                               |Status    |ms.       |
 +------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                          |https://app.leadsbasket.com/register/integration                      |PASS      |3912      |
-|by text: Integration with API |download()                                                            |PASS      |2327      |
-|by text: Integration with API |download()                                                            |PASS      |994       |
+|open                          |https://app.leadsbasket.com/register/integration                      |PASS      |1057      |
+|by text: Integration with API |download()                                                            |PASS      |1846      |
+|by text: Integration with API |download()                                                            |PASS      |688       |
 +------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">testLoginTotalSpentAndLeads</span>
+              <span class="reporter-method-name">testTotalLeadTotalSpentAvgcplParCamp</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">total spent is correct 2832.0</span>
-                <span class="reporter-method-output">total Leads is correct 79.0</span>
-                <span class="reporter-method-output">Report for testLoginTotalSpentAndLeads
-+------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|Element                                               |Subject                                                               |Status    |ms.       |
-+------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                                                  |https://test_app.leadsbasket.com                                      |PASS      |277       |
-|input[name='email']                                   |send keys(kirilk+bidder@affilomania.com)                              |PASS      |228       |
-|#password                                             |send keys(0546474985Ko)                                               |PASS      |103       |
-|button[type='submit']                                 |press enter()                                                         |PASS      |71        |
-|a[ui-sref='leads_list']                               |click()                                                               |PASS      |1452      |
-|a[ng-class='{ active: perPage == 200 }']              |click()                                                               |PASS      |97        |
-|div[class='loader']                                   |should be(visible)                                                    |PASS      |145       |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][0]   |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][0]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][1]   |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][1]  |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][2]   |get text()                                                            |PASS      |42        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][2]  |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][3]   |get text()                                                            |PASS      |46        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][3]  |get text()                                                            |PASS      |59        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][4]   |get text()                                                            |PASS      |51        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][4]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][5]   |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][5]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][6]   |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][6]  |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][7]   |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][7]  |get text()                                                            |PASS      |24        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][8]   |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][8]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][9]   |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][9]  |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][10]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][10] |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][11]  |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][11] |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][12]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][12] |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][13]  |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][13] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][14]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][14] |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][15]  |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][15] |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][16]  |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][16] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][17]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][17] |get text()                                                            |PASS      |43        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][18]  |get text()                                                            |PASS      |46        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][18] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][19]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][19] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][20]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][20] |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][21]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][21] |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][22]  |get text()                                                            |PASS      |49        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][22] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][23]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][23] |get text()                                                            |PASS      |59        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][24]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][24] |get text()                                                            |PASS      |55        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][25]  |get text()                                                            |PASS      |44        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][25] |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][26]  |get text()                                                            |PASS      |42        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][26] |get text()                                                            |PASS      |41        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][27]  |get text()                                                            |PASS      |49        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][27] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][28]  |get text()                                                            |PASS      |45        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][28] |get text()                                                            |PASS      |45        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][29]  |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][29] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][30]  |get text()                                                            |PASS      |55        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][30] |get text()                                                            |PASS      |52        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][31]  |get text()                                                            |PASS      |44        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][31] |get text()                                                            |PASS      |48        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][32]  |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][32] |get text()                                                            |PASS      |43        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][33]  |get text()                                                            |PASS      |48        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][33] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][34]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][34] |get text()                                                            |PASS      |48        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][35]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][35] |get text()                                                            |PASS      |44        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][36]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][36] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][37]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][37] |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][38]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][38] |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][39]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][39] |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][40]  |get text()                                                            |PASS      |26        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][40] |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][41]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][41] |get text()                                                            |PASS      |42        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][42]  |get text()                                                            |PASS      |50        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][42] |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][43]  |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][43] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][44]  |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][44] |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][45]  |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][45] |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][46]  |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][46] |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][47]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][47] |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][48]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][48] |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][49]  |get text()                                                            |PASS      |44        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][49] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][50]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][50] |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][51]  |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][51] |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][52]  |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][52] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][53]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][53] |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][54]  |get text()                                                            |PASS      |43        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][54] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][55]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][55] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][56]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][56] |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][57]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][57] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][58]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][58] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][59]  |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][59] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][60]  |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][60] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][61]  |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][61] |get text()                                                            |PASS      |47        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][62]  |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][62] |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][63]  |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][63] |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][64]  |get text()                                                            |PASS      |41        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][64] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][65]  |get text()                                                            |PASS      |46        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][65] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][66]  |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][66] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][67]  |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][67] |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][68]  |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][68] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][69]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][69] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][70]  |get text()                                                            |PASS      |41        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][70] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][71]  |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][71] |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][72]  |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][72] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][73]  |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][73] |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][74]  |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][74] |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][75]  |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][75] |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][76]  |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][76] |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][77]  |get text()                                                            |PASS      |45        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][77] |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][78]  |get text()                                                            |PASS      |54        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][78] |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][79]  |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][79] |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[5][80]  |get text()                                                            |PASS      |41        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[12][80] |get text()                                                            |PASS      |32        |
-|by text: Dashboard                                    |click()                                                               |PASS      |118       |
-|html[ng-app='leadsBasket']                            |scroll to()                                                           |PASS      |135       |
-|#date_range                                           |click()                                                               |PASS      |124       |
-|input[name='daterangepicker_start']                   |clear()                                                               |PASS      |77        |
-|input[name='daterangepicker_start']                   |set value(13/11/16)                                                   |PASS      |124       |
-|by text: Apply                                        |click()                                                               |PASS      |113       |
-|div[class='loader']                                   |should be(hidden)                                                     |PASS      |1538      |
-|div.tl_spend_ico>div>span                             |get text()                                                            |PASS      |34        |
-|div.tl_leads_ico>div>span                             |get text()                                                            |PASS      |42        |
-|a.profile                                             |click()                                                               |PASS      |97        |
-|div.drop_userInfo>ul>li:nth-child(5)>a                |should be(visible)                                                    |PASS      |28        |
-|div.drop_userInfo>ul>li:nth-child(5)>a                |click()                                                               |PASS      |84        |
-+------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+                <span class="reporter-method-output">campgns name : biddertesttotal spend : 1656.0total leads: 46.0avgCpl 36.0</span>
+                <span class="reporter-method-output">campgns name : los angelestotal spend : 144.0total leads: 4.0avgCpl 36.0</span>
+                <span class="reporter-method-output">campgns name : russian - moskvatotal spend : 36.0total leads: 1.0avgCpl 36.0</span>
+                <span class="reporter-method-output">campgns name : germmnytotal spend : 60.0total leads: 2.0avgCpl 30.0</span>
+                <span class="reporter-method-output">Report for testTotalLeadTotalSpentAvgcplParCamp
++-----------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                                                    |Subject                                                               |Status    |ms.       |
++-----------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                                                       |https://test_app.leadsbasket.com                                      |PASS      |257       |
+|input[name='email']                                        |send keys(kirilk+bidder@affilomania.com)                              |PASS      |224       |
+|#password                                                  |send keys(0546474985Ko)                                               |PASS      |104       |
+|button[type='submit']                                      |press enter()                                                         |PASS      |77        |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][0] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[10][0]               |get text()                                                            |PASS      |46        |
+|By.xpath: //tr[@class='ng-scope']//td[6][0]                |get text()                                                            |PASS      |29        |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][0] |click()                                                               |PASS      |67        |
+|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1426      |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |23        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][1]        |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][1]      |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][2]        |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][2]      |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][3]        |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][3]      |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][4]        |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][4]      |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][5]        |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][5]      |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][6]        |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][6]      |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][7]        |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][7]      |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][8]        |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][8]      |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][9]        |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][9]      |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][10]       |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][10]     |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][11]       |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][11]     |get text()                                                            |PASS      |23        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][12]       |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][12]     |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][13]       |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][13]     |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][14]       |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][14]     |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][15]       |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][15]     |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][16]       |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][16]     |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][17]       |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][17]     |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][18]       |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][18]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][19]       |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][19]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][20]       |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][20]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][21]       |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][21]     |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][22]       |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][22]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][23]       |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][23]     |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][24]       |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][24]     |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][25]       |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][25]     |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][26]       |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][26]     |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][27]       |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][27]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][28]       |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][28]     |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][29]       |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][29]     |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][30]       |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][30]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][31]       |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][31]     |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][32]       |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][32]     |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][33]       |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][33]     |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][34]       |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][34]     |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][35]       |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][35]     |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][36]       |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][36]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][37]       |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][37]     |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][38]       |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][38]     |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][39]       |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][39]     |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][40]       |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][40]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][41]       |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][41]     |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][42]       |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][42]     |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][43]       |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][43]     |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][44]       |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][44]     |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][45]       |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][45]     |get text()                                                            |PASS      |32        |
+|by text: Dashboard                                         |click()                                                               |PASS      |228       |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][1] |get text()                                                            |PASS      |417       |
+|By.xpath: //tr[@class='ng-scope']//td[10][1]               |get text()                                                            |PASS      |47        |
+|By.xpath: //tr[@class='ng-scope']//td[6][1]                |get text()                                                            |PASS      |57        |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][1] |click()                                                               |PASS      |144       |
+|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1821      |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |43        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][1]        |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][1]      |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][2]        |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][2]      |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][3]        |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][3]      |get text()                                                            |PASS      |38        |
+|by text: Dashboard                                         |click()                                                               |PASS      |54        |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][2] |get text()                                                            |PASS      |565       |
+|By.xpath: //tr[@class='ng-scope']//td[10][2]               |get text()                                                            |PASS      |46        |
+|By.xpath: //tr[@class='ng-scope']//td[6][2]                |get text()                                                            |PASS      |47        |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][2] |click()                                                               |PASS      |133       |
+|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1016      |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |33        |
+|by text: Dashboard                                         |click()                                                               |PASS      |109       |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][3] |get text()                                                            |PASS      |1155      |
+|By.xpath: //tr[@class='ng-scope']//td[10][3]               |get text()                                                            |PASS      |93        |
+|By.xpath: //tr[@class='ng-scope']//td[6][3]                |get text()                                                            |PASS      |36        |
+|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][3] |click()                                                               |PASS      |145       |
+|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1001      |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][1]        |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][1]      |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[3][2]        |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']//td[10][2]      |get text()                                                            |PASS      |31        |
+|by text: Dashboard                                         |click()                                                               |PASS      |49        |
+|a.profile                                                  |click()                                                               |PASS      |192       |
+|div.drop_userInfo>ul>li:nth-child(5)>a                     |should be(visible)                                                    |PASS      |34        |
+|div.drop_userInfo>ul>li:nth-child(5)>a                     |click()                                                               |PASS      |128       |
++-----------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">testTotalLeadTotalCpl</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">
+total Leads is  25.0</span>
+                <span class="reporter-method-output">
+total revenue is  809.2</span>
+                <span class="reporter-method-output">
+Actual avg cpl  is  32.37</span>
+                <span class="reporter-method-output">
+Avg. Min CPL  is  31.6</span>
+                <span class="reporter-method-output">Report for testTotalLeadTotalCpl
++----------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                                       |Subject                                                               |Status    |ms.       |
++----------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                                          |https://test_app.leadsbasket.com                                      |PASS      |271       |
+|input[name='email']                           |send keys(kirilk+webdriver1@affilomania.com)                          |PASS      |262       |
+|#password                                     |send keys(0546474985Ko)                                               |PASS      |107       |
+|button[type='submit']                         |press enter()                                                         |PASS      |71        |
+|by text: Report                               |click()                                                               |PASS      |1364      |
+|by text: 200                                  |wait until([visible, 20000])                                          |PASS      |1187      |
+|by text: 200                                  |click()                                                               |PASS      |94        |
+|By.xpath: //tr[@class='ng-scope']//td[5][0]   |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][0]   |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[14][0]  |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='ng-scope']//td[5][1]   |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[6][1]   |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='ng-scope']//td[14][1]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[5][2]   |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='ng-scope']//td[6][2]   |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[14][2]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='ng-scope']//td[5][3]   |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[6][3]   |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][3]  |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[5][4]   |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[6][4]   |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='ng-scope']//td[14][4]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[5][5]   |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[6][5]   |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[14][5]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][6]   |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[6][6]   |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='ng-scope']//td[14][6]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[5][7]   |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[6][7]   |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='ng-scope']//td[14][7]  |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[5][8]   |get text()                                                            |PASS      |24        |
+|By.xpath: //tr[@class='ng-scope']//td[6][8]   |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='ng-scope']//td[14][8]  |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='ng-scope']//td[5][9]   |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][9]   |get text()                                                            |PASS      |24        |
+|By.xpath: //tr[@class='ng-scope']//td[14][9]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][10]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[6][10]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[14][10] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[5][11]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[6][11]  |get text()                                                            |PASS      |24        |
+|By.xpath: //tr[@class='ng-scope']//td[14][11] |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[5][12]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='ng-scope']//td[6][12]  |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[14][12] |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[5][13]  |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='ng-scope']//td[6][13]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[14][13] |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='ng-scope']//td[5][14]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[6][14]  |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='ng-scope']//td[14][14] |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[5][15]  |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='ng-scope']//td[6][15]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='ng-scope']//td[14][15] |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='ng-scope']//td[5][16]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[6][16]  |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='ng-scope']//td[14][16] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[5][17]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='ng-scope']//td[6][17]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[14][17] |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='ng-scope']//td[5][18]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[6][18]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='ng-scope']//td[14][18] |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[5][19]  |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][19]  |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[14][19] |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='ng-scope']//td[5][20]  |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='ng-scope']//td[6][20]  |get text()                                                            |PASS      |44        |
+|By.xpath: //tr[@class='ng-scope']//td[14][20] |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[5][21]  |get text()                                                            |PASS      |47        |
+|By.xpath: //tr[@class='ng-scope']//td[6][21]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[14][21] |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='ng-scope']//td[5][22]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[6][22]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='ng-scope']//td[14][22] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][23]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='ng-scope']//td[6][23]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[14][23] |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='ng-scope']//td[5][24]  |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='ng-scope']//td[6][24]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[14][24] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][25]  |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[6][25]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='ng-scope']//td[14][25] |get text()                                                            |PASS      |36        |
+|a[ui-sref*='dashboardSeller']                 |click()                                                               |PASS      |94        |
+|html[ng-app='leadsBasket']                    |scroll to()                                                           |PASS      |118       |
+|#date_range                                   |click()                                                               |PASS      |112       |
+|input[name='daterangepicker_start']           |clear()                                                               |PASS      |55        |
+|input[name='daterangepicker_start']           |set value(13/11/16)                                                   |PASS      |126       |
+|by text: Apply                                |click()                                                               |PASS      |135       |
+|span[class*='value ng-scope'][1]              |get text()                                                            |PASS      |29        |
+|span[class*='value ng-scope'][3]              |get text()                                                            |PASS      |29        |
+|span[class*='value ng-scope'][5]              |get text()                                                            |PASS      |32        |
+|span[class*='value ng-scope'][4]              |get text()                                                            |PASS      |26        |
+|a.profile                                     |click()                                                               |PASS      |85        |
+|div.drop_userInfo>ul>li:nth-child(5)>a        |should be(visible)                                                    |PASS      |33        |
+|div.drop_userInfo>ul>li:nth-child(5)>a        |click()                                                               |PASS      |95        |
++----------------------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -506,274 +700,333 @@ return data;
 +---------------------------------------+----------------------------------------------------------------------+----------+----------+
 |Element                                |Subject                                                               |Status    |ms.       |
 +---------------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                                   |https://test_app.leadsbasket.com/register-industry                    |PASS      |3920      |
-|div.reg>h2                             |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |80        |
-|div.choose_industry_text               |should have(text 'Get ready to be bombarded with some top quality leads!')|PASS      |41        |
-|a.link                                 |should be(visible)                                                    |PASS      |32        |
-|a.link                                 |click()                                                               |PASS      |74        |
-|div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |210       |
-|button.btn                             |should be(disabled)                                                   |PASS      |32        |
-|a[placeholder*='Industry']             |click()                                                               |PASS      |250       |
-|by text: Zoo Industry                  |click()                                                               |PASS      |116       |
-|button.btn                             |should have(text 'Create Account')                                    |PASS      |36        |
-|button.btn                             |click()                                                               |PASS      |66        |
-|h4                                     |should have(text '100% Self-service Platform for Quality Lead Generation')|PASS      |640       |
-|button.btn                             |should be(disabled)                                                   |PASS      |22        |
-|by text: Terms of Service              |click()                                                               |PASS      |153       |
-|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1709      |
-|by text: Login                         |should be(visible)                                                    |PASS      |61        |
-|by text: Login                         |click()                                                               |PASS      |60        |
+|open                                   |https://test_app.leadsbasket.com/register-industry                    |PASS      |434       |
+|div.reg>h2                             |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |262       |
+|div.choose_industry_text               |should have(text 'Get ready to be bombarded with some top quality leads!')|PASS      |37        |
+|a.link                                 |should be(visible)                                                    |PASS      |34        |
+|a.link                                 |click()                                                               |PASS      |83        |
+|div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |100       |
+|button.btn                             |should be(disabled)                                                   |PASS      |25        |
+|a[placeholder*='Industry']             |click()                                                               |PASS      |1083      |
+|by text: Zoo Industry                  |click()                                                               |PASS      |106       |
+|button.btn                             |should have(text 'Create Account')                                    |PASS      |38        |
+|button.btn                             |click()                                                               |PASS      |65        |
+|h4                                     |should have(text '100% Self-service Platform for Quality Lead Generation')|PASS      |249       |
+|button.btn                             |should be(disabled)                                                   |PASS      |16        |
+|by text: Terms of Service              |click()                                                               |PASS      |112       |
+|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1048      |
+|by text: Login                         |should be(visible)                                                    |PASS      |58        |
+|by text: Login                         |click()                                                               |PASS      |74        |
 |div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |63        |
-|input[name='firstName']                |set value(selenidedbgb)                                               |PASS      |170       |
-|input[name='lastName']                 |set value(automticdbgb)                                               |PASS      |163       |
-|input[id='tel-dc']                     |get attribute(placeholder)                                            |PASS      |22        |
-|input[id='tel-dc']                     |set value(050-123-4567)                                               |PASS      |155       |
-|input[placeholder*='Email']            |set value(lbdemo234+32ab2cdd@gmail.com)                               |PASS      |240       |
-|input[name='pass']                     |set value(D%132ab2cdd)                                                |PASS      |168       |
-|input[name='rePass']                   |set value(D%132ab2cdd)                                                |PASS      |219       |
-|button.btn                             |should be(visible)                                                    |PASS      |29        |
-|button.btn                             |click()                                                               |PASS      |76        |
-|h2                                     |should have(text 'Connect To Your Platform')                          |PASS      |1190      |
+|input[name='firstName']                |set value(selenidedbcd)                                               |PASS      |203       |
+|input[name='lastName']                 |set value(automticdbcd)                                               |PASS      |153       |
+|input[id='tel-dc']                     |get attribute(placeholder)                                            |PASS      |21        |
+|input[id='tel-dc']                     |set value(050-123-4567)                                               |PASS      |161       |
+|input[placeholder*='Email']            |set value(lbdemo234+c2daddaa@gmail.com)                               |PASS      |292       |
+|input[name='pass']                     |set value(D%1c2daddaa)                                                |PASS      |183       |
+|input[name='rePass']                   |set value(D%1c2daddaa)                                                |PASS      |177       |
+|button.btn                             |should be(visible)                                                    |PASS      |31        |
+|button.btn                             |click()                                                               |PASS      |79        |
+|h2                                     |should have(text 'Connect To Your Platform')                          |PASS      |1324      |
 |div.reg>h4                             |should have(text 'Get Leads Directly To Your Email or Platform')      |PASS      |38        |
-|h2.h2_inside                           |should have(text 'Select how you wish to receive your leads')         |PASS      |35        |
-|button.btn                             |should be(disabled)                                                   |PASS      |20        |
-|label[class*='checkbox'][0]            |click()                                                               |PASS      |219       |
-|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |169       |
-|button.btn                             |should be(visible)                                                    |PASS      |25        |
-|button.btn                             |click()                                                               |PASS      |69        |
-|h2                                     |should have(text 'Billing Information')                               |PASS      |1038      |
+|h2.h2_inside                           |should have(text 'Select how you wish to receive your leads')         |PASS      |50        |
+|button.btn                             |should be(disabled)                                                   |PASS      |52        |
+|label[class*='checkbox'][0]            |click()                                                               |PASS      |92        |
+|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |166       |
+|button.btn                             |should be(visible)                                                    |PASS      |28        |
+|button.btn                             |click()                                                               |PASS      |55        |
+|h2                                     |should have(text 'Billing Information')                               |PASS      |859       |
 |h2                                     |should have(text 'Billing Information')                               |PASS      |19        |
-|h4                                     |should have(text 'Enter Billing Information & Fund Your Account')     |PASS      |33        |
-|by text: click here.                   |click()                                                               |PASS      |152       |
-|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1047      |
-|input[name='companyName']              |set value(Company Name)                                               |PASS      |196       |
-|input[name='companyAddress']           |set value(test steeen 234 -4 4333 1)                                  |PASS      |266       |
-|input[name='city']                     |set value(tel aviv)                                                   |PASS      |141       |
-|button.btn                             |should(disabled)                                                      |PASS      |19        |
-|input[name='state']                    |set value(israel)                                                     |PASS      |125       |
-|a[placeholder='Select Country']        |click()                                                               |PASS      |292       |
-|li[role='option'][171]                 |click()                                                               |PASS      |610       |
-|input[name='zip']                      |set value(464564)                                                     |PASS      |159       |
-|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |192       |
-|button.btn                             |should(enabled)                                                       |PASS      |18        |
-|button.btn                             |click()                                                               |PASS      |81        |
-|h2                                     |should have(text 'Congratulations!')                                  |PASS      |917       |
-|h4                                     |should have(text 'Done')                                              |PASS      |29        |
-|p                                      |should have(text 'You Can Start Creating Your Campaigns and Get Leads')|PASS      |31        |
-|[class*='finish_btn']                  |click()                                                               |PASS      |85        |
-|h5                                     |should have(text 'Please fill in all required entry setting fields and create new campaign.')|PASS      |2077      |
-|a.profile                              |click()                                                               |PASS      |97        |
-|div.drop_userInfo>ul>li:nth-child(5)>a |should be(visible)                                                    |PASS      |31        |
-|div.drop_userInfo>ul>li:nth-child(5)>a |click()                                                               |PASS      |111       |
+|h4                                     |should have(text 'Enter Billing Information & Fund Your Account')     |PASS      |30        |
+|by text: click here.                   |click()                                                               |PASS      |114       |
+|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1050      |
+|input[name='companyName']              |set value(Company Name)                                               |PASS      |202       |
+|input[name='companyAddress']           |set value(test steeen 234 -4 4333 1)                                  |PASS      |271       |
+|input[name='city']                     |set value(tel aviv)                                                   |PASS      |131       |
+|button.btn                             |should(disabled)                                                      |PASS      |20        |
+|input[name='state']                    |set value(israel)                                                     |PASS      |121       |
+|a[placeholder='Select Country']        |click()                                                               |PASS      |279       |
+|li[role='option'][167]                 |click()                                                               |PASS      |581       |
+|input[name='zip']                      |set value(464564)                                                     |PASS      |161       |
+|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |169       |
+|button.btn                             |should(enabled)                                                       |PASS      |17        |
+|button.btn                             |click()                                                               |PASS      |87        |
+|h2                                     |should have(text 'Congratulations!')                                  |PASS      |951       |
+|h4                                     |should have(text 'Done')                                              |PASS      |33        |
+|p                                      |should have(text 'You Can Start Creating Your Campaigns and Get Leads')|PASS      |52        |
+|[class*='finish_btn']                  |click()                                                               |PASS      |67        |
+|h5                                     |should have(text 'Please fill in all required entry setting fields and create new campaign.')|PASS      |1552      |
+|a.profile                              |click()                                                               |PASS      |92        |
+|div.drop_userInfo>ul>li:nth-child(5)>a |should be(visible)                                                    |PASS      |33        |
+|div.drop_userInfo>ul>li:nth-child(5)>a |click()                                                               |PASS      |112       |
 +---------------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">testTotalLeadTotalSpentAvgcplParCamp</span>
+              <span class="reporter-method-name">testLoginTotalSpentAndLeads</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">campgns name : biddertesttotal spend : 2592.0total leads: 72.0avgCpl 36.0</span>
-                <span class="reporter-method-output">campgns name : los angelestotal spend : 144.0total leads: 4.0avgCpl 36.0</span>
-                <span class="reporter-method-output">campgns name : russian - moskvatotal spend : 36.0total leads: 1.0avgCpl 36.0</span>
-                <span class="reporter-method-output">campgns name : germmnytotal spend : 60.0total leads: 2.0avgCpl 30.0</span>
-                <span class="reporter-method-output">Report for testTotalLeadTotalSpentAvgcplParCamp
-+-----------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|Element                                                    |Subject                                                               |Status    |ms.       |
-+-----------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                                                       |https://test_app.leadsbasket.com                                      |PASS      |503       |
-|input[name='email']                                        |send keys(kirilk+bidder@affilomania.com)                              |PASS      |281       |
-|#password                                                  |send keys(0546474985Ko)                                               |PASS      |112       |
-|button[type='submit']                                      |press enter()                                                         |PASS      |78        |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][0] |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='ng-scope']//td[10][0]               |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='ng-scope']//td[6][0]                |get text()                                                            |PASS      |30        |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][0] |click()                                                               |PASS      |89        |
-|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1923      |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][1]        |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][1]      |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][2]        |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][2]      |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][3]        |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][3]      |get text()                                                            |PASS      |42        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][4]        |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][4]      |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][5]        |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][5]      |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][6]        |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][6]      |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][7]        |get text()                                                            |PASS      |25        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][7]      |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][8]        |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][8]      |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][9]        |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][9]      |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][10]       |get text()                                                            |PASS      |51        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][10]     |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][11]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][11]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][12]       |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][12]     |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][13]       |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][13]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][14]       |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][14]     |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][15]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][15]     |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][16]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][16]     |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][17]       |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][17]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][18]       |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][18]     |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][19]       |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][19]     |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][20]       |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][20]     |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][21]       |get text()                                                            |PASS      |27        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][21]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][22]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][22]     |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][23]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][23]     |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][24]       |get text()                                                            |PASS      |50        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][24]     |get text()                                                            |PASS      |43        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][25]       |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][25]     |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][26]       |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][26]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][27]       |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][27]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][28]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][28]     |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][29]       |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][29]     |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][30]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][30]     |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][31]       |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][31]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][32]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][32]     |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][33]       |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][33]     |get text()                                                            |PASS      |51        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][34]       |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][34]     |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][35]       |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][35]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][36]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][36]     |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][37]       |get text()                                                            |PASS      |45        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][37]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][38]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][38]     |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][39]       |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][39]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][40]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][40]     |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][41]       |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][41]     |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][42]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][42]     |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][43]       |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][43]     |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][44]       |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][44]     |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][45]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][45]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][46]       |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][46]     |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][47]       |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][47]     |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][48]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][48]     |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][49]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][49]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][50]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][50]     |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][51]       |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][51]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][52]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][52]     |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][53]       |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][53]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][54]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][54]     |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][55]       |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][55]     |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][56]       |get text()                                                            |PASS      |34        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][56]     |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][57]       |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][57]     |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][58]       |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][58]     |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][59]       |get text()                                                            |PASS      |28        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][59]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][60]       |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][60]     |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][61]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][61]     |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][62]       |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][62]     |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][63]       |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][63]     |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][64]       |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][64]     |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][65]       |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][65]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][66]       |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][66]     |get text()                                                            |PASS      |29        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][67]       |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][67]     |get text()                                                            |PASS      |30        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][68]       |get text()                                                            |PASS      |39        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][68]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][69]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][69]     |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][70]       |get text()                                                            |PASS      |31        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][70]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][71]       |get text()                                                            |PASS      |43        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][71]     |get text()                                                            |PASS      |35        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][72]       |get text()                                                            |PASS      |48        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][72]     |get text()                                                            |PASS      |38        |
-|by text: Dashboard                                         |click()                                                               |PASS      |191       |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][1] |get text()                                                            |PASS      |544       |
-|By.xpath: //tr[@class='ng-scope']//td[10][1]               |get text()                                                            |PASS      |58        |
-|By.xpath: //tr[@class='ng-scope']//td[6][1]                |get text()                                                            |PASS      |54        |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][1] |click()                                                               |PASS      |132       |
-|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1201      |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |45        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |45        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][1]        |get text()                                                            |PASS      |32        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][1]      |get text()                                                            |PASS      |41        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][2]        |get text()                                                            |PASS      |38        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][2]      |get text()                                                            |PASS      |36        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][3]        |get text()                                                            |PASS      |42        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][3]      |get text()                                                            |PASS      |36        |
-|by text: Dashboard                                         |click()                                                               |PASS      |57        |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][2] |get text()                                                            |PASS      |679       |
-|By.xpath: //tr[@class='ng-scope']//td[10][2]               |get text()                                                            |PASS      |48        |
-|By.xpath: //tr[@class='ng-scope']//td[6][2]                |get text()                                                            |PASS      |36        |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][2] |click()                                                               |PASS      |123       |
-|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1176      |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |37        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |38        |
-|by text: Dashboard                                         |click()                                                               |PASS      |132       |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][3] |get text()                                                            |PASS      |500       |
-|By.xpath: //tr[@class='ng-scope']//td[10][3]               |get text()                                                            |PASS      |49        |
-|By.xpath: //tr[@class='ng-scope']//td[6][3]                |get text()                                                            |PASS      |43        |
-|a[ui-sref='campaign_item.month({ idCampaign: itm.id})'][3] |click()                                                               |PASS      |146       |
-|a[ng-class='{ active: perPage == 200 }']                   |click()                                                               |PASS      |1034      |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][0]        |get text()                                                            |PASS      |40        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][0]      |get text()                                                            |PASS      |53        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][1]        |get text()                                                            |PASS      |59        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][1]      |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']/td[3][2]        |get text()                                                            |PASS      |33        |
-|By.xpath: //tr[@class='lead-row ng-scope']//td[10][2]      |get text()                                                            |PASS      |38        |
-|by text: Dashboard                                         |click()                                                               |PASS      |46        |
-|a.profile                                                  |click()                                                               |PASS      |169       |
-|div.drop_userInfo>ul>li:nth-child(5)>a                     |should be(visible)                                                    |PASS      |34        |
-|div.drop_userInfo>ul>li:nth-child(5)>a                     |click()                                                               |PASS      |115       |
-+-----------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+                <span class="reporter-method-output">total spent is correct 1896.0</span>
+                <span class="reporter-method-output">total Leads is correct 53.0</span>
+                <span class="reporter-method-output">Report for testLoginTotalSpentAndLeads
++------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                                               |Subject                                                               |Status    |ms.       |
++------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                                                  |https://test_app.leadsbasket.com                                      |PASS      |250       |
+|input[name='email']                                   |send keys(kirilk+bidder@affilomania.com)                              |PASS      |256       |
+|#password                                             |send keys(0546474985Ko)                                               |PASS      |107       |
+|button[type='submit']                                 |press enter()                                                         |PASS      |74        |
+|a[ui-sref='leads_list']                               |click()                                                               |PASS      |1469      |
+|a[ng-class='{ active: perPage == 200 }']              |click()                                                               |PASS      |80        |
+|div[class='loader']                                   |should be(visible)                                                    |PASS      |146       |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][0]   |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][0]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][1]   |get text()                                                            |PASS      |24        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][1]  |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][2]   |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][2]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][3]   |get text()                                                            |PASS      |24        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][3]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][4]   |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][4]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][5]   |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][5]  |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][6]   |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][6]  |get text()                                                            |PASS      |24        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][7]   |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][7]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][8]   |get text()                                                            |PASS      |44        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][8]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][9]   |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][9]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][10]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][10] |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][11]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][11] |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][12]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][12] |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][13]  |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][13] |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][14]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][14] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][15]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][15] |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][16]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][16] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][17]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][17] |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][18]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][18] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][19]  |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][19] |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][20]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][20] |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][21]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][21] |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][22]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][22] |get text()                                                            |PASS      |49        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][23]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][23] |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][24]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][24] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][25]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][25] |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][26]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][26] |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][27]  |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][27] |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][28]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][28] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][29]  |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][29] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][30]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][30] |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][31]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][31] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][32]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][32] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][33]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][33] |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][34]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][34] |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][35]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][35] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][36]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][36] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][37]  |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][37] |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][38]  |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][38] |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][39]  |get text()                                                            |PASS      |31        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][39] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][40]  |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][40] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][41]  |get text()                                                            |PASS      |25        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][41] |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][42]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][42] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][43]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][43] |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][44]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][44] |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][45]  |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][45] |get text()                                                            |PASS      |23        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][46]  |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][46] |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][47]  |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][47] |get text()                                                            |PASS      |30        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][48]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][48] |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][49]  |get text()                                                            |PASS      |27        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][49] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][50]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][50] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][51]  |get text()                                                            |PASS      |26        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][51] |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][52]  |get text()                                                            |PASS      |28        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][52] |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[5][53]  |get text()                                                            |PASS      |29        |
+|By.xpath: //tr[@class='lead-row ng-scope']/td[12][53] |get text()                                                            |PASS      |36        |
+|by text: Dashboard                                    |click()                                                               |PASS      |101       |
+|html[ng-app='leadsBasket']                            |scroll to()                                                           |PASS      |133       |
+|#date_range                                           |click()                                                               |PASS      |121       |
+|input[name='daterangepicker_start']                   |clear()                                                               |PASS      |63        |
+|input[name='daterangepicker_start']                   |set value(13/11/16)                                                   |PASS      |116       |
+|by text: Apply                                        |click()                                                               |PASS      |173       |
+|div[class='loader']                                   |should be(hidden)                                                     |PASS      |1465      |
+|div.tl_spend_ico>div>span                             |get text()                                                            |PASS      |29        |
+|div.tl_leads_ico>div>span                             |get text()                                                            |PASS      |48        |
+|a.profile                                             |click()                                                               |PASS      |77        |
+|div.drop_userInfo>ul>li:nth-child(5)>a                |should be(visible)                                                    |PASS      |32        |
+|div.drop_userInfo>ul>li:nth-child(5)>a                |click()                                                               |PASS      |120       |
++------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">testStatisticParOffer</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">
+OfferName: Home securityaagdf>Number leads:1.0>Revenues: 22.0>Avg. CPL: 22.0EPC: 11.0</span>
+                <span class="reporter-method-output">
+OfferName: selenium Webdriver(don't use!!!)>Number leads:24.0>Revenues: 787.2>Avg. CPL: 32.8EPC: 31.49</span>
+                <span class="reporter-method-output">Report for testStatisticParOffer
++------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                                         |Subject                                                               |Status    |ms.       |
++------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                                            |https://test_app.leadsbasket.com                                      |PASS      |266       |
+|input[name='email']                             |send keys(kirilk+webdriver1@affilomania.com)                          |PASS      |265       |
+|#password                                       |send keys(0546474985Ko)                                               |PASS      |107       |
+|button[type='submit']                           |press enter()                                                         |PASS      |73        |
+|a[ui-sref*='live_offers']                       |click()                                                               |PASS      |1462      |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(2)  |get text()                                                            |PASS      |31        |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(7)  |get text()                                                            |PASS      |29        |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(9)  |get text()                                                            |PASS      |31        |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(14) |get text()                                                            |PASS      |33        |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(6)  |get text()                                                            |PASS      |27        |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(15) |get text()                                                            |PASS      |32        |
+|tbody.ng-scope>tr:nth-child(1)>td:nth-child(2)  |click()                                                               |PASS      |69        |
+|by text: 200                                    |wait until([visible, 20000])                                          |PASS      |36        |
+|by text: 200                                    |click()                                                               |PASS      |78        |
+|By.xpath: //tr[@class='ng-scope']//td[5][0]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[6][0]     |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[14][0]    |get text()                                                            |PASS      |45        |
+|a[ui-sref*='live_offers'][0]                    |click()                                                               |PASS      |53        |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(2)  |get text()                                                            |PASS      |1415      |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(7)  |get text()                                                            |PASS      |36        |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(9)  |get text()                                                            |PASS      |27        |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(14) |get text()                                                            |PASS      |39        |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(6)  |get text()                                                            |PASS      |36        |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(15) |get text()                                                            |PASS      |33        |
+|tbody.ng-scope>tr:nth-child(2)>td:nth-child(2)  |click()                                                               |PASS      |136       |
+|by text: 200                                    |wait until([visible, 20000])                                          |PASS      |38        |
+|by text: 200                                    |click()                                                               |PASS      |80        |
+|By.xpath: //tr[@class='ng-scope']//td[5][0]     |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[6][0]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][0]    |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[5][1]     |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][1]     |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='ng-scope']//td[14][1]    |get text()                                                            |PASS      |43        |
+|By.xpath: //tr[@class='ng-scope']//td[5][2]     |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[6][2]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][2]    |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[5][3]     |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[6][3]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][3]    |get text()                                                            |PASS      |46        |
+|By.xpath: //tr[@class='ng-scope']//td[5][4]     |get text()                                                            |PASS      |56        |
+|By.xpath: //tr[@class='ng-scope']//td[6][4]     |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][4]    |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[5][5]     |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[6][5]     |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[14][5]    |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[5][6]     |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[6][6]     |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[14][6]    |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[5][7]     |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[6][7]     |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[14][7]    |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[5][8]     |get text()                                                            |PASS      |50        |
+|By.xpath: //tr[@class='ng-scope']//td[6][8]     |get text()                                                            |PASS      |46        |
+|By.xpath: //tr[@class='ng-scope']//td[14][8]    |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][9]     |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='ng-scope']//td[6][9]     |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[14][9]    |get text()                                                            |PASS      |46        |
+|By.xpath: //tr[@class='ng-scope']//td[5][10]    |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[6][10]    |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[14][10]   |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[5][11]    |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='ng-scope']//td[6][11]    |get text()                                                            |PASS      |34        |
+|By.xpath: //tr[@class='ng-scope']//td[14][11]   |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='ng-scope']//td[5][12]    |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[6][12]    |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][12]   |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[5][13]    |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][13]    |get text()                                                            |PASS      |56        |
+|By.xpath: //tr[@class='ng-scope']//td[14][13]   |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[5][14]    |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][14]    |get text()                                                            |PASS      |42        |
+|By.xpath: //tr[@class='ng-scope']//td[14][14]   |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][15]    |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[6][15]    |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[14][15]   |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][16]    |get text()                                                            |PASS      |50        |
+|By.xpath: //tr[@class='ng-scope']//td[6][16]    |get text()                                                            |PASS      |59        |
+|By.xpath: //tr[@class='ng-scope']//td[14][16]   |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[5][17]    |get text()                                                            |PASS      |36        |
+|By.xpath: //tr[@class='ng-scope']//td[6][17]    |get text()                                                            |PASS      |43        |
+|By.xpath: //tr[@class='ng-scope']//td[14][17]   |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[5][18]    |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[6][18]    |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][18]   |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[5][19]    |get text()                                                            |PASS      |41        |
+|By.xpath: //tr[@class='ng-scope']//td[6][19]    |get text()                                                            |PASS      |39        |
+|By.xpath: //tr[@class='ng-scope']//td[14][19]   |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[5][20]    |get text()                                                            |PASS      |48        |
+|By.xpath: //tr[@class='ng-scope']//td[6][20]    |get text()                                                            |PASS      |56        |
+|By.xpath: //tr[@class='ng-scope']//td[14][20]   |get text()                                                            |PASS      |46        |
+|By.xpath: //tr[@class='ng-scope']//td[5][21]    |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[6][21]    |get text()                                                            |PASS      |43        |
+|By.xpath: //tr[@class='ng-scope']//td[14][21]   |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[5][22]    |get text()                                                            |PASS      |33        |
+|By.xpath: //tr[@class='ng-scope']//td[6][22]    |get text()                                                            |PASS      |40        |
+|By.xpath: //tr[@class='ng-scope']//td[14][22]   |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[5][23]    |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[6][23]    |get text()                                                            |PASS      |35        |
+|By.xpath: //tr[@class='ng-scope']//td[14][23]   |get text()                                                            |PASS      |38        |
+|By.xpath: //tr[@class='ng-scope']//td[5][24]    |get text()                                                            |PASS      |37        |
+|By.xpath: //tr[@class='ng-scope']//td[6][24]    |get text()                                                            |PASS      |32        |
+|By.xpath: //tr[@class='ng-scope']//td[14][24]   |get text()                                                            |PASS      |36        |
+|a[ui-sref*='live_offers'][0]                    |click()                                                               |PASS      |156       |
+|a[ui-sref*='dashboardSeller'][0]                |click()                                                               |PASS      |87        |
+|html[ng-app='leadsBasket']                      |scroll to()                                                           |PASS      |116       |
+|#date_range                                     |click()                                                               |PASS      |112       |
+|input[name='daterangepicker_start']             |clear()                                                               |PASS      |57        |
+|input[name='daterangepicker_start']             |set value(13/11/16)                                                   |PASS      |165       |
+|by text: Apply                                  |click()                                                               |PASS      |123       |
+|span[class*='value ng-scope'][3]                |get text()                                                            |PASS      |43        |
+|span[class*='value ng-scope'][0]                |get text()                                                            |PASS      |36        |
+|span[class*='value ng-scope'][6]                |get text()                                                            |PASS      |35        |
++------------------------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -792,38 +1045,72 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+              <div class="chronological-class-name">com.affilomnia.leadbaskets.FormLbTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">LoginAsSellerAndSendLead</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">com.affilomnia.leadbaskets.BuyerTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testBuyerRegistrtion</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">17961 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logs([TestResult name=testBuyerRegistrtion status=SUCCESS method=BuyerTest.testBuyerRegistrtion()[pri:1, ...)</span>
-                <span class="method-start">19854 ms</span>
+                <span class="method-start">33338 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testTotalLeadTotalSpentAvgcplParCamp</span>
-                <span class="method-start">20902 ms</span>
+                <span class="method-start">34611 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logs([TestResult name=testTotalLeadTotalSpentAvgcplParCamp status=SUCCESS method=BuyerTest.testTotalLeadT...)</span>
-                <span class="method-start">46884 ms</span>
+                <span class="method-start">57244 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.affilomnia.leadbaskets.SellerTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testLoginTotalSpentAndLeads</span>
-                <span class="method-start">47891 ms</span>
+                <span class="method-name">testTotalLeadTotalCpl</span>
+                <span class="method-start">58262 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">logs([TestResult name=testLoginTotalSpentAndLeads status=SUCCESS method=BuyerTest.testLoginTotalSpentAndL...)</span>
-                <span class="method-start">61266 ms</span>
+                <span class="method-name">logs([TestResult name=testTotalLeadTotalCpl status=SUCCESS method=SellerTest.testTotalLeadTotalCpl()[pri:...)</span>
+                <span class="method-start">70492 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.affilomnia.leadbaskets.BuyerTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testdownloadIntegrtionPDF</span>
-                <span class="method-start">62270 ms</span>
+                <span class="method-start">71503 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logs([TestResult name=testdownloadIntegrtionPDF status=SUCCESS method=BuyerTest.testdownloadIntegrtionPDF...)</span>
-                <span class="method-start">70268 ms</span>
+                <span class="method-start">75724 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testLoginTotalSpentAndLeads</span>
+                <span class="method-start">76753 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">logs([TestResult name=testLoginTotalSpentAndLeads status=SUCCESS method=BuyerTest.testLoginTotalSpentAndL...)</span>
+                <span class="method-start">87975 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.affilomnia.leadbaskets.SellerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testStatisticParOffer</span>
+                <span class="method-start">89071 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">logs([TestResult name=testStatisticParOffer status=FAILURE method=SellerTest.testStatisticParOffer()[pri:...)</span>
+                <span class="method-start">113302 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -38,14 +38,17 @@ public class SellerPage {
 	@Inject
 	BuyerPage buyerPage;
 
+	private SelenideElement profile = $("a.profile");
+	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(5)>a");
 	private SelenideElement liveOfferPage = $("a[ng-class*='live_offers']");
 	private SelenideElement Offer543 = $(byText("selenium Webdriver(don't use!!!)"));
 	private SelenideElement dataChar = $("div[chart-data*='offerStatistic']");
 	private SelenideElement perPage200 = $(byText("200"));
 	private ElementsCollection saleCpl = $$(By.xpath("//tr[@class='ng-scope']//td[5]"));
+	private ElementsCollection webMinSaleCpl = $$(By.xpath("//tr[@class='ng-scope']//td[6]"));
 	private ElementsCollection statusLead = $$(By.xpath("//tr[@class='ng-scope']//td[14]"));
-	private ElementsCollection webStastic = $$("span[class*='value ng-scope']"); // idex 0 = total leads idex 1= total
-																					// revenue total idex 2 =actual
+	private ElementsCollection webStastic = $$("span[class*='value ng-scope']"); // idex 0 = total leads idex 1= total//
+																					// revenue total idex 2 =actual//
 																					// avgCpl
 
 	/**
@@ -53,67 +56,99 @@ public class SellerPage {
 	 * 
 	 * @return buyerTotalLeads,totalRevenues,actualAvgCpl
 	 * @throws Exception
+	 * @throws Exception
 	 */
 
 	public Float[] calcTotalRevenueLeadActualAvgCpl() throws Exception {
-		$(byText("Report")).click();
 		perPage200.waitUntil(Condition.visible, 20000).click();
 		wait.waitUntilAngularPageLoaded();
-		String element;
-		Float saleCpls = null;
-		Float actualAvgCpl = null;
-
+		Thread.sleep(3000);
+		String element, element2;
+		Float saleCpls, minSaleCpl = null, actualAvgCpl = null;
+		Float totalminSaleCpl = (float) 0;
 		Float totalRevenues = (float) 0;
 		Float buyerTotalLeads = (float) 0;
-		for (int i = 0; i < saleCpl.size(); i++) {
+		for (int i = 0; i < $$(By.xpath("//tr[@class='ng-scope']//td[5]")).size(); i++) {
 			element = saleCpl.get(i).getText().replace("$", " ");
+			element2 = webMinSaleCpl.get(i).getText().replace("$", " ");
 			saleCpls = Float.parseFloat(element);
+			minSaleCpl = Float.parseFloat(element2);
 			String leadStatus = statusLead.get(i).getText();
-
 			if (leadStatus.equalsIgnoreCase("Paid") || leadStatus.equalsIgnoreCase("Dispute")
 					|| leadStatus.equalsIgnoreCase("Dispute Declined")) {
-				System.out.println(saleCpl.size());
 				totalRevenues += saleCpls;
+				totalminSaleCpl += minSaleCpl;
 				buyerTotalLeads++;
 			}
 		}
+		minSaleCpl = totalminSaleCpl / buyerTotalLeads;
 		actualAvgCpl = totalRevenues / buyerTotalLeads;
+		minSaleCpl = (float) (Math.round(minSaleCpl * 100.0) / 100.0);
 		actualAvgCpl = (float) (Math.round(actualAvgCpl * 100.0) / 100.0);
 		totalRevenues = (float) (Math.round(totalRevenues * 100.0) / 100.0);
-		Reporter.log(totalRevenues + "  " + buyerTotalLeads + " " + actualAvgCpl + "\n", true);
-
-		return new Float[] { buyerTotalLeads, totalRevenues, actualAvgCpl };
-
+		return new Float[] { buyerTotalLeads, totalRevenues, actualAvgCpl, minSaleCpl };
 	}
 
-	public void checkStatisticOnDashBoard(Float buyerTotalLeads, Float totalRevenues, Float actualAvgCpl) {
+	public void checkStatisticOnDashBoard(Float buyerTotalLeads, Float totalRevenues, Float actualAvgCpl,
+			Float minSaleCpl) {
 		$("a[ui-sref*='dashboardSeller']").click();
-		wait.waitUntilAngularPageLoaded();
 		buyerPage.selectDate("13/11/16");
 		wait.waitUntilAngularPageLoaded();
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(1)), buyerTotalLeads, "Total Leads");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(3)), totalRevenues, "total Revenues");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(5)), actualAvgCpl, "actual Avg Cpl");
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(4)), minSaleCpl, "Avg. Min CPL");
 		softAssert.assertAll();
-		System.out.println("total Leads is correct " + buyerTotalLeads);
-		System.out.println("total revenue is correct " + totalRevenues);
-		System.out.println("Actual avg cpl  is correct " + actualAvgCpl);
+		Reporter.log("\n" + "total Leads is  " + buyerTotalLeads, true);
+		Reporter.log("\n" + "total revenue is  " + totalRevenues, true);
+		Reporter.log("\n" + "Actual avg cpl  is  " + actualAvgCpl, true);
+		Reporter.log("\n" + "Avg. Min CPL  is  " + minSaleCpl, true);
+
 	}
 
-	public void checkstatParOffer() {
+	/**
+	 * checking amount of leads,avgcpl,revenue,clicks,EPC par offer.
+	 * and check total clicks and Avg. EPC par on dashboard
+	 * @throws Exception
+	 */
+	public void checkstatParOffer() throws Exception {
 		String offerName;
-		Float revenue, leads, clicks, avgCpl;
+		Float totalClicks = (float) 0;
+		Float revenue = null, leads, clicks, avgCpl, webEpc, rEpc;
 		$("a[ui-sref*='live_offers']").click();
 		wait.waitUntilAngularPageLoaded();
-
-		for (int i = 1; i < $$("tr[ng-repeat*='liveOffersList']").size(); i++) {
-
+		int liveOfferSIze = $$("tr[ng-repeat*='liveOffersList']").size();
+		for (int i = 1; i <= liveOfferSIze; i++) {
 			offerName = $("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").getText();
-			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));
+			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(7)"));
 			avgCpl = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(9)"));
-			System.out.println(offerName + " " + leads + " " + avgCpl);
-			Reporter.log(offerName + " " + leads + " " + avgCpl + "\n", true);
+			revenue = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));
+			clicks = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(6)"));
+			webEpc = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(15)"));
+			$("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").click();
+			wait.waitUntilAngularPageLoaded();
+			Float statResult[] = calcTotalRevenueLeadActualAvgCpl();
+			rEpc = statResult[1] / clicks;
+			totalClicks += clicks;
+			rEpc = (float) (Math.round(rEpc * 100.0) / 100.0);
+			$$("a[ui-sref*='live_offers']").get(0).click();
+			softAssert.assertEquals(leads, statResult[0], "Leads");
+			softAssert.assertEquals(revenue, statResult[1], "Revenue");
+			softAssert.assertEquals(avgCpl, statResult[2], "avgCpl");
+			softAssert.assertEquals(webEpc, rEpc, "Epc per offer");
+			Reporter.log("\n" +"OfferName: " + offerName + ">Number leads:" + statResult[0] + ">Revenues: " + statResult[1]
+					+ ">Avg. CPL: " + statResult[2] + "EPC: " + rEpc, true);
+
 		}
+		$$("a[ui-sref*='dashboardSeller']").get(0).click();
+		buyerPage.selectDate("13/11/16");
+		wait.waitUntilAngularPageLoaded();
+		Float avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(0)), totalClicks, "total clicks");
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(6)), avgEpc, "Avg. EPC");
+		softAssert.assertAll();
+		Reporter.log("\n" +"Total clicks: "+totalClicks+ "Avg. EPC "+avgEpc,true);
+
 	}
 
 	public Float convertWebElementToNm(SelenideElement nm) {
@@ -134,5 +169,10 @@ public class SellerPage {
 				"return angular.element(document.getElementsByClassName('form-control ng-pristine ng-untouched ng-valid ng-not-empty')).scope().clipToClipboard");
 		open(offerlink);
 
+	}
+
+	public void logOut() {
+		profile.click();
+		logOut.shouldBe(Condition.visible).click();
 	}
 }
