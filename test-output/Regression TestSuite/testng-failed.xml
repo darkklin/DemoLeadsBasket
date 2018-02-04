@@ -4,19 +4,19 @@
   <test name="LeadsBaskets Test(failed)">
     <groups>
       <run>
+        <include name="create Lead"/>
         <include name="buyer statistic"/>
+        <include name="Seller Statistic"/>
         <include name="BuyerReg"/>
       </run>
     </groups>
     <classes>
-      <class name="com.affilomnia.leadbaskets.BuyerTest">
+      <class name="com.affilomnia.leadbaskets.SellerTest">
         <methods>
-          <include name="testBuyerRegistrtion"/>
-          <include name="testLoginTotalSpentAndLeads"/>
-          <include name="testdownloadIntegrtionPDF"/>
-          <include name="testTotalLeadTotalSpentAvgcplParCamp"/>
+          <include name="testStatisticParOffer"/>
+          <include name="logs"/>
         </methods>
-      </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
+      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
     </classes>
   </test> <!-- LeadsBaskets Test(failed) -->
 </suite> <!-- Failed suite [Regression TestSuite] -->

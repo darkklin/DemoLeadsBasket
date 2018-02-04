@@ -32,10 +32,10 @@ public class FormLbPage {
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
 		email.setValue(generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ",10)+"@lb.com");
-		String element = phone.getAttribute("placeholder");
-		element = element.replace("-", "").replace("(", "").replace(")", "");
+		String placeholder = phone.getAttribute("placeholder");
+		placeholder = placeholder.replace("-", "").replace("(", "").replace(")", "");
 
-		phone.setValue("0528896515");
+		phone.setValue(placeholder);
 		submitBtn.click();
 		confirm();
 		errorMessage.shouldBe(Condition.exactText(""));
