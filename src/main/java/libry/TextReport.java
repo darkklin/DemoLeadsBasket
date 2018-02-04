@@ -1,7 +1,7 @@
 package libry;
 
 
-import libry.SimpleReport;
+import libry.MyReport;
 import com.codeborne.selenide.testng.annotations.Report;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
@@ -18,7 +18,7 @@ import org.testng.internal.ConstructorOrMethod;
  * Use either {@link TextReport} or {@link GlobalTextReport}, never both
  */
 public class TextReport implements IInvokedMethodListener {
-  protected SimpleReport report = new SimpleReport();
+  protected MyReport report = new MyReport();
 
   public static boolean onFailedTest = true;
   public static boolean onSucceededTest = true;

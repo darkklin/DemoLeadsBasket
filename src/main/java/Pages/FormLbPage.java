@@ -32,6 +32,9 @@ public class FormLbPage {
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
 		email.setValue(generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ",10)+"@lb.com");
+		String element = phone.getAttribute("placeholder");
+		element = element.replace("-", "").replace("(", "").replace(")", "");
+
 		phone.setValue("0528896515");
 		submitBtn.click();
 		confirm();

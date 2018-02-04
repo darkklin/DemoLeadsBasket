@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.testng.TextReport;
+import libry.TextReport;
 
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
@@ -22,7 +22,7 @@ public class BaseTest {
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;
-		Configuration.holdBrowserOpen = false;
+		Configuration.holdBrowserOpen = true;
 		Configuration.fastSetValue = true;
 		Configuration.driverManagerEnabled = true;
 		TextReport.onSucceededTest = false;
@@ -40,7 +40,7 @@ public class BaseTest {
 	public String logOutput(List<String> outputList) {
 		String output = "";
 		for (String o : outputList)
-			output += o + "<br/>";
+			output += o + "<br>";
 		return output;
 	}
 }
