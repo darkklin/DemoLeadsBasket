@@ -121,7 +121,7 @@ public class SellerPage {
 		for (int i = 1; i <= liveOfferSIze; i++) {
 			offerName = $("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").getText();
 			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(7)"));
-			avgCpl = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(9)"));
+			avgCpl = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(2)>td:nth-child(9)").text().replace("$", ""));
 			revenue = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));
 			clicks = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(6)"));
 			webEpc = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(15)"));
@@ -144,8 +144,8 @@ public class SellerPage {
 		buyerPage.selectDate("13/11/16");
 		wait.waitUntilAngularPageLoaded();
 		Float avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
-		softAssert.assertEquals(convertWebElementToNm(webStastic.get(0)), totalClicks, "total clicks");
-		softAssert.assertEquals(convertWebElementToNm(webStastic.get(6)), avgEpc, "Avg. EPC");
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(0)), totalClicks, "DashBoard Total clicks");
+		softAssert.assertEquals(convertWebElementToNm(webStastic.get(6)), avgEpc, "DashBoard Avg. EPC");
 		softAssert.assertAll();
 		Reporter.log("\n" +"Total clicks: "+totalClicks+ "Avg. EPC "+avgEpc,true);
 
@@ -156,6 +156,14 @@ public class SellerPage {
 		Float result;
 		element = nm.getText();
 		element = element.replace("$", "").replace(",", "");
+		result = Float.parseFloat(element);
+		return result;
+	}
+	public Float convertWebElementToNm(String nm) {
+		String element;
+		Float result;
+		element = nm.split(" ")[0];
+		System.out.println(element);
 		result = Float.parseFloat(element);
 		return result;
 	}

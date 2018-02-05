@@ -34,7 +34,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
+	@Test(enabled = false, description = "How much seller have leads and Total CPl", groups = {
 			"Seller Statistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
 		open("https://test_app.leadsbasket.com");
