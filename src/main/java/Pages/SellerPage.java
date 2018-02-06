@@ -107,8 +107,9 @@ public class SellerPage {
 	}
 
 	/**
-	 * checking amount of leads,avgcpl,revenue,clicks,EPC par offer.
-	 * and check total clicks and Avg. EPC par on dashboard
+	 * checking amount of leads,avgcpl,revenue,clicks,EPC par offer. and check total
+	 * clicks and Avg. EPC par on dashboard
+	 * 
 	 * @throws Exception
 	 */
 	public void checkstatParOffer() throws Exception {
@@ -121,7 +122,8 @@ public class SellerPage {
 		for (int i = 1; i <= liveOfferSIze; i++) {
 			offerName = $("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").getText();
 			leads = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(7)"));
-			avgCpl = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(2)>td:nth-child(9)").text().replace("$", ""));
+			avgCpl = convertWebElementToNm(
+					$("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(9)").text().replace("$", ""));
 			revenue = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(14)"));
 			clicks = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(6)"));
 			webEpc = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(15)"));
@@ -136,18 +138,58 @@ public class SellerPage {
 			softAssert.assertEquals(revenue, statResult[1], "Revenue");
 			softAssert.assertEquals(avgCpl, statResult[2], "avgCpl");
 			softAssert.assertEquals(webEpc, rEpc, "Epc per offer");
-			Reporter.log("\n" +"OfferName: " + offerName + ">Number leads:" + statResult[0] + ">Revenues: " + statResult[1]
-					+ ">Avg. CPL: " + statResult[2] + "EPC: " + rEpc, true);
+			Reporter.log("\n" + "OfferName: " + offerName + ">Number leads:" + statResult[0] + ">Revenues: "
+					+ statResult[1] + ">Avg. CPL: " + statResult[2] + "EPC: " + rEpc, true);
 
 		}
 		$$("a[ui-sref*='dashboardSeller']").get(0).click();
 		buyerPage.selectDate("13/11/16");
 		wait.waitUntilAngularPageLoaded();
 		Float avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
+		avgEpc = (float) (Math.round(avgEpc * 100.0) / 100.0);
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(0)), totalClicks, "DashBoard Total clicks");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(6)), avgEpc, "DashBoard Avg. EPC");
 		softAssert.assertAll();
-		Reporter.log("\n" +"Total clicks: "+totalClicks+ "Avg. EPC "+avgEpc,true);
+		Reporter.log("\n" + "Total clicks: " + totalClicks + "Avg. EPC " + avgEpc, true);
+
+	}
+
+	public void accountingStatistic() {
+		Float saleCpl, totalInvoice = (float) 0, nmLeads = (float) 0;
+		$("a[ui-sref*='accounting']").click();
+		wait.waitUntilAngularPageLoaded();
+		$(byText("Current invoice breakdown")).click();
+		wait.waitUntilAngularPageLoaded();
+		for (int i = 1; i <= $$("tr[ng-repeat='itm in breakdown']").size(); i++) {
+			saleCpl = convertWebElementToNm(
+					$("table.scrolling-table>tbody>tr:nth-child(" + i + ")>td:nth-child(4)").text().replace("$", ""));
+			totalInvoice += saleCpl;
+			nmLeads++;
+		}
+		totalInvoice = (float) (Math.round(totalInvoice * 100.0) / 100.0);
+		Float popUpwebTotalSaleCpl = convertWebElementToNm($$("p[class='ng-binding']").get(0).getText());
+		Float popUpwebTotalLeads = convertWebElementToNm($$("p[class='ng-binding']").get(1).getText());
+		softAssert.assertEquals(totalInvoice, popUpwebTotalSaleCpl, "popUp total invoice");
+		softAssert.assertEquals(nmLeads, popUpwebTotalLeads, "popUP total leads");
+		softAssert.assertAll();
+		$(byText("Close")).click();
+
+		for (int i = 1; i <= $$("[ng-repeat*='invoiceCollection']").size(); i++) {
+			String statusInvoice = $("table.detailTable>tbody>tr:nth-child(" + i + ")>td:nth-child(6)").getText();
+			if (statusInvoice.equalsIgnoreCase("open")) {
+				Float InvoiceAmount = convertWebElementToNm(
+						$(By.xpath("//tr[@ng-repeat='item in invoiceCollection'][" + i + "]//td[4]")).getText());
+				Float invoiceLeads = convertWebElementToNm(
+						$(By.xpath("//tr[@ng-repeat='item in invoiceCollection'][" + i + "]//td[2]")).getText());
+
+				softAssert.assertEquals(totalInvoice, InvoiceAmount, " total Amount invoice leads accounting page ");
+				softAssert.assertEquals(nmLeads, invoiceLeads, " total Amount  leads accounting page");
+				softAssert.assertAll();
+				Reporter.log("total Amount invoice leads accounting page" + totalInvoice,true);
+				Reporter.log("total Amount  leads accounting page" + invoiceLeads,true);
+
+			}
+		}
 
 	}
 
@@ -159,12 +201,21 @@ public class SellerPage {
 		result = Float.parseFloat(element);
 		return result;
 	}
+
 	public Float convertWebElementToNm(String nm) {
 		String element;
 		Float result;
-		element = nm.split(" ")[0];
-		System.out.println(element);
+		if (nm.contains(":")) {
+			element = nm.split(":")[1];
+
+		} else {
+			element = nm.split(" ")[0];
+
+		}
+		element = element.replace("$", "").replace(" ", "").replace(",", "");
+
 		result = Float.parseFloat(element);
+
 		return result;
 	}
 

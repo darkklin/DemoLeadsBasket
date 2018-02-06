@@ -34,7 +34,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "How much seller have leads and Total CPl", groups = {
+	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
 			"Seller Statistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
 		open("https://test_app.leadsbasket.com");
@@ -53,6 +53,17 @@ public class SellerTest extends BaseTest {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
 		sellerPage.checkstatParOffer();
+		sellerPage.logOut();
+
+	}
+	@Video
+	@Feature("Seller Statistic")
+	@Severity(SeverityLevel.CRITICAL)
+	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "Seller Statistic" }, priority = 2)
+	public void sellerAccountingStatistic() throws Exception {
+		open("https://test_app.leadsbasket.com");
+		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
+		sellerPage.accountingStatistic();
 		sellerPage.logOut();
 
 	}
