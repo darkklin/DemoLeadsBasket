@@ -35,7 +35,7 @@ public class SellerTest extends BaseTest {
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
-			"Seller Statistic" }, priority = 1)
+			"sellerStatistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
@@ -48,7 +48,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test Stats Par offer ", groups = { "Seller Statistic" }, priority = 2)
+	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 2)
 	public void testStatisticParOffer() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
@@ -59,7 +59,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "Seller Statistic" }, priority = 2)
+	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
 	public void sellerAccountingStatistic() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");

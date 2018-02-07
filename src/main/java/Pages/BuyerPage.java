@@ -106,7 +106,7 @@ public class BuyerPage {
 	 */
 	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads) {
 		openDashBoardPage.click();
-		selectDate("13/11/16");
+		selectDate("13/11/16","Dashboard");
 		loader.shouldBe(Condition.disappear);
 		softAssert.assertEquals(convertWebElementToNm(webTotalSpend), totalspent, "Totalspend");
 		softAssert.assertEquals(convertWebElementToNm(webTotalLeads), totalLeads, "TotalLeads");
@@ -119,7 +119,7 @@ public class BuyerPage {
 	 * Test total leads/total spent / avgCpl par offer in buyer > dashboard >
 	 * Recently Updated Campaigns
 	 */
-	public void checkStatisticPerCamp() throws Exception {
+	public void checkStatisticPerCamp()  {
 		String campName, campLeadStatus;
 		Float webCampSpend, webCampLeads, leadBuyCpl = (float) 0, webAvgCPL = (float) 0;
 		wait.waitUntilAngularPageLoaded();
@@ -130,8 +130,10 @@ public class BuyerPage {
 			webAvgCPL = webCampSpend / webCampLeads;
 			wait.waitUntilAngularPageLoaded();
 			campaignsName.get(i).click();
+			wait.waitUntilAngularPageLoaded();
 			perPage200.click();
-
+			wait.waitUntilAngularPageLoaded();
+			selectDate("13/11/16","Report");
 			wait.waitUntilAngularPageLoaded();
 			Float totalLeads = (float) 0, totaleadBuyCpl = (float) 0;
 			Float avgCpl = (float) 0;
@@ -147,12 +149,13 @@ public class BuyerPage {
 				}
 
 			}
-			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName);
-			softAssert.assertEquals(webCampLeads, totalLeads, campName);
+			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName+ " Total spent");
+			softAssert.assertEquals(webCampLeads, totalLeads, campName+" Total leads");
 			softAssert.assertEquals(webAvgCPL, avgCpl, campName);
-			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + "total leads: " + totalLeads
+			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + " total leads: " + totalLeads
 					+ "avgCpl " + avgCpl, true);
 			openDashBoardPage.click();
+
 		}
 		softAssert.assertAll();
 
@@ -167,12 +170,23 @@ public class BuyerPage {
 		return result;
 	}
 
-	public void selectDate(String Date) {
-		$("html[ng-app='leadsBasket']").scrollTo();
-		datePicker.click();
-		startDate.clear();
-		startDate.setValue(Date);
-		applyDate.click();
+	public void selectDate(String Date,String page) {
+		if(page == "Dashboard")
+		{
+			$("html[ng-app='leadsBasket']").scrollTo();
+			datePicker.click();
+			startDate.clear();
+			startDate.setValue(Date);
+			applyDate.click();
+		}
+		else {
+			$("a.btn").scrollIntoView(true);
+			$("input[st-search='date_range']").shouldBe(Condition.enabled).click();
+			$$("input[name='daterangepicker_start']").get(1).clear();
+			$$("input[name='daterangepicker_start']").get(1).setValue(Date);
+			$$("button[class*='btn-success']").get(1).click();
+		}
+
 	}
 
 	public void logOut() {

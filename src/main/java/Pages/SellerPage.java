@@ -92,7 +92,7 @@ public class SellerPage {
 	public void checkStatisticOnDashBoard(Float buyerTotalLeads, Float totalRevenues, Float actualAvgCpl,
 			Float minSaleCpl) {
 		$("a[ui-sref*='dashboardSeller']").click();
-		buyerPage.selectDate("13/11/16");
+		buyerPage.selectDate("13/11/16","Dashboard");
 		wait.waitUntilAngularPageLoaded();
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(1)), buyerTotalLeads, "Total Leads");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(3)), totalRevenues, "total Revenues");
@@ -143,7 +143,7 @@ public class SellerPage {
 
 		}
 		$$("a[ui-sref*='dashboardSeller']").get(0).click();
-		buyerPage.selectDate("13/11/16");
+		buyerPage.selectDate("13/11/16","Dashboard");
 		wait.waitUntilAngularPageLoaded();
 		Float avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
 		avgEpc = (float) (Math.round(avgEpc * 100.0) / 100.0);

@@ -12,6 +12,12 @@ public class WaitAngularPageLoaded {
 							.toString();
 		
 		}
+		try {
+			Thread.sleep(250);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -31,7 +31,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = { "buyer statistic" }, priority = 2)
+	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = { "buyerStatistic" }, priority = 1)
 	public void testLoginTotalSpentAndLeads()  {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
@@ -42,8 +42,8 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = { "buyer statistic" }, priority = 1)
-	public void testTotalLeadTotalSpentAvgcplParCamp() throws Exception {
+	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = { "buyerStatistic" }, priority = 2)
+	public void testTotalLeadTotalSpentAvgcplParCamp()  {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
 		buyerPage.checkStatisticPerCamp();
