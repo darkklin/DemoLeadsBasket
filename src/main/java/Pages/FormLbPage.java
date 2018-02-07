@@ -33,7 +33,7 @@ public class FormLbPage {
 		lastName.setValue("selenide");
 		email.setValue(generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ",10)+"@lb.com");
 		String placeholder = phone.getAttribute("placeholder");
-		placeholder = placeholder.replace("-", "").replace("(", "").replace(")", "");
+		placeholder = placeholder.replace("-", "").replace("(", "").replace(")", "").replace(" ","");
 
 		phone.setValue(placeholder);
 		submitBtn.click();
