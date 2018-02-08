@@ -31,13 +31,16 @@ public class FormLbTest  {
 
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test (description = "seller send one lead thought offer 543 ",groups = { "create Lead" }, priority = 1)
+	@Test (description = "seller send one lead thought offer 543 ",groups = { "createLead" }, priority = 1)
 	public void LoginAsSellerAndSendLead() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
-		sellerPage.OpenOfferlink();	
+		String targtingOfferLink =sellerPage.Offerlink();			
+		open(targtingOfferLink);
 		formLbPage.regLead();
-		back();
+		open(targtingOfferLink);
+		back();	back();
+
 		sellerPage.logOut();
 	}
 }

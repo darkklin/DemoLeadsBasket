@@ -52,7 +52,7 @@ public class BuyerTest extends BaseTest {
 	}
 
 	@Video
-	@Feature("Registration")
+	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(enabled = true, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
 	public void testBuyerRegistrtion() {
@@ -67,7 +67,7 @@ public class BuyerTest extends BaseTest {
 	}
 
 	@Video
-	@Feature("Registration")
+	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
 	@Test(enabled = true, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {

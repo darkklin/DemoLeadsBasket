@@ -219,14 +219,15 @@ public class SellerPage {
 		return result;
 	}
 
-	public void OpenOfferlink() throws Exception {
+	public String  Offerlink() throws Exception {
 		String offerlink;
 		liveOfferPage.click();
 		Offer543.shouldBe(Condition.appear, Condition.enabled).click();
 		dataChar.shouldBe(Condition.appear, Condition.enabled);
 		offerlink = executeJavaScript(
 				"return angular.element(document.getElementsByClassName('form-control ng-pristine ng-untouched ng-valid ng-not-empty')).scope().clipToClipboard");
-		open(offerlink);
+		return offerlink;
+		
 
 	}
 

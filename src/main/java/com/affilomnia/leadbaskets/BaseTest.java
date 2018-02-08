@@ -29,7 +29,7 @@ public class BaseTest {
 		TextReport.onFailedTest = true;
 	}
 
-	@AfterMethod(groups = { "BuyerReg", "buyer statistic", "Seller Statistic", "create Lead" })
+	@AfterMethod(groups = { "BuyerReg", "buyerStatistic", "sellerStatistic", "createLead" })
 	public void logs(ITestResult testResult) throws Exception {
 		VideoRecord.attachment();
 		logOutput(Reporter.getOutput(testResult));

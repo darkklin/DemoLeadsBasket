@@ -18,7 +18,7 @@
 	<test name="create lead  test ">
 		<groups>
 			<run>
-				<include name="create Lead" />
+				<include name="createLead" />
 
 			</run>
 		</groups>
