@@ -1,137 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
-    <line>
-      <![CDATA[
-total Leads is  62.0]]>
-    </line>
-    <line>
-      <![CDATA[
-total revenue is  2024.73]]>
-    </line>
-    <line>
-      <![CDATA[
-Actual avg cpl  is  32.66]]>
-    </line>
-    <line>
-      <![CDATA[
-Avg. Min CPL  is  31.84]]>
-    </line>
-    <line>
-      <![CDATA[total Amount invoice leads accounting page2024.73]]>
-    </line>
-    <line>
-      <![CDATA[total Amount  leads accounting page62.0]]>
-    </line>
-    <line>
-      <![CDATA[
-OfferName: Home security>Number leads:1.0>Revenues: 22.0>Avg. CPL: 22.0EPC: 11.0]]>
-    </line>
-    <line>
-      <![CDATA[
-OfferName: selenium Webdriver(don't use!!!)>Number leads:61.0>Revenues: 2002.73>Avg. CPL: 32.83EPC: 29.03]]>
-    </line>
-    <line>
-      <![CDATA[
-Total clicks: 71.0Avg. EPC 28.52]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64572" started-at="2018-02-07T15:01:35Z" finished-at="2018-02-07T15:02:40Z">
+  <suite name="Default suite" duration-ms="15383" started-at="2018-02-11T11:47:34Z" finished-at="2018-02-11T11:47:50Z">
     <groups>
-      <group name="sellerStatistic">
-        <method signature="SellerTest.sellerAccountingStatistic()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="sellerAccountingStatistic" class="com.affilomnia.leadbaskets.SellerTest"/>
-        <method signature="SellerTest.testStatisticParOffer()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="testStatisticParOffer" class="com.affilomnia.leadbaskets.SellerTest"/>
-        <method signature="SellerTest.testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="testTotalLeadTotalCpl" class="com.affilomnia.leadbaskets.SellerTest"/>
-      </group> <!-- sellerStatistic -->
+      <group name="createLead">
+        <method signature="FormLbTest.LoginAsSellerAndSendLead()[pri:1, instance:com.affilomnia.leadbaskets.FormLbTest@1cd2143b]" name="LoginAsSellerAndSendLead" class="com.affilomnia.leadbaskets.FormLbTest"/>
+      </group> <!-- createLead -->
     </groups>
-    <test name="Default test" duration-ms="64572" started-at="2018-02-07T15:01:35Z" finished-at="2018-02-07T15:02:40Z">
-      <class name="com.affilomnia.leadbaskets.SellerTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="beforeTest" is-config="true" duration-ms="15" started-at="2018-02-07T17:01:35Z" finished-at="2018-02-07T17:01:35Z">
+    <test name="Default test" duration-ms="15383" started-at="2018-02-11T11:47:34Z" finished-at="2018-02-11T11:47:50Z">
+      <class name="com.affilomnia.leadbaskets.FormLbTest">
+        <test-method status="PASS" signature="LoginAsSellerAndSendLead()[pri:1, instance:com.affilomnia.leadbaskets.FormLbTest@1cd2143b]" name="LoginAsSellerAndSendLead" duration-ms="15274" started-at="2018-02-11T13:47:34Z" description="seller send one lead thought offer 543 " finished-at="2018-02-11T13:47:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="testTotalLeadTotalCpl" duration-ms="19796" started-at="2018-02-07T17:01:35Z" description="How much seller have leads and Total CPl" finished-at="2018-02-07T17:01:55Z">
-          <reporter-output>
-            <line>
-              <![CDATA[
-total Leads is  62.0]]>
-            </line>
-            <line>
-              <![CDATA[
-total revenue is  2024.73]]>
-            </line>
-            <line>
-              <![CDATA[
-Actual avg cpl  is  32.66]]>
-            </line>
-            <line>
-              <![CDATA[
-Avg. Min CPL  is  31.84]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testTotalLeadTotalCpl -->
-        <test-method status="PASS" signature="logs(org.testng.ITestResult)[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="logs" is-config="true" duration-ms="1050" started-at="2018-02-07T17:01:55Z" finished-at="2018-02-07T17:01:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testTotalLeadTotalCpl status=SUCCESS method=SellerTest.testTotalLeadTotalCpl()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2] output=
-total Leads is  62.0]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logs -->
-        <test-method status="PASS" signature="sellerAccountingStatistic()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="sellerAccountingStatistic" duration-ms="8866" started-at="2018-02-07T17:01:56Z" description="Test seller accounting statistic " finished-at="2018-02-07T17:02:05Z">
-          <reporter-output>
-            <line>
-              <![CDATA[total Amount invoice leads accounting page2024.73]]>
-            </line>
-            <line>
-              <![CDATA[total Amount  leads accounting page62.0]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- sellerAccountingStatistic -->
-        <test-method status="PASS" signature="logs(org.testng.ITestResult)[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="logs" is-config="true" duration-ms="1004" started-at="2018-02-07T17:02:05Z" finished-at="2018-02-07T17:02:06Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=sellerAccountingStatistic status=SUCCESS method=SellerTest.sellerAccountingStatistic()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2] output=total Amount invoice leads accounting page2024.73]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logs -->
-        <test-method status="PASS" signature="testStatisticParOffer()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="testStatisticParOffer" duration-ms="32471" started-at="2018-02-07T17:02:06Z" description="Test Statistic Par offer " finished-at="2018-02-07T17:02:39Z">
-          <reporter-output>
-            <line>
-              <![CDATA[
-OfferName: Home security>Number leads:1.0>Revenues: 22.0>Avg. CPL: 22.0EPC: 11.0]]>
-            </line>
-            <line>
-              <![CDATA[
-OfferName: selenium Webdriver(don't use!!!)>Number leads:61.0>Revenues: 2002.73>Avg. CPL: 32.83EPC: 29.03]]>
-            </line>
-            <line>
-              <![CDATA[
-Total clicks: 71.0Avg. EPC 28.52]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testStatisticParOffer -->
-        <test-method status="PASS" signature="logs(org.testng.ITestResult)[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2]" name="logs" is-config="true" duration-ms="1004" started-at="2018-02-07T17:02:39Z" finished-at="2018-02-07T17:02:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testStatisticParOffer status=SUCCESS method=SellerTest.testStatisticParOffer()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@4cc12db2] output=
-OfferName: Home security>Number leads:1.0>Revenues: 22.0>Avg. CPL: 22.0EPC: 11.0]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logs -->
-      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
+        </test-method> <!-- LoginAsSellerAndSendLead -->
+      </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
