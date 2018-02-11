@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15383" started-at="2018-02-11T11:47:34Z" finished-at="2018-02-11T11:47:50Z">
+  <suite name="Default suite" duration-ms="9149" started-at="2018-02-11T17:03:28Z" finished-at="2018-02-11T17:03:37Z">
     <groups>
-      <group name="createLead">
-        <method signature="FormLbTest.LoginAsSellerAndSendLead()[pri:1, instance:com.affilomnia.leadbaskets.FormLbTest@1cd2143b]" name="LoginAsSellerAndSendLead" class="com.affilomnia.leadbaskets.FormLbTest"/>
-      </group> <!-- createLead -->
+      <group name="sellerRegistrtion">
+        <method signature="SellerTest.sellerRegistrtion()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@72a8361b]" name="sellerRegistrtion" class="com.affilomnia.leadbaskets.SellerTest"/>
+      </group> <!-- sellerRegistrtion -->
     </groups>
-    <test name="Default test" duration-ms="15383" started-at="2018-02-11T11:47:34Z" finished-at="2018-02-11T11:47:50Z">
-      <class name="com.affilomnia.leadbaskets.FormLbTest">
-        <test-method status="PASS" signature="LoginAsSellerAndSendLead()[pri:1, instance:com.affilomnia.leadbaskets.FormLbTest@1cd2143b]" name="LoginAsSellerAndSendLead" duration-ms="15274" started-at="2018-02-11T13:47:34Z" description="seller send one lead thought offer 543 " finished-at="2018-02-11T13:47:50Z">
+    <test name="Default test" duration-ms="9149" started-at="2018-02-11T17:03:28Z" finished-at="2018-02-11T17:03:37Z">
+      <class name="com.affilomnia.leadbaskets.SellerTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@72a8361b]" name="beforeTest" is-config="true" duration-ms="13" started-at="2018-02-11T19:03:28Z" finished-at="2018-02-11T19:03:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginAsSellerAndSendLead -->
-      </class> <!-- com.affilomnia.leadbaskets.FormLbTest -->
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="sellerRegistrtion()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@72a8361b]" name="sellerRegistrtion" duration-ms="7833" started-at="2018-02-11T19:03:28Z" description="Test seller accounting statistic " finished-at="2018-02-11T19:03:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sellerRegistrtion -->
+        <test-method status="PASS" signature="logs(org.testng.ITestResult)[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@72a8361b]" name="logs" is-config="true" duration-ms="1044" started-at="2018-02-11T19:03:36Z" finished-at="2018-02-11T19:03:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sellerRegistrtion status=SUCCESS method=SellerTest.sellerRegistrtion()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@72a8361b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logs -->
+      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

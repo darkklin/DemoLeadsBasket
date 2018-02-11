@@ -17,6 +17,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.collections.Texts;
 import com.google.inject.Inject;
 
@@ -48,8 +49,14 @@ public class SellerPage {
 	private ElementsCollection webMinSaleCpl = $$(By.xpath("//tr[@class='ng-scope']//td[6]"));
 	private ElementsCollection statusLead = $$(By.xpath("//tr[@class='ng-scope']//td[14]"));
 	private ElementsCollection webStastic = $$("span[class*='value ng-scope']"); // idex 0 = total leads idex 1= total//
-																					// revenue total idex 2 =actual//
-																					// avgCpl
+	private SelenideElement btnSubmit = $("button.btn");
+	private SelenideElement firstName = $("input[name='firstName']");
+	private SelenideElement lastName = $("input[name='lastName']");
+	private SelenideElement phoneNumber = $("input[id='tel-dc']");
+	private SelenideElement companyName = $("input[name='company']");
+	private SelenideElement email = $("input[placeholder*='Email']");
+	private SelenideElement password = $("input[name='pass']");
+	private SelenideElement confirmPassword = $("input[name='rePass']");
 
 	/**
 	 * Calculate seller statistic
@@ -92,7 +99,7 @@ public class SellerPage {
 	public void checkStatisticOnDashBoard(Float buyerTotalLeads, Float totalRevenues, Float actualAvgCpl,
 			Float minSaleCpl) {
 		$("a[ui-sref*='dashboardSeller']").click();
-		buyerPage.selectDate("13/11/16","Dashboard");
+		buyerPage.selectDate("13/11/16", "Dashboard");
 		wait.waitUntilAngularPageLoaded();
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(1)), buyerTotalLeads, "Total Leads");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(3)), totalRevenues, "total Revenues");
@@ -143,7 +150,7 @@ public class SellerPage {
 
 		}
 		$$("a[ui-sref*='dashboardSeller']").get(0).click();
-		buyerPage.selectDate("13/11/16","Dashboard");
+		buyerPage.selectDate("13/11/16", "Dashboard");
 		wait.waitUntilAngularPageLoaded();
 		Float avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
 		avgEpc = (float) (Math.round(avgEpc * 100.0) / 100.0);
@@ -185,8 +192,8 @@ public class SellerPage {
 				softAssert.assertEquals(totalInvoice, InvoiceAmount, " total Amount invoice leads accounting page ");
 				softAssert.assertEquals(nmLeads, invoiceLeads, " total Amount  leads accounting page");
 				softAssert.assertAll();
-				Reporter.log("total Amount invoice leads accounting page" + totalInvoice,true);
-				Reporter.log("total Amount  leads accounting page" + invoiceLeads,true);
+				Reporter.log("total Amount invoice leads accounting page" + totalInvoice, true);
+				Reporter.log("total Amount  leads accounting page" + invoiceLeads, true);
 
 			}
 		}
@@ -219,22 +226,76 @@ public class SellerPage {
 		return result;
 	}
 
-	public String  Offerlink() throws Exception {
+	public String Offerlink() throws Exception {
 		String offerlink;
 		liveOfferPage.click();
 		wait.waitUntilAngularPageLoaded();
-		Offer543.waitUntil(Condition.visible, 10000).click();;
+		Offer543.waitUntil(Condition.visible, 10000).click();
+		;
 		wait.waitUntilAngularPageLoaded();
 		dataChar.shouldBe(Condition.appear, Condition.enabled);
 		offerlink = executeJavaScript(
 				"return angular.element(document.getElementsByClassName('form-control ng-pristine ng-untouched ng-valid ng-not-empty')).scope().clipToClipboard");
 		return offerlink;
-		
 
 	}
 
 	public void logOut() {
 		profile.click();
 		logOut.shouldBe(Condition.visible).click();
+	}
+
+	public void startRegister() {
+		FormLbPage rendom = new FormLbPage();
+		String text = rendom.generateEmail("abcdfddDd23%2", 8);
+		String rdBname = rendom.generateEmail("abcdfg", 4);
+
+		$("h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
+		$(byText("Login")).click();
+		$("h2").shouldHave(Condition.text("Login to LeadsBasket"));
+		back();
+		$(byText("Get Started")).click();
+
+		$(byText("Terms of Services")).click();
+		switchTo().window(1);
+		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
+		switchTo().window(1).close();
+		switchTo().window(0);
+		$(byText("Login")).shouldBe(Condition.visible).click();
+		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));
+		back();
+		wait.waitUntilAngularPageLoaded();
+		btnSubmit.shouldBe(Condition.disabled);
+		firstName.setValue("selenide" + rdBname);
+		lastName.setValue("automtic" + rdBname);
+		phoneNumber.setValue(phoneNumber.getAttribute("placeholder"));
+		companyName.setValue("selenide");
+		email.setValue("lbdemo234+" + text + "@gmail.com");
+		password.setValue("D%1" + text);
+		confirmPassword.setValue("D%1" + text);
+		btnSubmit.shouldBe(Condition.visible).click();
+
+		$("h4").shouldHave(Condition.text("YOU'RE ALMOST THERE!"));
+		$(byText("Done")).shouldBe(Condition.visible).click();
+		String url = WebDriverRunner.url();
+		if (WebDriverRunner.url().contains("https://leadsbasket.com/")) {
+			Reporter.log("New seller Create",true);
+		}
+
+	}
+
+	public void verifyEmail() {
+		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
+//		$("a[href*='Login']").shouldBe(Condition.visible).click();
+		$("input[type='email']").setValue("lbdemo234@gmail.com");
+		$("span[class='RveJvd snByac']").click();
+		$("input[type='password']").setValue("A#aaaaaa");
+		$("span[class='RveJvd snByac']").click();
+//		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
+		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
+		$("input[type='submit']").click();
+		$$("table[class='th']>tbody>tr").get(0).click();
+		$(byText("Click Here")).click();
+		
 	}
 }

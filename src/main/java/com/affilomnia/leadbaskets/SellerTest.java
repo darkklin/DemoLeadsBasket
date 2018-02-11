@@ -67,5 +67,15 @@ public class SellerTest extends BaseTest {
 		sellerPage.logOut();
 
 	}
+	
+	@Video
+	@Feature("Seller Registrtion")
+	@Severity(SeverityLevel.CRITICAL)
+	@Test(enabled = false, description = "Test seller accounting statistic ", groups = { "sellerRegistrtion" }, priority = 2)
+	public void sellerRegistrtion() throws Exception {
+		open("https://test_app.leadsbasket.com/register-seller-start");
+//		sellerPage.startRegister();
+		sellerPage.verifyEmail();
+	}
 
 }

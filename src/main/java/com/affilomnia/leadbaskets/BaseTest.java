@@ -49,6 +49,7 @@ public class BaseTest {
 			}
 			else
 			{
+				WebDriverRunner.clearBrowserCache();
 				WebDriverRunner.closeWebDriver();
 			}
 		}

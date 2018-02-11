@@ -10,7 +10,7 @@
     <classes>
       <class name="com.affilomnia.leadbaskets.BuyerTest">
         <methods>
-          <include name="testBuyerRegistrtion"/>
+          <include name="testdownloadIntegrtionPDF"/>
           <include name="logs"/>
         </methods>
       </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
