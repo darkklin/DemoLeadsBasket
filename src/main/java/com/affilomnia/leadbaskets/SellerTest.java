@@ -71,11 +71,12 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test seller accounting statistic ", groups = { "sellerRegistrtion" }, priority = 2)
+	@Test(enabled = true, description = "Seller Registion full flow +admin accepte Pending  seller ", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		open("https://test_app.leadsbasket.com/register-seller-start");
-//		sellerPage.startRegister();
+		sellerPage.startRegister();
 		sellerPage.verifyEmail();
+		sellerPage.billingInformation();
 	}
 
 }

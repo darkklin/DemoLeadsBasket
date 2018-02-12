@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
 
@@ -38,7 +39,6 @@ public class SellerPage {
 
 	@Inject
 	BuyerPage buyerPage;
-
 	private SelenideElement profile = $("a.profile");
 	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(5)>a");
 	private SelenideElement liveOfferPage = $("a[ng-class*='live_offers']");
@@ -57,6 +57,12 @@ public class SellerPage {
 	private SelenideElement email = $("input[placeholder*='Email']");
 	private SelenideElement password = $("input[name='pass']");
 	private SelenideElement confirmPassword = $("input[name='rePass']");
+	private SelenideElement bankNamee = $("input[name='bank_name']");
+	private SelenideElement bankCountryField = $("select[name='bank_country']");
+	private ElementsCollection chooseBankCountry = $$("select[name='bank_country']>option");
+	private SelenideElement bankDetailNote = $("textarea[name='bank_note']");
+	private SelenideElement swiftt = $("input[name='bank_swift']");
+	private SelenideElement bankAccNumber = $("input[name='bank_account_number']");
 
 	/**
 	 * Calculate seller statistic
@@ -279,23 +285,52 @@ public class SellerPage {
 		$(byText("Done")).shouldBe(Condition.visible).click();
 		String url = WebDriverRunner.url();
 		if (WebDriverRunner.url().contains("https://leadsbasket.com/")) {
-			Reporter.log("New seller Create",true);
+			Reporter.log("New seller Create", true);
 		}
 
 	}
 
 	public void verifyEmail() {
 		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
-//		$("a[href*='Login']").shouldBe(Condition.visible).click();
 		$("input[type='email']").setValue("lbdemo234@gmail.com");
 		$("span[class='RveJvd snByac']").click();
 		$("input[type='password']").setValue("A#aaaaaa");
 		$("span[class='RveJvd snByac']").click();
-//		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
 		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
 		$("input[type='submit']").click();
-		$$("table[class='th']>tbody>tr").get(0).click();
-		$(byText("Click Here")).click();
-		
+		$$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
+		$("img[src*='New-Email-Template_approved.jpg']").shouldBe(Condition.visible);
+		String verifyLink = $(byText("Click Here")).getAttribute("href");
+		$(byText("Delete")).click();
+		open(verifyLink);
+		$("h4").shouldHave(Condition.text("Email Verified Successfully!"));
+
+	}
+
+	public void billingInformation() {
+		Random rand = new Random();
+		int bankNm = rand.nextInt(239);
+		String bankName = "bankSelenide", bankCountry, bankDetailsNote = "Test this Shit 123", swift = "BOtfIIE2DXXX",
+				accountNm = "ABCD2343512", iban = "IE89BOFI43201724454323", companyName = "selenide",
+				stretAdress1 = "test 1243 Bin", state = "state hahaha", zipCode = "432dsfsd", city = "tel aviv";
+
+		bankNamee.setValue(bankName);
+		bankCountryField.click();
+		bankCountry = chooseBankCountry.get(bankNm).getText();
+		chooseBankCountry.get(bankNm).click();
+		bankDetailNote.setValue(bankDetailsNote);
+		swiftt.setValue(swift);
+		bankAccNumber.setValue(accountNm);
+		$("input[name='bank_iban']").setValue(iban);
+		$("select[name='receiver_country']").click();
+		$$("select[name='receiver_country']>option").get(bankNm).click();
+		$("input[name*='company_name']").setValue(companyName);
+		$$("input[name*='receiver_street']").get(0).setValue(stretAdress1);
+		$("input[name*='receiver_state']").setValue(state);
+		$("input[name*='zip']").setValue(zipCode);
+		$("input[name*='city']").setValue(city);
+		btnSubmit.shouldBe(Condition.enabled).click();
+		$("h4").waitUntil(Condition.text("Hold on!"), 10000);
+		$("a.btn").waitUntil(Condition.visible,10000).click();;
 	}
 }

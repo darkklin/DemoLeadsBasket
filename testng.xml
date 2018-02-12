@@ -46,6 +46,7 @@
 		<groups>
 			<run>
 				<include name="sellerStatistic" />
+				<include name="sellerRegistrtion" />
 
 			</run>
 		</groups>
