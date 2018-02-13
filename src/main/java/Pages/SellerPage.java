@@ -296,6 +296,8 @@ public class SellerPage {
 		$("span[class='RveJvd snByac']").click();
 		$("input[type='password']").setValue("A#aaaaaa");
 		$("span[class='RveJvd snByac']").click();
+		$(byText("Confirm your recovery phone number")).click();
+		$("input[type='tel']").setValue("0528895514");
 		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
 		$("input[type='submit']").click();
 		$$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
