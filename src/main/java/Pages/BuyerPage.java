@@ -131,9 +131,9 @@ public class BuyerPage {
 			wait.waitUntilAngularPageLoaded();
 			campaignsName.get(i).click();
 			wait.waitUntilAngularPageLoaded();
-			perPage200.click();
-			wait.waitUntilAngularPageLoaded();
 			selectDate("13/11/16","Report");
+			wait.waitUntilAngularPageLoaded();
+			perPage200.click();
 			wait.waitUntilAngularPageLoaded();
 			Float totalLeads = (float) 0, totaleadBuyCpl = (float) 0;
 			Float avgCpl = (float) 0;
@@ -180,7 +180,7 @@ public class BuyerPage {
 			applyDate.click();
 		}
 		else {
-			$("a.btn").scrollIntoView(true);
+			$$("div[class=title]").get(2).scrollIntoView(true);
 			$("input[st-search='date_range']").shouldBe(Condition.enabled).click();
 			$$("input[name='daterangepicker_start']").get(1).clear();
 			$$("input[name='daterangepicker_start']").get(1).setValue(Date);
