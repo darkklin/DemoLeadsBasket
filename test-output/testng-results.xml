@@ -2,40 +2,58 @@
 <testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[New seller Create]]>
+      <![CDATA[campgns name : biddertesttotal spend : 3168.0 total leads: 88.0avgCpl 36.0]]>
+    </line>
+    <line>
+      <![CDATA[campgns name : los angelestotal spend : 144.0 total leads: 4.0avgCpl 36.0]]>
+    </line>
+    <line>
+      <![CDATA[campgns name : russian - moskvatotal spend : 36.0 total leads: 1.0avgCpl 36.0]]>
+    </line>
+    <line>
+      <![CDATA[campgns name : germmnytotal spend : 60.0 total leads: 2.0avgCpl 30.0]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38265" started-at="2018-02-12T20:50:42Z" finished-at="2018-02-12T20:51:20Z">
+  <suite name="Default suite" duration-ms="34693" started-at="2018-02-13T16:28:15Z" finished-at="2018-02-13T16:28:49Z">
     <groups>
-      <group name="sellerRegistrtion">
-        <method signature="SellerTest.sellerRegistrtion()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@279126f5]" name="sellerRegistrtion" class="com.affilomnia.leadbaskets.SellerTest"/>
-      </group> <!-- sellerRegistrtion -->
+      <group name="buyerStatistic">
+        <method signature="BuyerTest.testTotalLeadTotalSpentAvgcplParCamp()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@5012c571]" name="testTotalLeadTotalSpentAvgcplParCamp" class="com.affilomnia.leadbaskets.BuyerTest"/>
+      </group> <!-- buyerStatistic -->
     </groups>
-    <test name="Default test" duration-ms="38265" started-at="2018-02-12T20:50:42Z" finished-at="2018-02-12T20:51:20Z">
-      <class name="com.affilomnia.leadbaskets.SellerTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@279126f5]" name="beforeTest" is-config="true" duration-ms="29" started-at="2018-02-12T22:50:42Z" finished-at="2018-02-12T22:50:42Z">
+    <test name="Default test" duration-ms="34693" started-at="2018-02-13T16:28:15Z" finished-at="2018-02-13T16:28:49Z">
+      <class name="com.affilomnia.leadbaskets.BuyerTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@5012c571]" name="beforeTest" is-config="true" duration-ms="15" started-at="2018-02-13T18:28:15Z" finished-at="2018-02-13T18:28:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="sellerRegistrtion()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@279126f5]" name="sellerRegistrtion" duration-ms="36786" started-at="2018-02-12T22:50:42Z" description="Seller Registion full flow +admin accepte Pending  seller " finished-at="2018-02-12T22:51:19Z">
+        <test-method status="PASS" signature="testTotalLeadTotalSpentAvgcplParCamp()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@5012c571]" name="testTotalLeadTotalSpentAvgcplParCamp" duration-ms="33451" started-at="2018-02-13T18:28:15Z" description="Test total leads/spent/avgcpl par offer " finished-at="2018-02-13T18:28:48Z">
           <reporter-output>
             <line>
-              <![CDATA[New seller Create]]>
+              <![CDATA[campgns name : biddertesttotal spend : 3168.0 total leads: 88.0avgCpl 36.0]]>
+            </line>
+            <line>
+              <![CDATA[campgns name : los angelestotal spend : 144.0 total leads: 4.0avgCpl 36.0]]>
+            </line>
+            <line>
+              <![CDATA[campgns name : russian - moskvatotal spend : 36.0 total leads: 1.0avgCpl 36.0]]>
+            </line>
+            <line>
+              <![CDATA[campgns name : germmnytotal spend : 60.0 total leads: 2.0avgCpl 30.0]]>
             </line>
           </reporter-output>
-        </test-method> <!-- sellerRegistrtion -->
-        <test-method status="PASS" signature="logs(org.testng.ITestResult)[pri:0, instance:com.affilomnia.leadbaskets.SellerTest@279126f5]" name="logs" is-config="true" duration-ms="1042" started-at="2018-02-12T22:51:19Z" finished-at="2018-02-12T22:51:20Z">
+        </test-method> <!-- testTotalLeadTotalSpentAvgcplParCamp -->
+        <test-method status="PASS" signature="logs(org.testng.ITestResult)[pri:0, instance:com.affilomnia.leadbaskets.BuyerTest@5012c571]" name="logs" is-config="true" duration-ms="1043" started-at="2018-02-13T18:28:48Z" finished-at="2018-02-13T18:28:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=sellerRegistrtion status=SUCCESS method=SellerTest.sellerRegistrtion()[pri:2, instance:com.affilomnia.leadbaskets.SellerTest@279126f5] output=New seller Create]]]>
+                <![CDATA[[TestResult name=testTotalLeadTotalSpentAvgcplParCamp status=SUCCESS method=BuyerTest.testTotalLeadTotalSpentAvgcplParCamp()[pri:2, instance:com.affilomnia.leadbaskets.BuyerTest@5012c571] output=campgns name : biddertesttotal spend : 3168.0 total leads: 88.0avgCpl 36.0]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logs -->
-      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
+      </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
