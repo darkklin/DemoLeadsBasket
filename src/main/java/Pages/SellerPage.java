@@ -294,7 +294,7 @@ public class SellerPage {
 		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
 		$("input[type='email']").setValue("lbdemo234@gmail.com");
 		$("span[class='RveJvd snByac']").click();
-		$("input[type='password']").setValue("A#aaaaaa");
+		$("input[type='password']").setValue("0546474985");
 		$("span[class='RveJvd snByac']").click();
 		$("div[class='qclxzb']").click();
 		$$("[role='option']").get(4).scrollIntoView(true).click();
