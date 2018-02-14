@@ -1,6 +1,7 @@
 package com.affilomnia.leadbaskets;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.close;
 
 import java.util.List;
 
@@ -49,8 +50,8 @@ public class BaseTest {
 			}
 			else
 			{
-				WebDriverRunner.clearBrowserCache();
-				WebDriverRunner.closeWebDriver();
+				close();
+
 			}
 		}
 

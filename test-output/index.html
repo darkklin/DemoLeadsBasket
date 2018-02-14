@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,8 +37,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+            <a href="#" class="navigator-link" panel-name="suite-Regression_TestSuite">
+              <span class="suite-name border-failed">Regression TestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\kiril\AppData\Local\Temp\testng-eclipse-1425730171\testng-customsuite.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Regression_TestSuite">
+                    <span>C:\LeadBasketsVr2\affilomnia.leadbaskets\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
-                    <span class="test-stats">1 test</span>
+                  <a href="#" class="navigator-link " panel-name="testlist-Regression_TestSuite">
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
-                    <span>1 group</span>
+                  <a href="#" class="navigator-link " panel-name="group-Regression_TestSuite">
+                    <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="times-Regression_TestSuite">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="reporter-Regression_TestSuite">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Regression_TestSuite">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="chronological-Regression_TestSuite">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,21 +91,54 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 2 failed,  1 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="hide-methods failed suite-Regression_TestSuite"> (hide)</a> <!-- hide-methods failed suite-Regression_TestSuite -->
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="show-methods failed suite-Regression_TestSuite"> (show)</a> <!-- show-methods failed suite-Regression_TestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-Regression_TestSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.BuyerTest" hash-for-method="testBuyerRegistrtion">testBuyerRegistrtion</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.BuyerTest" hash-for-method="testdownloadIntegrtionPDF">testdownloadIntegrtionPDF</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Regression_TestSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="hide-methods skipped suite-Regression_TestSuite"> (hide)</a> <!-- hide-methods skipped suite-Regression_TestSuite -->
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="show-methods skipped suite-Regression_TestSuite"> (show)</a> <!-- show-methods skipped suite-Regression_TestSuite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Regression_TestSuite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.BuyerTest" hash-for-method="testdownloadIntegrtionPDF">testdownloadIntegrtionPDF</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Regression_TestSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="hide-methods passed suite-Regression_TestSuite"> (hide)</a> <!-- hide-methods passed suite-Regression_TestSuite -->
+                      <a href="#" panel-name="suite-Regression_TestSuite" class="show-methods passed suite-Regression_TestSuite"> (show)</a> <!-- show-methods passed suite-Regression_TestSuite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content passed suite-Regression_TestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.affilomnia.leadbaskets.SellerTest" hash-for-method="sellerRegistrtion">sellerRegistrtion</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.SellerTest" hash-for-method="sellerRegistrtion">sellerRegistrtion</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content passed suite-Regression_TestSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,8 +149,149 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+        <div panel-name="suite-Regression_TestSuite" class="panel Regression_TestSuite">
+          <div class="suite-Regression_TestSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.affilomnia.leadbaskets.BuyerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBuyerRegistrtion">
+                  </a> <!-- testBuyerRegistrtion -->
+                  <span class="method-name">testBuyerRegistrtion</span>
+                  <div class="stack-trace">Element not found {div.terms&gt;h1}
+Expected: text &apos;TERMS OF USE&apos;
+Screenshot: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1518625991765.0.png
+Page source: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1518625991765.0.html
+Timeout: 4 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div.terms&gt;h1&quot;}
+	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
+	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
+	at com.codeborne.selenide.commands.Should.should(Should.java:35)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:29)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:12)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:63)
+	at com.sun.proxy.$Proxy21.shouldHave(Unknown Source)
+	at Pages.BuyerPage.registerPage(BuyerPage.java:228)
+	at com.affilomnia.leadbaskets.BuyerTest.testBuyerRegistrtion(BuyerTest.java:61)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div.terms&gt;h1&quot;}
+  (Session info: chrome=64.0.3282.140)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
+System info: host: &apos;RG-W-KIRIL&apos;, ip: &apos;192.168.10.21&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.140, webStorageEnabled: true}
+Session ID: 95e6049e684f52a27a7b0b0120858a7f
+*** Element info: {Using=css selector, value=div.terms&gt;h1}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:465)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:29)
+	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
+	... 34 more
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Buyer Registration)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testdownloadIntegrtionPDF">
+                  </a> <!-- testdownloadIntegrtionPDF -->
+                  <span class="method-name">testdownloadIntegrtionPDF</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at libry.MyReport.finish(MyReport.java:27)
+	at libry.TextReport.afterInvocation(TextReport.java:39)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Download PDF integrtion API  )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression_TestSuite-class-failed -->
+          <div class="suite-Regression_TestSuite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.affilomnia.leadbaskets.BuyerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testdownloadIntegrtionPDF">
+                  </a> <!-- testdownloadIntegrtionPDF -->
+                  <span class="method-name">testdownloadIntegrtionPDF</span>
+                  <div class="stack-trace">Element not found {a.profile}
+Expected: visible
+Screenshot: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1518625997603.1.png
+Page source: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1518625997603.1.html
+Timeout: 4 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a.profile&quot;}
+	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
+	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:82)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:59)
+	at com.codeborne.selenide.commands.Should.should(Should.java:35)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:29)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:12)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:87)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:63)
+	at com.sun.proxy.$Proxy21.shouldBe(Unknown Source)
+	at com.affilomnia.leadbaskets.BaseTest.logs(BaseTest.java:47)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a.profile&quot;}
+  (Session info: chrome=64.0.3282.140)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
+System info: host: &apos;RG-W-KIRIL&apos;, ip: &apos;192.168.10.21&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.140, webStorageEnabled: true}
+Session ID: 95e6049e684f52a27a7b0b0120858a7f
+*** Element info: {Using=css selector, value=a.profile}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:465)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:29)
+	at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:56)
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
+	... 35 more
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Download PDF integrtion API  )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression_TestSuite-class-skipped -->
+          <div class="suite-Regression_TestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">com.affilomnia.leadbaskets.SellerTest</span>
@@ -133,43 +307,73 @@
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
-        </div> <!-- panel Default_suite -->
-        <div panel-name="test-xml-Default_suite" class="panel">
+          </div> <!-- suite-Regression_TestSuite-class-passed -->
+        </div> <!-- panel Regression_TestSuite -->
+        <div panel-name="test-xml-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\kiril\AppData\Local\Temp\testng-eclipse-1425730171\testng-customsuite.xml</span>
+            <span class="header-content">C:\LeadBasketsVr2\affilomnia.leadbaskets\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Regression TestSuite&quot;&gt;
+  &lt;test name=&quot;seller Registration check &quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;sellerRegistrtion&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.affilomnia.leadbaskets.SellerTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Default test --&gt;
-&lt;/suite&gt; &lt;!-- Default suite --&gt;
+  &lt;/test&gt; &lt;!-- seller Registration check  --&gt;
+  &lt;test name=&quot;buyer Registration test &quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;BuyerReg&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.affilomnia.leadbaskets.BuyerTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- buyer Registration test  --&gt;
+&lt;/suite&gt; &lt;!-- Regression TestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Default_suite" class="panel">
+        <div panel-name="testlist-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Default suite</span>
+            <span class="header-content">Tests for Regression TestSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Default test (1 class)</span>
+                <span class="test-name">seller Registration check  (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">buyer Registration test  (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Default_suite" class="panel">
+        <div panel-name="group-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Default suite</span>
+            <span class="header-content">Groups for Regression TestSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">BuyerReg</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testBuyerRegistrtion</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testdownloadIntegrtionPDF</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
             <div class="test-group">
               <span class="test-group-name">sellerRegistrtion</span>
               <br/>
@@ -180,52 +384,152 @@
             </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Default_suite" class="panel">
+        <div panel-name="times-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Default suite</span>
+            <span class="header-content">Times for Regression TestSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Default_suite');
-function tableData_Default_suite() {
+suiteTableInitFunctions.push('tableData_Regression_TestSuite');
+function tableData_Regression_TestSuite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'sellerRegistrtion')
 data.setCell(0, 2, 'com.affilomnia.leadbaskets.SellerTest')
-data.setCell(0, 3, 38938);
-window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+data.setCell(0, 3, 46525);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testBuyerRegistrtion')
+data.setCell(1, 2, 'com.affilomnia.leadbaskets.BuyerTest')
+data.setCell(1, 3, 6291);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testdownloadIntegrtionPDF')
+data.setCell(2, 2, 'com.affilomnia.leadbaskets.BuyerTest')
+data.setCell(2, 3, 300);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testdownloadIntegrtionPDF')
+data.setCell(3, 2, 'com.affilomnia.leadbaskets.BuyerTest')
+data.setCell(3, 3, 0);
+window.suiteTableData['Regression_TestSuite']= { tableData: data, tableDiv: 'times-div-Regression_TestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 38 seconds</span>
-              <div id="times-div-Default_suite">
-              </div> <!-- times-div-Default_suite -->
+              <span class="suite-total-time">Total running time: 53 seconds</span>
+              <div id="times-div-Regression_TestSuite">
+              </div> <!-- times-div-Regression_TestSuite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Default_suite" class="panel">
+        <div panel-name="reporter-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Default suite</span>
+            <span class="header-content">Reporter output for Regression TestSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
               <span class="reporter-method-name">sellerRegistrtion</span>
               <div class="reporter-method-output-div">
+                <span class="reporter-method-output">seller email > jzl61088@bnuis.com</span>
                 <span class="reporter-method-output">New seller Create</span>
                 <span class="reporter-method-output">Email Welcome to LeadsBasket sent </span>
+                <span class="reporter-method-output">Report for sellerRegistrtion
++--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                                                 |Subject                                                               |Status    |ms.       |
++--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                                                    |https://10minutemail.net                                              |PASS      |9293      |
+|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |22        |
+|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |27        |
+|open                                                    |https://test_app.leadsbasket.com/register-seller-start                |PASS      |1704      |
+|h2                                                      |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |84        |
+|by text: Login                                          |click()                                                               |PASS      |66        |
+|h2                                                      |should have(text 'Login to LeadsBasket')                              |PASS      |212       |
+|by text: Get Started                                    |click()                                                               |PASS      |79        |
+|by text: Terms of Services                              |click()                                                               |PASS      |257       |
+|div.terms>h1                                            |should have(text 'TERMS OF USE')                                      |PASS      |7754      |
+|by text: Login                                          |should be(visible)                                                    |PASS      |24        |
+|by text: Login                                          |click()                                                               |PASS      |120       |
+|div.auth>h2                                             |should have(text 'Login to LeadsBasket')                              |PASS      |67        |
+|button.btn                                              |should be(disabled)                                                   |PASS      |22        |
+|input[name='firstName']                                 |set value(selenidecdad)                                               |PASS      |150       |
+|input[name='lastName']                                  |set value(automticcdad)                                               |PASS      |143       |
+|input[id='tel-dc']                                      |get attribute(placeholder)                                            |PASS      |20        |
+|input[id='tel-dc']                                      |set value(050-123-4567)                                               |PASS      |139       |
+|input[name='company']                                   |set value(selenide)                                                   |PASS      |186       |
+|input[placeholder*='Email']                             |set value(jzl61088@bnuis.com)                                         |PASS      |154       |
+|input[name='pass']                                      |set value(D%1D3faD2%c)                                                |PASS      |150       |
+|input[name='rePass']                                    |set value(D%1D3faD2%c)                                                |PASS      |159       |
+|button.btn                                              |should be(visible)                                                    |PASS      |22        |
+|button.btn                                              |click()                                                               |PASS      |67        |
+|h4                                                      |should have(text 'YOU'RE ALMOST THERE!')                              |PASS      |1055      |
+|by text: Done                                           |should be(visible)                                                    |PASS      |25        |
+|by text: Done                                           |click()                                                               |PASS      |8650      |
+|open                                                    |https://10minutemail.net                                              |PASS      |2976      |
+|by text: Welcome to LeadsBasket - Verification Required |wait until([visible, 15000])                                          |PASS      |30        |
+|by text: Welcome to LeadsBasket - Verification Required |click()                                                               |PASS      |2820      |
+|by text: Click Here                                     |click()                                                               |PASS      |129       |
+|h4                                                      |wait until([text 'Email Verified Successfully!', 20000])              |PASS      |1710      |
+|input[name='bank_name']                                 |wait until([visible, 15000])                                          |PASS      |3306      |
+|input[name='bank_name']                                 |set value(bankSelenide)                                               |PASS      |197       |
+|select[name='bank_country']                             |click()                                                               |PASS      |96        |
+|select[name='bank_country']>option[173]                 |get text()                                                            |PASS      |29        |
+|select[name='bank_country']>option[173]                 |click()                                                               |PASS      |51        |
+|textarea[name='bank_note']                              |set value(Test this Shit 123)                                         |PASS      |219       |
+|input[name='bank_swift']                                |set value(BOtfIIE2DXXX)                                               |PASS      |225       |
+|input[name='bank_account_number']                       |set value(ABCD2343512)                                                |PASS      |168       |
+|input[name='bank_iban']                                 |set value(IE89BOFI43201724454323)                                     |PASS      |242       |
+|select[name='receiver_country']                         |click()                                                               |PASS      |100       |
+|select[name='receiver_country']>option[173]             |click()                                                               |PASS      |61        |
+|input[name*='company_name']                             |set value(selenide)                                                   |PASS      |184       |
+|input[name*='receiver_street'][0]                       |set value(test 1243 Bin)                                              |PASS      |191       |
+|input[name*='receiver_state']                           |set value(state hahaha)                                               |PASS      |171       |
+|input[name*='zip']                                      |set value(432dsfsd)                                                   |PASS      |142       |
+|input[name*='city']                                     |set value(tel aviv)                                                   |PASS      |168       |
+|button.btn                                              |should be(enabled)                                                    |PASS      |22        |
+|button.btn                                              |click()                                                               |PASS      |66        |
+|h4                                                      |wait until([text 'Hold on!', 10000])                                  |PASS      |761       |
+|a.btn                                                   |wait until([visible, 10000])                                          |PASS      |21        |
+|a.btn                                                   |click()                                                               |PASS      |632       |
+|by text: Welcome to LeadsBasket                         |wait until([visible, 15000])                                          |PASS      |69        |
+|by text: Welcome to LeadsBasket                         |click()                                                               |PASS      |57        |
++--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">testBuyerRegistrtion</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Report for testBuyerRegistrtion
++---------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                    |Subject                                                               |Status    |ms.       |
++---------------------------+----------------------------------------------------------------------+----------+----------+
+|open                       |https://test_app.leadsbasket.com/register-industry                    |PASS      |386       |
+|div.reg>h2                 |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |217       |
+|div.choose_industry_text   |should have(text 'Get ready to be bombarded with some top quality leads!')|PASS      |36        |
+|a.link                     |should be(visible)                                                    |PASS      |25        |
+|a.link                     |click()                                                               |PASS      |58        |
+|div.auth>h2                |should have(text 'Login to LeadsBasket')                              |PASS      |81        |
+|button.btn                 |should be(disabled)                                                   |PASS      |35        |
+|a[placeholder*='Industry'] |click()                                                               |PASS      |365       |
+|by text: Zoo Industry      |click()                                                               |PASS      |92        |
+|button.btn                 |should have(text 'Create Account')                                    |PASS      |28        |
+|button.btn                 |click()                                                               |PASS      |63        |
+|h4                         |should have(text '100% Self-service Platform for Quality Lead Generation')|PASS      |212       |
+|button.btn                 |should be(disabled)                                                   |PASS      |15        |
+|by text: Terms of Service  |click()                                                               |PASS      |85        |
+|div.terms>h1               |should have(text 'TERMS OF USE')                                      |FAIL      |4070      |
++---------------------------+----------------------------------------------------------------------+----------+----------+
+</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Default_suite" class="panel">
+        <div panel-name="ignored-methods-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -239,26 +543,46 @@ return data;
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.affilomnia.leadbaskets.BuyerTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testLoginTotalSpentAndLeads</span>
+                <br/>
+                <span class="ignored-method-name">testTotalLeadTotalSpentAvgcplParCamp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Default_suite" class="panel">
+        <div panel-name="chronological-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.affilomnia.leadbaskets.SellerTest</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">beforeTest</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">sellerRegistrtion</span>
-                <span class="method-start">30 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logs([TestResult name=sellerRegistrtion status=SUCCESS method=SellerTest.sellerRegistrtion()[pri:1, insta...)</span>
-                <span class="method-start">39165 ms</span>
+                <span class="method-start">46732 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.affilomnia.leadbaskets.BuyerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testBuyerRegistrtion</span>
+                <span class="method-start">47818 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">logs([TestResult name=testBuyerRegistrtion status=FAILURE method=BuyerTest.testBuyerRegistrtion()[pri:1, ...)</span>
+                <span class="method-start">54536 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

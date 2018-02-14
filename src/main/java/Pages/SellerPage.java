@@ -357,6 +357,7 @@ public class SellerPage {
 		switchTo().window(0);
 		$(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible), 15000).click();
 		Reporter.log("Email Welcome to LeadsBasket sent ",true);
+		close();
 
 	}
 }
