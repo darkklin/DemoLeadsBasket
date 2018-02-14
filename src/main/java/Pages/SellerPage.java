@@ -251,7 +251,14 @@ public class SellerPage {
 		logOut.shouldBe(Condition.visible).click();
 	}
 
-	public void startRegister() {
+	
+	public  String tenMinutEmail()
+	{
+		open("https://10minutemail.net");	
+		System.out.println("seller email > "+$("input[class='mailtext']").getAttribute("value"));
+		return $("input[class='mailtext']").getAttribute("value");
+	}
+	public void startRegister(String tenEmail) {
 		FormLbPage rendom = new FormLbPage();
 		String text = rendom.generateEmail("abcdfddDd23%2", 8);
 		String rdBname = rendom.generateEmail("abcdfg", 4);
@@ -276,7 +283,7 @@ public class SellerPage {
 		lastName.setValue("automtic" + rdBname);
 		phoneNumber.setValue(phoneNumber.getAttribute("placeholder"));
 		companyName.setValue("selenide");
-		email.setValue("lbdemo234+" + text + "@gmail.com");
+		email.setValue(tenEmail);
 		password.setValue("D%1" + text);
 		confirmPassword.setValue("D%1" + text);
 		btnSubmit.shouldBe(Condition.visible).click();
@@ -290,25 +297,31 @@ public class SellerPage {
 
 	}
 
+//	public void verifyEmail() {
+//		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
+//		$("input[type='email']").setValue("lbdemo234@gmail.com");
+//		$("span[class='RveJvd snByac']").click();
+//		$("input[type='password']").setValue("0546474985");
+//		$("span[class='RveJvd snByac']").click();
+//		$("div[class='qclxzb']").click();
+//		$$("[role='option']").get(4).scrollIntoView(true).click();
+//		$("input[type='tel']").setValue("0528895514");
+//		$("span[class='RveJvd snByac']").click();
+//		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
+//		$("input[type='submit']").click();
+//		$$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
+//		$("img[src*='New-Email-Template_approved.jpg']").shouldBe(Condition.visible);
+//		String verifyLink = $(byText("Click Here")).getAttribute("href");
+//		$(byText("Delete")).click();
+//		open(verifyLink);
+//		$("h4").shouldHave(Condition.text("Email Verified Successfully!"));
+//	}
 	public void verifyEmail() {
-		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
-		$("input[type='email']").setValue("lbdemo234@gmail.com");
-		$("span[class='RveJvd snByac']").click();
-		$("input[type='password']").setValue("0546474985");
-		$("span[class='RveJvd snByac']").click();
-		$("div[class='qclxzb']").click();
-		$$("[role='option']").get(4).scrollIntoView(true).click();
-		$("input[type='tel']").setValue("0528895514");
-		$("span[class='RveJvd snByac']").click();
-		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
-		$("input[type='submit']").click();
-		$$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
-		$("img[src*='New-Email-Template_approved.jpg']").shouldBe(Condition.visible);
-		String verifyLink = $(byText("Click Here")).getAttribute("href");
-		$(byText("Delete")).click();
-		open(verifyLink);
-		$("h4").shouldHave(Condition.text("Email Verified Successfully!"));
-
+		open("https://10minutemail.net");	
+		$(byText("Welcome to LeadsBasket - Verification Required")).waitUntil((Condition.visible), 15000).click();
+		$(byText("Click Here")).click();
+		switchTo().window(1);
+		$("h4").waitUntil(Condition.text("Email Verified Successfully!"), 20000);
 	}
 
 	public void billingInformation() {
@@ -317,8 +330,7 @@ public class SellerPage {
 		String bankName = "bankSelenide", bankCountry, bankDetailsNote = "Test this Shit 123", swift = "BOtfIIE2DXXX",
 				accountNm = "ABCD2343512", iban = "IE89BOFI43201724454323", companyName = "selenide",
 				stretAdress1 = "test 1243 Bin", state = "state hahaha", zipCode = "432dsfsd", city = "tel aviv";
-
-		bankNamee.setValue(bankName);
+		bankNamee.waitUntil(Condition.appear, 15000).setValue(bankName);
 		bankCountryField.click();
 		bankCountry = chooseBankCountry.get(bankNm).getText();
 		chooseBankCountry.get(bankNm).click();
@@ -336,5 +348,9 @@ public class SellerPage {
 		btnSubmit.shouldBe(Condition.enabled).click();
 		$("h4").waitUntil(Condition.text("Hold on!"), 10000);
 		$("a.btn").waitUntil(Condition.visible,10000).click();;
+		switchTo().window(0);
+		$(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible), 15000).click();
+		Reporter.log("Email Welcome to LeadsBasket sent ",true);
+
 	}
 }

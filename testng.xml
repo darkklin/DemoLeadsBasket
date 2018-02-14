@@ -1,20 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression TestSuite">
-	<test name="buyer Registration test ">
-		<groups>
-			<run>
-				<include name="BuyerReg" />
-
-			</run>
-		</groups>
-		<classes>
-			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
-
-		</classes>
-	</test>
-
-
 	<test name="create lead  test ">
 		<groups>
 			<run>
@@ -41,17 +27,42 @@
 
 		</classes>
 	</test>
-
 	<test name="seller statistic check ">
 		<groups>
 			<run>
 				<include name="sellerStatistic" />
-				<include name="sellerRegistrtion" />
+
 
 			</run>
 		</groups>
 		<classes>
 			<class name="com.affilomnia.leadbaskets.SellerTest"></class>
+
+		</classes>
+	</test>
+
+	<test name="seller Registration check ">
+		<groups>
+			<run>
+				<include name="sellerRegistrtion" />
+
+
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.SellerTest"></class>
+
+		</classes>
+	</test>
+	<test name="buyer Registration test ">
+		<groups>
+			<run>
+				<include name="BuyerReg" />
+
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
 
 		</classes>
 	</test>

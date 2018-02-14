@@ -59,7 +59,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
+	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 3)
 	public void sellerAccountingStatistic() throws Exception {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
@@ -71,10 +71,11 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Seller Registion full flow +admin accepte Pending  seller ", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = false, description = "Seller Registion full flow +admin accepte Pending  seller ", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
+		String sellerEmail = sellerPage.tenMinutEmail();
 		open("https://test_app.leadsbasket.com/register-seller-start");
-		sellerPage.startRegister();
+		sellerPage.startRegister(sellerEmail);
 		sellerPage.verifyEmail();
 		sellerPage.billingInformation();
 	}
