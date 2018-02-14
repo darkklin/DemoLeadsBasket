@@ -255,7 +255,7 @@ public class SellerPage {
 	public  String tenMinutEmail()
 	{
 		open("https://10minutemail.net");	
-		System.out.println("seller email > "+$("input[class='mailtext']").getAttribute("value"));
+		Reporter.log("seller email > "+$("input[class='mailtext']").getAttribute("value"),true);
 		return $("input[class='mailtext']").getAttribute("value");
 	}
 	public void startRegister(String tenEmail) {
@@ -265,7 +265,13 @@ public class SellerPage {
 
 		$("h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
 		$(byText("Login")).click();
-		$("h2").shouldHave(Condition.text("Login to LeadsBasket"));
+		try {
+			$("h2").shouldHave(Condition.text("Login to LeadsBasket"));
+
+		} catch (Exception e) {
+			$(byText("Login")).click();
+
+		}
 		back();
 		$(byText("Get Started")).click();
 
