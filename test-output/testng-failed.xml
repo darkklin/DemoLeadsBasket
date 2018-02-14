@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression TestSuite]">
+  <test name="seller statistic check (failed)">
+    <groups>
+      <run>
+        <include name="sellerRegistrtion"/>
+        <include name="sellerStatistic"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.affilomnia.leadbaskets.BuyerTest">
+      <class name="com.affilomnia.leadbaskets.SellerTest">
         <methods>
-          <include name="beforeTest"/>
-          <include name="testTotalLeadTotalSpentAvgcplParCamp"/>
+          <include name="testTotalLeadTotalCpl"/>
+          <include name="sellerAccountingStatistic"/>
+          <include name="testStatisticParOffer"/>
           <include name="logs"/>
         </methods>
-      </class> <!-- com.affilomnia.leadbaskets.BuyerTest -->
+      </class> <!-- com.affilomnia.leadbaskets.SellerTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- seller statistic check (failed) -->
+</suite> <!-- Failed suite [Regression TestSuite] -->

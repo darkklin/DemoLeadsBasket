@@ -71,7 +71,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Seller Registion full flow +admin accepte Pending  seller ", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = true, description = "Seller Registion   ", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		String sellerEmail = sellerPage.tenMinutEmail();
 		open("https://test_app.leadsbasket.com/register-seller-start");
