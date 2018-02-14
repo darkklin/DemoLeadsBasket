@@ -297,7 +297,7 @@ public class SellerPage {
 		$("input[type='password']").setValue("A#aaaaaa");
 		$("span[class='RveJvd snByac']").click();
 		$("div[class='qclxzb']").click();
-		$(byText("israel")).click();
+		$$("[role='option']").get(101).click();
 		$("input[type='tel']").setValue("0528895514");
 		$("span[class='RveJvd snByac']").click();
 		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
