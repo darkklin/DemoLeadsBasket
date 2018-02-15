@@ -24,7 +24,7 @@ import libry.VideoRecord;
 
 public class BaseTest {
 
-	@BeforeSuite(groups = { "Regression TestSuite" })
+	@BeforeSuite(groups = { "seller statistic Regression Test,seller/buyer registrtion Regression Test" })
 	@Description("start")
 	public void beforeTest() {
 		Configuration.startMaximized = true;

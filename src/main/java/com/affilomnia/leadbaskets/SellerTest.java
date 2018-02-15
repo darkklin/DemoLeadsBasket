@@ -54,7 +54,6 @@ public class SellerTest extends BaseTest {
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
 		sellerPage.checkstatParOffer();
 		sellerPage.logOut();
-
 	}
 	@Video
 	@Feature("Seller Statistic")
@@ -69,15 +68,16 @@ public class SellerTest extends BaseTest {
 	}
 	
 	@Video
-	@Feature("Seller Registrtion")
+	@Feature("Seller Registrtion + Forget password")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Seller Registion   ", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = true, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		String sellerEmail = sellerPage.tenMinutEmail();
 		open("https://test_app.leadsbasket.com/register-seller-start");
 		sellerPage.startRegister(sellerEmail);
 		sellerPage.verifyEmail();
 		sellerPage.billingInformation();
+		sellerPage.forgetPassword(sellerEmail);
 	}
 
 }

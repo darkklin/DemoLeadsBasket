@@ -40,7 +40,7 @@
 
 		</classes>
 	</test>
-	<test name="seller Registration check ">
+	<test name="seller Registration test ">
 		<groups>
 			<run>
 				<include name="sellerRegistrtion" />

@@ -39,6 +39,7 @@ public class SellerPage {
 
 	@Inject
 	BuyerPage buyerPage;
+	
 	private SelenideElement profile = $("a.profile");
 	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(5)>a");
 	private SelenideElement liveOfferPage = $("a[ng-class*='live_offers']");
@@ -264,17 +265,10 @@ public class SellerPage {
 		String rdBname = rendom.generateEmail("abcdfg", 4);
 
 		$("h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
-		$(byText("Login")).click();
-		try {
-			$("h2").shouldHave(Condition.text("Login to LeadsBasket"));
-
-		} catch (Exception e) {
-			$(byText("Login")).click();
-
-		}
+		$("a[ui-sref='login']").click();
+		$("h2").shouldHave(Condition.text("Login to LeadsBasket"));
 		back();
 		$(byText("Get Started")).click();
-
 		$(byText("Terms of Services")).click();
 		switchTo().window(1);
 		$("div.terms>h1").shouldHave(Condition.text("TERMS OF USE"));
@@ -325,6 +319,7 @@ public class SellerPage {
 	public void verifyEmail() {
 		open("https://10minutemail.net");	
 		$(byText("Welcome to LeadsBasket - Verification Required")).waitUntil((Condition.visible), 15000).click();
+		Reporter.log("Email Verification Required ",true);
 		$(byText("Click Here")).click();
 		switchTo().window(1);
 		$("h4").waitUntil(Condition.text("Email Verified Successfully!"), 20000);
@@ -357,7 +352,27 @@ public class SellerPage {
 		switchTo().window(0);
 		$(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible), 15000).click();
 		Reporter.log("Email Welcome to LeadsBasket sent ",true);
-		close();
 
 	}
+	public void forgetPassword(String email)
+	{	
+		open("https://test_app.leadsbasket.com/login");
+		$(byText("Forgot Password?")).waitUntil((Condition.visible), 15000).click();
+		wait.waitUntilAngularPageLoaded();
+		$("input[type='email']").setValue(email);
+		$("button[type='submit']").click();
+		$("h2").shouldHave(Condition.text("Reset Your Password"));
+		open("https://10minutemail.net");	
+		$(byText("LeadsBasket – Reset Password")).waitUntil((Condition.visible), 20000).click();
+		Reporter.log("Email reset password sent",true);
+		$(byText("Reset Password")).waitUntil((Condition.visible), 20000).click();
+		switchTo().window(2);
+		$("h2").shouldHave(Condition.text("Reset Your Password"));
+		$$("input[type='password']").get(0).setValue("Test123456@");
+		$$("input[type='password']").get(1).setValue("Test123456@");
+		$("button[type='submit']").click();
+		$(byText("Password was reset successfully!"));
+		close();
+	}
+	
 }
