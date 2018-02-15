@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="183.926" tests="11" errors="0" skipped="2" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="211.433" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\kiril\AppData\Local\Temp\surefire3078423208149169896\surefirebooter227878839501974135.jar C:\Users\kiril\AppData\Local\Temp\surefire3078423208149169896 2018-02-14T18-06-30_938-jvmRun1 surefire3758007728823922043tmp surefire_03451124846633633994tmp"/>
+    <property name="sun.java.command" value="C:\Users\kiril\AppData\Local\Temp\surefire1755316082858418051\surefirebooter2039146680605338106.jar C:\Users\kiril\AppData\Local\Temp\surefire1755316082858418051 2018-02-15T18-26-48_310-jvmRun1 surefire975423782000767622tmp surefire_07915774378968637105tmp"/>
     <property name="surefire.test.class.path" value="C:\LeadBasketsVr2\affilomnia.leadbaskets\target\test-classes;C:\LeadBasketsVr2\affilomnia.leadbaskets\target\classes;C:\Users\kiril\.m2\repository\org\testng\testng\6.13.1\testng-6.13.1.jar;C:\Users\kiril\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\kiril\.m2\repository\com\codeborne\selenide\4.10\selenide-4.10.jar;C:\Users\kiril\.m2\repository\io\github\bonigarcia\webdrivermanager\2.0.1\webdrivermanager-2.0.1.jar;C:\Users\kiril\.m2\repository\org\slf4j\slf4j-api\1.7.24\slf4j-api-1.7.24.jar;C:\Users\kiril\.m2\repository\commons-io\commons-io\2.5\commons-io-2.5.jar;C:\Users\kiril\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar;C:\Users\kiril\.m2\repository\org\rauschig\jarchivelib\0.7.1\jarchivelib-0.7.1.jar;C:\Users\kiril\.m2\repository\org\apache\commons\commons-compress\1.9\commons-compress-1.9.jar;C:\Users\kiril\.m2\repository\org\jsoup\jsoup\1.10.2\jsoup-1.10.2.jar;C:\Users\kiril\.m2\repository\org\apache\httpcomponents\httpcore\4.4.8\httpcore-4.4.8.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-java\3.8.1\selenium-java-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-api\3.8.1\selenium-api-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.8.1\selenium-chrome-driver-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.8.1\selenium-edge-driver-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.8.1\selenium-firefox-driver-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.8.1\selenium-ie-driver-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.8.1\selenium-opera-driver-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.8.1\selenium-remote-driver-3.8.1.jar;C:\Users\kiril\.m2\repository\org\seleniumhq\selenium\selenium-support\3.8.1\selenium-support-3.8.1.jar;C:\Users\kiril\.m2\repository\net\bytebuddy\byte-buddy\1.7.5\byte-buddy-1.7.5.jar;C:\Users\kiril\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\kiril\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\kiril\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\kiril\.m2\repository\com\google\guava\guava\23.6-jre\guava-23.6-jre.jar;C:\Users\kiril\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\kiril\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\kiril\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\kiril\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\kiril\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\kiril\.m2\repository\net\lightbody\bmp\browsermob-core\2.1.5\browsermob-core-2.1.5.jar;C:\Users\kiril\.m2\repository\net\lightbody\bmp\littleproxy\1.1.0-beta-bmp-17\littleproxy-1.1.0-beta-bmp-17.jar;C:\Users\kiril\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.8.9\jackson-core-2.8.9.jar;C:\Users\kiril\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.8.9\jackson-databind-2.8.9.jar;C:\Users\kiril\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.9\jackson-annotations-2.8.9.jar;C:\Users\kiril\.m2\repository\dnsjava\dnsjava\2.1.8\dnsjava-2.1.8.jar;C:\Users\kiril\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\kiril\.m2\repository\com\jcraft\jzlib\1.1.3\jzlib-1.1.3.jar;C:\Users\kiril\.m2\repository\io\netty\netty-all\4.0.51.Final\netty-all-4.0.51.Final.jar;C:\Users\kiril\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.58\bcprov-jdk15on-1.58.jar;C:\Users\kiril\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.58\bcpkix-jdk15on-1.58.jar;C:\Users\kiril\.m2\repository\net\lightbody\bmp\mitm\2.1.5\mitm-2.1.5.jar;C:\Users\kiril\.m2\repository\com\codeborne\phantomjsdriver\1.4.4\phantomjsdriver-1.4.4.jar;C:\Users\kiril\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\kiril\.m2\repository\com\google\inject\guice\4.1.0\guice-4.1.0.jar;C:\Users\kiril\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\kiril\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\kiril\.m2\repository\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar;C:\Users\kiril\.m2\repository\io\qameta\allure\allure-testng\2.0-BETA19\allure-testng-2.0-BETA19.jar;C:\Users\kiril\.m2\repository\io\qameta\allure\allure-descriptions-javadoc\2.0-BETA19\allure-descriptions-javadoc-2.0-BETA19.jar;C:\Users\kiril\.m2\repository\io\qameta\allure\allure-java-commons\2.0-BETA19\allure-java-commons-2.0-BETA19.jar;C:\Users\kiril\.m2\repository\io\qameta\allure\allure2-model-api\1.0-BETA6\allure2-model-api-1.0-BETA6.jar;C:\Users\kiril\.m2\repository\io\qameta\allure\allure2-model-pojo\1.0-BETA6\allure2-model-pojo-1.0-BETA6.jar;C:\Users\kiril\.m2\repository\org\apache\tika\tika-core\1.14\tika-core-1.14.jar;C:\Users\kiril\.m2\repository\io\qameta\allure\allure2-model-jackson\1.0-BETA6\allure2-model-jackson-1.0-BETA6.jar;C:\Users\kiril\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.7.0\jackson-module-jaxb-annotations-2.7.0.jar;C:\Users\kiril\.m2\repository\org\aspectj\aspectjrt\1.8.10\aspectjrt-1.8.10.jar;C:\Users\kiril\.m2\repository\org\jooq\joor\0.9.6\joor-0.9.6.jar;C:\Users\kiril\.m2\repository\com\codeborne\pdf-test\1.4\pdf-test-1.4.jar;C:\Users\kiril\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\kiril\.m2\repository\org\apache\pdfbox\pdfbox\2.0.0\pdfbox-2.0.0.jar;C:\Users\kiril\.m2\repository\org\apache\pdfbox\fontbox\2.0.0\fontbox-2.0.0.jar;C:\Users\kiril\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\kiril\.m2\repository\com\automation-remarks\video-recorder-testng\1.7\video-recorder-testng-1.7.jar;C:\Users\kiril\.m2\repository\com\automation-remarks\video-recorder-core\1.7\video-recorder-core-1.7.jar;C:\Users\kiril\.m2\repository\org\zeroturnaround\zt-exec\1.9\zt-exec-1.9.jar;C:\Users\kiril\.m2\repository\org\aeonbits\owner\owner-java8\1.0.9\owner-java8-1.0.9.jar;C:\Users\kiril\.m2\repository\org\aeonbits\owner\owner\1.0.9\owner-1.0.9.jar;C:\Users\kiril\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\kiril\.m2\repository\org\json\json\20160810\json-20160810.jar;C:\Users\kiril\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpclient-4.5.2.jar;C:\Users\kiril\.m2\repository\org\awaitility\awaitility\3.0.0\awaitility-3.0.0.jar;C:\Users\kiril\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\kiril\.m2\repository\org\objenesis\objenesis\2.5.1\objenesis-2.5.1.jar;C:\Users\kiril\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.20.1\surefire-testng-utils-2.20.1.jar;C:\Users\kiril\.m2\repository\org\apache\maven\surefire\surefire-grouper\2.20.1\surefire-grouper-2.20.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\kiril"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\kiril\AppData\Local\Temp\surefire3078423208149169896\surefirebooter227878839501974135.jar;C:\Users\kiril\.m2\repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\kiril\AppData\Local\Temp\surefire1755316082858418051\surefirebooter2039146680605338106.jar;C:\Users\kiril\.m2\repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -60,84 +60,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="LoginAsSellerAndSendLead" classname="com.affilomnia.leadbaskets.FormLbTest" time="17.951"/>
-  <testcase name="testLoginTotalSpentAndLeads" classname="com.affilomnia.leadbaskets.BuyerTest" time="14.847"/>
-  <testcase name="testTotalLeadTotalSpentAvgcplParCamp" classname="com.affilomnia.leadbaskets.BuyerTest" time="29.285"/>
-  <testcase name="testTotalLeadTotalCpl" classname="com.affilomnia.leadbaskets.SellerTest" time="20.503"/>
-  <testcase name="testStatisticParOffer" classname="com.affilomnia.leadbaskets.SellerTest" time="36.329"/>
-  <testcase name="sellerAccountingStatistic" classname="com.affilomnia.leadbaskets.SellerTest" time="9.287"/>
-  <testcase name="sellerRegistrtion" classname="com.affilomnia.leadbaskets.SellerTest" time="30.17"/>
-  <testcase name="testBuyerRegistrtion" classname="com.affilomnia.leadbaskets.BuyerTest" time="6.579">
-    <failure message="Element not found {div.terms&gt;h1}&#10;Expected: text &apos;TERMS OF USE&apos;" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {div.terms>h1}
-Expected: text 'TERMS OF USE'
-	at com.affilomnia.leadbaskets.BuyerTest.testBuyerRegistrtion(BuyerTest.java:61)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"div.terms>h1"}
-  (Session info: chrome=64.0.3282.140)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'RG-W-KIRIL', ip: '192.168.10.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.140, webStorageEnabled: true}
-Session ID: cec5cd3ff2e52a744b8869441b094a6c
-*** Element info: {Using=css selector, value=div.terms>h1}
-	at com.affilomnia.leadbaskets.BuyerTest.testBuyerRegistrtion(BuyerTest.java:61)
-</failure>
-    <system-out><![CDATA[Report for testBuyerRegistrtion
-+---------------------------+----------------------------------------------------------------------+----------+----------+
-|Element                    |Subject                                                               |Status    |ms.       |
-+---------------------------+----------------------------------------------------------------------+----------+----------+
-|open                       |https://test_app.leadsbasket.com/register-industry                    |PASS      |358       |
-|div.reg>h2                 |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |186       |
-|div.choose_industry_text   |should have(text 'Get ready to be bombarded with some top quality leads!')|PASS      |37        |
-|a.link                     |should be(visible)                                                    |PASS      |24        |
-|a.link                     |click()                                                               |PASS      |57        |
-|div.auth>h2                |should have(text 'Login to LeadsBasket')                              |PASS      |83        |
-|button.btn                 |should be(disabled)                                                   |PASS      |24        |
-|a[placeholder*='Industry'] |click()                                                               |PASS      |365       |
-|by text: Zoo Industry      |click()                                                               |PASS      |94        |
-|button.btn                 |should have(text 'Create Account')                                    |PASS      |29        |
-|button.btn                 |click()                                                               |PASS      |63        |
-|h4                         |should have(text '100% Self-service Platform for Quality Lead Generation')|PASS      |201       |
-|button.btn                 |should be(disabled)                                                   |PASS      |15        |
-|by text: Terms of Service  |click()                                                               |PASS      |81        |
-|div.terms>h1               |should have(text 'TERMS OF USE')                                      |FAIL      |4030      |
-+---------------------------+----------------------------------------------------------------------+----------+----------+
-
-]]></system-out>
-  </testcase>
-  <testcase name="logs" classname="com.affilomnia.leadbaskets.BuyerTest" time="12.068">
-    <failure message="Element not found {a.profile}&#10;Expected: visible" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
-Element not found {a.profile}
-Expected: visible
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"a.profile"}
-  (Session info: chrome=64.0.3282.140)
-  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'RG-W-KIRIL', ip: '192.168.10.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.140, webStorageEnabled: true}
-Session ID: cec5cd3ff2e52a744b8869441b094a6c
-*** Element info: {Using=css selector, value=a.profile}
-</failure>
-  </testcase>
-  <testcase name="logs" classname="com.affilomnia.leadbaskets.BuyerTest" time="0">
-    <skipped/>
-    <system-out><![CDATA[Report for null
-+--------------------+----------------------------------------------------------------------+----------+----------+
-|Element             |Subject                                                               |Status    |ms.       |
-+--------------------+----------------------------------------------------------------------+----------+----------+
-+--------------------+----------------------------------------------------------------------+----------+----------+
-
-]]></system-out>
-  </testcase>
-  <testcase name="testdownloadIntegrtionPDF" classname="com.affilomnia.leadbaskets.BuyerTest" time="0">
-    <skipped message="Element not found {a.profile}&#10;Expected: visible"/>
-  </testcase>
+  <testcase name="LoginAsSellerAndSendLead" classname="com.affilomnia.leadbaskets.FormLbTest" time="18.963"/>
+  <testcase name="testLoginTotalSpentAndLeads" classname="com.affilomnia.leadbaskets.BuyerTest" time="14.081"/>
+  <testcase name="testTotalLeadTotalSpentAvgcplParCamp" classname="com.affilomnia.leadbaskets.BuyerTest" time="30.003"/>
+  <testcase name="testTotalLeadTotalCpl" classname="com.affilomnia.leadbaskets.SellerTest" time="22.639"/>
+  <testcase name="testStatisticParOffer" classname="com.affilomnia.leadbaskets.SellerTest" time="37.774"/>
+  <testcase name="sellerAccountingStatistic" classname="com.affilomnia.leadbaskets.SellerTest" time="9.953"/>
+  <testcase name="sellerRegistrtion" classname="com.affilomnia.leadbaskets.SellerTest" time="43.05"/>
+  <testcase name="testBuyerRegistrtion" classname="com.affilomnia.leadbaskets.BuyerTest" time="17.186"/>
+  <testcase name="testdownloadIntegrtionPDF" classname="com.affilomnia.leadbaskets.BuyerTest" time="2.798"/>
 </testsuite>
