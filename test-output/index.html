@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Regression_TestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.SellerTest" hash-for-method="sellerRegistrtion">sellerRegistrtion</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_TestSuite" title="com.affilomnia.leadbaskets.AdminTest" hash-for-method="forgetPasswordTest">forgetPasswordTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -130,23 +130,6 @@
           <div class="suite-Regression_TestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.affilomnia.leadbaskets.SellerTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="sellerRegistrtion">
-                  </a> <!-- sellerRegistrtion -->
-                  <span class="method-name">sellerRegistrtion</span>
-                  <em>
-(Seller Registion+forget password test)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Regression_TestSuite-class-passed -->
-          <div class="suite-Regression_TestSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">com.affilomnia.leadbaskets.BuyerTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -170,6 +153,23 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Regression_TestSuite-class-passed -->
+          <div class="suite-Regression_TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.affilomnia.leadbaskets.AdminTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="forgetPasswordTest">
+                  </a> <!-- forgetPasswordTest -->
+                  <span class="method-name">forgetPasswordTest</span>
+                  <em>
+(Test forget Password)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression_TestSuite-class-passed -->
         </div> <!-- panel Regression_TestSuite -->
         <div panel-name="test-xml-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -180,16 +180,6 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Regression TestSuite&quot;&gt;
-  &lt;test name=&quot;seller Registration test &quot;&gt;
-    &lt;groups&gt;
-      &lt;run&gt;
-        &lt;include name=&quot;sellerRegistrtion&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.affilomnia.leadbaskets.SellerTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- seller Registration test  --&gt;
   &lt;test name=&quot;buyer Registration test &quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
@@ -200,6 +190,16 @@
       &lt;class name=&quot;com.affilomnia.leadbaskets.BuyerTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- buyer Registration test  --&gt;
+  &lt;test name=&quot;admin Regression test &quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;forgetPassword&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.affilomnia.leadbaskets.AdminTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- admin Regression test  --&gt;
 &lt;/suite&gt; &lt;!-- Regression TestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -211,10 +211,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">seller Registration test  (1 class)</span>
+                <span class="test-name">buyer Registration test  (1 class)</span>
               </li>
               <li>
-                <span class="test-name">buyer Registration test  (1 class)</span>
+                <span class="test-name">admin Regression test  (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -237,10 +237,10 @@
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
             <div class="test-group">
-              <span class="test-group-name">sellerRegistrtion</span>
+              <span class="test-group-name">forgetPassword</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">sellerRegistrtion</span>
+                <span class="method-in-group-name">forgetPasswordTest</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -262,22 +262,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'sellerRegistrtion')
-data.setCell(0, 2, 'com.affilomnia.leadbaskets.SellerTest')
-data.setCell(0, 3, 51957);
+data.setCell(0, 1, 'forgetPasswordTest')
+data.setCell(0, 2, 'com.affilomnia.leadbaskets.AdminTest')
+data.setCell(0, 3, 21415);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testBuyerRegistrtion')
 data.setCell(1, 2, 'com.affilomnia.leadbaskets.BuyerTest')
-data.setCell(1, 3, 16687);
+data.setCell(1, 3, 14364);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testdownloadIntegrtionPDF')
 data.setCell(2, 2, 'com.affilomnia.leadbaskets.BuyerTest')
-data.setCell(2, 3, 2976);
+data.setCell(2, 3, 2879);
 window.suiteTableData['Regression_TestSuite']= { tableData: data, tableDiv: 'times-div-Regression_TestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 38 seconds</span>
               <div id="times-div-Regression_TestSuite">
               </div> <!-- times-div-Regression_TestSuite -->
             </div> <!-- times-div -->
@@ -289,86 +289,72 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">sellerRegistrtion</span>
+              <span class="reporter-method-name">testBuyerRegistrtion</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">seller email > xjo13730@bnuis.com</span>
-                <span class="reporter-method-output">New seller Create</span>
-                <span class="reporter-method-output">Email Welcome to LeadsBasket sent </span>
-                <span class="reporter-method-output">Report for sellerRegistrtion
-+--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|Element                                                 |Subject                                                               |Status    |ms.       |
-+--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                                                    |https://10minutemail.net                                              |PASS      |2530      |
-|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |28        |
-|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |18        |
-|open                                                    |https://test_app.leadsbasket.com/register-seller-start                |PASS      |1830      |
-|h2                                                      |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |62        |
-|a[ui-sref='login']                                      |click()                                                               |PASS      |72        |
-|h2                                                      |should have(text 'Login to LeadsBasket')                              |PASS      |209       |
-|by text: Get Started                                    |click()                                                               |PASS      |92        |
-|by text: Terms of Services                              |click()                                                               |PASS      |307       |
-|div.terms>h1                                            |should have(text 'TERMS OF USE')                                      |PASS      |1056      |
-|by text: Login                                          |should be(visible)                                                    |PASS      |52        |
-|by text: Login                                          |click()                                                               |PASS      |90        |
-|div.auth>h2                                             |should have(text 'Login to LeadsBasket')                              |PASS      |38        |
-|button.btn                                              |should be(disabled)                                                   |PASS      |24        |
-|input[name='firstName']                                 |set value(selenideffgc)                                               |PASS      |152       |
-|input[name='lastName']                                  |set value(automticffgc)                                               |PASS      |137       |
-|input[id='tel-dc']                                      |get attribute(placeholder)                                            |PASS      |18        |
-|input[id='tel-dc']                                      |set value(050-123-4567)                                               |PASS      |141       |
-|input[name='company']                                   |set value(selenide)                                                   |PASS      |125       |
-|input[placeholder*='Email']                             |set value(xjo13730@bnuis.com)                                         |PASS      |170       |
-|input[name='pass']                                      |set value(D%1dd2dfdbd)                                                |PASS      |149       |
-|input[name='rePass']                                    |set value(D%1dd2dfdbd)                                                |PASS      |148       |
-|button.btn                                              |should be(visible)                                                    |PASS      |19        |
-|button.btn                                              |click()                                                               |PASS      |71        |
-|h4                                                      |should have(text 'YOU'RE ALMOST THERE!')                              |PASS      |917       |
-|by text: Done                                           |should be(visible)                                                    |PASS      |28        |
-|by text: Done                                           |click()                                                               |PASS      |1186      |
-|open                                                    |https://10minutemail.net                                              |PASS      |2424      |
-|by text: Welcome to LeadsBasket - Verification Required |wait until([visible, 15000])                                          |PASS      |8725      |
-|by text: Welcome to LeadsBasket - Verification Required |click()                                                               |PASS      |2252      |
-|by text: Click Here                                     |click()                                                               |PASS      |186       |
-|h4                                                      |wait until([text 'Email Verified Successfully!', 20000])              |PASS      |2444      |
-|input[name='bank_name']                                 |wait until([visible, 15000])                                          |PASS      |3241      |
-|input[name='bank_name']                                 |set value(bankSelenide)                                               |PASS      |152       |
-|select[name='bank_country']                             |click()                                                               |PASS      |100       |
-|select[name='bank_country']>option[39]                  |get text()                                                            |PASS      |716       |
-|select[name='bank_country']>option[39]                  |click()                                                               |PASS      |64        |
-|textarea[name='bank_note']                              |set value(Test this Shit 123)                                         |PASS      |243       |
-|input[name='bank_swift']                                |set value(BOtfIIE2DXXX)                                               |PASS      |199       |
-|input[name='bank_account_number']                       |set value(ABCD2343512)                                                |PASS      |217       |
-|input[name='bank_iban']                                 |set value(IE89BOFI43201724454323)                                     |PASS      |241       |
-|select[name='receiver_country']                         |click()                                                               |PASS      |99        |
-|select[name='receiver_country']>option[39]              |click()                                                               |PASS      |68        |
-|input[name*='company_name']                             |set value(selenide)                                                   |PASS      |204       |
-|input[name*='receiver_street'][0]                       |set value(test 1243 Bin)                                              |PASS      |210       |
-|input[name*='receiver_state']                           |set value(state hahaha)                                               |PASS      |184       |
-|input[name*='zip']                                      |set value(432dsfsd)                                                   |PASS      |158       |
-|input[name*='city']                                     |set value(tel aviv)                                                   |PASS      |156       |
-|button.btn                                              |should be(enabled)                                                    |PASS      |26        |
-|button.btn                                              |click()                                                               |PASS      |96        |
-|h4                                                      |wait until([text 'Hold on!', 10000])                                  |PASS      |772       |
-|a.btn                                                   |wait until([visible, 10000])                                          |PASS      |25        |
-|a.btn                                                   |click()                                                               |PASS      |574       |
-|by text: Welcome to LeadsBasket                         |wait until([visible, 15000])                                          |PASS      |106       |
-|by text: Welcome to LeadsBasket                         |click()                                                               |PASS      |92        |
-|open                                                    |https://test_app.leadsbasket.com/login                                |PASS      |447       |
-|by text: Forgot Password?                               |wait until([visible, 15000])                                          |PASS      |28        |
-|by text: Forgot Password?                               |click()                                                               |PASS      |77        |
-|input[type='email']                                     |set value(xjo13730@bnuis.com)                                         |PASS      |175       |
-|button[type='submit']                                   |click()                                                               |PASS      |90        |
-|h2                                                      |should have(text 'Reset Your Password')                               |PASS      |36        |
-|open                                                    |https://10minutemail.net                                              |PASS      |2860      |
-|by text: LeadsBasket – Reset Password                   |wait until([visible, 20000])                                          |PASS      |8709      |
-|by text: LeadsBasket – Reset Password                   |click()                                                               |PASS      |1510      |
-|by text: Reset Password                                 |wait until([visible, 20000])                                          |PASS      |43        |
-|by text: Reset Password                                 |click()                                                               |PASS      |139       |
-|h2                                                      |should have(text 'Reset Your Password')                               |PASS      |1050      |
-|input[type='password'][0]                               |set value(Test123456@)                                                |PASS      |125       |
-|input[type='password'][1]                               |set value(Test123456@)                                                |PASS      |114       |
-|button[type='submit']                                   |click()                                                               |PASS      |76        |
-+--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
+                <span class="reporter-method-output">Report for testBuyerRegistrtion
++---------------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                                |Subject                                                               |Status    |ms.       |
++---------------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                                   |https://test_app.leadsbasket.com/register-industry                    |PASS      |1184      |
+|div.reg>h2                             |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |186       |
+|div.choose_industry_text               |should have(text 'Get ready to be bombarded with some top quality leads!')|PASS      |40        |
+|a.link                                 |should be(visible)                                                    |PASS      |35        |
+|a.link                                 |click()                                                               |PASS      |80        |
+|div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |159       |
+|button.btn                             |should be(disabled)                                                   |PASS      |55        |
+|a[placeholder*='Industry']             |click()                                                               |PASS      |377       |
+|by text: Zoo Industry                  |click()                                                               |PASS      |89        |
+|button.btn                             |should have(text 'Create Account')                                    |PASS      |30        |
+|button.btn                             |click()                                                               |PASS      |61        |
+|h4                                     |should have(text '100% Self-service Platform for Quality Lead Generation')|PASS      |274       |
+|button.btn                             |should be(disabled)                                                   |PASS      |17        |
+|by text: Terms of Service              |click()                                                               |PASS      |231       |
+|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1050      |
+|by text: Login                         |should be(visible)                                                    |PASS      |70        |
+|by text: Login                         |click()                                                               |PASS      |77        |
+|div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |47        |
+|input[name='firstName']                |set value(selenidefbac)                                               |PASS      |141       |
+|input[name='lastName']                 |set value(automticfbac)                                               |PASS      |131       |
+|input[id='tel-dc']                     |get attribute(placeholder)                                            |PASS      |20        |
+|input[id='tel-dc']                     |set value(050-123-4567)                                               |PASS      |137       |
+|input[placeholder*='Email']            |set value(lbdemo234+d%dadaff@gmail.com)                               |PASS      |191       |
+|input[name='pass']                     |set value(D%1d%dadaff)                                                |PASS      |143       |
+|input[name='rePass']                   |set value(D%1d%dadaff)                                                |PASS      |145       |
+|button.btn                             |should be(visible)                                                    |PASS      |25        |
+|button.btn                             |click()                                                               |PASS      |61        |
+|h2                                     |should have(text 'Connect To Your Platform')                          |PASS      |1314      |
+|div.reg>h4                             |should have(text 'Get Leads Directly To Your Email or Platform')      |PASS      |37        |
+|h2.h2_inside                           |should have(text 'Select how you wish to receive your leads')         |PASS      |32        |
+|button.btn                             |should be(disabled)                                                   |PASS      |15        |
+|label[class*='checkbox'][0]            |click()                                                               |PASS      |210       |
+|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |161       |
+|button.btn                             |should be(visible)                                                    |PASS      |23        |
+|button.btn                             |click()                                                               |PASS      |64        |
+|h2                                     |should have(text 'Billing Information')                               |PASS      |729       |
+|h2                                     |should have(text 'Billing Information')                               |PASS      |23        |
+|h4                                     |should have(text 'Enter Billing Information & Fund Your Account')     |PASS      |24        |
+|by text: click here.                   |click()                                                               |PASS      |102       |
+|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1045      |
+|input[name='companyName']              |set value(Company Name)                                               |PASS      |239       |
+|input[name='companyAddress']           |set value(test steeen 234 -4 4333 1)                                  |PASS      |200       |
+|input[name='city']                     |set value(tel aviv)                                                   |PASS      |117       |
+|button.btn                             |should(disabled)                                                      |PASS      |13        |
+|input[name='state']                    |set value(israel)                                                     |PASS      |108       |
+|a[placeholder='Select Country']        |click()                                                               |PASS      |231       |
+|li[role='option'][128]                 |click()                                                               |PASS      |439       |
+|input[name='zip']                      |set value(464564)                                                     |PASS      |131       |
+|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |156       |
+|button.btn                             |should(enabled)                                                       |PASS      |17        |
+|button.btn                             |click()                                                               |PASS      |79        |
+|h2                                     |should have(text 'Congratulations!')                                  |PASS      |698       |
+|h4                                     |should have(text 'Done')                                              |PASS      |33        |
+|p                                      |should have(text 'You Can Start Creating Your Campaigns and Get Leads')|PASS      |33        |
+|[class*='finish_btn']                  |click()                                                               |PASS      |67        |
+|h5                                     |should have(text 'Please fill in all required entry setting fields and create new campaign.')|PASS      |1630      |
+|a.profile                              |click()                                                               |PASS      |89        |
+|div.drop_userInfo>ul>li:nth-child(5)>a |should be(visible)                                                    |PASS      |32        |
+|div.drop_userInfo>ul>li:nth-child(5)>a |click()                                                               |PASS      |101       |
++---------------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -379,80 +365,45 @@ return data;
 +------------------------------+----------------------------------------------------------------------+----------+----------+
 |Element                       |Subject                                                               |Status    |ms.       |
 +------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                          |https://app.leadsbasket.com/register/integration                      |PASS      |862       |
-|by text: Integration with API |download()                                                            |PASS      |1223      |
-|by text: Integration with API |download()                                                            |PASS      |453       |
+|open                          |https://app.leadsbasket.com/register/integration                      |PASS      |752       |
+|by text: Integration with API |download()                                                            |PASS      |1128      |
+|by text: Integration with API |download()                                                            |PASS      |473       |
 +------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">testBuyerRegistrtion</span>
+              <span class="reporter-method-name">forgetPasswordTest</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Report for testBuyerRegistrtion
-+---------------------------------------+----------------------------------------------------------------------+----------+----------+
-|Element                                |Subject                                                               |Status    |ms.       |
-+---------------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                                   |https://test_app.leadsbasket.com/register-industry                    |PASS      |4406      |
-|div.reg>h2                             |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |42        |
-|div.choose_industry_text               |should have(text 'Get ready to be bombarded with some top quality leads!')|PASS      |36        |
-|a.link                                 |should be(visible)                                                    |PASS      |24        |
-|a.link                                 |click()                                                               |PASS      |68        |
-|div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |157       |
-|button.btn                             |should be(disabled)                                                   |PASS      |25        |
-|a[placeholder*='Industry']             |click()                                                               |PASS      |343       |
-|by text: Zoo Industry                  |click()                                                               |PASS      |104       |
-|button.btn                             |should have(text 'Create Account')                                    |PASS      |27        |
-|button.btn                             |click()                                                               |PASS      |66        |
-|h4                                     |should have(text '100% Self-service Platform for Quality Lead Generation')|PASS      |221       |
-|button.btn                             |should be(disabled)                                                   |PASS      |15        |
-|by text: Terms of Service              |click()                                                               |PASS      |86        |
-|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1045      |
-|by text: Login                         |should be(visible)                                                    |PASS      |40        |
-|by text: Login                         |click()                                                               |PASS      |73        |
-|div.auth>h2                            |should have(text 'Login to LeadsBasket')                              |PASS      |61        |
-|input[name='firstName']                |set value(selenidecffg)                                               |PASS      |140       |
-|input[name='lastName']                 |set value(automticcffg)                                               |PASS      |138       |
-|input[id='tel-dc']                     |get attribute(placeholder)                                            |PASS      |17        |
-|input[id='tel-dc']                     |set value(050-123-4567)                                               |PASS      |137       |
-|input[placeholder*='Email']            |set value(lbdemo234+adf%d2%2@gmail.com)                               |PASS      |202       |
-|input[name='pass']                     |set value(D%1adf%d2%2)                                                |PASS      |156       |
-|input[name='rePass']                   |set value(D%1adf%d2%2)                                                |PASS      |150       |
-|button.btn                             |should be(visible)                                                    |PASS      |22        |
-|button.btn                             |click()                                                               |PASS      |80        |
-|h2                                     |should have(text 'Connect To Your Platform')                          |PASS      |1088      |
-|div.reg>h4                             |should have(text 'Get Leads Directly To Your Email or Platform')      |PASS      |35        |
-|h2.h2_inside                           |should have(text 'Select how you wish to receive your leads')         |PASS      |32        |
-|button.btn                             |should be(disabled)                                                   |PASS      |17        |
-|label[class*='checkbox'][0]            |click()                                                               |PASS      |195       |
-|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |147       |
-|button.btn                             |should be(visible)                                                    |PASS      |18        |
-|button.btn                             |click()                                                               |PASS      |70        |
-|h2                                     |should have(text 'Billing Information')                               |PASS      |699       |
-|h2                                     |should have(text 'Billing Information')                               |PASS      |17        |
-|h4                                     |should have(text 'Enter Billing Information & Fund Your Account')     |PASS      |21        |
-|by text: click here.                   |click()                                                               |PASS      |142       |
-|div.terms>h1                           |should have(text 'TERMS OF USE')                                      |PASS      |1040      |
-|input[name='companyName']              |set value(Company Name)                                               |PASS      |238       |
-|input[name='companyAddress']           |set value(test steeen 234 -4 4333 1)                                  |PASS      |191       |
-|input[name='city']                     |set value(tel aviv)                                                   |PASS      |118       |
-|button.btn                             |should(disabled)                                                      |PASS      |15        |
-|input[name='state']                    |set value(israel)                                                     |PASS      |119       |
-|a[placeholder='Select Country']        |click()                                                               |PASS      |227       |
-|li[role='option'][106]                 |click()                                                               |PASS      |395       |
-|input[name='zip']                      |set value(464564)                                                     |PASS      |128       |
-|input[placeholder*='Email']            |set value(test@test.com)                                              |PASS      |168       |
-|button.btn                             |should(enabled)                                                       |PASS      |16        |
-|button.btn                             |click()                                                               |PASS      |79        |
-|h2                                     |should have(text 'Congratulations!')                                  |PASS      |699       |
-|h4                                     |should have(text 'Done')                                              |PASS      |26        |
-|p                                      |should have(text 'You Can Start Creating Your Campaigns and Get Leads')|PASS      |32        |
-|[class*='finish_btn']                  |click()                                                               |PASS      |63        |
-|h5                                     |should have(text 'Please fill in all required entry setting fields and create new campaign.')|PASS      |1580      |
-|a.profile                              |click()                                                               |PASS      |87        |
-|div.drop_userInfo>ul>li:nth-child(5)>a |should be(visible)                                                    |PASS      |30        |
-|div.drop_userInfo>ul>li:nth-child(5)>a |click()                                                               |PASS      |103       |
-+---------------------------------------+----------------------------------------------------------------------+----------+----------+
+                <span class="reporter-method-output">Email reset password sent</span>
+                <span class="reporter-method-output">Report for forgetPasswordTest
++-------------------------------+----------------------------------------------------------------------+----------+----------+
+|Element                        |Subject                                                               |Status    |ms.       |
++-------------------------------+----------------------------------------------------------------------+----------+----------+
+|open                           |https://test_staff.leadsbasket.com/admin/login                        |PASS      |704       |
+|by text: Forgot Password?      |wait until([visible, 15000])                                          |PASS      |333       |
+|by text: Forgot Password?      |click()                                                               |PASS      |134       |
+|input[type='email']            |set value(KIRL@gmx.com)                                               |PASS      |204       |
+|button[type='submit']          |click()                                                               |PASS      |82        |
+|h2                             |should have(text 'Reset Your Password')                               |PASS      |32        |
+|open                           |https://www.gmx.com                                                   |PASS      |6421      |
+|a[id='login-button']           |click()                                                               |PASS      |83        |
+|input[name='username']         |set value(KIRL@gmx.com)                                               |PASS      |294       |
+|input[name='password']         |set value(0546474985)                                                 |PASS      |110       |
+|button[type='submit']          |click()                                                               |PASS      |5058      |
+|pos-svg-icon[name='core_mail'] |click()                                                               |PASS      |140       |
+|tr[class='new']                |wait until([visible, 20000])                                          |PASS      |700       |
+|tr[class='new']                |click()                                                               |PASS      |227       |
+|a[href]                        |click()                                                               |PASS      |319       |
+|h2                             |wait until([text 'Reset Your Password', 20000])                       |PASS      |4072      |
+|input[type='password'][0]      |set value(Test123456@)                                                |PASS      |126       |
+|input[type='password'][1]      |set value(Test123456@)                                                |PASS      |116       |
+|button[type='submit']          |click()                                                               |PASS      |76        |
+|open                           |https://test_staff.leadsbasket.com/admin/login                        |PASS      |304       |
+|input[name='email']            |send keys(KIRL@gmx.com)                                               |PASS      |123       |
+|#password                      |send keys(Test123456@)                                                |PASS      |85        |
+|button[type='submit']          |press enter()                                                         |PASS      |64        |
++-------------------------------+----------------------------------------------------------------------+----------+----------+
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -460,20 +411,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Regression_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.affilomnia.leadbaskets.SellerTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">testTotalLeadTotalCpl</span>
-                <br/>
-                <span class="ignored-method-name">sellerAccountingStatistic</span>
-                <br/>
-                <span class="ignored-method-name">testStatisticParOffer</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.affilomnia.leadbaskets.BuyerTest</span>
               <div class="ignored-methods-div">
@@ -491,34 +431,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.affilomnia.leadbaskets.SellerTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">sellerRegistrtion</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">logs([TestResult name=sellerRegistrtion status=SUCCESS method=SellerTest.sellerRegistrtion()[pri:1, insta...)</span>
-                <span class="method-start">52106 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">com.affilomnia.leadbaskets.BuyerTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testBuyerRegistrtion</span>
-                <span class="method-start">53213 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logs([TestResult name=testBuyerRegistrtion status=SUCCESS method=BuyerTest.testBuyerRegistrtion()[pri:1, ...)</span>
-                <span class="method-start">69983 ms</span>
+                <span class="method-start">14541 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testdownloadIntegrtionPDF</span>
-                <span class="method-start">71006 ms</span>
+                <span class="method-start">15597 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logs([TestResult name=testdownloadIntegrtionPDF status=SUCCESS method=BuyerTest.testdownloadIntegrtionPDF...)</span>
-                <span class="method-start">74052 ms</span>
+                <span class="method-start">18545 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.affilomnia.leadbaskets.AdminTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">forgetPasswordTest</span>
+                <span class="method-start">19587 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

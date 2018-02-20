@@ -53,6 +53,7 @@
 
 		</classes>
 	</test>
+	
 	<test name="buyer Registration test ">
 		<groups>
 			<run>
@@ -62,6 +63,18 @@
 		</groups>
 		<classes>
 			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
+
+		</classes>
+	</test>
+	<test name="admin Regression test ">
+		<groups>
+			<run>
+				<include name="forgetPassword" />
+
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.AdminTest"></class>
 
 		</classes>
 	</test>
