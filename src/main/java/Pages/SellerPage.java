@@ -89,7 +89,7 @@ public class SellerPage {
 			minSaleCpl = Float.parseFloat(element2);
 			String leadStatus = statusLead.get(i).getText();
 			if (leadStatus.equalsIgnoreCase("Paid") || leadStatus.equalsIgnoreCase("Dispute")
-					|| leadStatus.equalsIgnoreCase("Dispute Declined")) {
+					|| leadStatus.equalsIgnoreCase("Dispute Rejected")) {
 				totalRevenues += saleCpls;
 				totalminSaleCpl += minSaleCpl;
 				buyerTotalLeads++;
