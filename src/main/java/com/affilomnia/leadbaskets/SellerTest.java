@@ -64,7 +64,6 @@ public class SellerTest extends BaseTest {
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
 		sellerPage.accountingStatistic();
 		sellerPage.logOut();
-
 	}
 	
 	@Video

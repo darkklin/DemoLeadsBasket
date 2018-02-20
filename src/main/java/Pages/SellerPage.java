@@ -263,7 +263,7 @@ public class SellerPage {
 		FormLbPage rendom = new FormLbPage();
 		String text = rendom.generateEmail("abcdfddDd23%2", 8);
 		String rdBname = rendom.generateEmail("abcdfg", 4);
-
+		wait.waitUntilAngularPageLoaded();
 		$("h2").shouldHave(Condition.text("Create a Free Account on LEADSBASKET"));
 		$("a[ui-sref='login']").click();
 		$("h2").shouldHave(Condition.text("Login to LeadsBasket"));
