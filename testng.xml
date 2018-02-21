@@ -1,6 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression TestSuite">
+<!--  
 	<test name="create lead  test ">
 		<groups>
 			<run>
@@ -66,6 +67,7 @@
 
 		</classes>
 	</test>
+	-->
 	<test name="admin Regression test ">
 		<groups>
 			<run>

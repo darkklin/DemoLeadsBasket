@@ -37,7 +37,7 @@ public class BaseTest {
 		TextReport.onFailedTest = true;
 	}
 
-	@AfterMethod(groups = { "BuyerReg", "buyerStatistic", "sellerStatistic", "createLead","sellerRegistrtion" })
+	@AfterMethod(groups = { "BuyerReg", "buyerStatistic", "sellerStatistic", "createLead","sellerRegistrtion","forgetPassword" })
 	public void logs(ITestResult testResult) throws Exception {
 		VideoRecord.attachment();
 		logOutput(Reporter.getOutput(testResult));
