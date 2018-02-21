@@ -1,6 +1,7 @@
 package Pages;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.byText;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;

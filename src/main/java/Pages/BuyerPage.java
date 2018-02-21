@@ -2,9 +2,7 @@ package Pages;
 
 import static com.codeborne.selenide.Selenide.*;
 
-
 import java.util.Random;
-
 
 import org.openqa.selenium.By;
 import org.testng.Reporter;
@@ -106,7 +104,7 @@ public class BuyerPage {
 	 */
 	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads) {
 		openDashBoardPage.click();
-		selectDate("13/11/16","Dashboard");
+		selectDate("13/11/16", "Dashboard");
 		loader.shouldBe(Condition.disappear);
 		softAssert.assertEquals(convertWebElementToNm(webTotalSpend), totalspent, "Totalspend");
 		softAssert.assertEquals(convertWebElementToNm(webTotalLeads), totalLeads, "TotalLeads");
@@ -119,7 +117,7 @@ public class BuyerPage {
 	 * Test total leads/total spent / avgCpl par offer in buyer > dashboard >
 	 * Recently Updated Campaigns
 	 */
-	public void checkStatisticPerCamp()  {
+	public void checkStatisticPerCamp() {
 		String campName, campLeadStatus;
 		Float webCampSpend, webCampLeads, leadBuyCpl = (float) 0, webAvgCPL = (float) 0;
 		wait.waitUntilAngularPageLoaded();
@@ -131,7 +129,7 @@ public class BuyerPage {
 			wait.waitUntilAngularPageLoaded();
 			campaignsName.get(i).click();
 			wait.waitUntilAngularPageLoaded();
-			selectDate("13/11/16","Report");
+			selectDate("13/11/16", "Report");
 			wait.waitUntilAngularPageLoaded();
 			perPage200.click();
 			wait.waitUntilAngularPageLoaded();
@@ -149,11 +147,11 @@ public class BuyerPage {
 				}
 
 			}
-			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName+ " Total spent");
-			softAssert.assertEquals(webCampLeads, totalLeads, campName+" Total leads");
+			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName + " Total spent");
+			softAssert.assertEquals(webCampLeads, totalLeads, campName + " Total leads");
 			softAssert.assertEquals(webAvgCPL, avgCpl, campName);
-			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + " total leads: " + totalLeads
-					+ "avgCpl " + avgCpl, true);
+			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + " total leads: "
+					+ totalLeads + "avgCpl " + avgCpl, true);
 			openDashBoardPage.click();
 
 		}
@@ -170,16 +168,14 @@ public class BuyerPage {
 		return result;
 	}
 
-	public void selectDate(String Date,String page) {
-		if(page == "Dashboard")
-		{
+	public void selectDate(String Date, String page) {
+		if (page == "Dashboard") {
 			$("html[ng-app='leadsBasket']").scrollTo();
 			datePicker.click();
 			startDate.clear();
 			startDate.setValue(Date);
 			applyDate.click();
-		}
-		else {
+		} else {
 			$$("div[class=title]").get(2).scrollIntoView(true);
 			$("input[st-search='date_range']").shouldBe(Condition.enabled).click();
 			$$("input[name='daterangepicker_start']").get(1).clear();
@@ -301,6 +297,28 @@ public class BuyerPage {
 		$(byText("Integration with API")).download();
 		PDF pdf = new PDF($(byText("Integration with API")).download());
 		assertThat(pdf, containsText("Get leads by API"));
+	}
+
+	public void createCamp() {
+		FormLbPage rendom = new FormLbPage();
+		String campName = rendom.generateEmail("abcdfagg124324543sad", 5);
+		$$("a[ui-sref='create_campaigns']").get(1).click();
+		$(byText("Save")).shouldBe(Condition.disabled);
+		wait.waitUntilAngularPageLoaded();
+		$("input[placeholder='Campaign Title']").setValue(campName);
+		$("a[placeholder='Sub-industry']").click();
+		$$("li[role='option']").get(0).click();
+		$("a[placeholder='Choose a Language']").click();
+		$$("li[role='option']").get(1).click();
+		$("div[title='Choose Locations']").click();
+		$$("li[role='option']").get(99).click();
+		$(byText("$28")).shouldBe(Condition.visible);
+		$("input[name='pricePerLead']").clear();
+		$("input[name='pricePerLead']").setValue("128");
+		$(byText("Save")).shouldBe(Condition.enabled).click();;
+
+		
+		
 	}
 
 }

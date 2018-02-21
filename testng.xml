@@ -58,7 +58,7 @@
 		<groups>
 			<run>
 				<include name="BuyerReg" />
-
+				<include name="Campaign" />
 			</run>
 		</groups>
 		<classes>

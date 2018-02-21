@@ -5,6 +5,7 @@ Pages\SellerPage.class
 com\affilomnia\leadbaskets\BuyerTest.class
 libry\TextReport.class
 Pages\FormLbPage.class
+com\affilomnia\leadbaskets\AdminTest.class
 libry\VideoRecord.class
 libry\MyReport.class
 Pages\LoginPage.class

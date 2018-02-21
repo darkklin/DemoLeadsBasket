@@ -65,7 +65,7 @@ public class BuyerTest extends BaseTest {
 		buyerPage.logOut();
 
 	}
-
+	
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
@@ -73,6 +73,16 @@ public class BuyerTest extends BaseTest {
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
+	}
+	
+	@Video
+	@Feature("Create Campaign")
+	@Severity(SeverityLevel.NORMAL)
+	@Test(enabled = true, description = "Buyer Create Campaign  ", groups = { "Campaign" }, priority = 1)
+	public void creteCampaign() {
+		open("https://test_app.leadsbasket.com");
+		loginPage.login("lbdemo234+3dbd%%df@gmail.com", "0546474985Ko");
+		buyerPage.createCamp();
 	}
 	
 }
