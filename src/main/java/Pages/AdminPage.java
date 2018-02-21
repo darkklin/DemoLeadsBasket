@@ -50,7 +50,7 @@ public class AdminPage {
 		$("tr[class='new']").waitUntil((Condition.visible), 20000).click();
 		Reporter.log("Email reset password sent",true);
 		switchTo().frame("mail-detail");
-		$("a[href]").click();
+		$("a[href]").waitUntil(Condition.appear, 30000).click();
 		switchTo().window(1);
 		$("h2").waitUntil(Condition.text("Reset Your Password"), 20000);
 		$$("input[type='password']").get(0).setValue("Test123456@");
