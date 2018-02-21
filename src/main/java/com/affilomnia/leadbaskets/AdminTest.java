@@ -31,7 +31,7 @@ public class AdminTest extends BaseTest {
 	LoginPage loginPage;
 
 	@Video
-	@Feature("buyer forget password")
+	@Feature("admin forget password")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest()
