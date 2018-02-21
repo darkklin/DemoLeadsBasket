@@ -32,7 +32,7 @@ public class AdminTest extends BaseTest {
 
 	@Video
 	@Feature("admin forget password")
-	@Severity(SeverityLevel.CRITICAL)
+	@Severity(SeverityLevel.NORMAL)
 	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest()
 	{

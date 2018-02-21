@@ -37,15 +37,15 @@ public class BaseTest {
 		TextReport.onFailedTest = true;
 	}
 
-	@AfterMethod(groups = { "BuyerReg", "buyerStatistic", "sellerStatistic", "createLead","sellerRegistrtion","forgetPassword" })
+	@AfterMethod(alwaysRun=true)
 	public void logs(ITestResult testResult) throws Exception {
-		VideoRecord.attachment();
 		logOutput(Reporter.getOutput(testResult));
 		
 		if(!testResult.isSuccess())
 		{
 			if(profile.shouldBe(Condition.visible) != null)
 			{
+				VideoRecord.attachment();
 				logOut();
 			}
 			else
