@@ -29,13 +29,22 @@ public class FormLbPage {
 	
 	public void regLead()
 	{
+		String nm = generateEmail("1234567890", 7);
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
 		email.setValue(generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ",10)+"@lb.com");
-		String placeholder = phone.getAttribute("placeholder");
-		placeholder = placeholder.replace("-", "").replace("(", "").replace(")", "").replace(" ","");
+//		String placeholder = phone.getAttribute("placeholder");
+//		placeholder = placeholder.replace("-", "").replace("(", "").replace(")", "").replace(" ","");
 
-		phone.setValue(placeholder);
+		if($$("div[title*='Israel']").size() != 0)
+		{
+			phone.setValue("531415926");
+		}
+		else
+		{
+			phone.setValue("201"+nm);
+
+		}
 		submitBtn.click();
 		confirm();
 		errorMessage.shouldBe(Condition.exactText(""));

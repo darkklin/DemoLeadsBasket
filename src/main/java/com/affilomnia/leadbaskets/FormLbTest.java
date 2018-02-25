@@ -47,6 +47,7 @@ public class FormLbTest  {
 		String targtingOfferLink = sellerPage.Offerlink();
 		open(targtingOfferLink);
 		formLbPage.regLead();
+		
 		open(targtingOfferLink);
 		back();
 		back();

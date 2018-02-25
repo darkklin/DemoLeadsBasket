@@ -102,6 +102,7 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 
 	</dependencies>
 
