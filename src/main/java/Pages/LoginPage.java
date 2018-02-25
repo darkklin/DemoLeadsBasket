@@ -11,7 +11,10 @@ import com.google.inject.Inject;
 public class LoginPage {
 	@Inject
 	public LoginPage() {
+//		Configuration.remote = "http://localhost:4446/wd/hub";
+
 		Configuration.browser = "chrome";
+
 		page(this);
 	}
 

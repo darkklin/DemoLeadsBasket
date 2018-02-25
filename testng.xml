@@ -66,18 +66,7 @@
 
 		</classes>
 	</test>
-	<test name="admin Regression test ">
-		<groups>
-			<run>
-				<include name="forgetPassword" />
-
-			</run>
-		</groups>
-		<classes>
-			<class name="com.affilomnia.leadbaskets.AdminTest"></class>
-
-		</classes>
-	</test>
+	
 </suite>
 
 

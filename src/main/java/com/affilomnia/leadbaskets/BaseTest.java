@@ -3,9 +3,13 @@ package com.affilomnia.leadbaskets;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
@@ -24,9 +28,13 @@ import libry.VideoRecord;
 
 public class BaseTest {
 
-	@BeforeSuite(groups = { "seller statistic Regression Test,seller/buyer registrtion Regression Test" })
+	@BeforeSuite(alwaysRun=true)
 	@Description("start")
-	public void beforeTest() {
+	public void beforeTest() throws Exception {
+//		String urlToRemoteWD = "http://localhost:4446/wd/hub";
+//		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
+//		WebDriverRunner.setWebDriver(driver);
+		
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;
@@ -35,17 +43,18 @@ public class BaseTest {
 		Configuration.driverManagerEnabled = true;
 		TextReport.onSucceededTest = false;
 		TextReport.onFailedTest = true;
+		
 	}
 
 	@AfterMethod(alwaysRun=true)
 	public void logs(ITestResult testResult) throws Exception {
 		logOutput(Reporter.getOutput(testResult));
+		VideoRecord.attachment();
 		
 		if(!testResult.isSuccess())
 		{
 			if(profile.shouldBe(Condition.visible) != null)
 			{
-				VideoRecord.attachment();
 				logOut();
 			}
 			else
