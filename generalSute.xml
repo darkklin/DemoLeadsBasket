@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression TestSuite buyer">
+	<test name="seller test ">
+		<groups>
+			<run>
+				<include name="sellerRegistrtion" />
+
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.SellerTest"></class>
+
+		</classes>
+	</test>
+	<test name="buyer test ">
+		<groups>
+			<run>
+				<include name="BuyerReg" />
+				<include name="Campaign" />
+				<include name="dispute" />
+
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
+
+		</classes>
+	</test>
+	<test name="admin test ">
+		<groups>
+			<run>
+				<include name="adminDispute" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.AdminTest"></class>
+
+		</classes>
+	</test>
+
+
+</suite>
+
+
+
