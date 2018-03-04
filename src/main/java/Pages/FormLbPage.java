@@ -27,7 +27,7 @@ public class FormLbPage {
 	private SelenideElement errorMessage = $("p[class='error']");
 
 	public String regLead(String emailDomain) {
-		String nm = generateEmail("1234567890", 7);
+		String nm = generateEmail("12345554467890", 7);
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
 		String email1 = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + emailDomain;
@@ -44,6 +44,15 @@ public class FormLbPage {
 		}
 		submitBtn.click();
 		confirm();
+
+		while($("p[class='error']").text().contains("You have entered an invalid phone number"))
+		{
+			String nm1 = generateEmail("12345554467890", 7);
+			phone.clear();
+			phone.setValue("201" + nm1);
+			submitBtn.click();
+			confirm();
+		}
 		errorMessage.shouldBe(Condition.exactText(""));
 		return email1;
 	}

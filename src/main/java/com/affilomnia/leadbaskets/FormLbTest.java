@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.automation.remarks.testng.VideoListener;
 import com.automation.remarks.video.annotations.Video;
-
+import com.codeborne.selenide.testng.annotations.Report;
 import com.google.inject.Inject;
 
 import Pages.FormLbPage;
@@ -21,7 +21,7 @@ import libry.TextReport;
 
 import static com.codeborne.selenide.Selenide.*;
 
-
+@Report
 @Guice
 @Listeners({ BaseListener.class, VideoListener.class })
 public class FormLbTest  {
