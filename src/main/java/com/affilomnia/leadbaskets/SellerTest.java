@@ -34,7 +34,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "How much seller have leads and Total CPl", groups = {
+	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
 			"sellerStatistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
 		open("https://test_app.leadsbasket.com");
@@ -69,7 +69,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion + Forget password")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = true, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		String sellerEmail = sellerPage.tenMinutEmail();
 		open("https://test_app.leadsbasket.com/register-seller-start");

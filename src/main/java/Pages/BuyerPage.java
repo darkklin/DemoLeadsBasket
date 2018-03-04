@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 import java.util.Random;
 
+import org.awaitility.core.ConditionSettings;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
@@ -16,6 +17,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.google.inject.Inject;
+import com.codeborne.selenide.CollectionCondition;
 
 import libry.WaitAngularPageLoaded;
 
@@ -71,6 +73,7 @@ public class BuyerPage {
 	private SelenideElement country = $("a[placeholder='Select Country']");
 	private SelenideElement zipCode = $("input[name='zip']");
 	private ElementsCollection chooseCountry = $$("li[role='option']");
+	private ElementsCollection disputeReson = $$("li[role='menuitem']");
 
 	/**
 	 * calculate buyer total spend and total lead parameters
@@ -294,9 +297,12 @@ public class BuyerPage {
 	}
 
 	public void downalodPdf() throws Exception {
-		$(byText("Integration with API")).download();
+		// $(byText("Integration with API")).download();
 		PDF pdf = new PDF($(byText("Integration with API")).download());
 		assertThat(pdf, containsText("Get leads by API"));
+		PDF pdf1 = new PDF($(byText("Integration with Zapier")).download());
+		assertThat(pdf1, containsText("Receive leads to your Zapier account"));
+
 	}
 
 	public void createCamp() {
@@ -315,10 +321,25 @@ public class BuyerPage {
 		$(byText("$28")).shouldBe(Condition.visible);
 		$("input[name='pricePerLead']").clear();
 		$("input[name='pricePerLead']").setValue("128");
-		$(byText("Save")).shouldBe(Condition.enabled).click();;
+		$(byText("Save")).shouldBe(Condition.enabled).click();
+		;
 
-		
-		
 	}
+
+	public void buyerDisputeLead(String email) {
+		Random rd = new Random();
+		int reson = rd.nextInt(7);
+		openLeadListPage.click();
+		wait.waitUntilAngularPageLoaded();
+		$("input[placeholder*='Email']").setValue(email);
+		wait.waitUntilAngularPageLoaded();
+		$$("tr[ng-repeat='lead in leadsCollection']").shouldHave(CollectionCondition.size(1));
+		$("tr[ng-repeat='lead in leadsCollection']").click();
+		wait.waitUntilAngularPageLoaded();
+		$(byText("Dispute")).click();
+		disputeReson.get(reson).click();
+	}
+
+	
 
 }

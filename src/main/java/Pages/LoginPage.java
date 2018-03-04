@@ -8,10 +8,15 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.google.inject.Inject;
 
+import libry.WaitAngularPageLoaded;
+
 public class LoginPage {
+	private WaitAngularPageLoaded wait;
+
 	@Inject
 	public LoginPage() {
 //		Configuration.remote = "http://localhost:4446/wd/hub";
+		wait = new WaitAngularPageLoaded();
 
 		Configuration.browser = "chrome";
 
@@ -31,6 +36,8 @@ public class LoginPage {
 		email.sendKeys(useremail);
 		password.sendKeys(userpassword);
 		submit.pressEnter();
+		wait.waitUntilAngularPageLoaded();
+
 	}
 
 }

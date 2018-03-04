@@ -75,6 +75,7 @@ public class SellerPage {
 	 */
 
 	public Float[] calcTotalRevenueLeadActualAvgCpl() throws Exception {
+		wait.waitUntilAngularPageLoaded();
 		perPage200.waitUntil(Condition.visible, 20000).click();
 		wait.waitUntilAngularPageLoaded();
 		Thread.sleep(3000);

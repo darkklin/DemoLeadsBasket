@@ -39,28 +39,22 @@ public class FormLbTest  {
 	@Test(enabled = true, description = "seller send one lead thought offer 543 ", groups = {
 			"createLead" }, priority = 1)
 	public void LoginAsSellerAndSendLead() throws Exception {
-		
-
-
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
 		String targtingOfferLink = sellerPage.Offerlink();
 		open(targtingOfferLink);
-		formLbPage.regLead();
-		
+		formLbPage.regLead("@lb.com");
 		open(targtingOfferLink);
 		back();
 		back();
 		sellerPage.logOut();
 	}
-
 	@Video
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = " sent lead through embedded form ", groups = { "createLead" }, priority = 2)
+	@Test(enabled = true, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
 	public void EmbeddedForm() {
 		open("http://52.17.171.159/EmbeddedOffer/");
-		formLbPage.regLead();
-
+		formLbPage.regLead("@lb.com");
 	}
 }
