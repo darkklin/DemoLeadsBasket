@@ -9,41 +9,39 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">statistic Regression TestSuite </th></tr>
-<tr><td><a href="#t0">create lead  test </a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">14,682</td><td>createLead</td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">buyer statistic check </a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">61,317</td><td>buyerStatistic</td><td></td></tr>
-<tr><td><a href="#t2">seller statistic check </a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">95,990</td><td>sellerStatistic</td><td></td></tr>
+<tr><td><a href="#t0">create lead  test </a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">15,993</td><td>createLead</td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">buyer statistic check </a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td>buyerStatistic</td><td></td></tr>
+<tr><td><a href="#t2">seller statistic check </a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">99,291</td><td>sellerStatistic</td><td></td></tr>
 <tr><th colspan="7">Regression TestSuite buyer</th></tr>
-<tr class="stripe"><td><a href="#t3">seller test </a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">36,877</td><td>sellerRegistrtion</td><td></td></tr>
-<tr><td><a href="#t4">buyer test </a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">41,467</td><td>dispute, Campaign, BuyerReg</td><td></td></tr>
-<tr class="stripe"><td><a href="#t5">admin test </a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">36,749</td><td>adminDispute</td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">seller test </a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">35,191</td><td>sellerRegistrtion</td><td></td></tr>
+<tr><td><a href="#t4">buyer test </a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">14,032</td><td>dispute, Campaign, BuyerReg</td><td></td></tr>
+<tr class="stripe"><td><a href="#t5">admin test </a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">35,906</td><td>adminDispute</td><td></td></tr>
 <tr><th colspan="7">allSuites</th></tr>
-<tr><th>Total</th><th class="num">13</th><th class="num">0</th><th class="num attn">1</th><th class="num">287,082</th><th colspan="2"></th></tr>
+<tr><th>Total</th><th class="num">8</th><th class="num">0</th><th class="num attn">1</th><th class="num">200,413</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">statistic Regression TestSuite </th></tr></tbody><tbody id="t0"><tr><th colspan="4">create lead  test  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.affilomnia.leadbaskets.FormLbTest</td><td><a href="#m0">EmbeddedForm</a></td><td rowspan="1">1520153116169</td><td rowspan="1">1244</td></tr><tr class="passedeven"><td><a href="#m1">LoginAsSellerAndSendLead</a></td><td rowspan="1">1520153102808</td><td rowspan="1">13355</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">buyer statistic check  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.affilomnia.leadbaskets.BuyerTest</td><td><a href="#m2">testLoginTotalSpentAndLeads</a></td><td rowspan="1">1520153117501</td><td rowspan="1">21845</td></tr><tr class="passedeven"><td><a href="#m3">testTotalLeadTotalSpentAvgcplParCamp</a></td><td rowspan="1">1520153140432</td><td rowspan="1">37286</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">seller statistic check  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.affilomnia.leadbaskets.SellerTest</td><td><a href="#m4">sellerAccountingStatistic</a></td><td rowspan="1">1520153260554</td><td rowspan="1">13172</td></tr><tr class="passedeven"><td><a href="#m5">testStatisticParOffer</a></td><td rowspan="1">1520153209724</td><td rowspan="1">49737</td></tr><tr class="passedeven"><td><a href="#m6">testTotalLeadTotalCpl</a></td><td rowspan="1">1520153178827</td><td rowspan="1">29808</td></tr></tbody>
-<tbody><tr><th colspan="4">Regression TestSuite buyer</th></tr></tbody><tbody id="t3"><tr><th colspan="4">seller test  &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.affilomnia.leadbaskets.SellerTest</td><td><a href="#m7">logs</a></td><td rowspan="1">1520153018857</td><td rowspan="1">5626</td></tr><tr><th colspan="4">seller test  &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.affilomnia.leadbaskets.SellerTest</td><td><a href="#m8">sellerRegistrtion</a></td><td rowspan="1">1520152987638</td><td rowspan="1">30605</td></tr></tbody>
-<tbody id="t4"><tr><th colspan="4">buyer test  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.affilomnia.leadbaskets.BuyerTest</td><td><a href="#m9">creteCampaign</a></td><td rowspan="1">1520153024549</td><td rowspan="1">9763</td></tr><tr class="passedeven"><td><a href="#m10">disputeLead</a></td><td rowspan="1">1520153035384</td><td rowspan="1">12755</td></tr><tr class="passedeven"><td><a href="#m11">testBuyerRegistrtion</a></td><td rowspan="1">1520153049287</td><td rowspan="1">11225</td></tr><tr class="passedeven"><td><a href="#m12">testdownloadIntegrtionPDF</a></td><td rowspan="1">1520153061609</td><td rowspan="1">3315</td></tr></tbody>
-<tbody id="t5"><tr><th colspan="4">admin test  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.affilomnia.leadbaskets.AdminTest</td><td><a href="#m13">adminAcceptDispute</a></td><td rowspan="1">1520153066036</td><td rowspan="1">12465</td></tr><tr class="passedeven"><td><a href="#m14">adminDeclinedDispute</a></td><td rowspan="1">1520153079576</td><td rowspan="1">22033</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">statistic Regression TestSuite </th></tr></tbody><tbody id="t0"><tr><th colspan="4">create lead  test  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.affilomnia.leadbaskets.FormLbTest</td><td><a href="#m0">EmbeddedForm</a></td><td rowspan="1">1520159811192</td><td rowspan="1">1287</td></tr><tr class="passedeven"><td><a href="#m1">LoginAsSellerAndSendLead</a></td><td rowspan="1">1520159796589</td><td rowspan="1">14597</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4" class="invisible"/></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">seller statistic check  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.affilomnia.leadbaskets.SellerTest</td><td><a href="#m2">sellerAccountingStatistic</a></td><td rowspan="1">1520159897467</td><td rowspan="1">13342</td></tr><tr class="passedeven"><td><a href="#m3">testStatisticParOffer</a></td><td rowspan="1">1520159844476</td><td rowspan="1">51911</td></tr><tr class="passedeven"><td><a href="#m4">testTotalLeadTotalCpl</a></td><td rowspan="1">1520159812599</td><td rowspan="1">30764</td></tr></tbody>
+<tbody><tr><th colspan="4">Regression TestSuite buyer</th></tr></tbody><tbody id="t3"><tr><th colspan="4">seller test  &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.affilomnia.leadbaskets.SellerTest</td><td><a href="#m5">logs</a></td><td rowspan="1">1520159741047</td><td rowspan="1">5501</td></tr><tr><th colspan="4">seller test  &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.affilomnia.leadbaskets.SellerTest</td><td><a href="#m6">sellerRegistrtion</a></td><td rowspan="1">1520159711387</td><td rowspan="1">29122</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">buyer test  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.affilomnia.leadbaskets.BuyerTest</td><td><a href="#m7">disputeLead</a></td><td rowspan="1">1520159746606</td><td rowspan="1">12899</td></tr></tbody>
+<tbody id="t5"><tr><th colspan="4">admin test  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.affilomnia.leadbaskets.AdminTest</td><td><a href="#m8">adminAcceptDispute</a></td><td rowspan="1">1520159760664</td><td rowspan="1">12010</td></tr><tr class="passedeven"><td><a href="#m9">adminDeclinedDispute</a></td><td rowspan="1">1520159773761</td><td rowspan="1">21672</td></tr></tbody>
 <tbody><tr><th colspan="4">allSuites</th></tr></tbody></table>
 <h2>create lead  test </h2><h3 id="m0">com.affilomnia.leadbaskets.FormLbTest#EmbeddedForm</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">com.affilomnia.leadbaskets.FormLbTest#LoginAsSellerAndSendLead</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>buyer statistic check </h2><h3 id="m2">com.affilomnia.leadbaskets.BuyerTest#testLoginTotalSpentAndLeads</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">total spent is correct 5784.0<br/>total Leads is correct 161.0</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.affilomnia.leadbaskets.BuyerTest#testTotalLeadTotalSpentAvgcplParCamp</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">campgns name : biddertesttotal spend : 5544.0 total leads: 154.0avgCpl 36.0<br/>campgns name : los angelestotal spend : 144.0 total leads: 4.0avgCpl 36.0<br/>campgns name : russian - moskvatotal spend : 36.0 total leads: 1.0avgCpl 36.0<br/>campgns name : germmnytotal spend : 60.0 total leads: 2.0avgCpl 30.0</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>seller statistic check </h2><h3 id="m4">com.affilomnia.leadbaskets.SellerTest#sellerAccountingStatistic</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">total Amount invoice leads accounting page4696.97<br/>total Amount  leads accounting page143.0</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.affilomnia.leadbaskets.SellerTest#testStatisticParOffer</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">
+<h2>buyer statistic check </h2><h2>seller statistic check </h2><h3 id="m2">com.affilomnia.leadbaskets.SellerTest#sellerAccountingStatistic</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">total Amount invoice leads accounting page4793.77<br/>total Amount  leads accounting page146.0</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.affilomnia.leadbaskets.SellerTest#testStatisticParOffer</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">
 OfferName: Home security>Number leads:1.0>Revenues: 22.0>Avg. CPL: 22.0EPC: 11.0<br/>
-OfferName: selenium Webdriver(don't use!!!)>Number leads:142.0>Revenues: 4674.97>Avg. CPL: 32.92EPC: 19.98<br/>
-Total clicks: 236.0Avg. EPC 19.9</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.affilomnia.leadbaskets.SellerTest#testTotalLeadTotalCpl</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">
-total Leads is  143.0<br/>
-total revenue is  4696.97<br/>
-Actual avg cpl  is  32.85<br/>
+OfferName: selenium Webdriver(don't use!!!)>Number leads:145.0>Revenues: 4771.77>Avg. CPL: 32.91EPC: 19.8<br/>
+Total clicks: 243.0Avg. EPC 19.73</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.affilomnia.leadbaskets.SellerTest#testTotalLeadTotalCpl</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">
+total Leads is  146.0<br/>
+total revenue is  4793.77<br/>
+Actual avg cpl  is  32.83<br/>
 Avg. Min CPL  is  31.93</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>seller test </h2><h3 id="m7">com.affilomnia.leadbaskets.SellerTest#logs</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=sellerRegistrtion status=FAILURE method=SellerTest.sellerRegistrtion()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@2e6d76ba] output=seller email &gt; mtt91393@bnuis.com]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {a.profile}
+<h2>seller test </h2><h3 id="m5">com.affilomnia.leadbaskets.SellerTest#logs</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=sellerRegistrtion status=FAILURE method=SellerTest.sellerRegistrtion()[pri:1, instance:com.affilomnia.leadbaskets.SellerTest@119290b9] output=seller email &gt; nfs46344@qiaua.com]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {a.profile}
 Expected: visible
-Screenshot: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520153024008.1.png
-Page source: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520153024008.1.html
+Screenshot: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520159746150.1.png
+Page source: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520159746150.1.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a.profile&quot;}
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
@@ -66,7 +64,7 @@ Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: 
 System info: host: &apos;RG-W-KIRIL&apos;, ip: &apos;169.254.62.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.36.540470 (e522d04694c7eb..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.167, webStorageEnabled: true}
-Session ID: 7856b0a85bbf9bb45b250aa5d9a16638
+Session ID: 04e9b999d518c9c23439bbe1fca29871
 *** Element info: {Using=css selector, value=a.profile}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
@@ -85,44 +83,44 @@ Session ID: 7856b0a85bbf9bb45b250aa5d9a16638
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 41 more
 ... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.affilomnia.leadbaskets.SellerTest#sellerRegistrtion</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">seller email > mtt91393@bnuis.com<br/>New seller Create<br/>Report for sellerRegistrtion
+<h3 id="m6">com.affilomnia.leadbaskets.SellerTest#sellerRegistrtion</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">seller email > nfs46344@qiaua.com<br/>New seller Create<br/>Report for sellerRegistrtion
 +--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
 |Element                                                 |Subject                                                               |Status    |ms.       |
 +--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
-|open                                                    |https://10minutemail.net                                              |PASS      |2654      |
-|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |24        |
-|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |15        |
-|open                                                    |https://test_app.leadsbasket.com/register-seller-start                |PASS      |1159      |
-|h2                                                      |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |65        |
-|a[ui-sref='login']                                      |click()                                                               |PASS      |78        |
+|open                                                    |https://10minutemail.net                                              |PASS      |2645      |
+|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |26        |
+|input[class='mailtext']                                 |get attribute(value)                                                  |PASS      |12        |
+|open                                                    |https://test_app.leadsbasket.com/register-seller-start                |PASS      |936       |
+|h2                                                      |should have(text 'Create a Free Account on LEADSBASKET')              |PASS      |71        |
+|a[ui-sref='login']                                      |click()                                                               |PASS      |73        |
 |h2                                                      |should have(text 'Login to LeadsBasket')                              |PASS      |228       |
-|by text: Get Started                                    |click()                                                               |PASS      |74        |
-|by text: Terms of Services                              |click()                                                               |PASS      |290       |
-|div.terms>h1                                            |should have(text 'TERMS OF USE')                                      |PASS      |1054      |
-|by text: Login                                          |should be(visible)                                                    |PASS      |113       |
-|by text: Login                                          |click()                                                               |PASS      |100       |
-|div.auth>h2                                             |should have(text 'Login to LeadsBasket')                              |PASS      |48        |
-|button.btn                                              |should be(disabled)                                                   |PASS      |26        |
-|input[name='firstName']                                 |set value(selenidefcad)                                               |PASS      |52        |
-|input[name='lastName']                                  |set value(automticfcad)                                               |PASS      |58        |
-|input[id='tel-dc']                                      |get attribute(placeholder)                                            |PASS      |27        |
-|input[id='tel-dc']                                      |set value(050-123-4567)                                               |PASS      |48        |
-|input[name='company']                                   |set value(selenide)                                                   |PASS      |50        |
-|input[placeholder*='Email']                             |set value(mtt91393@bnuis.com)                                         |PASS      |69        |
-|input[name='pass']                                      |set value(D%1%bfdd3c%)                                                |PASS      |67        |
-|input[name='rePass']                                    |set value(D%1%bfdd3c%)                                                |PASS      |67        |
-|button.btn                                              |should be(visible)                                                    |PASS      |30        |
-|button.btn                                              |click()                                                               |PASS      |78        |
-|h4                                                      |should have(text 'YOU'RE ALMOST THERE!')                              |PASS      |987       |
-|by text: Done                                           |should be(visible)                                                    |PASS      |31        |
-|by text: Done                                           |click()                                                               |PASS      |2524      |
-|open                                                    |https://10minutemail.net                                              |PASS      |3779      |
-|by text: Welcome to LeadsBasket - Verification Required |wait until([visible, 15000])                                          |FAIL      |15097     |
+|by text: Get Started                                    |click()                                                               |PASS      |85        |
+|by text: Terms of Services                              |click()                                                               |PASS      |275       |
+|div.terms>h1                                            |should have(text 'TERMS OF USE')                                      |PASS      |1056      |
+|by text: Login                                          |should be(visible)                                                    |PASS      |70        |
+|by text: Login                                          |click()                                                               |PASS      |94        |
+|div.auth>h2                                             |should have(text 'Login to LeadsBasket')                              |PASS      |55        |
+|button.btn                                              |should be(disabled)                                                   |PASS      |23        |
+|input[name='firstName']                                 |set value(selenidedgbb)                                               |PASS      |52        |
+|input[name='lastName']                                  |set value(automticdgbb)                                               |PASS      |59        |
+|input[id='tel-dc']                                      |get attribute(placeholder)                                            |PASS      |28        |
+|input[id='tel-dc']                                      |set value(050-123-4567)                                               |PASS      |55        |
+|input[name='company']                                   |set value(selenide)                                                   |PASS      |60        |
+|input[placeholder*='Email']                             |set value(nfs46344@qiaua.com)                                         |PASS      |54        |
+|input[name='pass']                                      |set value(D%12cf32ddd)                                                |PASS      |57        |
+|input[name='rePass']                                    |set value(D%12cf32ddd)                                                |PASS      |65        |
+|button.btn                                              |should be(visible)                                                    |PASS      |28        |
+|button.btn                                              |click()                                                               |PASS      |84        |
+|h4                                                      |should have(text 'YOU'RE ALMOST THERE!')                              |PASS      |943       |
+|by text: Done                                           |should be(visible)                                                    |PASS      |28        |
+|by text: Done                                           |click()                                                               |PASS      |1842      |
+|open                                                    |https://10minutemail.net                                              |PASS      |3289      |
+|by text: Welcome to LeadsBasket - Verification Required |wait until([visible, 15000])                                          |FAIL      |15042     |
 +--------------------------------------------------------+----------------------------------------------------------------------+----------+----------+
 </div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">Element not found {by text: Welcome to LeadsBasket - Verification Required}
 Expected: visible
-Screenshot: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520153017774.0.png
-Page source: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520153017774.0.html
+Screenshot: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520159740075.0.png
+Page source: file:/C:/LeadBasketsVr2/affilomnia.leadbaskets/build/reports/tests/1520159740075.0.html
 Timeout: 15 s.
 Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*/text()[normalize-space(translate(string(.), &apos;
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:31)
@@ -148,7 +146,7 @@ Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: 
 System info: host: &apos;RG-W-KIRIL&apos;, ip: &apos;169.254.62.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.36.540470 (e522d04694c7eb..., userDataDir: C:\Users\kiril\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 64.0.3282.167, webStorageEnabled: true}
-Session ID: 7856b0a85bbf9bb45b250aa5d9a16638
+Session ID: 04e9b999d518c9c23439bbe1fca29871
 *** Element info: {Using=xpath, value=.//*/text()[normalize-space(translate(string(.), &apos;	
 
  &apos;, &apos;    &apos;)) = &quot;Welcome to LeadsBasket - Verification Required&quot;]/parent::*}
@@ -169,11 +167,8 @@ Session ID: 7856b0a85bbf9bb45b250aa5d9a16638
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:44)
 	... 39 more
 ... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>buyer test </h2><h3 id="m9">com.affilomnia.leadbaskets.BuyerTest#creteCampaign</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">com.affilomnia.leadbaskets.BuyerTest#disputeLead</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">com.affilomnia.leadbaskets.BuyerTest#testBuyerRegistrtion</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">com.affilomnia.leadbaskets.BuyerTest#testdownloadIntegrtionPDF</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>admin test </h2><h3 id="m13">com.affilomnia.leadbaskets.AdminTest#adminAcceptDispute</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Admin accepted dispute</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m14">com.affilomnia.leadbaskets.AdminTest#adminDeclinedDispute</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>buyer test </h2><h3 id="m7">com.affilomnia.leadbaskets.BuyerTest#disputeLead</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>admin test </h2><h3 id="m8">com.affilomnia.leadbaskets.AdminTest#adminAcceptDispute</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Admin accepted dispute</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.affilomnia.leadbaskets.AdminTest#adminDeclinedDispute</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
