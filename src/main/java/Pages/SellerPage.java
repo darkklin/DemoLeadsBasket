@@ -320,7 +320,7 @@ public class SellerPage {
 //	}
 	public void verifyEmail() {
 		open("https://10minutemail.net");	
-		$(byText("Welcome to LeadsBasket - Verification Required")).waitUntil((Condition.visible), 15000).click();
+		$(byText("Welcome to LeadsBasket - Verification Required")).waitUntil((Condition.visible), 20000).click();
 		Reporter.log("Email Verification Required ",true);
 		$(byText("Click Here")).click();
 		switchTo().window(1);
