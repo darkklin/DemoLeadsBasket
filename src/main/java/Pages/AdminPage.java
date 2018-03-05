@@ -34,7 +34,7 @@ public class AdminPage {
 	{
 		$(byText("Forgot Password?")).waitUntil((Condition.visible), 15000).click();
 		wait.waitUntilAngularPageLoaded();
-		$("input[type='email']").setValue("kirill3@gmx.com");
+		$("input[type='email']").setValue("");
 		$("button[type='submit']").click();
 		$("h2").shouldHave(Condition.text("Reset Your Password"));
 		try {
@@ -45,7 +45,7 @@ public class AdminPage {
 		}
 		open("https://www.gmx.com");
 		$("a[id='login-button']").click();
-		$("input[name='username']").setValue("kirill3@gmx.com");
+		$("input[name='username']").setValue("");
 		$("input[name='password']").setValue("0546474985");
 		$("button[type='submit']").click();
 		$("pos-svg-icon[name='core_mail']").click();

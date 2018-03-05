@@ -38,7 +38,7 @@ public class SellerTest extends BaseTest {
 			"sellerStatistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
+		loginPage.login("", "");
 		$(byText("Report")).click();
 		Float statResult[] = sellerPage.calcTotalRevenueLeadActualAvgCpl();
 		sellerPage.checkStatisticOnDashBoard(statResult[0], statResult[1], statResult[2], statResult[3]);
@@ -51,7 +51,7 @@ public class SellerTest extends BaseTest {
 	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 2)
 	public void testStatisticParOffer() throws Exception {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
+		loginPage.login("", "");
 		sellerPage.checkstatParOffer();
 		sellerPage.logOut();
 	}
@@ -61,7 +61,7 @@ public class SellerTest extends BaseTest {
 	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 3)
 	public void sellerAccountingStatistic() throws Exception {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
+		loginPage.login("", "");
 		sellerPage.accountingStatistic();
 		sellerPage.logOut();
 	}

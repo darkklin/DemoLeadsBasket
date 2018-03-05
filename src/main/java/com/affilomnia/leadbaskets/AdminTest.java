@@ -45,7 +45,7 @@ public class AdminTest extends BaseTest {
 		open("https://test_staff.leadsbasket.com/admin/login");
 		adminPage.forgetPassword();
 		open("https://test_staff.leadsbasket.com/admin/login");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		loginPage.login("", "");
 		adminPage.logOut();
 		
 	}
@@ -56,7 +56,7 @@ public class AdminTest extends BaseTest {
 	@Test(enabled = true, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
 	public void adminAcceptDispute() {
 		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		loginPage.login("", "");
 		adminPage.acceptDispute("Yes");		
 		adminPage.logOut();
 	}
@@ -67,7 +67,7 @@ public class AdminTest extends BaseTest {
 	public void adminDeclinedDispute() {
 		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		loginPage.login("", "");
 		adminPage.acceptDispute("No");	
 		adminPage.logOut();
 
