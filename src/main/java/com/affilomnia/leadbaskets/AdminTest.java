@@ -15,9 +15,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 import Pages.AdminPage;
-import Pages.BuyerPage;
 import Pages.LoginPage;
-import Pages.SellerPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -45,7 +43,7 @@ public class AdminTest extends BaseTest {
 		open("https://test_staff.leadsbasket.com/admin/login");
 		adminPage.forgetPassword();
 		open("https://test_staff.leadsbasket.com/admin/login");
-		loginPage.login("", "");
+		loginPage.login("kirill3@gmx.com", "Test123456@");
 		adminPage.logOut();
 		
 	}
@@ -56,7 +54,7 @@ public class AdminTest extends BaseTest {
 	@Test(enabled = true, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
 	public void adminAcceptDispute() {
 		open("https://test_staff.leadsbasket.com");
-		loginPage.login("", "");
+		loginPage.login("kirill3@gmx.com", "Test123456@");
 		adminPage.acceptDispute("Yes");		
 		adminPage.logOut();
 	}
@@ -67,7 +65,7 @@ public class AdminTest extends BaseTest {
 	public void adminDeclinedDispute() {
 		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
-		loginPage.login("", "");
+		loginPage.login("kirill3@gmx.com", "Test123456@");
 		adminPage.acceptDispute("No");	
 		adminPage.logOut();
 

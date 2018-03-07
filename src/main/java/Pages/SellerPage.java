@@ -3,23 +3,17 @@ package Pages;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.collections.Texts;
 import com.google.inject.Inject;
 
 import libry.WaitAngularPageLoaded;

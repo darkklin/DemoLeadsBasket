@@ -42,7 +42,7 @@ public class BuyerTest extends BaseTest {
 			"buyerStatistic" }, priority = 1)
 	public void testLoginTotalSpentAndLeads() {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("", "");
+		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
 		buyerPage.calcTotalSpentAndTotalLead();
 		buyerPage.logOut();
 	}
@@ -54,7 +54,7 @@ public class BuyerTest extends BaseTest {
 			"buyerStatistic" }, priority = 2)
 	public void testTotalLeadTotalSpentAvgcplParCamp() {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("", "");
+		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
 		buyerPage.checkStatisticPerCamp();
 		buyerPage.logOut();
 	}
@@ -88,7 +88,7 @@ public class BuyerTest extends BaseTest {
 	@Test(enabled = true, description = "Buyer Create Campaign  ", groups = { "Campaign" }, priority = 1)
 	public void creteCampaign() {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("", "");
+		loginPage.login("lbdemo234+3dbd%%df@gmail.com", "0546474985Ko");
 		buyerPage.createCamp();
 		buyerPage.logOut();
 
@@ -103,7 +103,7 @@ public class BuyerTest extends BaseTest {
 		String email = formLbPage.regLead("@dispute.com");
 		System.out.println("Dispute email" + email);
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("", "");
+		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
 		buyerPage.buyerDisputeLead(email);
 		buyerPage.logOut();
 
