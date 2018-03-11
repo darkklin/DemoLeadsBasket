@@ -43,7 +43,6 @@ public class FormLbPage {
 
 		}
 		submitBtn.click();
-		$("H1").waitUntil(Condition.text("Registration done!"), 10000);
 
 		while($("p[class='error']").text().contains("You have entered an invalid phone number"))
 		{
@@ -51,9 +50,8 @@ public class FormLbPage {
 			phone.clear();
 			phone.setValue("201" + nm1);
 			submitBtn.click();
-			$("H1").waitUntil(Condition.text("Registration done!"), 10000);
 		}
-		errorMessage.shouldBe(Condition.exactText(""));
+		$("H1").waitUntil(Condition.text("Registration done!"), 10000);
 		return email1;
 	}
 
