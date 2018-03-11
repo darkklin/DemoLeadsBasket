@@ -26,7 +26,7 @@ public class FormLbPage {
 	private SelenideElement submitBtn = $("input[type='submit']");
 	private SelenideElement errorMessage = $("p[class='error']");
 
-	public String regLead(String emailDomain) {
+	public String regLead(String emailDomain)  {
 		String nm = generateEmail("12345554467890", 7);
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
@@ -43,7 +43,7 @@ public class FormLbPage {
 
 		}
 		submitBtn.click();
-		confirm();
+		$("H1").waitUntil(Condition.text("Registration done!"), 10000);
 
 		while($("p[class='error']").text().contains("You have entered an invalid phone number"))
 		{
@@ -51,7 +51,7 @@ public class FormLbPage {
 			phone.clear();
 			phone.setValue("201" + nm1);
 			submitBtn.click();
-			confirm();
+			$("H1").waitUntil(Condition.text("Registration done!"), 10000);
 		}
 		errorMessage.shouldBe(Condition.exactText(""));
 		return email1;

@@ -16,6 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 import Pages.AdminPage;
 import Pages.LoginPage;
+import Pages.SellerPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
