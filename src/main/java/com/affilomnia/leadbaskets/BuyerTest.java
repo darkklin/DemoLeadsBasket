@@ -50,7 +50,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = {
+	@Test(enabled = false, description = "Test total leads/spent/avgcpl par offer ", groups = {
 			"buyerStatistic" }, priority = 2)
 	public void testTotalLeadTotalSpentAvgcplParCamp() {
 		open("https://test_app.leadsbasket.com");
@@ -62,7 +62,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.BLOCKER)
-	@Test(enabled = true, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
+	@Test(enabled = false, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
 	public void testBuyerRegistrtion() {
 		open("https://test_app.leadsbasket.com/register-industry");
 		buyerPage.industryPage();
@@ -76,7 +76,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
+	@Test(enabled = false, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
@@ -85,7 +85,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Create Campaign")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Buyer Create Campaign  ", groups = { "Campaign" }, priority = 1)
+	@Test(enabled = false, description = "Buyer Create Campaign  ", groups = { "Campaign" }, priority = 1)
 	public void creteCampaign() {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("lbdemo234+3dbd%%df@gmail.com", "0546474985Ko");
@@ -97,7 +97,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
+	@Test(enabled = false, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
 	public void disputeLead() {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
 		String email = formLbPage.regLead("@dispute.com");

@@ -88,6 +88,12 @@ public class BuyerPage {
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
+		int pageCount = $$("a[ng-click='selectPage(page)']").size();
+		if(pageCount <= 0) {
+			pageCount = 1;
+		}
+		for (int j = 1; j <= pageCount; j++) {
+		
 		for (int i = 0; i < leadCollection.size(); i++) {
 			leadBuyCpl = convertWebElementToNm(buyCplParLead.get(i));
 			String leadstatus = leadStatusCollection.get(i).getText();
@@ -98,6 +104,9 @@ public class BuyerPage {
 			}
 
 		}
+		$("a[ng-click='selectPage(currentPage+1)']").click();	
+		}
+
 		checkTotalSpentAndTotalLeads(totaleadBuyCpl, totalLeads);
 		// return new Float[] { totalLeads, totaleadBuyCpl };
 	}
@@ -137,20 +146,35 @@ public class BuyerPage {
 			perPage200.click();
 			wait.waitUntilAngularPageLoaded();
 			Float totalLeads = (float) 0, totaleadBuyCpl = (float) 0;
-			Float avgCpl = (float) 0;
-			for (int j = 0; j < $$("tr[ng-repeat*='leadsCollection']").size(); j++) {
-				leadBuyCpl = convertWebElementToNm(campLeadBuyCpl.get(j));
-				campLeadStatus = campaignLeadStatus.get(j).getText();
+			Float avgCpl = (float) 0;		
+			int pageCount = $$("a[ng-click='selectPage(page)']").size();
+			boolean hasPages = true;
+			if(pageCount <= 0) {
+				pageCount = 1;
+				hasPages = false;
+			}		
+			for (int j = 1; j <= pageCount; j++) {
+				for (int k = 0; k < $$("tr[ng-repeat*='leadsCollection']").size(); k++) {
+					leadBuyCpl = convertWebElementToNm(campLeadBuyCpl.get(k));
+					campLeadStatus = campaignLeadStatus.get(k).getText();
 
-				if (campLeadStatus.equalsIgnoreCase("Paid") || campLeadStatus.equalsIgnoreCase("Dispute")
-						|| campLeadStatus.equalsIgnoreCase("Dispute Declined")) {
-					totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
-					totalLeads++;
-					avgCpl = totaleadBuyCpl / totalLeads;
+					if (campLeadStatus.equalsIgnoreCase("Paid") || campLeadStatus.equalsIgnoreCase("Dispute")
+							|| campLeadStatus.equalsIgnoreCase("Dispute Declined")) {
+						totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
+						totalLeads++;
+						avgCpl = totaleadBuyCpl / totalLeads;
+					}
+				}		
+				if(hasPages)
+					$("a[ng-click='selectPage(currentPage+1)']").click();			
+				try {
+					wait.waitUntilAngularPageLoaded();
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
-
-			}
-			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName + " Total spent");
+				}
+		softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName + " Total spent");
 			softAssert.assertEquals(webCampLeads, totalLeads, campName + " Total leads");
 			softAssert.assertEquals(webAvgCPL, avgCpl, campName);
 			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + " total leads: "
@@ -339,7 +363,5 @@ public class BuyerPage {
 		$(byText("Dispute")).click();
 		disputeReson.get(reson).click();
 	}
-
-	
 
 }
