@@ -95,7 +95,7 @@ public class SellerPage {
 		actualAvgCpl = totalRevenues / buyerTotalLeads;
 		minSaleCpl = (float) (Math.round(minSaleCpl * 100.0) / 100.0);
 		actualAvgCpl = (float) (Math.round(actualAvgCpl * 100.0) / 100.0);
-		totalRevenues = (float) (Math.round(totalRevenues * 100.0) / 100.0);
+		totalRevenues = (float) (Math.ceil(totalRevenues * 100.0) / 100.0);
 		return new Float[] { buyerTotalLeads, totalRevenues, actualAvgCpl, minSaleCpl };
 	}
 
@@ -186,7 +186,7 @@ public class SellerPage {
 
 		for (int i = 1; i <= $$("[ng-repeat*='invoiceCollection']").size(); i++) {
 			String statusInvoice = $("table.detailTable>tbody>tr:nth-child(" + i + ")>td:nth-child(6)").getText();
-			if (statusInvoice.equalsIgnoreCase("open")) {
+			if (statusInvoice.equalsIgnoreCase("Open")) {
 				Float InvoiceAmount = convertWebElementToNm(
 						$(By.xpath("//tr[@ng-repeat='item in invoiceCollection'][" + i + "]//td[4]")).getText());
 				Float invoiceLeads = convertWebElementToNm(
