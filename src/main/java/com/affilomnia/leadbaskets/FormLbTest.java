@@ -59,7 +59,7 @@ public class FormLbTest  {
 			"createLead" }, priority = 1)
 	public void LoginAsSellerAndSendLead() throws Exception {
 		open("https://test_app.leadsbasket.com");
-		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
+		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko"); //selelr id 710
 		String targtingOfferLink = sellerPage.Offerlink();
 		open(targtingOfferLink);
 		formLbPage.regLead("@lb.com");

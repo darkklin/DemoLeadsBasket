@@ -89,22 +89,28 @@ public class BuyerPage {
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
 		int pageCount = $$("a[ng-click='selectPage(page)']").size();
-		if(pageCount <= 0) {
+		if (pageCount <= 0) {
 			pageCount = 1;
 		}
 		for (int j = 1; j <= pageCount; j++) {
-		
-		for (int i = 0; i < leadCollection.size(); i++) {
-			leadBuyCpl = convertWebElementToNm(buyCplParLead.get(i));
-			String leadstatus = leadStatusCollection.get(i).getText();
-			if (leadstatus.equalsIgnoreCase("Paid") || leadstatus.equalsIgnoreCase("Dispute")
-					|| leadstatus.equalsIgnoreCase("Dispute Declined")) {
-				totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
-				totalLeads++;
-			}
 
-		}
-		$("a[ng-click='selectPage(currentPage+1)']").click();	
+			for (int i = 0; i < $$("tr[ng-repeat*='leadsCollection']").size(); i++) {
+				leadBuyCpl = convertWebElementToNm(buyCplParLead.get(i));
+				String leadstatus = leadStatusCollection.get(i).getText();
+				if (leadstatus.equalsIgnoreCase("Paid") || leadstatus.equalsIgnoreCase("Dispute")
+						|| leadstatus.equalsIgnoreCase("Dispute Declined")) {
+					totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
+					totalLeads++;
+				}
+
+			}
+			$("a[ng-click='selectPage(currentPage+1)']").click();
+			try {
+				wait.waitUntilAngularPageLoaded();
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 
 		checkTotalSpentAndTotalLeads(totaleadBuyCpl, totalLeads);
@@ -146,13 +152,13 @@ public class BuyerPage {
 			perPage200.click();
 			wait.waitUntilAngularPageLoaded();
 			Float totalLeads = (float) 0, totaleadBuyCpl = (float) 0;
-			Float avgCpl = (float) 0;		
+			Float avgCpl = (float) 0;
 			int pageCount = $$("a[ng-click='selectPage(page)']").size();
 			boolean hasPages = true;
-			if(pageCount <= 0) {
+			if (pageCount <= 0) {
 				pageCount = 1;
 				hasPages = false;
-			}		
+			}
 			for (int j = 1; j <= pageCount; j++) {
 				for (int k = 0; k < $$("tr[ng-repeat*='leadsCollection']").size(); k++) {
 					leadBuyCpl = convertWebElementToNm(campLeadBuyCpl.get(k));
@@ -164,17 +170,17 @@ public class BuyerPage {
 						totalLeads++;
 						avgCpl = totaleadBuyCpl / totalLeads;
 					}
-				}		
-				if(hasPages)
-					$("a[ng-click='selectPage(currentPage+1)']").click();			
+				}
+				if (hasPages)
+					$("a[ng-click='selectPage(currentPage+1)']").click();
 				try {
 					wait.waitUntilAngularPageLoaded();
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				}
-		softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName + " Total spent");
+			}
+			softAssert.assertEquals(webCampSpend, totaleadBuyCpl, campName + " Total spent");
 			softAssert.assertEquals(webCampLeads, totalLeads, campName + " Total leads");
 			softAssert.assertEquals(webAvgCPL, avgCpl, campName);
 			Reporter.log("campgns name : " + campName + "total spend : " + totaleadBuyCpl + " total leads: "
@@ -352,7 +358,7 @@ public class BuyerPage {
 
 	public void buyerDisputeLead(String email) {
 		Random rd = new Random();
-		int reson = rd.nextInt(7);
+		int reson = rd.nextInt(6);
 		openLeadListPage.click();
 		wait.waitUntilAngularPageLoaded();
 		$("input[placeholder*='Email']").setValue(email);
