@@ -55,7 +55,7 @@ public class FormLbTest  {
 	
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "seller send one lead thought offer 543 ", groups = {
+	@Test(enabled = false, description = "seller send one lead thought offer 543 ", groups = {
 			"createLead" }, priority = 1)
 	public void LoginAsSellerAndSendLead() throws Exception {
 		open("https://test_app.leadsbasket.com");
