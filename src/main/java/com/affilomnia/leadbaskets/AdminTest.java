@@ -63,7 +63,7 @@ public class AdminTest extends BaseTest {
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "admin Declined dispute", groups = { "adminDispute" }, priority = 2)
-	public void adminDeclinedDispute() {
+	public void adminDeclinedDispute() throws Exception {
 		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
