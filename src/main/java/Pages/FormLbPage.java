@@ -49,7 +49,7 @@ public class FormLbPage {
 		while ($("p[class='error']").text().contains("You have entered an invalid phone number")) {
 			String nm1 = generateEmail("12345554467890", 7);
 			phone.clear();
-			phone.setValue("2011" + nm1);
+			phone.setValue("201" + nm1);
 			submitBtn.click();
 			Thread.sleep(2000);
 
