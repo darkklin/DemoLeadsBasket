@@ -19,6 +19,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import static com.codeborne.selenide.Selenide.*;
 
 import libry.TextReport;
 
@@ -53,7 +54,7 @@ public class BaseTest {
 		
 		if(!testResult.isSuccess())
 		{
-			if(profile.shouldBe(Condition.visible) != null)
+			if( $$("a.profile").size() != 0)
 			{
 				logOut();
 			}

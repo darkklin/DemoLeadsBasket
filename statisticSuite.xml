@@ -34,8 +34,18 @@
 			<class name="com.affilomnia.leadbaskets.SellerTest"></class>
 		</classes>
 	</test>
+	<test name="admin seller statistic ">
+		<groups>
+			<run>
+				<include name="adminStatistic" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.AdminTest"></class>
 
-	
+		</classes>
+	</test>
+
 </suite>
 
 

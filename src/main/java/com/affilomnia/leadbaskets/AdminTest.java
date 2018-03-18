@@ -71,6 +71,17 @@ public class AdminTest extends BaseTest {
 		adminPage.logOut();
 
 	}
+	@Video
+	@Feature("seller LB Revenue")
+	@Severity(SeverityLevel.TRIVIAL)
+	@Test(enabled = true, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
+	public void sellerLbRevenue()  {
+		open("https://test_staff.leadsbasket.com");
+		loginPage.login("kirill3@gmx.com", "Test123456@");
+		adminPage.sellerLbRevenue();
+		adminPage.logOut();
+
+	}
 
 
 }
