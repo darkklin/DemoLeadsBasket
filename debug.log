@@ -452,3 +452,108 @@
 [0315/185034.032:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
 [0318/125838.355:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
 [0318/125912.862:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0318/204205.976:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir15744_18764\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0318/204205.976:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir15744_18764\Crashpad\reports\4f9ab21a-57ae-4389-bdae-7ddc2c2b01a5.dmp: The system cannot find the path specified. (0x3)
+[0318/204205.976:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0318/204747.955:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir13696_10818\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0318/204747.955:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir13696_10818\Crashpad\reports\9686066c-1d2f-40ff-b3c9-c66f5f0e3117.dmp: The system cannot find the path specified. (0x3)
+[0318/204747.955:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0319/182829.338:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0320/004741.490:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir45284_23466\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0320/004741.490:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir45284_23466\Crashpad\reports\0b4079a6-170f-4b05-aac5-21fa2f44a4b6.dmp: The system cannot find the path specified. (0x3)
+[0320/004741.490:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0321/172847.131:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0322/175115.787:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0322/183909.639:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0323/033205.373:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir32128_12900\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0323/033205.374:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir32128_12900\Crashpad\reports\01195df6-cf35-4d28-aaf5-8dea1d81ba53.dmp: The system cannot find the path specified. (0x3)
+[0323/033205.374:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0323/041616.546:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir31736_20198\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0323/041616.548:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir31736_20198\Crashpad\reports\b896e7ac-75df-4359-87ee-4cd78b49ade3.dmp: The system cannot find the path specified. (0x3)
+[0323/041616.548:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0325/100607.671:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0325/103611.510:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0325/103846.759:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0325/173346.312:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0325/180502.032:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir94216_15834\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0325/180502.033:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir94216_15834\Crashpad\reports\d048ecc1-9452-46a7-886e-10f9325cdd7e.dmp: The system cannot find the path specified. (0x3)
+[0325/180502.033:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0325/183615.259:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir11616_490\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0325/183615.261:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir11616_490\Crashpad\reports\9d2c41ee-a0a8-42c9-91d7-044a7e3003a0.dmp: The system cannot find the path specified. (0x3)
+[0325/183615.261:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0325/184201.562:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir22364_24643\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0325/184201.565:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir22364_24643\Crashpad\reports\523b375f-865b-4805-b05a-46f1b6ed82bf.dmp: The system cannot find the path specified. (0x3)
+[0325/184201.565:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0326/105254.089:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0326/122401.983:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir107188_32763\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0326/122401.984:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir107188_32763\Crashpad\reports\18e715b9-3147-4721-961a-7fe3b2b5cf19.dmp: The system cannot find the path specified. (0x3)
+[0326/122401.984:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0326/175810.163:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir108652_21553\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0326/175810.164:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir108652_21553\Crashpad\reports\e0bb5ca1-7cfc-4005-9f9f-bf99b403b68b.dmp: The system cannot find the path specified. (0x3)
+[0326/175810.164:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/095539.797:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/095618.847:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/102525.009:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/104210.728:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/105118.810:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/105449.642:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/113132.914:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0327/191838.726:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir99972_13139\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/191838.728:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir99972_13139\Crashpad\reports\93411a97-ae71-41b1-aff3-252d4d75ce1e.dmp: The system cannot find the path specified. (0x3)
+[0327/191838.728:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/193526.575:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir128020_19471\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/193526.576:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir128020_19471\Crashpad\reports\5c129c52-c9bc-482c-b7ed-7ed2ded314a3.dmp: The system cannot find the path specified. (0x3)
+[0327/193526.576:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/194509.426:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir100836_12680\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/194509.426:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir100836_12680\Crashpad\reports\a0af9f64-2e09-465e-a6e7-36df375c7b6b.dmp: The system cannot find the path specified. (0x3)
+[0327/194509.426:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/200531.105:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir8444_18938\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/200531.110:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir8444_18938\Crashpad\reports\a24e4dbb-9366-4149-9fbd-0138e271ce58.dmp: The system cannot find the path specified. (0x3)
+[0327/200531.110:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/201245.372:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir132804_29664\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/201245.374:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir132804_29664\Crashpad\reports\6089267f-792a-45d9-843a-870962ac491a.dmp: The system cannot find the path specified. (0x3)
+[0327/201245.374:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/202226.325:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir132248_7243\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/202226.328:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir132248_7243\Crashpad\reports\d66a8635-e391-4774-b469-70a4e33cf624.dmp: The system cannot find the path specified. (0x3)
+[0327/202226.328:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0327/205806.221:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir101064_26063\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0327/205806.221:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir101064_26063\Crashpad\reports\e9fa7692-ade7-4e7b-8c5a-f4c285159aa8.dmp: The system cannot find the path specified. (0x3)
+[0327/205806.221:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0328/120112.556:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0328/185234.614:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir164640_29150\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0328/185234.697:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir164640_29150\Crashpad\reports\4e68734a-d71d-401b-a038-70ad0cbcf431.dmp: The system cannot find the path specified. (0x3)
+[0328/185234.697:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0329/093019.982:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0329/102127.247:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0329/185249.876:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir211292_7330\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0329/185249.876:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir211292_7330\Crashpad\reports\eb195e9a-f2c0-4779-9e72-9fb119219fdd.dmp: The system cannot find the path specified. (0x3)
+[0329/185249.876:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0329/210647.880:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir224756_9707\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0329/210647.880:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir224756_9707\Crashpad\reports\b46e6459-58f0-44a6-af0e-9714509636fa.dmp: The system cannot find the path specified. (0x3)
+[0329/210647.880:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0405/112527.185:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0405/112630.757:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0408/122605.513:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0408/122712.164:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0408/133805.758:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir19640_6322\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0408/133805.759:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir19640_6322\Crashpad\reports\d611e4d9-e843-4612-8ea1-7ace5600fb41.dmp: The system cannot find the path specified. (0x3)
+[0408/133805.759:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0408/140249.064:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir30400_27248\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0408/140249.070:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir30400_27248\Crashpad\reports\004579ef-5090-49eb-8843-f95bf9ec2c05.dmp: The system cannot find the path specified. (0x3)
+[0408/140249.070:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0409/122432.913:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0409/172948.660:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0409/184322.017:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0409/193011.489:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir2828_5861\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0409/193011.491:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir2828_5861\Crashpad\reports\bee4d89e-45db-4d2c-9551-88a16057ea0b.dmp: The system cannot find the path specified. (0x3)
+[0409/193011.491:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0410/011851.302:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir1928_17296\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0410/011851.303:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir1928_17296\Crashpad\reports\9c3fe4c1-7ccc-40f0-8161-adce4aef667d.dmp: The system cannot find the path specified. (0x3)
+[0410/011851.303:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0410/023458.248:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir30048_13437\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0410/023458.249:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir30048_13437\Crashpad\reports\17fc3527-ae4d-48ed-ae7a-75a8c92cb2af.dmp: The system cannot find the path specified. (0x3)
+[0410/023458.249:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0410/103901.942:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0410/172330.808:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir38148_18179\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0410/172330.811:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir38148_18179\Crashpad\reports\a7f65ccb-190c-4504-b87b-be07acb5c05e.dmp: The system cannot find the path specified. (0x3)
+[0410/172330.811:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed

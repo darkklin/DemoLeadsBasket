@@ -45,8 +45,7 @@ public class AdminTest extends BaseTest {
 		adminPage.forgetPassword();
 		open("https://test_staff.leadsbasket.com/admin/login");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
-		adminPage.logOut();
-		
+		adminPage.logOut();		
 	}
 	
 	@Video

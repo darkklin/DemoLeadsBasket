@@ -5,7 +5,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 import java.util.Random;
 
-
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
@@ -24,7 +23,6 @@ public class SellerPage {
 
 	@Inject
 	public SellerPage() {
-		
 
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
@@ -34,7 +32,7 @@ public class SellerPage {
 
 	@Inject
 	BuyerPage buyerPage;
-	
+
 	private SelenideElement profile = $("a.profile");
 	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(5)>a");
 	private SelenideElement liveOfferPage = $("a[ng-class*='live_offers']");
@@ -72,23 +70,40 @@ public class SellerPage {
 		wait.waitUntilAngularPageLoaded();
 		perPage200.waitUntil(Condition.visible, 20000).click();
 		wait.waitUntilAngularPageLoaded();
-		Thread.sleep(3000);
+//		Thread.sleep(3000);
 		String element, element2;
 		Float saleCpls, minSaleCpl = null, actualAvgCpl = null;
 		Float totalminSaleCpl = (float) 0;
 		Float totalRevenues = (float) 0;
 		Float buyerTotalLeads = (float) 0;
-		for (int i = 0; i < $$(By.xpath("//tr[@class='ng-scope']//td[5]")).size(); i++) {
-			element = saleCpl.get(i).getText().replace("$", " ");
-			element2 = webMinSaleCpl.get(i).getText().replace("$", " ");
-			saleCpls = Float.parseFloat(element);
-			minSaleCpl = Float.parseFloat(element2);
-			String leadStatus = statusLead.get(i).getText();
-			if (leadStatus.equalsIgnoreCase("Paid") || leadStatus.equalsIgnoreCase("Dispute")
-					|| leadStatus.equalsIgnoreCase("Dispute Rejected")) {
-				totalRevenues += saleCpls;
-				totalminSaleCpl += minSaleCpl;
-				buyerTotalLeads++;
+		int pageCount = $$("a[ng-click='selectPage(page.number, $event)']").size();
+		boolean hasPages = true;
+		if (pageCount <= 1) {
+			pageCount = 1;
+			hasPages = false;
+		}
+		for (int k = 0; k < pageCount; k++) {
+			for (int i = 0; i < $$(By.xpath("//tr[@class='ng-scope']//td[5]")).size(); i++) {
+				element = saleCpl.get(i).getText().replace("$", " ");
+				element2 = webMinSaleCpl.get(i).getText().replace("$", " ");
+				saleCpls = Float.parseFloat(element);
+				minSaleCpl = Float.parseFloat(element2);
+				String leadStatus = statusLead.get(i).getText();
+				if (leadStatus.equalsIgnoreCase("Paid") || leadStatus.equalsIgnoreCase("Dispute")
+						|| leadStatus.equalsIgnoreCase("Dispute Rejected") || leadStatus.equalsIgnoreCase("Dispute in Process")) {
+					totalRevenues += saleCpls;
+					totalminSaleCpl += minSaleCpl;
+					buyerTotalLeads++;
+				}
+			}
+
+			if (hasPages)
+				$("a[ng-click='selectPage(page + 1, $event)']").click();
+			try {
+				wait.waitUntilAngularPageLoaded();
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 		minSaleCpl = totalminSaleCpl / buyerTotalLeads;
@@ -138,6 +153,7 @@ public class SellerPage {
 			clicks = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(6)"));
 			webEpc = convertWebElementToNm($("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(15)"));
 			$("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").click();
+			$(byText("See Report")).click();
 			wait.waitUntilAngularPageLoaded();
 			Float statResult[] = calcTotalRevenueLeadActualAvgCpl();
 			rEpc = statResult[1] / clicks;
@@ -248,13 +264,12 @@ public class SellerPage {
 		logOut.shouldBe(Condition.visible).click();
 	}
 
-	
-	public  String tenMinutEmail()
-	{
-		open("https://10minutemail.net");	
-		Reporter.log("seller email > "+$("input[class='mailtext']").getAttribute("value"),true);
+	public String tenMinutEmail() {
+		open("https://10minutemail.net");
+		Reporter.log("seller email > " + $("input[class='mailtext']").getAttribute("value"), true);
 		return $("input[class='mailtext']").getAttribute("value");
 	}
+
 	public void startRegister(String tenEmail) {
 		FormLbPage rendom = new FormLbPage();
 		String text = rendom.generateEmail("abcdfddDd23%2", 8);
@@ -293,29 +308,30 @@ public class SellerPage {
 
 	}
 
-//	public void verifyEmail() {
-//		open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
-//		$("input[type='email']").setValue("lbdemo234@gmail.com");
-//		$("span[class='RveJvd snByac']").click();
-//		$("input[type='password']").setValue("0546474985");
-//		$("span[class='RveJvd snByac']").click();
-//		$("div[class='qclxzb']").click();
-//		$$("[role='option']").get(4).scrollIntoView(true).click();
-//		$("input[type='tel']").setValue("0528895514");
-//		$("span[class='RveJvd snByac']").click();
-//		$("input[title='Search']").waitUntil(Condition.visible, 20000).setValue("verification required");
-//		$("input[type='submit']").click();
-//		$$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
-//		$("img[src*='New-Email-Template_approved.jpg']").shouldBe(Condition.visible);
-//		String verifyLink = $(byText("Click Here")).getAttribute("href");
-//		$(byText("Delete")).click();
-//		open(verifyLink);
-//		$("h4").shouldHave(Condition.text("Email Verified Successfully!"));
-//	}
+	// public void verifyEmail() {
+	// open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
+	// $("input[type='email']").setValue("lbdemo234@gmail.com");
+	// $("span[class='RveJvd snByac']").click();
+	// $("input[type='password']").setValue("0546474985");
+	// $("span[class='RveJvd snByac']").click();
+	// $("div[class='qclxzb']").click();
+	// $$("[role='option']").get(4).scrollIntoView(true).click();
+	// $("input[type='tel']").setValue("0528895514");
+	// $("span[class='RveJvd snByac']").click();
+	// $("input[title='Search']").waitUntil(Condition.visible,
+	// 20000).setValue("verification required");
+	// $("input[type='submit']").click();
+	// $$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
+	// $("img[src*='New-Email-Template_approved.jpg']").shouldBe(Condition.visible);
+	// String verifyLink = $(byText("Click Here")).getAttribute("href");
+	// $(byText("Delete")).click();
+	// open(verifyLink);
+	// $("h4").shouldHave(Condition.text("Email Verified Successfully!"));
+	// }
 	public void verifyEmail() {
-		open("https://10minutemail.net");	
+		open("https://10minutemail.net");
 		$(byText("Welcome to LeadsBasket - Verification Required")).waitUntil((Condition.visible), 30000).click();
-		Reporter.log("Email Verification Required ",true);
+		Reporter.log("Email Verification Required ", true);
 		$(byText("Click Here")).click();
 		switchTo().window(1);
 		$("h4").waitUntil(Condition.text("Email Verified Successfully!"), 20000);
@@ -342,25 +358,26 @@ public class SellerPage {
 		$("input[name*='receiver_state']").setValue(state);
 		$("input[name*='zip']").setValue(zipCode);
 		$("input[name*='city']").setValue(city);
-		btnSubmit.shouldBe(Condition.enabled).click();
-		$("h4").waitUntil(Condition.text("Hold on!"), 10000);
-		$("a.btn").waitUntil(Condition.visible,10000).click();;
-		switchTo().window(0);
-		$(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible), 15000).click();
-		Reporter.log("Email Welcome to LeadsBasket sent ",true);
+		 btnSubmit.shouldBe(Condition.enabled).click();
+		 $("h4").waitUntil(Condition.text("Hold on!"), 10000);
+		 $("a.btn").waitUntil(Condition.visible,10000).click();;
+		 switchTo().window(0);
+		 $(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible),
+		 15000).click();
+		 Reporter.log("Email Welcome to LeadsBasket sent ",true);
 
 	}
-	public void forgetPassword(String email)
-	{	
+
+	public void forgetPassword(String email) {
 		open("https://test_app.leadsbasket.com/login");
 		$(byText("Forgot Password?")).waitUntil((Condition.visible), 15000).click();
 		wait.waitUntilAngularPageLoaded();
 		$("input[type='email']").setValue(email);
 		$("button[type='submit']").click();
 		$("h2").shouldHave(Condition.text("Reset Your Password"));
-		open("https://10minutemail.net");	
+		open("https://10minutemail.net");
 		$(byText("LeadsBasket – Reset Password")).waitUntil((Condition.visible), 20000).click();
-		Reporter.log("Email reset password sent",true);
+		Reporter.log("Email reset password sent", true);
 		$(byText("Reset Password")).waitUntil((Condition.visible), 20000).click();
 		switchTo().window(2);
 		$("h2").shouldHave(Condition.text("Reset Your Password"));
@@ -370,5 +387,5 @@ public class SellerPage {
 		$(byText("Password was reset successfully!"));
 		close();
 	}
-	
+
 }

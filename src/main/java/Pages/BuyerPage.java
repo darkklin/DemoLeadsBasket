@@ -165,7 +165,8 @@ public class BuyerPage {
 					campLeadStatus = campaignLeadStatus.get(k).getText();
 
 					if (campLeadStatus.equalsIgnoreCase("Paid") || campLeadStatus.equalsIgnoreCase("Dispute")
-							|| campLeadStatus.equalsIgnoreCase("Dispute Declined")) {
+							|| campLeadStatus.equalsIgnoreCase("Dispute Declined")
+							|| campLeadStatus.equalsIgnoreCase("Un disputed")) {
 						totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
 						totalLeads++;
 						avgCpl = totaleadBuyCpl / totalLeads;

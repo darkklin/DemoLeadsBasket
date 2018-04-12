@@ -39,7 +39,7 @@ public class BaseTest {
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;
-		Configuration.holdBrowserOpen = false;
+		Configuration.holdBrowserOpen = true;
 		Configuration.fastSetValue = true;
 		Configuration.driverManagerEnabled = true;
 		TextReport.onSucceededTest = false;

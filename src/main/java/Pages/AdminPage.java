@@ -25,11 +25,9 @@ public class AdminPage {
 
 	@Inject
 	public AdminPage() {
-
 		Configuration.browser = "chrome";
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
-
 		page(this);
 	}
 
@@ -129,7 +127,7 @@ public class AdminPage {
 		wait.waitUntilAngularPageLoaded();
 		perPage200.waitUntil(Condition.visible, 20000).click();
 		wait.waitUntilAngularPageLoaded();
-		for (int i = 1; i <= amoutOfRows.size(); i++) {
+		for (int i = 1; i <= $$("tr[class='lead-row ng-scope']").size(); i++) {
 
 			Float buyerScpl = sellerPage.convertWebElementToNm($("tr:nth-child(" + i + ")>td:nth-child(12)>small"));
 			totalBuyerCpl += buyerScpl;
