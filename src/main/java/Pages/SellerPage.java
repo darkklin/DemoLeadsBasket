@@ -66,16 +66,16 @@ public class SellerPage {
 	 * @throws Exception
 	 */
 
-	public Float[] calcTotalRevenueLeadActualAvgCpl() throws Exception {
+	public Double[] calcTotalRevenueLeadActualAvgCpl() throws Exception {
 		wait.waitUntilAngularPageLoaded();
 		perPage200.waitUntil(Condition.visible, 20000).click();
 		wait.waitUntilAngularPageLoaded();
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		String element, element2;
-		Float saleCpls, minSaleCpl = null, actualAvgCpl = null;
-		Float totalminSaleCpl = (float) 0;
-		Float totalRevenues = (float) 0;
-		Float buyerTotalLeads = (float) 0;
+		Double saleCpls, minSaleCpl = null, actualAvgCpl = null;
+		Double totalminSaleCpl = (double) 0;
+		Double totalRevenues = (double) 0;
+		Double buyerTotalLeads = (double) 0;
 		int pageCount = $$("a[ng-click='selectPage(page.number, $event)']").size();
 		boolean hasPages = true;
 		if (pageCount <= 1) {
@@ -84,13 +84,14 @@ public class SellerPage {
 		}
 		for (int k = 0; k < pageCount; k++) {
 			for (int i = 0; i < $$(By.xpath("//tr[@class='ng-scope']//td[5]")).size(); i++) {
-				element = saleCpl.get(i).getText().replace("$", " ");
-				element2 = webMinSaleCpl.get(i).getText().replace("$", " ");
-				saleCpls = Float.parseFloat(element);
-				minSaleCpl = Float.parseFloat(element2);
+				element = saleCpl.get(i).getText().replace("$", "");
+				element2 = webMinSaleCpl.get(i).getText().replace("$", "");
+				saleCpls = Double.parseDouble(element);
+				minSaleCpl = Double.parseDouble(element2);
 				String leadStatus = statusLead.get(i).getText();
 				if (leadStatus.equalsIgnoreCase("Paid") || leadStatus.equalsIgnoreCase("Dispute")
-						|| leadStatus.equalsIgnoreCase("Dispute Rejected") || leadStatus.equalsIgnoreCase("Dispute in Process")) {
+						|| leadStatus.equalsIgnoreCase("Dispute Rejected")
+						|| leadStatus.equalsIgnoreCase("Dispute in Process")) {
 					totalRevenues += saleCpls;
 					totalminSaleCpl += minSaleCpl;
 					buyerTotalLeads++;
@@ -108,14 +109,18 @@ public class SellerPage {
 		}
 		minSaleCpl = totalminSaleCpl / buyerTotalLeads;
 		actualAvgCpl = totalRevenues / buyerTotalLeads;
-		minSaleCpl = (float) (Math.round(minSaleCpl * 100.0) / 100.0);
-		actualAvgCpl = (float) (Math.round(actualAvgCpl * 100.0) / 100.0);
-		totalRevenues = (float) (Math.ceil(totalRevenues * 100.0) / 100.0);
-		return new Float[] { buyerTotalLeads, totalRevenues, actualAvgCpl, minSaleCpl };
+		System.out.println(buyerTotalLeads);
+
+		System.out.println(totalRevenues);
+
+		minSaleCpl = (double) (Math.round(minSaleCpl * 100.0) / 100.0);
+		actualAvgCpl = (double) (Math.round(actualAvgCpl * 100.0) / 100.0);
+		totalRevenues = (double) (Math.round(totalRevenues * 100.0) / 100.0);
+		return new Double[] { buyerTotalLeads, totalRevenues, actualAvgCpl, minSaleCpl };
 	}
 
-	public void checkStatisticOnDashBoard(Float buyerTotalLeads, Float totalRevenues, Float actualAvgCpl,
-			Float minSaleCpl) {
+	public void checkStatisticOnDashBoard(Double buyerTotalLeads, Double totalRevenues, Double actualAvgCpl,
+			Double minSaleCpl) {
 		$("a[ui-sref*='dashboardSeller']").click();
 		buyerPage.selectDate("13/11/16", "Dashboard");
 		wait.waitUntilAngularPageLoaded();
@@ -139,8 +144,9 @@ public class SellerPage {
 	 */
 	public void checkstatParOffer() throws Exception {
 		String offerName;
-		Float totalClicks = (float) 0;
-		Float revenue = null, leads, clicks, avgCpl, webEpc, rEpc;
+		Double totalClicks = (double) 0;
+		Double revenue = null, leads, clicks, avgCpl, webEpc;
+		Double rEpc;
 		$("a[ui-sref*='live_offers']").click();
 		wait.waitUntilAngularPageLoaded();
 		int liveOfferSIze = $$("tr[ng-repeat*='liveOffersList']").size();
@@ -155,10 +161,10 @@ public class SellerPage {
 			$("tbody.ng-scope>tr:nth-child(" + i + ")>td:nth-child(2)").click();
 			$(byText("See Report")).click();
 			wait.waitUntilAngularPageLoaded();
-			Float statResult[] = calcTotalRevenueLeadActualAvgCpl();
+			Double statResult[] = calcTotalRevenueLeadActualAvgCpl();
 			rEpc = statResult[1] / clicks;
 			totalClicks += clicks;
-			rEpc = (float) (Math.round(rEpc * 100.0) / 100.0);
+			rEpc = (Math.round(rEpc * 100.0) / 100.0);
 			$$("a[ui-sref*='live_offers']").get(0).click();
 			softAssert.assertEquals(leads, statResult[0], "Leads");
 			softAssert.assertEquals(revenue, statResult[1], "Revenue");
@@ -171,8 +177,8 @@ public class SellerPage {
 		$$("a[ui-sref*='dashboardSeller']").get(0).click();
 		buyerPage.selectDate("13/11/16", "Dashboard");
 		wait.waitUntilAngularPageLoaded();
-		Float avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
-		avgEpc = (float) (Math.round(avgEpc * 100.0) / 100.0);
+		Double avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
+		avgEpc =  (Math.round(avgEpc * 100.0) / 100.0);
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(0)), totalClicks, "DashBoard Total clicks");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(6)), avgEpc, "DashBoard Avg. EPC");
 		softAssert.assertAll();
@@ -181,7 +187,7 @@ public class SellerPage {
 	}
 
 	public void accountingStatistic() {
-		Float saleCpl, totalInvoice = (float) 0, nmLeads = (float) 0;
+		Double saleCpl, totalInvoice = (double) 0, nmLeads = (double) 0;
 		$("a[ui-sref*='accounting']").click();
 		wait.waitUntilAngularPageLoaded();
 		$(byText("Current invoice breakdown")).click();
@@ -192,9 +198,9 @@ public class SellerPage {
 			totalInvoice += saleCpl;
 			nmLeads++;
 		}
-		totalInvoice = (float) (Math.round(totalInvoice * 100.0) / 100.0);
-		Float popUpwebTotalSaleCpl = convertWebElementToNm($$("p[class='ng-binding']").get(0).getText());
-		Float popUpwebTotalLeads = convertWebElementToNm($$("p[class='ng-binding']").get(1).getText());
+		totalInvoice =  (Math.round(totalInvoice * 100.0) / 100.0);
+		Double popUpwebTotalSaleCpl = convertWebElementToNm($$("p[class='ng-binding']").get(0).getText());
+		Double popUpwebTotalLeads = convertWebElementToNm($$("p[class='ng-binding']").get(1).getText());
 		softAssert.assertEquals(totalInvoice, popUpwebTotalSaleCpl, "popUp total invoice");
 		softAssert.assertEquals(nmLeads, popUpwebTotalLeads, "popUP total leads");
 		softAssert.assertAll();
@@ -203,9 +209,9 @@ public class SellerPage {
 		for (int i = 1; i <= $$("[ng-repeat*='invoiceCollection']").size(); i++) {
 			String statusInvoice = $("table.detailTable>tbody>tr:nth-child(" + i + ")>td:nth-child(6)").getText();
 			if (statusInvoice.equalsIgnoreCase("Open")) {
-				Float InvoiceAmount = convertWebElementToNm(
+				Double InvoiceAmount = convertWebElementToNm(
 						$(By.xpath("//tr[@ng-repeat='item in invoiceCollection'][" + i + "]//td[4]")).getText());
-				Float invoiceLeads = convertWebElementToNm(
+				Double invoiceLeads = convertWebElementToNm(
 						$(By.xpath("//tr[@ng-repeat='item in invoiceCollection'][" + i + "]//td[2]")).getText());
 
 				softAssert.assertEquals(totalInvoice, InvoiceAmount, " total Amount invoice leads accounting page ");
@@ -219,18 +225,18 @@ public class SellerPage {
 
 	}
 
-	public Float convertWebElementToNm(SelenideElement nm) {
+	public Double convertWebElementToNm(SelenideElement nm) {
 		String element;
-		Float result;
+		Double result;
 		element = nm.getText();
 		element = element.replace("$", "").replace(",", "");
-		result = Float.parseFloat(element);
+		result = Double.parseDouble(element);
 		return result;
 	}
 
-	public Float convertWebElementToNm(String nm) {
+	public Double convertWebElementToNm(String nm) {
 		String element;
-		Float result;
+		Double result;
 		if (nm.contains(":")) {
 			element = nm.split(":")[1];
 
@@ -240,7 +246,7 @@ public class SellerPage {
 		}
 		element = element.replace("$", "").replace(" ", "").replace(",", "");
 
-		result = Float.parseFloat(element);
+		result = Double.parseDouble(element);
 
 		return result;
 	}
@@ -358,13 +364,13 @@ public class SellerPage {
 		$("input[name*='receiver_state']").setValue(state);
 		$("input[name*='zip']").setValue(zipCode);
 		$("input[name*='city']").setValue(city);
-		 btnSubmit.shouldBe(Condition.enabled).click();
-		 $("h4").waitUntil(Condition.text("Hold on!"), 10000);
-		 $("a.btn").waitUntil(Condition.visible,10000).click();;
-		 switchTo().window(0);
-		 $(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible),
-		 15000).click();
-		 Reporter.log("Email Welcome to LeadsBasket sent ",true);
+		btnSubmit.shouldBe(Condition.enabled).click();
+		$("h4").waitUntil(Condition.text("Hold on!"), 10000);
+		$("a.btn").waitUntil(Condition.visible, 10000).click();
+		;
+		switchTo().window(0);
+		$(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible), 15000).click();
+		Reporter.log("Email Welcome to LeadsBasket sent ", true);
 
 	}
 

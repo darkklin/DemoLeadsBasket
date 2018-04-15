@@ -111,13 +111,13 @@ public class AdminPage {
 	}
 
 	public void sellerLbRevenue() {
-		Float totatSellerrCpl = (float) 0;
-		Float totalBuyerCpl = (float) 0;
+		Double totatSellerrCpl = (double) 0;
+		Double totalBuyerCpl = (double) 0;
 		sPage.click();
 		searchField.sendKeys("462");
 		$$("button[type='submit']").get(0).click();
 		wait.waitUntilAngularPageLoaded();
-		Float sellerLbrevenue = sellerPage.convertWebElementToNm(webSellerRevenue);
+		Double sellerLbrevenue = sellerPage.convertWebElementToNm(webSellerRevenue);
 		leadReport.click();
 		$(byText("Columns")).click();
 		removeRows.get(1).click();
@@ -129,13 +129,13 @@ public class AdminPage {
 		wait.waitUntilAngularPageLoaded();
 		for (int i = 1; i <= $$("tr[class='lead-row ng-scope']").size(); i++) {
 
-			Float buyerScpl = sellerPage.convertWebElementToNm($("tr:nth-child(" + i + ")>td:nth-child(12)>small"));
+			Double buyerScpl = sellerPage.convertWebElementToNm($("tr:nth-child(" + i + ")>td:nth-child(12)>small"));
 			totalBuyerCpl += buyerScpl;
-			Float sellerScpl = sellerPage.convertWebElementToNm($("tr:nth-child(" + i + ")>td:nth-child(10)>small"));
+			Double sellerScpl = sellerPage.convertWebElementToNm($("tr:nth-child(" + i + ")>td:nth-child(10)>small"));
 			totatSellerrCpl += sellerScpl;
 		}
-		Float lbRevenue = totalBuyerCpl - totatSellerrCpl;
-		lbRevenue = (float) (Math.ceil(lbRevenue * 100.0) / 100.0);
+		Double lbRevenue = totalBuyerCpl - totatSellerrCpl;
+		lbRevenue =  (Math.ceil(lbRevenue * 100.0) / 100.0);
 		softAssert.assertEquals(sellerLbrevenue, lbRevenue,"Seller lb revenue");
 		Reporter.log("Seller lb revenue is correct "+ lbRevenue ,true);
 		softAssert.assertAll();

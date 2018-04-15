@@ -40,7 +40,7 @@ public class SellerTest extends BaseTest {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko");
 		$(byText("Report")).click();
-		Float statResult[] = sellerPage.calcTotalRevenueLeadActualAvgCpl();
+		Double statResult[] = sellerPage.calcTotalRevenueLeadActualAvgCpl();
 		sellerPage.checkStatisticOnDashBoard(statResult[0], statResult[1], statResult[2], statResult[3]);
 		sellerPage.logOut();
 	}
