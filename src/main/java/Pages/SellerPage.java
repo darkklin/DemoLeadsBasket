@@ -272,6 +272,8 @@ public class SellerPage {
 
 	public String tenMinutEmail() {
 		open("https://10minutemail.net");
+		open("https://10minutemail.net");
+
 		Reporter.log("seller email > " + $("input[class='mailtext']").getAttribute("value"), true);
 		return $("input[class='mailtext']").getAttribute("value");
 	}

@@ -558,3 +558,15 @@
 [0410/172330.811:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir38148_18179\Crashpad\reports\a7f65ccb-190c-4504-b87b-be07acb5c05e.dmp: The system cannot find the path specified. (0x3)
 [0410/172330.811:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
 [0412/181814.620:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0416/133616.765:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0416/201645.288:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir1074380_6735\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0416/201645.291:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir1074380_6735\Crashpad\reports\9cc8ef24-9a40-405a-a71b-80c3893595b6.dmp: The system cannot find the path specified. (0x3)
+[0416/201645.291:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0417/100807.741:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0417/130342.994:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0417/172930.202:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir2312148_11249\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0417/172930.204:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir2312148_11249\Crashpad\reports\1aba6978-7e32-45d9-b93a-bc0a589ed8f6.dmp: The system cannot find the path specified. (0x3)
+[0417/172930.204:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0417/204708.871:ERROR:file_io_win.cc(161)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir2466952_30099\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0417/204708.876:ERROR:file_io_win.cc(170)] CreateFile C:\Users\kiril\AppData\Local\Temp\scoped_dir2466952_30099\Crashpad\reports\a7f6d7ae-a60b-453a-a25e-94878b568e6f.dmp: The system cannot find the path specified. (0x3)
+[0417/204708.876:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
