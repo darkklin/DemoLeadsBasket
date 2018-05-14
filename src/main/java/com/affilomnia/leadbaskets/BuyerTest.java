@@ -62,7 +62,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.BLOCKER)
-	@Test(enabled = true, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
+	@Test(enabled = false, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
 	public void testBuyerRegistrtion() {
 		open("https://test_app.leadsbasket.com/register-industry");
 		buyerPage.industryPage();
@@ -76,7 +76,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
+	@Test(enabled = false, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
@@ -85,7 +85,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Create Campaign")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Buyer Create Campaign  ", groups = { "Campaign" }, priority = 1)
+	@Test(enabled = false, description = "Buyer Create Campaign  ", groups = { "Campaign" }, priority = 1)
 	public void creteCampaign() {
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("lbdemo234+3dbd%%df@gmail.com", "0546474985Ko");
@@ -97,10 +97,10 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
+	@Test(enabled = false, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
 	public void disputeLead() throws Exception {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
-		String email = formLbPage.regLead("@dispute.com");
+		String email = formLbPage.regLead("@dispute.com","");
 		System.out.println("Dispute email" + email);
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
@@ -108,5 +108,7 @@ public class BuyerTest extends BaseTest {
 		buyerPage.logOut();
 
 	}
+
+	
 
 }

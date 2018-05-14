@@ -62,7 +62,7 @@ public class FormLbTest  {
 		loginPage.login("kirilk+webdriver1@affilomania.com", "0546474985Ko"); //selelr id 710
 		String targtingOfferLink = sellerPage.Offerlink();
 		open(targtingOfferLink);
-		formLbPage.regLead("@lb.com");
+		formLbPage.regLead("@lb.com","");
 		open(targtingOfferLink);
 		back();
 		back();
@@ -71,9 +71,9 @@ public class FormLbTest  {
 	@Video
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
+	@Test(enabled = false, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
 	public void EmbeddedForm()throws Exception {
 		open("http://52.17.171.159/EmbeddedOffer/");
-		formLbPage.regLead("@lb.com");
+		formLbPage.regLead("@lb.com","");
 	}
 }
