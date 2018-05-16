@@ -69,7 +69,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion + Forget password")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = true, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		String sellerEmail = sellerPage.tenMinutEmail();
 		open("https://test_app.leadsbasket.com/register-seller-start");

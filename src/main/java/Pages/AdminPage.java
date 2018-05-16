@@ -282,4 +282,16 @@ public class AdminPage {
 		softAssert.assertAll();
 
 	}
+	public void createCoupon()
+	{
+		$("a[href*='system-management']").click();
+		$("a[ui-sref='system.coupon_generator']").click();
+		wait.waitUntilAngularPageLoaded();
+		$(byText("Generate Codes")).click();
+		$("a[placeholder='Industry']").click();
+		$(byText("9 - IndustryQA")).click();
+		$(byText("Create")).click();
+
+		
+	}
 }
