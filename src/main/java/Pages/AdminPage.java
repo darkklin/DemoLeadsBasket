@@ -282,7 +282,7 @@ public class AdminPage {
 		softAssert.assertAll();
 
 	}
-	public void createCoupon()
+	public String  createCoupon() throws Exception
 	{
 		$("a[href*='system-management']").click();
 		$("a[ui-sref='system.coupon_generator']").click();
@@ -291,7 +291,10 @@ public class AdminPage {
 		$("a[placeholder='Industry']").click();
 		$(byText("9 - IndustryQA")).click();
 		$(byText("Create")).click();
-
-		
+		$$("th[role='columnheader']").get(0).click();
+		wait.waitUntilAngularPageLoaded();
+		Thread.sleep(1000);
+		System.out.println($$("td").get(1).getText());
+		return $$("td").get(1).getText();
 	}
 }

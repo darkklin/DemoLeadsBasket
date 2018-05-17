@@ -129,10 +129,13 @@ public class AdminTest extends BaseTest {
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 1)
-	public void couponGenerator() throws Exception {
+	public String couponGenerator() throws Exception {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
-		adminPage.createCoupon();
+		String coupon = adminPage.createCoupon();
+		adminPage.logOut();
+		return coupon;
+		
 		
 	}
 

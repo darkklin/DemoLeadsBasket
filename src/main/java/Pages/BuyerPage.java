@@ -46,7 +46,13 @@ public class BuyerPage {
 	private SelenideElement webTotalSpend = $("div.tl_spend_ico>div>span");
 	private SelenideElement webTotalLeads = $("div.tl_leads_ico>div>span");
 	private SelenideElement profile = $("a.profile");
+	private SelenideElement couponField = $("input[ng-model='coupon']");
 	private SelenideElement logOut = $("div.drop_userInfo>ul>li:nth-child(5)>a");
+	private SelenideElement activateCoupon = $("button[ng-click='activateCoupon()']");
+	private SelenideElement buyerBalance = $("span[class='value ng-scope']");
+	private SelenideElement couponNotification = $("span[class='help-block red ng-binding']");
+
+
 	private ElementsCollection leadStatusCollection = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[12]"));
 	private ElementsCollection buyCplParLead = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[5]"));
 	private ElementsCollection leadCollection = $$("tr[ng-repeat='lead in leadsCollection']");
@@ -371,4 +377,74 @@ public class BuyerPage {
 		disputeReson.get(reson).click();
 	}
 
+	public void buyerEnterValidCoupon(String coupoId) {
+		Float balanceAftCoupon;
+		openPage("billing");
+		Reporter.log("balance before coupon " + buyerBalance.getText(),true);
+		openPage("Payment Method");
+		couponField.setValue(coupoId);
+		activateCoupon.click();
+		$(byText("Congratulations, your coupon code has been applied! View your campaign")).shouldBe(Condition.appear);
+		openPage("billing");
+		wait.waitUntilAngularPageLoaded();
+		balanceAftCoupon =convertWebElementToNm(buyerBalance);
+		Reporter.log("balance after  coupon " + buyerBalance.getText(),true);
+		softAssert.assertEquals(balanceAftCoupon,(float) 500.0, "balance");
+		softAssert.assertEquals($("td[class='ng-binding']").text(), "COUPON"+coupoId, "invoice coupon");
+		softAssert.assertAll();
+	}
+	public void buyerEnterInvalidCoupon(String coupoId) {
+		openPage("billing");
+		openPage("Payment Method");
+		Reporter.log("User Trying to enter Coupon without Credit Card",true);
+		couponField.setValue("1D80B76C");
+		activateCoupon.click();
+		$(byText("You have to enter a credit card details before entering a coupon")).shouldBe(Condition.appear);
+		Reporter.log("User got notification "+couponNotification.getText(),true);
+		
+		buyerAddCreaditCard();
+		Reporter.log("\nUser Trying to enter expired Coupon ",true);
+
+		couponField.setValue("9CB8884C");
+		activateCoupon.click();
+		$(byText("The coupon code you’ve entered is expired")).shouldBe(Condition.appear);
+		Reporter.log("User got notification "+couponNotification.getText(),true);
+
+		Reporter.log("\nUser Trying to enter Coupon From other industry",true);
+		couponField.setValue(coupoId);
+		activateCoupon.click();
+		$(byText("The coupon code you’ve entered is invalid")).shouldBe(Condition.appear);
+		Reporter.log("User got notification "+couponNotification.getText(),true);
+			
+	}
+	public void buyerAddCreaditCard()
+	{
+		$("input[name='firstName']").setValue("test");
+		$("input[name='lastName']").setValue("test");
+		$("input[name='email']").setValue("test@test.com");
+		$("input[name='numberCart']").setValue("4111111111111111");
+		$("a[placeholder='Month']").click();$(byText("05")).click();
+		$("a[placeholder='Year']").click();$(byText("2021")).click();
+		$("input[name='cvv']").setValue("1111");
+
+		$("button[ng-if='!isSelectCard']").click();
+		wait.waitUntilAngularPageLoaded();
+
+	}
+	
+	
+
+	public void openPage(String whatPage) {
+		switch (whatPage) {
+		case "billing":
+			profile.click();
+			$$("a[ui-sref='users-billing']").get(1).click();
+			break;
+		case "Payment Method":
+			profile.click();
+			$$("a[ui-sref='payment']").get(1).click();
+			break;
+
+		}
+	}
 }
