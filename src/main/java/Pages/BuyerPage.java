@@ -29,7 +29,6 @@ public class BuyerPage {
 
 	@Inject
 	public BuyerPage() {
-		Configuration.browser = "chrome";
 		this.softAssert = new SoftAssert();
 		wait = new WaitAngularPageLoaded();
 		page(this);

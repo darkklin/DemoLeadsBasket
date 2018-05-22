@@ -55,7 +55,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = {
+	@Test(enabled = false, description = "Test total leads/spent/avgcpl par offer ", groups = {
 			"buyerStatistic" }, priority = 2)
 	public void testTotalLeadTotalSpentAvgcplParCamp() {
 		open("https://test_app.leadsbasket.com");
