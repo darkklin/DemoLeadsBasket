@@ -43,7 +43,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test total leads Total spent of buyer", groups = {
+	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = {
 			"buyerStatistic" }, priority = 1)
 	public void testLoginTotalSpentAndLeads() {
 		open("https://test_app.leadsbasket.com");
@@ -55,7 +55,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test total leads/spent/avgcpl par offer ", groups = {
+	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = {
 			"buyerStatistic" }, priority = 2)
 	public void testTotalLeadTotalSpentAvgcplParCamp() {
 		open("https://test_app.leadsbasket.com");
@@ -116,7 +116,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Buyer anter Valid Coupon ", groups = { "Coupon" }, priority = 1)
+	@Test(enabled = false, description = "Buyer anter Valid Coupon ", groups = { "Coupon" }, priority = 1)
 	public void anterValidCoupon() throws Exception {
 		String couponId = adminTest.couponGenerator();
 		db.executeStatement("update billing_profile set balance = null where user_id = 617","Update balance for buyer");
@@ -130,7 +130,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Buyer anter Invalid Coupons ", groups = { "Coupon" }, priority = 2)
+	@Test(enabled = false, description = "Buyer anter Invalid Coupons ", groups = { "Coupon" }, priority = 2)
 	public void anterInvalidCoupon() throws Exception {
 		String couponId = adminTest.couponGenerator();
 		open("https://test_app.leadsbasket.com");

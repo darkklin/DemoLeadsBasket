@@ -85,7 +85,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Quality")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Test quality part 1 ", groups = { "quality" }, priority = 1)
+	@Test(enabled = true, description = "Test quality part 1 ", groups = { "quality" }, priority = 1)
 	public void QualityParOne() throws Exception {
 		// ctrlv , scroll , reg_duration , reg_time , ctrlv+scroll,reg_duration 5,sec,reg_time 5 sec
 
@@ -128,7 +128,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 1)
+	@Test(enabled = false, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 1)
 	public String couponGenerator() throws Exception {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
