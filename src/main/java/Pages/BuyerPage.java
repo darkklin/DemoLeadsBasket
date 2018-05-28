@@ -32,6 +32,8 @@ public class BuyerPage {
 		this.softAssert = new SoftAssert();
 		wait = new WaitAngularPageLoaded();
 		page(this);
+		Configuration.browser = "chrome";
+
 
 	}
 

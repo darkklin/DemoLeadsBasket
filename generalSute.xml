@@ -31,12 +31,15 @@
 		<groups>
 			<run>
 				<include name="adminDispute" />
+				<include name="Quality"/>
+				<include name="Coupon"/>			
 			</run>
 		</groups>
 		<classes>
 			<class name="com.affilomnia.leadbaskets.AdminTest"></class>
 
 		</classes>
+		
 	</test>
 
 

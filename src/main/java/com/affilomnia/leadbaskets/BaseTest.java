@@ -2,6 +2,7 @@ package com.affilomnia.leadbaskets;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,7 +36,8 @@ public class BaseTest {
 //		String urlToRemoteWD = "http://localhost:4446/wd/hub";
 //		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
 //		WebDriverRunner.setWebDriver(driver);
-		
+		Configuration.browser = "chrome";
+
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;
@@ -57,7 +59,8 @@ public class BaseTest {
 			if( $$("a.profile").size() != 0)
 			{
 				logOut();
-			}
+				closeWebDriver();
+				}
 			else
 			{
 				close();
