@@ -225,9 +225,9 @@ public class AdminPage {
 		leadReport.click();
 		wait.waitUntilAngularPageLoaded();
 		$("input[st-search='email_hash']").setValue(email);
-		wait.waitUntilAngularPageLoaded();
 		softAssert.assertEquals(disqualified.getText(), isDisqualified);
 
+		wait.waitUntilAngularPageLoaded();
 		$(byText("Lead Info")).click();
 		$(byText("Lead Quality")).click();
 		String rateScore = qualityTracking.get(18).getText();
