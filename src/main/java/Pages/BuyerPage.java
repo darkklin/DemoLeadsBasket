@@ -92,14 +92,13 @@ public class BuyerPage {
 		Float totaleadBuyCpl = (float) 0;
 		openLeadListPage.click();
 		wait.waitUntilAngularPageLoaded();
-		$(byText("19391")).shouldBe(Condition.visible);
 
 //		$("input[placeholder='ID..']").sendKeys("19391");
 //		wait.waitUntilAngularPageLoaded();
 //		screenshot("19391");
 
 		perPage200.click();
-		loader.shouldBe(Condition.visible);
+		loader.shouldBe(Condition.disappear);
 		wait.waitUntilAngularPageLoaded();
 		int pageCount = $$("a[ng-click='selectPage(page)']").size();
 		if (pageCount <= 0) {
