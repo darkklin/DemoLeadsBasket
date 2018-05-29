@@ -92,11 +92,8 @@ public class BuyerPage {
 		Float totaleadBuyCpl = (float) 0;
 		openLeadListPage.click();
 		wait.waitUntilAngularPageLoaded();
-		$("select[st-search='is_active']").click();
-		$(byText("All")).click();
+		$("th[st-sort='id']").click();
 		wait.waitUntilAngularPageLoaded();
-
-		
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
