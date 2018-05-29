@@ -18,7 +18,6 @@
 			<run>
 				<include name="BuyerReg" />
 				<include name="Campaign" />
-				<include name="dispute" />
 
 			</run>
 		</groups>

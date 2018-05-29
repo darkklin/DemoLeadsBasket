@@ -11,6 +11,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.testng.annotations.Report;
 import com.google.inject.Inject;
+import static com.codeborne.selenide.Selenide.*;
+import com.codeborne.selenide.CollectionCondition;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -53,7 +55,8 @@ public class AdminTest extends BaseTest {
 	@Feature("Accep Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
-	public void adminAcceptDispute() {
+	public void adminAcceptDispute() throws Exception {
+		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
 		adminPage.acceptDispute("Yes");		
@@ -124,6 +127,9 @@ public class AdminTest extends BaseTest {
 		adminPage.updateQuality("85","reg_time", "-17");	
 		adminPage.checkRateScore("reg_time 5 sec","83","yes");
 		
+		adminPage.resetRules();
+		$("div[class*='ui-notification']").waitUntil(Condition.disappears, 10000);
+
 		adminPage.logOut();
 
 	}

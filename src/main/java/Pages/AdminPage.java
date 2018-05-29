@@ -27,7 +27,7 @@ public class AdminPage {
 
 	@Inject
 	public AdminPage() {
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
@@ -76,7 +76,8 @@ public class AdminPage {
 		$("input[name='username']").setValue("kirill3@gmx.com");
 		$("input[name='password']").setValue("0546474985");
 		$("button[type='submit']").click();
-		$("pos-svg-icon[name='core_mail']").click();
+//		$("pos-svg-icon[name='core_mail']").click();
+		$(byText("E-mail")).click();
 		switchTo().frame("thirdPartyFrame_mail");
 
 		$("tr[class='new']").waitUntil((Condition.visible), 20000).click();
@@ -158,10 +159,8 @@ public class AdminPage {
 
 	public void updateQuality(String minScore, String roles, String roleScore ) {
 		// ctrlv , scroll , reg_duration , reg_time
-		$("a[href*='system-management']").click();
-		$("a[ui-sref='system.quality']").click();
-		wait.waitUntilAngularPageLoaded();
 		resetRules();
+
 		minimumQualityScore.clear();
 		minimumQualityScore.sendKeys(minScore);
 		updateBtns.get(0).click();
@@ -175,7 +174,6 @@ public class AdminPage {
 		}
 		else {
 			
-		
 		$("input[name=" + roles + "]").clear();
 		$("input[name=" + roles + "]").sendKeys(roleScore);
 		}
@@ -212,6 +210,9 @@ public class AdminPage {
 	}
 
 	public void resetRules() {
+		$("a[href*='system-management']").click();
+		$("a[ui-sref='system.quality']").click();
+		wait.waitUntilAngularPageLoaded();
 		for (int i = 0; i < resetBtn.size(); i++) {
 			resetBtn.get(i).click();
 
@@ -230,6 +231,8 @@ public class AdminPage {
 		softAssert.assertEquals(disqualified.getText(), isDisqualified);
 
 		wait.waitUntilAngularPageLoaded();
+		$$("tr[class='lead-row ng-scope']").shouldHave(CollectionCondition.size(1));
+
 		$(byText("Lead Info")).click();
 		$(byText("Lead Quality")).click();
 		String rateScore = qualityTracking.get(18).getText();
