@@ -91,8 +91,12 @@ public class BuyerPage {
 		Float totalLeads = (float) 0;
 		Float totaleadBuyCpl = (float) 0;
 		openLeadListPage.click();
-		wait.waitUntilAngularPageLoaded();
-		$("th[st-sort='id']").click();
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		wait.waitUntilAngularPageLoaded();
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
