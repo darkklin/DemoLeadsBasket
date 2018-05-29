@@ -39,7 +39,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("admin forget password")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = false, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
+	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest()
 	{
 		open("https://test_staff.leadsbasket.com/admin/login");
@@ -52,7 +52,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Accep Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
+	@Test(enabled = true, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
 	public void adminAcceptDispute() {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
@@ -62,7 +62,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "admin Declined dispute", groups = { "adminDispute" }, priority = 2)
+	@Test(enabled = true, description = "admin Declined dispute", groups = { "adminDispute" }, priority = 2)
 	public void adminDeclinedDispute() throws Exception {
 		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
@@ -74,7 +74,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("seller LB Revenue")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
+	@Test(enabled = true, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
 	public void sellerLbRevenue()  {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
@@ -131,7 +131,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
+	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
 	public String couponGenerator() throws Exception {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
