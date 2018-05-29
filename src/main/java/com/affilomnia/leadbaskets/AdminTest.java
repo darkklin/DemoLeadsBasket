@@ -85,7 +85,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Quality")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Test quality part 1 ", groups = { "Quality" }, priority = 1)
+	@Test(enabled = true, description = "Test quality part 1 ", groups = { "Quality" }, priority = 1)
 	public void QualityParOne() throws Exception {
 		// ctrlv , scroll , reg_duration , reg_time , ctrlv+scroll,reg_duration 5,sec,reg_time 5 sec
 
@@ -106,7 +106,7 @@ public class AdminTest extends BaseTest {
 		open("https://test_staff.leadsbasket.com");
 		adminPage.updateQuality("90","ctrlv+scroll", "-20");	
 		adminPage.checkRateScore("ctrlv","60","yes"); 
-		Reporter.log("user didn't use Scroll!",false);
+		Reporter.log("user didn't use Scroll!",true);
 		
 		open("https://test_staff.leadsbasket.com");
 		adminPage.updateQuality("90","reg_duration", "-20");	

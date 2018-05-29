@@ -69,7 +69,7 @@ public class BuyerTest extends BaseTest {
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(enabled = false, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
 	public void testBuyerRegistrtion() {
-		open("https://test_app.leadsbasket.com/register-industry?r=lb");
+		open("https://test_app.leadsbasket.com/register-industry");
 		buyerPage.industryPage();
 		buyerPage.registerPage();
 		buyerPage.integrationPage();

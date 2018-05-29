@@ -27,6 +27,8 @@ public class AdminPage {
 
 	@Inject
 	public AdminPage() {
+//		Configuration.browser = "chrome";
+
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
 		page(this);
@@ -278,6 +280,7 @@ public class AdminPage {
 			Reporter.log(timeToReg+ " ," + rateScore+ ", Is Lead disqualified ? "+isDisqualified, true);
 			break;
 		}
+		$("[ng-click='closeModal()']").click();
 		softAssert.assertAll();
 
 	}
