@@ -92,36 +92,40 @@ public class BuyerPage {
 		Float totaleadBuyCpl = (float) 0;
 		openLeadListPage.click();
 		wait.waitUntilAngularPageLoaded();
-		perPage200.click();
-		loader.shouldBe(Condition.visible);
+		$("input[placeholder='ID..']").sendKeys("19391");
 		wait.waitUntilAngularPageLoaded();
-		int pageCount = $$("a[ng-click='selectPage(page)']").size();
-		if (pageCount <= 0) {
-			pageCount = 1;
-		}
-		for (int j = 1; j <= pageCount; j++) {
-
-			for (int i = 0; i < $$("tr[ng-repeat*='leadsCollection']").size(); i++) {
-				leadBuyCpl = convertWebElementToNm(buyCplParLead.get(i));
-				String leadstatus = leadStatusCollection.get(i).getText();
-				if (leadstatus.equalsIgnoreCase("Paid") || leadstatus.equalsIgnoreCase("Dispute")
-						|| leadstatus.equalsIgnoreCase("Dispute Declined")) {
-					totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
-					totalLeads++;
-				}
-
-			}
-			$("a[ng-click='selectPage(currentPage+1)']").click();
-			try {
-				wait.waitUntilAngularPageLoaded();
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-
-		checkTotalSpentAndTotalLeads(totaleadBuyCpl, totalLeads);
-		// return new Float[] { totalLeads, totaleadBuyCpl };
+		screenshot("19391");
+		
+//		perPage200.click();
+//		loader.shouldBe(Condition.visible);
+//		wait.waitUntilAngularPageLoaded();
+//		int pageCount = $$("a[ng-click='selectPage(page)']").size();
+//		if (pageCount <= 0) {
+//			pageCount = 1;
+//		}
+//		for (int j = 1; j <= pageCount; j++) {
+//
+//			for (int i = 0; i < $$("tr[ng-repeat*='leadsCollection']").size(); i++) {
+//				leadBuyCpl = convertWebElementToNm(buyCplParLead.get(i));
+//				String leadstatus = leadStatusCollection.get(i).getText();
+//				if (leadstatus.equalsIgnoreCase("Paid") || leadstatus.equalsIgnoreCase("Dispute")
+//						|| leadstatus.equalsIgnoreCase("Dispute Declined")) {
+//					totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
+//					totalLeads++;
+//				}
+//
+//			}
+//			$("a[ng-click='selectPage(currentPage+1)']").click();
+//			try {
+//				wait.waitUntilAngularPageLoaded();
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//
+//		checkTotalSpentAndTotalLeads(totaleadBuyCpl, totalLeads);
+//		// return new Float[] { totalLeads, totaleadBuyCpl };
 	}
 
 	/**
