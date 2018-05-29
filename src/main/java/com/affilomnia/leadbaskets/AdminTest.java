@@ -41,7 +41,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("admin forget password")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
+	@Test(enabled = false, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest()
 	{
 		open("https://test_staff.leadsbasket.com/admin/login");
@@ -54,7 +54,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Accep Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
+	@Test(enabled = false, description = "admin Accept dispute", groups = { "adminDispute" }, priority = 1)
 	public void adminAcceptDispute() throws Exception {
 		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
@@ -65,7 +65,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "admin Declined dispute", groups = { "adminDispute" }, priority = 2)
+	@Test(enabled = false, description = "admin Declined dispute", groups = { "adminDispute" }, priority = 2)
 	public void adminDeclinedDispute() throws Exception {
 		buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
@@ -77,7 +77,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("seller LB Revenue")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
+	@Test(enabled = false, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
 	public void sellerLbRevenue()  {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
@@ -88,7 +88,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Quality")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Test quality part 1 ", groups = { "Quality" }, priority = 1)
+	@Test(enabled = false, description = "Test quality part 1 ", groups = { "Quality" }, priority = 1)
 	public void QualityParOne() throws Exception {
 		// ctrlv , scroll , reg_duration , reg_time , ctrlv+scroll,reg_duration 5,sec,reg_time 5 sec
 
@@ -109,7 +109,7 @@ public class AdminTest extends BaseTest {
 		open("https://test_staff.leadsbasket.com");
 		adminPage.updateQuality("90","ctrlv+scroll", "-20");	
 		adminPage.checkRateScore("ctrlv","60","yes"); 
-		Reporter.log("user didn't use Scroll!",true);
+		Reporter.log("user didn't use Scroll!",false);
 		
 		open("https://test_staff.leadsbasket.com");
 		adminPage.updateQuality("90","reg_duration", "-20");	
@@ -137,7 +137,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
+	@Test(enabled = false, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
 	public String couponGenerator() throws Exception {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
