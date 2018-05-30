@@ -71,7 +71,7 @@ public class FormLbTest  {
 	@Video
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
+	@Test(enabled = true, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
 	public void EmbeddedForm()throws Exception {
 		open("http://52.17.171.159/EmbeddedOffer/");
 		formLbPage.regLead("@lb.com","");
