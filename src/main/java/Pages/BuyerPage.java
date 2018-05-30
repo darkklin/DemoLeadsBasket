@@ -32,7 +32,7 @@ public class BuyerPage {
 		this.softAssert = new SoftAssert();
 		wait = new WaitAngularPageLoaded();
 		page(this);
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 
 
 	}
@@ -90,22 +90,9 @@ public class BuyerPage {
 		Float leadBuyCpl;
 		Float totalLeads = (float) 0;
 		Float totaleadBuyCpl = (float) 0;
-
 		openLeadListPage.click();
-		
-		wait.waitUntilAngularPageLoaded();
-		$("[st-search='id']").sendKeys("19401");
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		wait.waitUntilAngularPageLoaded();
-		refresh();
-		wait.waitUntilAngularPageLoaded();
 
-		
+		wait.waitUntilAngularPageLoaded();
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();

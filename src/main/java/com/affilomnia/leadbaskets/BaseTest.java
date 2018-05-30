@@ -44,7 +44,7 @@ public class BaseTest {
 		Configuration.holdBrowserOpen = false;
 		Configuration.fastSetValue = true;
 		Configuration.driverManagerEnabled = true;
-		TextReport.onSucceededTest = true;
+		TextReport.onSucceededTest = false;
 		TextReport.onFailedTest = true;
 		
 	}
