@@ -94,21 +94,12 @@ public class BuyerPage {
 		openLeadListPage.click();
 		
 		wait.waitUntilAngularPageLoaded();
-		$("[st-search='lead_type']").click();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		$(byText("All")).click();
+		$("[st-search='id']").setValue("19401");
 		wait.waitUntilAngularPageLoaded();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		$("[st-search='id']").clear();
+		wait.waitUntilAngularPageLoaded();
+
+		
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
