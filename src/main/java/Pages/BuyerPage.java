@@ -94,7 +94,7 @@ public class BuyerPage {
 		openLeadListPage.click();
 		
 		wait.waitUntilAngularPageLoaded();
-		$("[st-search='id']").setValue("19401");
+		$("[st-search='id']").sendKeys("19401");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e1) {
@@ -102,7 +102,7 @@ public class BuyerPage {
 			e1.printStackTrace();
 		}
 		wait.waitUntilAngularPageLoaded();
-		$("[st-search='id']").clear();
+		refresh();
 		wait.waitUntilAngularPageLoaded();
 
 		
