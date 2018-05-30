@@ -97,7 +97,12 @@ public class BuyerPage {
 		$("[st-search='lead_type']").click();
 		$(byText("All")).click();
 		wait.waitUntilAngularPageLoaded();
-
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
