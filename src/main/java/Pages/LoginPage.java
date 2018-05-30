@@ -18,7 +18,7 @@ public class LoginPage {
 //		Configuration.remote = "http://localhost:4446/wd/hub";
 		wait = new WaitAngularPageLoaded();
 
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 
 		page(this);
 	}
