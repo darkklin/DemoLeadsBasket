@@ -95,6 +95,12 @@ public class BuyerPage {
 		
 		wait.waitUntilAngularPageLoaded();
 		$("[st-search='id']").setValue("19401");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		wait.waitUntilAngularPageLoaded();
 		$("[st-search='id']").clear();
 		wait.waitUntilAngularPageLoaded();
