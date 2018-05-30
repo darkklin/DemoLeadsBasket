@@ -36,7 +36,7 @@ public class BaseTest {
 //		String urlToRemoteWD = "http://localhost:4446/wd/hub";
 //		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
 //		WebDriverRunner.setWebDriver(driver);
-		Configuration.browser = "chrome";
+//		Configuration.browser = "chrome";
 
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
