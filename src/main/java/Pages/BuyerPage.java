@@ -341,6 +341,7 @@ public class BuyerPage {
 		assertThat(pdf, containsText("Get leads by API"));
 		PDF pdf1 = new PDF($(byText("Integration with Zapier")).download());
 		assertThat(pdf1, containsText("Receive leads to your Zapier account"));
+		
 
 	}
 

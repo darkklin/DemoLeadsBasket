@@ -52,6 +52,7 @@ public class AdminPage {
 	private SelenideElement welcomMassage = $("div[class*='clickable']");
 	private SelenideElement disqualified = $("tr:nth-child(1)>td:nth-child(46)>small");
 	private SelenideElement controlV = $("span[ng-repeat*='form_content_insert']");
+	private SelenideElement acceptDispute = $("a[ng-click='modalAccept(lead)']");
 
 	private ElementsCollection removeRows = $$("input[type='radio']");
 	private ElementsCollection amoutOfRows = $$("tr[class='lead-row ng-scope']");
@@ -93,16 +94,18 @@ public class AdminPage {
 
 	}
 
-	public void acceptDispute(String YesOrNo) {
+	public void acceptDispute(String YesOrNo,String leadEmail) {
 		$("a[href*='system-management']").click();
 		$("a[ui-sref='system.dispute']").click();
 		wait.waitUntilAngularPageLoaded();
-		$("input[placeholder*='Email']").setValue("dispute.com");
+		$("input[placeholder*='Email']").setValue(leadEmail);
 		wait.waitUntilAngularPageLoaded();
 		$$("tr[ng-repeat*='displayedSellerList']").shouldHave(CollectionCondition.size(1));
 		$("tr[ng-repeat*='displayedSellerList']").click();
+		$("div[ng-if='lead.id == expandedLeadId']").shouldBe(Condition.visible);
+
 		if (YesOrNo == "Yes") {
-			$(byText("Accept")).click();
+			acceptDispute.click();
 			$(byText("Yes")).click();
 			Reporter.log("Admin accepted dispute", true);
 			$$("tr[ng-repeat*='displayedSellerList']").shouldHave(CollectionCondition.size(0));

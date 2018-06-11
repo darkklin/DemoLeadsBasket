@@ -103,14 +103,15 @@ public class BuyerTest extends BaseTest {
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
-	public void disputeLead() throws Exception {
+	public String disputeLead() throws Exception {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
 		String email = formLbPage.regLead("@dispute.com","");
-		System.out.println("Dispute email" + email);
+		System.out.println("Dispute email " + email);
 		open("https://test_app.leadsbasket.com");
 		loginPage.login("kirilk+bidder@affilomania.com", "0546474985Ko");
 		buyerPage.buyerDisputeLead(email);
 		buyerPage.logOut();
+		return email;
 
 	}
 	@Video
