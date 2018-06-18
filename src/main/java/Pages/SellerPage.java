@@ -256,7 +256,6 @@ public class SellerPage {
 		liveOfferPage.click();
 		wait.waitUntilAngularPageLoaded();
 		Offer543.waitUntil(Condition.visible, 10000).click();
-		;
 		wait.waitUntilAngularPageLoaded();
 		dataChar.shouldBe(Condition.appear, Condition.enabled);
 		offerlink = executeJavaScript(

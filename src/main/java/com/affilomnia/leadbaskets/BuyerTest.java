@@ -39,7 +39,6 @@ public class BuyerTest extends BaseTest {
 	AdminTest adminTest;
 	@Inject
 	DataBaseConnect db;
-
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
@@ -51,7 +50,6 @@ public class BuyerTest extends BaseTest {
 		buyerPage.calcTotalSpentAndTotalLead();
 		buyerPage.logOut();
 	}
-
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
@@ -63,7 +61,6 @@ public class BuyerTest extends BaseTest {
 		buyerPage.checkStatisticPerCamp();
 		buyerPage.logOut();
 	}
-
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.BLOCKER)
@@ -77,7 +74,6 @@ public class BuyerTest extends BaseTest {
 		buyerPage.finishPage();
 		buyerPage.logOut();
 	}
-
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
@@ -86,7 +82,6 @@ public class BuyerTest extends BaseTest {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
 	}
-
 	@Video
 	@Feature("Create Campaign")
 	@Severity(SeverityLevel.NORMAL)
@@ -96,9 +91,7 @@ public class BuyerTest extends BaseTest {
 		loginPage.login("lbdemo234+3dbd%%df@gmail.com", "0546474985Ko");
 		buyerPage.createCamp();
 		buyerPage.logOut();
-
 	}
-
 	@Video
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
@@ -112,7 +105,6 @@ public class BuyerTest extends BaseTest {
 		buyerPage.buyerDisputeLead(email);
 		buyerPage.logOut();
 		return email;
-
 	}
 	@Video
 	@Feature("Coupon")

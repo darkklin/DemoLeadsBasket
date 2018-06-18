@@ -1,6 +1,7 @@
 com\affilomnia\leadbaskets\SellerTest.class
 libry\WaitAngularPageLoaded.class
 Pages\BuyerPage.class
+libry\DataBaseConnect.class
 Pages\SellerPage.class
 com\affilomnia\leadbaskets\BuyerTest.class
 libry\TextReport.class
