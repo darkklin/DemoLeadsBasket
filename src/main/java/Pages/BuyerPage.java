@@ -34,7 +34,6 @@ public class BuyerPage {
 		page(this);
 		Configuration.browser = "chrome";
 
-
 	}
 
 	private SelenideElement openLeadListPage = $("a[ui-sref='leads_list']");
@@ -52,7 +51,6 @@ public class BuyerPage {
 	private SelenideElement activateCoupon = $("button[ng-click='activateCoupon()']");
 	private SelenideElement buyerBalance = $("span[class='value ng-scope']");
 	private SelenideElement couponNotification = $("span[class='help-block red ng-binding']");
-
 
 	private ElementsCollection leadStatusCollection = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[12]"));
 	private ElementsCollection buyCplParLead = $$(By.xpath("//tr[@class='lead-row ng-scope']/td[5]"));
@@ -96,7 +94,7 @@ public class BuyerPage {
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
-	
+
 		int pageCount = $$("a[ng-click='selectPage(page)']").size();
 		if (pageCount <= 0) {
 			pageCount = 1;
@@ -175,7 +173,7 @@ public class BuyerPage {
 					if (campLeadStatus.equalsIgnoreCase("Paid") || campLeadStatus.equalsIgnoreCase("Dispute")
 							|| campLeadStatus.equalsIgnoreCase("Dispute Declined")
 							|| campLeadStatus.equalsIgnoreCase("Un disputed")) {
-						
+
 						totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
 						totalLeads++;
 						avgCpl = totaleadBuyCpl / totalLeads;
@@ -345,7 +343,6 @@ public class BuyerPage {
 		assertThat(pdf, containsText("Get leads by API"));
 		PDF pdf1 = new PDF($(byText("Integration with Zapier")).download());
 		assertThat(pdf1, containsText("Receive leads to your Zapier account"));
-		
 
 	}
 
@@ -357,10 +354,15 @@ public class BuyerPage {
 		wait.waitUntilAngularPageLoaded();
 		$("input[placeholder='Campaign Title']").setValue(campName);
 
-		
-			$("a[placeholder='Sub-industry']").click();
-			$$("li[role='option']").get(0).click();
-		
+		$("a[placeholder='Sub-industry']").click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		$$("li[role='option']").get(0).click();
+
 		$("a[placeholder='Choose a Language']").click();
 		$$("li[role='option']").get(1).click();
 		$("div[title='Choose Locations']").click();
@@ -390,59 +392,60 @@ public class BuyerPage {
 	public void buyerEnterValidCoupon(String coupoId) {
 		Float balanceAftCoupon;
 		openPage("billing");
-		Reporter.log("balance before coupon " + buyerBalance.getText(),true);
+		Reporter.log("balance before coupon " + buyerBalance.getText(), true);
 		openPage("Payment Method");
 		couponField.setValue(coupoId);
 		activateCoupon.click();
 		$(byText("Congratulations, your coupon code has been applied! View your campaign")).shouldBe(Condition.appear);
 		openPage("billing");
 		wait.waitUntilAngularPageLoaded();
-		balanceAftCoupon =convertWebElementToNm(buyerBalance);
-		Reporter.log("balance after  coupon " + buyerBalance.getText(),true);
-		softAssert.assertEquals(balanceAftCoupon,(float) 500.0, "balance");
-		softAssert.assertEquals($("td[class='ng-binding']").text(), "COUPON"+coupoId, "invoice coupon");
+		balanceAftCoupon = convertWebElementToNm(buyerBalance);
+		Reporter.log("balance after  coupon " + buyerBalance.getText(), true);
+		softAssert.assertEquals(balanceAftCoupon, (float) 500.0, "balance");
+		softAssert.assertEquals($("td[class='ng-binding']").text(), "COUPON" + coupoId, "invoice coupon");
 		softAssert.assertAll();
 	}
+
 	public void buyerEnterInvalidCoupon(String coupoId) {
 		openPage("billing");
 		openPage("Payment Method");
-		Reporter.log("User Trying to enter Coupon without Credit Card",true);
+		Reporter.log("User Trying to enter Coupon without Credit Card", true);
 		couponField.setValue("1D80B76C");
 		activateCoupon.click();
 		$(byText("You have to enter a credit card details before entering a coupon")).shouldBe(Condition.appear);
-		Reporter.log("User got notification "+couponNotification.getText(),true);
-		
+		Reporter.log("User got notification " + couponNotification.getText(), true);
+
 		buyerAddCreaditCard();
-		Reporter.log("\nUser Trying to enter expired Coupon ",true);
+		Reporter.log("\nUser Trying to enter expired Coupon ", true);
 
 		couponField.setValue("9CB8884C");
 		activateCoupon.click();
 		$(byText("The coupon code you’ve entered is expired")).shouldBe(Condition.appear);
-		Reporter.log("User got notification "+couponNotification.getText(),true);
+		Reporter.log("User got notification " + couponNotification.getText(), true);
 
-		Reporter.log("\nUser Trying to enter Coupon From other industry",true);
+		Reporter.log("\nUser Trying to enter Coupon From other industry", true);
 		couponField.setValue(coupoId);
 		activateCoupon.click();
 		$(byText("The coupon code you’ve entered is invalid")).shouldBe(Condition.appear);
-		Reporter.log("User got notification "+couponNotification.getText(),true);
-			
+		Reporter.log("User got notification " + couponNotification.getText(), true);
+
 	}
-	public void buyerAddCreaditCard()
-	{
+
+	public void buyerAddCreaditCard() {
 		$("input[name='firstName']").setValue("test");
 		$("input[name='lastName']").setValue("test");
 		$("input[name='email']").setValue("test@test.com");
 		$("input[name='numberCart']").setValue("4111111111111111");
-		$("a[placeholder='Month']").click();$(byText("05")).click();
-		$("a[placeholder='Year']").click();$(byText("2021")).click();
+		$("a[placeholder='Month']").click();
+		$(byText("05")).click();
+		$("a[placeholder='Year']").click();
+		$(byText("2021")).click();
 		$("input[name='cvv']").setValue("1111");
 
 		$("button[ng-if='!isSelectCard']").click();
 		wait.waitUntilAngularPageLoaded();
 
 	}
-	
-	
 
 	public void openPage(String whatPage) {
 		switch (whatPage) {

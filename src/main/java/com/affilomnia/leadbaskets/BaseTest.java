@@ -38,7 +38,6 @@ public class BaseTest {
 //		WebDriverRunner.setWebDriver(driver);
 //		Configuration.browser = "chrome";
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
-
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;

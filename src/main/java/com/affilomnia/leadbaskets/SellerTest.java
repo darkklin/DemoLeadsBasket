@@ -31,14 +31,17 @@ public class SellerTest extends BaseTest {
 	@Inject
 	SellerPage sellerPage;
 
+	private String email = "tim38857@sawoe.com";
+	private String password = "0546474985Ko";
+
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
 			"sellerStatistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
-		open("https://test_app.leadsbasket.com");
-		loginPage.login("tim38857@sawoe.com", "0546474985Ko");
+		open("");
+		loginPage.login(email, password);
 		$(byText("Report")).click();
 		Double statResult[] = sellerPage.calcTotalRevenueLeadActualAvgCpl();
 		sellerPage.checkStatisticOnDashBoard(statResult[0], statResult[1], statResult[2], statResult[3]);
@@ -50,8 +53,8 @@ public class SellerTest extends BaseTest {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
 	public void testStatisticParOffer() throws Exception {
-		open("https://test_app.leadsbasket.com");
-		loginPage.login("tim38857@sawoe.com", "0546474985Ko");
+		open("");
+		loginPage.login(email, password);
 		sellerPage.checkstatParOffer();
 		sellerPage.logOut();
 	}
@@ -60,8 +63,8 @@ public class SellerTest extends BaseTest {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
 	public void sellerAccountingStatistic() throws Exception {
-		open("https://test_app.leadsbasket.com");
-		loginPage.login("tim38857@sawoe.com", "0546474985Ko");
+		open("");
+		loginPage.login(email, password);
 		sellerPage.accountingStatistic();
 		sellerPage.logOut();
 	}

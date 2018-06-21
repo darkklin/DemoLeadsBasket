@@ -39,17 +39,18 @@ public class AdminTest extends BaseTest {
 	LoginPage loginPage;
 	@Inject
 	BuyerTest buyerTest;
-
+	private String email = "kirill3@gmx.com";
+	private String password = "Test123456@";
 	@Video
 	@Feature("admin forget password")
 	@Severity(SeverityLevel.NORMAL)
 	@Test(enabled = false, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest()
 	{
-		open("https://test_staff.leadsbasket.com/admin/login");
+		open("");
 		adminPage.forgetPassword();
 		open("https://test_staff.leadsbasket.com/admin/login");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		loginPage.login(email, password);
 		adminPage.logOut();		
 	}
 	@Video
@@ -61,7 +62,7 @@ public class AdminTest extends BaseTest {
 	public void adminAcceptDispute() throws Exception {
 		String leadEmail = buyerTest.disputeLead();
 		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		loginPage.login(email, password);
 		adminPage.acceptDispute("Yes",leadEmail);		
 		adminPage.logOut();
 	}
@@ -73,8 +74,8 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	public void adminDeclinedDispute() throws Exception {
 		String leadEmail = buyerTest.disputeLead();
-		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		open("");
+		loginPage.login(email, password);
 		adminPage.acceptDispute("No",leadEmail);	
 		adminPage.logOut();
 	}
@@ -83,8 +84,8 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = false, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
 	public void sellerLbRevenue()  {
-		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		open("");
+		loginPage.login(email, password);
 		adminPage.sellerLbRevenue();
 		adminPage.logOut();
 	}
@@ -95,8 +96,8 @@ public class AdminTest extends BaseTest {
 	public void QualityParOne() throws Exception {
 		// ctrlv , scroll , reg_duration , reg_time , ctrlv+scroll,reg_duration 5,sec,reg_time 5 sec
 
-		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		open("");
+		loginPage.login(email, password);
 		
 		adminPage.updateQuality("95","ctrlv", "-20");	
 		adminPage.checkRateScore("ctrlv","80","yes");
@@ -142,8 +143,8 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = false, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
 	public String couponGenerator() throws Exception {
-		open("https://test_staff.leadsbasket.com");
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		open("");
+		loginPage.login(email, password);
 		String coupon = adminPage.createCoupon();
 		adminPage.logOut();
 		return coupon;
