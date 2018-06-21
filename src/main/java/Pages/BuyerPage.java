@@ -357,13 +357,10 @@ public class BuyerPage {
 		wait.waitUntilAngularPageLoaded();
 		$("input[placeholder='Campaign Title']").setValue(campName);
 
-		try {
+		
 			$("a[placeholder='Sub-industry']").click();
 			$$("li[role='option']").get(0).click();
-		} catch (Exception e) {
-			$("a[placeholder='Sub-industry']").click();
-			$$("li[role='option']").get(0).click();
-		}
+		
 		$("a[placeholder='Choose a Language']").click();
 		$$("li[role='option']").get(1).click();
 		$("div[title='Choose Locations']").click();

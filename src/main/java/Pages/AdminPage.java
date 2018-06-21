@@ -61,6 +61,8 @@ public class AdminPage {
 	private ElementsCollection qualityTracking = $$("li[class*='list-group-item']");
 
 	public void forgetPassword() {
+		
+		
 		$(byText("Forgot Password?")).waitUntil((Condition.visible), 15000).click();
 		wait.waitUntilAngularPageLoaded();
 		$("input[type='email']").setValue("kirill3@gmx.com");
