@@ -42,7 +42,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test total leads Total spent of buyer", groups = {
+	@Test(enabled = true, description = "Test total leads Total spent of buyer", groups = {
 			"buyerStatistic" }, priority = 1)
 	public void testLoginTotalSpentAndLeads() {
 		open("https://test_app.leadsbasket.com");
@@ -53,7 +53,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test total leads/spent/avgcpl par offer ", groups = {
+	@Test(enabled = true, description = "Test total leads/spent/avgcpl par offer ", groups = {
 			"buyerStatistic" }, priority = 2)
 	public void testTotalLeadTotalSpentAvgcplParCamp() {
 		open("https://test_app.leadsbasket.com");
@@ -64,7 +64,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.BLOCKER)
-	@Test(enabled = false, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
+	@Test(enabled = true, description = "Buyer Registration", groups = { "BuyerReg" }, priority = 1)
 	public void testBuyerRegistrtion() {
 		open("https://test_app.leadsbasket.com/register-industry");
 		buyerPage.industryPage();
@@ -77,7 +77,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Buyer Registration")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = false, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
+	@Test(enabled = true, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {
 		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
@@ -95,7 +95,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Dispute leads")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
+	@Test(enabled = true, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
 	public String disputeLead() throws Exception {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
 		String email = formLbPage.regLead("@dispute.com","");
@@ -109,7 +109,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Buyer anter Valid Coupon ", groups = { "Coupon" }, priority = 1)
+	@Test(enabled = true, description = "Buyer anter Valid Coupon ", groups = { "Coupon" }, priority = 1)
 	public void anterValidCoupon() throws Exception {
 		String couponId = adminTest.couponGenerator();
 		db.executeStatement("update billing_profile set balance = null where user_id = 617","Update balance for buyer");
@@ -123,7 +123,7 @@ public class BuyerTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = false, description = "Buyer anter Invalid Coupons ", groups = { "Coupon" }, priority = 2)
+	@Test(enabled = true, description = "Buyer anter Invalid Coupons ", groups = { "Coupon" }, priority = 2)
 	public void anterInvalidCoupon() throws Exception {
 		String couponId = adminTest.couponGenerator();
 		open("https://test_app.leadsbasket.com");
