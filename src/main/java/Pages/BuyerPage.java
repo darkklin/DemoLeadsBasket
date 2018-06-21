@@ -182,10 +182,13 @@ public class BuyerPage {
 					}
 				}
 				if (hasPages)
+
 					$("a[ng-click='selectPage(currentPage+1)']").click();
+				wait.waitUntilAngularPageLoaded();
+
 				try {
 					wait.waitUntilAngularPageLoaded();
-					Thread.sleep(1000);
+					Thread.sleep(500);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
