@@ -172,7 +172,6 @@ public class BuyerPage {
 				for (int k = 0; k < $$("tr[ng-repeat*='leadsCollection']").size(); k++) {
 					leadBuyCpl = convertWebElementToNm(campLeadBuyCpl.get(k));
 					campLeadStatus = campaignLeadStatus.get(k).getText();
-					System.out.println($$(By.xpath("//tr[@class='lead-row ng-scope']/td[1]")).get(k).text());
 					if (campLeadStatus.equalsIgnoreCase("Paid") || campLeadStatus.equalsIgnoreCase("Dispute")
 							|| campLeadStatus.equalsIgnoreCase("Dispute Declined")
 							|| campLeadStatus.equalsIgnoreCase("Un disputed")) {
