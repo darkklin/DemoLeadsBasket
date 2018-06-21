@@ -356,7 +356,7 @@ public class BuyerPage {
 
 		$("a[placeholder='Sub-industry']").click();
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
