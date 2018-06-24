@@ -39,8 +39,8 @@ public class BuyerTest extends BaseTest {
 	AdminTest adminTest;
 	@Inject
 	DataBaseConnect db;
-	
-	private String email = "kirilk+bidder@affilomania.com";
+
+	private String buyerEmail = "kirilk+bidder@affilomania.com";
 	private String password = "0546474985Ko";
 	
 	@Video
@@ -50,7 +50,7 @@ public class BuyerTest extends BaseTest {
 			"buyerStatistic" }, priority = 1)
 	public void testLoginTotalSpentAndLeads() {
 		open("");
-		loginPage.login(email, password);
+		loginPage.login(buyerEmail, password);
 		buyerPage.calcTotalSpentAndTotalLead();
 		buyerPage.logOut();
 	}
@@ -61,7 +61,7 @@ public class BuyerTest extends BaseTest {
 			"buyerStatistic" }, priority = 2)
 	public void testTotalLeadTotalSpentAvgcplParCamp() {
 		open("");
-		loginPage.login(email, password);
+		loginPage.login(buyerEmail, password);
 		buyerPage.checkStatisticPerCamp();
 		buyerPage.logOut();
 	}
@@ -105,7 +105,7 @@ public class BuyerTest extends BaseTest {
 		String email = formLbPage.regLead("@dispute.com","");
 		System.out.println("Dispute email " + email);
 		open("");
-		loginPage.login(email, password);
+		loginPage.login(buyerEmail, password);
 		buyerPage.buyerDisputeLead(email);
 		buyerPage.logOut();
 		return email;
@@ -138,6 +138,7 @@ public class BuyerTest extends BaseTest {
 
 
 	}
+	
 	
 
 	

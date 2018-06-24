@@ -33,6 +33,7 @@ public class BuyerPage {
 		wait = new WaitAngularPageLoaded();
 		page(this);
 		
+		Configuration.browser = "chrome";
 
 
 

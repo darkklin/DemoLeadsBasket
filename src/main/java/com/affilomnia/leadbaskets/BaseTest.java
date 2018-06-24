@@ -37,7 +37,7 @@ public class BaseTest {
 //		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
 //		WebDriverRunner.setWebDriver(driver);
 //		Configuration.browser = "chrome";
-		Configuration.baseUrl = "https://test_app.leadsbasket.com";
+//		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;

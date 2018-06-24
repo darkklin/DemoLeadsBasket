@@ -32,7 +32,6 @@ public class AdminPage {
 		this.softAssert = new SoftAssert();
 		page(this);
 		Configuration.browser = "chrome";
-		Configuration.baseUrl = "https://test_staff.leadsbasket.com";
 
 	}
 
