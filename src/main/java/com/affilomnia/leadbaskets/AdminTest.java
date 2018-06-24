@@ -47,7 +47,7 @@ public class AdminTest extends BaseTest {
 	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest()
 	{
-		open("");
+		open("https://test_staff.leadsbasket.com");
 		adminPage.forgetPassword();
 		open("https://test_staff.leadsbasket.com/admin/login");
 		loginPage.login(email, password);
@@ -74,7 +74,7 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	public void adminDeclinedDispute() throws Exception {
 		String leadEmail = buyerTest.disputeLead();
-		open("");
+		open("https://test_staff.leadsbasket.com");
 		loginPage.login(email, password);
 		adminPage.acceptDispute("No",leadEmail);	
 		adminPage.logOut();
@@ -84,7 +84,7 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Test  our LB Revenue from seller 462 ", groups = { "adminStatistic" }, priority =1)
 	public void sellerLbRevenue()  {
-		open("");
+		open("https://test_staff.leadsbasket.com");
 		loginPage.login(email, password);
 		adminPage.sellerLbRevenue();
 		adminPage.logOut();
@@ -96,7 +96,7 @@ public class AdminTest extends BaseTest {
 	public void QualityParOne() throws Exception {
 		// ctrlv , scroll , reg_duration , reg_time , ctrlv+scroll,reg_duration 5,sec,reg_time 5 sec
 
-		open("");
+		open("https://test_staff.leadsbasket.com");
 		loginPage.login(email, password);
 		
 		adminPage.updateQuality("95","ctrlv", "-20");	
@@ -143,7 +143,7 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
 	public String couponGenerator() throws Exception {
-		open("");
+		open("https://test_staff.leadsbasket.com");
 		loginPage.login(email, password);
 		String coupon = adminPage.createCoupon();
 		adminPage.logOut();

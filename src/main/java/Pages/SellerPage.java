@@ -10,6 +10,7 @@ import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
@@ -27,6 +28,8 @@ public class SellerPage {
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
 		page(this);
+		Configuration.baseUrl = "https://test_app.leadsbasket.com";
+
 
 	}
 
