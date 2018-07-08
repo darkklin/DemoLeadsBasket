@@ -135,6 +135,7 @@ public class AdminPage {
 		Double totatSellerrCpl = (double) 0;
 		Double totalBuyerCpl = (double) 0;
 		sPage.click();
+		wait.waitUntilAngularPageLoaded();
 		searchField.sendKeys("462");
 		$$("button[type='submit']").get(0).click();
 		wait.waitUntilAngularPageLoaded();
