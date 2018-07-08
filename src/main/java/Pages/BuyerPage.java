@@ -94,6 +94,7 @@ public class BuyerPage {
 		Float totalLeads = (float) 0;
 		Float totaleadBuyCpl = (float) 0;
 		openLeadListPage.click();
+
 		wait.waitUntilAngularPageLoaded();
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
@@ -113,8 +114,10 @@ public class BuyerPage {
 					totaleadBuyCpl = totaleadBuyCpl + leadBuyCpl;
 					totalLeads++;
 				}
+
 			}
 			$("a[ng-click='selectPage(currentPage+1)']").click();
+			wait.waitUntilAngularPageLoaded();
 			sleep(1000);
 		}
 
@@ -200,6 +203,7 @@ public class BuyerPage {
 		softAssert.assertAll();
 
 	}
+
 	public Float convertWebElementToNm(SelenideElement nm) {
 		String element;
 		Float result;
@@ -208,6 +212,7 @@ public class BuyerPage {
 		result = Float.parseFloat(element);
 		return result;
 	}
+
 	public void selectDate(String Date, String page) {
 		if (page == "Dashboard") {
 			$("html[ng-app='leadsBasket']").scrollTo();

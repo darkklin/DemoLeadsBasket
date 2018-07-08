@@ -133,9 +133,7 @@ public class AdminTest extends BaseTest {
 		
 		adminPage.resetRules();
 		$("div[class*='ui-notification']").waitUntil(Condition.disappears, 10000);
-
 		adminPage.logOut();
-
 	}
 	
 	@Video
