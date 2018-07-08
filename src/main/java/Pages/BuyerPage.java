@@ -117,8 +117,12 @@ public class BuyerPage {
 
 			}
 			$("a[ng-click='selectPage(currentPage+1)']").click();
-			wait.waitUntilAngularPageLoaded();
-			sleep(1000);
+			try {
+				wait.waitUntilAngularPageLoaded();
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 
 		checkTotalSpentAndTotalLeads(totaleadBuyCpl, totalLeads);
