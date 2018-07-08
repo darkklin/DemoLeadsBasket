@@ -19,7 +19,6 @@ public class FormLbPage {
 	@Inject
 	public FormLbPage() {
 		Configuration.browser = "chrome";
-
 		page(this);
 	}
 
@@ -30,7 +29,7 @@ public class FormLbPage {
 	private SelenideElement submitBtn = $("input[type='submit']");
 	private SelenideElement errorMessage = $("p[class='error']");
 
-	public String regLead(String emailDomain, String ruleTest) throws Exception {
+	public String regLead(String emailDomain, String ruleTest) {
 		String nm = generateEmail("12345554467890", 7);
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
@@ -46,7 +45,7 @@ public class FormLbPage {
 
 		}
 		submitBtn.click();
-		Thread.sleep(2000);
+		sleep(2000);
 
 		String error = $("p[class='error']").text();
 		while ($("p[class='error']").text().contains("You have entered an invalid phone number")) {
@@ -54,7 +53,7 @@ public class FormLbPage {
 			phone.clear();
 			phone.setValue("201" + nm1);
 			submitBtn.click();
-			Thread.sleep(2000);
+			sleep(2000);
 
 		}
 		$("H1").waitUntil(Condition.text("Registration done!"), 10000);
@@ -67,7 +66,7 @@ public class FormLbPage {
 		fieldEmail.sendKeys(Keys.CONTROL + "v");
 	}
 
-	public void qualityTest(String ruleTest) throws Exception {
+	public void qualityTest(String ruleTest)  {
 		String whatTest = ruleTest;
 
 		switch (whatTest) {
@@ -85,16 +84,16 @@ public class FormLbPage {
 			firstName.scrollTo();
 			break;
 		case "reg_duration":
-			Thread.sleep(10000);
+			sleep(10000);
 			break;
 		case "reg_duration 5 sec":
-			Thread.sleep(5000);
+			sleep(5000);
 			break;
 		case "reg_time":
-			Thread.sleep(10000);
+			sleep(10000);
 			break;
 		case "reg_time 5 sec":
-			Thread.sleep(5000);
+			sleep(5000);
 			break;
 		}
 	}

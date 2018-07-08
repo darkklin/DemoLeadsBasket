@@ -101,7 +101,7 @@ public class BuyerTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Buyer dispute lead  ", groups = { "dispute" }, priority = 1)
 	public String disputeLead() throws Exception {
-		open("http://52.17.171.159/seleniumOfferDontUse/");
+		open("https://test_app.leadsbasket.com/targeting?seller_id=800&offer_id=174");
 		String email = formLbPage.regLead("@dispute.com","");
 		System.out.println("Dispute email " + email);
 		open("");

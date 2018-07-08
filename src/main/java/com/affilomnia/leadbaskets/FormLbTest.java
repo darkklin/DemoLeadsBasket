@@ -58,7 +58,7 @@ public class FormLbTest  {
 	@Test(enabled = true, description = "seller send one lead thought offer 543 ", groups = {
 			"createLead" }, priority = 1)
 	public void LoginAsSellerAndSendLead() throws Exception {
-		open("https://test_app.leadsbasket.com");
+		open("");
 		loginPage.login("tim38857@sawoe.com", "0546474985Ko"); //selelr id 710
 		String targtingOfferLink = sellerPage.Offerlink();
 		open(targtingOfferLink);

@@ -80,6 +80,8 @@ public class BuyerPage {
 	private SelenideElement state = $("input[name='state']");
 	private SelenideElement country = $("a[placeholder='Select Country']");
 	private SelenideElement zipCode = $("input[name='zip']");
+	private SelenideElement campaignName = $("input[placeholder='Campaign Title']");
+
 	private ElementsCollection chooseCountry = $$("li[role='option']");
 	private ElementsCollection disputeReson = $$("li[role='menuitem']");
 
@@ -355,21 +357,18 @@ public class BuyerPage {
 		$$("a[ui-sref='create_campaigns']").get(1).click();
 		$(byText("Save")).shouldBe(Condition.disabled);
 		wait.waitUntilAngularPageLoaded();
-		$("input[placeholder='Campaign Title']").setValue(campName);
+
+		campaignName.setValue(campName);
 
 		$("a[placeholder='Sub-industry']").click();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		sleep(4000);
+
 		$$("li[role='option']").get(0).click();
 
 		$("a[placeholder='Choose a Language']").click();
 		$$("li[role='option']").get(1).click();
 		$("div[title='Choose Locations']").click();
-		$$("li[role='option']").get(99).click();
+		$$("li[role='option']").get(28).click();
 		$(byText("$28")).shouldBe(Condition.visible);
 		$("input[name='pricePerLead']").clear();
 		$("input[name='pricePerLead']").setValue("128");

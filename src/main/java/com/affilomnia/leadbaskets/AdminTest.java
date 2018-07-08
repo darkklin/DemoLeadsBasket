@@ -69,7 +69,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Test(enabled = true, description = "Test Declined dispute", groups = { "adminDispute" }, priority = 2)
 	@Feature("Dispute")
-	@Story("Admin accept Disputed leads")
+	@Story("Admin declined Disputed leads")
 	@Description("Seller send lead -> buyer dispute that lead -> admin declined lead ")
 	@Severity(SeverityLevel.TRIVIAL)
 	public void adminDeclinedDispute() throws Exception {
