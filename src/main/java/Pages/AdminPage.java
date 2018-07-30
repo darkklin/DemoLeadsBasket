@@ -5,8 +5,6 @@ import static com.codeborne.selenide.Selenide.*;
 import java.util.Random;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.logging.Logs;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
@@ -27,17 +25,18 @@ public class AdminPage {
 
 	@Inject
 	public AdminPage() {
+		Configuration.browser = "chrome";
 
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
 		page(this);
-		Configuration.browser = "chrome";
 
 	}
 
 	@Inject
 	FormLbPage formLbPage;
-
+	@Inject
+	LoginPage loginPage;
 	@Inject
 	SellerPage sellerPage;
 	private SelenideElement sPage = $("a[ng-class*='sellers']");
@@ -54,6 +53,9 @@ public class AdminPage {
 	private SelenideElement disqualified = $("tr:nth-child(1)>td:nth-child(46)>small");
 	private SelenideElement controlV = $("span[ng-repeat*='form_content_insert']");
 	private SelenideElement acceptDispute = $("a[ng-click='modalAccept(lead)']");
+	private SelenideElement smsVerification = $(By.xpath("//label[contains(@class,'check_chk') and @ng-repeat='itm in offerVerifications']"));
+	private ElementsCollection verification = $$(By.xpath("//label[@ng-repeat='itm in offerVerifications']"));
+	private SelenideElement smsCode = $(By.xpath("//li[@class='L9'][1]//span[@class='lit']"));
 
 	private ElementsCollection removeRows = $$("input[type='radio']");
 	private ElementsCollection amoutOfRows = $$("tr[class='lead-row ng-scope']");
@@ -68,13 +70,8 @@ public class AdminPage {
 		wait.waitUntilAngularPageLoaded();
 		$("input[type='email']").setValue("kirill3@gmx.com");
 		$("button[type='submit']").click();
-		$("h2").shouldHave(Condition.text("Reset Your Password"));
-		try {
-			Thread.sleep(700);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		$("h2").shouldHave(Condition.text("Reset Your Password"));		
+		sleep(700);		
 		open("https://www.gmx.com");
 		$("a[id='login-button']").click();
 		$("input[name='username']").setValue("kirill3@gmx.com");
@@ -294,7 +291,7 @@ public class AdminPage {
 		softAssert.assertAll();
 
 	}
-	public String  createCoupon() throws Exception
+	public String  createCoupon() 
 	{
 		$("a[href*='system-management']").click();
 		$("a[ui-sref='system.coupon_generator']").click();
@@ -305,8 +302,41 @@ public class AdminPage {
 		$(byText("Create")).click();
 		$$("th[role='columnheader']").get(0).click();
 		wait.waitUntilAngularPageLoaded();
-		Thread.sleep(1000);
+		sleep(1000);
 		System.out.println($$("td").get(1).getText());
 		return $$("td").get(1).getText();
+	}
+	public void turnOnOfferSMSnotification(String offerId){
+		open("https://test_staff.leadsbasket.com");
+		loginPage.login("kirill3@gmx.com", "Test123456@");
+		
+		$("a[href*='offers']").click();
+		searchField.sendKeys(offerId);
+		searchField.pressEnter();
+		wait.waitUntilAngularPageLoaded();
+		$("a[href*='316']").click();
+		wait.waitUntilAngularPageLoaded();
+		if (smsVerification.exists()==false) {
+			verification.get(0).click();
+			$(byText("Save")).click();
+			
+		}
+		$(byText("Save")).click();
+
+		System.out.println(smsVerification.exists());
+
+	}
+	public String getSMScodeFromLeadReport()
+	{
+		executeJavaScript("window.open('https://test_staff.leadsbasket.com');");
+	    switchTo().window(1);
+		loginPage.login("kirill3@gmx.com", "Test123456@");
+		$("a[href*='leads']").click();
+		$("input[st-search='email_hash']").setValue("@smsVerification.com");
+		wait.waitUntilAngularPageLoaded();
+		$$("button[ng-click='showLeadData(lead)']").get(0).click();
+		String smsCodeText = smsCode.getText();
+	    switchTo().window(0);
+		return smsCodeText;
 	}
 }

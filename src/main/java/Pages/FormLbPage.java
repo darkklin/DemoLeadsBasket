@@ -6,7 +6,10 @@ import static com.codeborne.selenide.Selenide.*;
 import java.util.Random;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.logging.Logs;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -15,10 +18,14 @@ import com.google.inject.Inject;
 import com.google.inject.Key;
 
 public class FormLbPage {
-
+	private SoftAssert softAssert;
+	@Inject
+	AdminPage adminPage;
 	@Inject
 	public FormLbPage() {
 		Configuration.browser = "chrome";
+		this.softAssert = new SoftAssert();
+
 		page(this);
 	}
 
@@ -31,9 +38,9 @@ public class FormLbPage {
 
 	public String regLead(String emailDomain, String ruleTest) {
 		String nm = generateEmail("12345554467890", 7);
+		String email1 = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + emailDomain;
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
-		String email1 = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + emailDomain;
 		fieldEmail.setValue(email1);
 
 		qualityTest(ruleTest);
@@ -98,6 +105,17 @@ public class FormLbPage {
 		}
 	}
 
+	public void duplicationTest(String email,String phoneNumber) {
+		firstName.setValue("AutomationLead");
+		lastName.setValue("selenide");
+		fieldEmail.setValue(email);
+		phone.setValue(phoneNumber);
+		submitBtn.click();
+		$("p").waitUntil(Condition.text("You already signed up"), 5000);
+
+
+		
+	}
 	public String generateEmail(String characters, int length) {
 		Random rng = new Random();
 		char[] randomText = new char[length];
@@ -108,4 +126,20 @@ public class FormLbPage {
 		return new String(randomText);
 	}
 
+	public void smsVerification()
+	{
+		open("http://52.17.171.159/videoyoutube/");
+		String email = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + "@smsVerification.com";
+		firstName.setValue("AutomationLead");
+		lastName.setValue("selenide");
+		fieldEmail.setValue(email);
+		phone.setValue("0528895514");
+		submitBtn.click();
+		$("div[class='phone_sms_verification']").waitUntil(Condition.appear, 5000);
+		$("input[placeholder='Type your code']").setValue(adminPage.getSMScodeFromLeadReport());
+		$(byText("Send")).click();
+		$("div[id='app1']").waitUntil(Condition.text("Registration done!").because("Lead typed SMS code into the field and the lead created"), 6000);
+	}
+
+	
 }

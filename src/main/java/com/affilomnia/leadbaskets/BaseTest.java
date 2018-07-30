@@ -36,12 +36,12 @@ public class BaseTest {
 //		String urlToRemoteWD = "http://localhost:4446/wd/hub";
 //		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
 //		WebDriverRunner.setWebDriver(driver);
-//		Configuration.browser = "chrome";
+		Configuration.browser = "chrome";
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 		Configuration.startMaximized = true;
 		Configuration.screenshots = true;
 		Configuration.headless = false;
-		Configuration.holdBrowserOpen = false;
+		Configuration.holdBrowserOpen = true;
 		Configuration.fastSetValue = true;
 		Configuration.driverManagerEnabled = true;
 		TextReport.onSucceededTest = false;

@@ -37,7 +37,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
+	@Test(enabled = false, description = "How much seller have leads and Total CPl", groups = {
 			"sellerStatistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() throws Exception {
 		open("");
@@ -51,7 +51,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
+	@Test(enabled = false, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
 	public void testStatisticParOffer() throws Exception {
 		open("");
 		loginPage.login(email, password);
@@ -72,10 +72,10 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion + Forget password")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = false, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		String sellerEmail = sellerPage.tenMinutEmail();
-		open("https://test_app.leadsbasket.com/register-seller-start?r=lb");
+		open("/register-seller-start?r=lb");
 		sellerPage.startRegister(sellerEmail);
 		sellerPage.verifyEmail();
 		sellerPage.billingInformation();

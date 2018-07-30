@@ -51,6 +51,8 @@ public class SellerPage {
 	private SelenideElement phoneNumber = $("input[id='tel-dc']");
 	private SelenideElement companyName = $("input[name='company']");
 	private SelenideElement email = $("input[placeholder*='Email']");
+	private SelenideElement skype = $("input[placeholder*='Enter Your Skype ID']");
+
 	private SelenideElement password = $("input[name='pass']");
 	private SelenideElement confirmPassword = $("input[name='rePass']");
 	private SelenideElement bankNamee = $("input[name='bank_name']");
@@ -304,6 +306,7 @@ public class SellerPage {
 		phoneNumber.setValue(phoneNumber.getAttribute("placeholder"));
 		companyName.setValue("selenide");
 		email.setValue(tenEmail);
+		skype.setValue("dsadas535435");
 		password.setValue("D%1" + text);
 		confirmPassword.setValue("D%1" + text);
 		btnSubmit.shouldBe(Condition.visible).click();
