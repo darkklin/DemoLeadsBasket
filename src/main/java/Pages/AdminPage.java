@@ -53,7 +53,8 @@ public class AdminPage {
 	private SelenideElement disqualified = $("tr:nth-child(1)>td:nth-child(46)>small");
 	private SelenideElement controlV = $("span[ng-repeat*='form_content_insert']");
 	private SelenideElement acceptDispute = $("a[ng-click='modalAccept(lead)']");
-	private SelenideElement smsVerification = $(By.xpath("//label[contains(@class,'check_chk') and @ng-repeat='itm in offerVerifications']"));
+	private SelenideElement smsVerification = $(
+			By.xpath("//label[contains(@class,'check_chk') and @ng-repeat='itm in offerVerifications']"));
 	private ElementsCollection verification = $$(By.xpath("//label[@ng-repeat='itm in offerVerifications']"));
 	private SelenideElement smsCode = $(By.xpath("//li[@class='L9'][1]//span[@class='lit']"));
 
@@ -64,20 +65,19 @@ public class AdminPage {
 	private ElementsCollection qualityTracking = $$("li[class*='list-group-item']");
 
 	public void forgetPassword() {
-		
-		
+
 		$(byText("Forgot Password?")).waitUntil((Condition.visible), 15000).click();
 		wait.waitUntilAngularPageLoaded();
 		$("input[type='email']").setValue("kirill3@gmx.com");
 		$("button[type='submit']").click();
-		$("h2").shouldHave(Condition.text("Reset Your Password"));		
-		sleep(700);		
+		$("h2").shouldHave(Condition.text("Reset Your Password"));
+		sleep(700);
 		open("https://www.gmx.com");
 		$("a[id='login-button']").click();
 		$("input[name='username']").setValue("kirill3@gmx.com");
 		$("input[name='password']").setValue("0546474985");
 		$("button[type='submit']").click();
-//		$("pos-svg-icon[name='core_mail']").click();
+		// $("pos-svg-icon[name='core_mail']").click();
 		$(byText("E-mail")).click();
 		switchTo().frame("thirdPartyFrame_mail");
 
@@ -94,7 +94,7 @@ public class AdminPage {
 
 	}
 
-	public void acceptDispute(String YesOrNo,String leadEmail) {
+	public void acceptDispute(String YesOrNo, String leadEmail) {
 		$("a[href*='system-management']").click();
 		$("a[ui-sref='system.dispute']").click();
 		wait.waitUntilAngularPageLoaded();
@@ -161,7 +161,7 @@ public class AdminPage {
 
 	}
 
-	public void updateQuality(String minScore, String roles, String roleScore ) {
+	public void updateQuality(String minScore, String roles, String roleScore) {
 		// ctrlv , scroll , reg_duration , reg_time
 		resetRules();
 
@@ -169,44 +169,47 @@ public class AdminPage {
 		minimumQualityScore.sendKeys(minScore);
 		updateBtns.get(0).click();
 		welcomMassage.should(Condition.appear);
-		if(roles=="ctrlv+scroll")
-		{
+		if (roles == "ctrlv+scroll") {
 			$("input[name='ctrlv']").clear();
 			$("input[name='ctrlv']").sendKeys(roleScore);
 			$("input[name='scroll']").clear();
 			$("input[name='scroll']").sendKeys(roleScore);
-		}
-		else {
-			
-		$("input[name=" + roles + "]").clear();
-		$("input[name=" + roles + "]").sendKeys(roleScore);
+		} else {
+
+			$("input[name=" + roles + "]").clear();
+			$("input[name=" + roles + "]").sendKeys(roleScore);
 		}
 		String whatTest = roles;
 
 		switch (whatTest) {
 		case "ctrlv":
-			updateBtns.get(1).click();	
-			Reporter.log("\nUpdate Minimum Quality to "+ minScore+", Role: "+roles+ " Role score: "+roleScore,true );
+			updateBtns.get(1).click();
+			Reporter.log("\nUpdate Minimum Quality to " + minScore + ", Role: " + roles + " Role score: " + roleScore,
+					true);
 			break;
 		case "scroll":
 			updateBtns.get(2).click();
-			Reporter.log("\nUpdate Minimum Quality to "+ minScore+", Role: "+roles+ " Role score: "+roleScore,true );
+			Reporter.log("\nUpdate Minimum Quality to " + minScore + ", Role: " + roles + " Role score: " + roleScore,
+					true);
 
 			break;
 		case "ctrlv+scroll":
 			updateBtns.get(1).click();
 			updateBtns.get(2).click();
-			Reporter.log("\nUpdate Minimum Quality to "+ minScore+", Role: "+roles+ " Role score: "+roleScore,true );
+			Reporter.log("\nUpdate Minimum Quality to " + minScore + ", Role: " + roles + " Role score: " + roleScore,
+					true);
 			break;
-			
+
 		case "reg_duration":
 			updateBtns.get(3).click();
-			Reporter.log("\nUpdate Minimum Quality to "+ minScore+", Role: "+roles+ " Role score: "+roleScore,true );
+			Reporter.log("\nUpdate Minimum Quality to " + minScore + ", Role: " + roles + " Role score: " + roleScore,
+					true);
 
 			break;
 		case "reg_time":
 			updateBtns.get(4).click();
-			Reporter.log("\nUpdate Minimum Quality to "+ minScore+", Role: "+roles+ " Role score: "+roleScore,true );
+			Reporter.log("\nUpdate Minimum Quality to " + minScore + ", Role: " + roles + " Role score: " + roleScore,
+					true);
 
 			break;
 		}
@@ -245,54 +248,57 @@ public class AdminPage {
 
 		switch (whatTest) {
 		case "ctrlv":
-			//did user used ctrlv 
+			// did user used ctrlv
 			controlV.shouldHave(Condition.text("email"));
-			Reporter.log("User used control + V on " + controlV.getText() +" ," + rateScore+ " Is Lead disqualified ? "+isDisqualified,true);
+			Reporter.log("User used control + V on " + controlV.getText() + " ," + rateScore
+					+ " Is Lead disqualified ? " + isDisqualified, true);
 
 			break;
 		case "scroll":
-			//did user used scroll 
+			// did user used scroll
 			$("i[ng-if*='use_scroll']").shouldBe(Condition.appear);
-			Reporter.log("User used scroll"+ " ," + rateScore+ " Is Lead disqualified ? "+isDisqualified, true);
+			Reporter.log("User used scroll" + " ," + rateScore + " Is Lead disqualified ? " + isDisqualified, true);
 
 			break;
 		case "ctrlv+scroll":
 			controlV.shouldHave(Condition.text("email"));
 			$("i[ng-if*='use_scroll']").shouldBe(Condition.appear);
-			Reporter.log("User used scroll AND ctrl v "+ " ," + rateScore+ " Is Lead disqualified ? "+isDisqualified, true);
+			Reporter.log(
+					"User used scroll AND ctrl v " + " ," + rateScore + " Is Lead disqualified ? " + isDisqualified,
+					true);
 
 			break;
-			
+
 		case "reg_duration":
-			String regDurtion= qualityTracking.get(11).getText();
+			String regDurtion = qualityTracking.get(11).getText();
 			qualityTracking.get(11).shouldHave(Condition.text("Reg Duration: 00:10"));
-			Reporter.log(regDurtion+ " ," + rateScore+ ", Is Lead disqualified ? "+isDisqualified, true);
+			Reporter.log(regDurtion + " ," + rateScore + ", Is Lead disqualified ? " + isDisqualified, true);
 
 			break;
 		case "reg_duration 5 sec":
-			regDurtion= qualityTracking.get(11).getText();
+			regDurtion = qualityTracking.get(11).getText();
 			qualityTracking.get(10).shouldHave(Condition.text("Time to Reg: 00:05"));
-			Reporter.log(regDurtion+ " ,"  + rateScore+ ", Is Lead disqualified ? "+isDisqualified, true);
+			Reporter.log(regDurtion + " ," + rateScore + ", Is Lead disqualified ? " + isDisqualified, true);
 			break;
 		case "reg_time":
 			String timeToReg = qualityTracking.get(10).getText();
 			qualityTracking.get(10).shouldHave(Condition.text("Time to Reg: 00:05"));
-			Reporter.log(timeToReg+ " ," + rateScore+ ", Is Lead disqualified ? "+isDisqualified, true);
+			Reporter.log(timeToReg + " ," + rateScore + ", Is Lead disqualified ? " + isDisqualified, true);
 			break;
-			
+
 		case "reg_time 5 sec":
 			timeToReg = qualityTracking.get(10).getText();
 			qualityTracking.get(10).shouldHave(Condition.text("Time to Reg: 00:05"));
 
-			Reporter.log(timeToReg+ " ," + rateScore+ ", Is Lead disqualified ? "+isDisqualified, true);
+			Reporter.log(timeToReg + " ," + rateScore + ", Is Lead disqualified ? " + isDisqualified, true);
 			break;
 		}
 		$("[ng-click='closeModal()']").click();
 		softAssert.assertAll();
 
 	}
-	public String  createCoupon() 
-	{
+
+	public String createCoupon() {
 		$("a[href*='system-management']").click();
 		$("a[ui-sref='system.coupon_generator']").click();
 		wait.waitUntilAngularPageLoaded();
@@ -306,37 +312,43 @@ public class AdminPage {
 		System.out.println($$("td").get(1).getText());
 		return $$("td").get(1).getText();
 	}
-	public void turnOnOfferSMSnotification(String offerId){
+
+	public void turnOnOfferVerfication(String offerId,String verificationType, int nmVerify) {
+		// nmVerify index 0 = "email";
+		// nmVerify index 1 = "SMS";
+
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
-		
+
 		$("a[href*='offers']").click();
 		searchField.sendKeys(offerId);
 		searchField.pressEnter();
 		wait.waitUntilAngularPageLoaded();
-		$("a[href*='316']").click();
+		$("a[href*='" + offerId + "']").click();
 		wait.waitUntilAngularPageLoaded();
-		if (smsVerification.exists()==false) {
-			verification.get(0).click();
+		if(!$(By.xpath("//label[@class='checkbox_empty group_check_btn ng-scope check_chk']//span[text()='"+verificationType+"']")).exists())
+		{
+			verification.get(nmVerify).click();
 			$(byText("Save")).click();
-			
+
 		}
-		$(byText("Save")).click();
+
+//		$(byText("Save")).click();
 
 		System.out.println(smsVerification.exists());
 
 	}
-	public String getSMScodeFromLeadReport()
-	{
+
+	public String getSMScodeFromLeadReport() {
 		executeJavaScript("window.open('https://test_staff.leadsbasket.com');");
-	    switchTo().window(1);
-		loginPage.login("kirill3@gmx.com", "Test123456@");
+		switchTo().window(1);
+		// loginPage.login("kirill3@gmx.com", "Test123456@");
 		$("a[href*='leads']").click();
 		$("input[st-search='email_hash']").setValue("@smsVerification.com");
 		wait.waitUntilAngularPageLoaded();
 		$$("button[ng-click='showLeadData(lead)']").get(0).click();
 		String smsCodeText = smsCode.getText();
-	    switchTo().window(0);
+		switchTo().window(0);
 		return smsCodeText;
 	}
 }

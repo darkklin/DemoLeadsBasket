@@ -167,11 +167,22 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("SMS Verification")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Test sms Verification", groups = { "Coupon" }, priority = 1)
+	@Test(enabled = true, description = "Test sms Verification", groups = { "Verification" }, priority = 1)
 	public void smsVerification() {
-//		adminPage.turnOnOfferSMSnotification("316");
+		adminPage.turnOnOfferVerfication("314","Phone Text Verification",1);
+//		mongo.updateQuary();
+//		formLBpage.smsVerification("SMS");
+
+	}
+	
+	@Video
+	@Feature("Email Verification")
+	@Severity(SeverityLevel.TRIVIAL)
+	@Test(enabled = false, description = "Test Email Verification", groups = { "Verification" }, priority = 2)
+	public void emailVerification() {
+		adminPage.turnOnOfferVerfication("314","Email Verification",0);
 		mongo.updateQuary();
-		formLBpage.smsVerification();
+		formLBpage.smsVerification("Email");
 
 	}
 
