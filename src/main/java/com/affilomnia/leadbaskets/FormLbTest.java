@@ -73,7 +73,7 @@ public class FormLbTest extends BaseTest {
 	@Video
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
+	@Test(enabled = true, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
 	public void EmbeddedForm() throws Exception {
 		open("http://52.17.171.159/EmbeddedOffer/");
 		formLbPage.regLead("@lb.com", "");
@@ -82,7 +82,7 @@ public class FormLbTest extends BaseTest {
 	@Video
 	@Feature("Duplication")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Try to create lead with existing email in the system from the same industry", groups = {
+	@Test(enabled = true, description = "Try to create lead with existing email in the system from the same industry", groups = {
 			"duplication" }, priority = 1)
 	public void emailDuplication() {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
@@ -92,7 +92,7 @@ public class FormLbTest extends BaseTest {
 	@Video
 	@Feature("Duplication")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Try to create lead with existing phoneNumber in the system from the same industry", groups = {
+	@Test(enabled = true, description = "Try to create lead with existing phoneNumber in the system from the same industry", groups = {
 			"duplication" }, priority = 2)
 	public void phoneDuplication() {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
