@@ -169,9 +169,9 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Test sms Verification", groups = { "Verification" }, priority = 1)
 	public void smsVerification() {
-		adminPage.turnOnOfferVerfication("314","Phone Text Verification",1);
-//		mongo.updateQuary();
-//		formLBpage.smsVerification("SMS");
+		adminPage.turnOnOfferVerfication("314","Phone Text Verification",0);
+		mongo.updateQuary();
+		formLBpage.smsVerification("SMS");
 
 	}
 	
@@ -180,7 +180,7 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = false, description = "Test Email Verification", groups = { "Verification" }, priority = 2)
 	public void emailVerification() {
-		adminPage.turnOnOfferVerfication("314","Email Verification",0);
+		adminPage.turnOnOfferVerfication("314","Email Verification",1);
 		mongo.updateQuary();
 		formLBpage.smsVerification("Email");
 

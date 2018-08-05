@@ -56,11 +56,11 @@ public class FormLbTest extends BaseTest {
 
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "seller send one lead thought offer 543 ", groups = {
+	@Test(enabled = true, description = "seller send one lead thought offer 543 ", groups = {
 			"createLead" }, priority = 1)
 	public void LoginAsSellerAndSendLead() throws Exception {
 		open("");
-		loginPage.login("tim38857@sawoe.com", "0546474985Ko"); // selelr id 710
+		loginPage.login("mvx09567@qiaua.com", "0546474985ko"); // selelr id 710
 		String targtingOfferLink = sellerPage.Offerlink();
 		open(targtingOfferLink);
 		formLbPage.regLead("@lb.com", "");
@@ -73,7 +73,7 @@ public class FormLbTest extends BaseTest {
 	@Video
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
+	@Test(enabled = false, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
 	public void EmbeddedForm() throws Exception {
 		open("http://52.17.171.159/EmbeddedOffer/");
 		formLbPage.regLead("@lb.com", "");

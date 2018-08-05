@@ -31,8 +31,8 @@ public class SellerTest extends BaseTest {
 	@Inject
 	SellerPage sellerPage;
 
-	private String email = "tim38857@sawoe.com";
-	private String password = "0546474985Ko";
+	private String email = "mvx09567@qiaua.com";
+	private String password = "0546474985ko";
 
 	@Video
 	@Feature("Seller Statistic")
@@ -51,7 +51,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = false, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
+	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
 	public void testStatisticParOffer() throws Exception {
 		open("");
 		loginPage.login(email, password);
@@ -61,7 +61,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
+	@Test(enabled = false, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
 	public void sellerAccountingStatistic() throws Exception {
 		open("");
 		loginPage.login(email, password);

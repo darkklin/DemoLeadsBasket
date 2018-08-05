@@ -41,7 +41,7 @@ public class BuyerTest extends BaseTest {
 	DataBaseConnect db;
 
 	private String buyerEmail = "kirilk+bidder@affilomania.com";
-	private String password = "0546474985Ko";
+	private String password = "0546474985ko";
 	
 	@Video
 	@Feature("Buyer Statistic")
@@ -135,12 +135,5 @@ public class BuyerTest extends BaseTest {
 		buyerPage.buyerEnterInvalidCoupon(couponId);
 		db.executeStatement("delete from billing_profile_creditcard where profile_id = 502","Delete credit Card  ");
 		buyerPage.logOut();
-
-
 	}
-	
-	
-
-	
-
 }

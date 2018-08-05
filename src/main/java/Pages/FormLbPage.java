@@ -158,6 +158,7 @@ public class FormLbPage {
 			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 30000).click();
 			Reporter.log("Email Verification sent ", true);
 			$(byText("Click here")).click();
+			switchTo().window(1);
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
 
 

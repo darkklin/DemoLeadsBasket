@@ -314,8 +314,8 @@ public class AdminPage {
 	}
 
 	public void turnOnOfferVerfication(String offerId,String verificationType, int nmVerify) {
-		// nmVerify index 0 = "email";
-		// nmVerify index 1 = "SMS";
+		// nmVerify index 1 = "email";
+		// nmVerify index 0 = "SMS";
 
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login("kirill3@gmx.com", "Test123456@");
@@ -328,14 +328,23 @@ public class AdminPage {
 		wait.waitUntilAngularPageLoaded();
 		if(!$(By.xpath("//label[@class='checkbox_empty group_check_btn ng-scope check_chk']//span[text()='"+verificationType+"']")).exists())
 		{
+			if(nmVerify==0)
+			{
+				verification.get(1).click();
+
+			}
+			else
+			{
+				verification.get(0).click();
+
+			}
+			sleep(500);
 			verification.get(nmVerify).click();
 			$(byText("Save")).click();
+			wait.waitUntilAngularPageLoaded();
+			Reporter.log(verificationType+" is on ",true);
 
 		}
-
-//		$(byText("Save")).click();
-
-		System.out.println(smsVerification.exists());
 
 	}
 
