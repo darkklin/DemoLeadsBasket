@@ -83,7 +83,7 @@ public class FormLbTest extends BaseTest {
 	@Feature("Duplication")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Try to create lead with existing email in the system from the same industry", groups = {
-			"duplication" }, priority = 1)
+			"Duplication" }, priority = 1)
 	public void emailDuplication() {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
 		formLbPage.duplicationTest("rfbbu1tckb@quality.com", "531415926");
@@ -93,7 +93,7 @@ public class FormLbTest extends BaseTest {
 	@Feature("Duplication")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Try to create lead with existing phoneNumber in the system from the same industry", groups = {
-			"duplication" }, priority = 2)
+			"Duplication" }, priority = 2)
 	public void phoneDuplication() {
 		open("http://52.17.171.159/seleniumOfferDontUse/");
 		formLbPage.duplicationTest("aaaa@dddddd.com", "0528895510");

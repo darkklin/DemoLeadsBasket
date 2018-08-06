@@ -41,9 +41,19 @@
 			<class name="com.affilomnia.leadbaskets.AdminTest"></class>
 
 		</classes>
+		
 
 	</test>
-
+	<test name="Duplication test ">
+		<groups>
+			<run>
+				<include name="Duplication" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.affilomnia.leadbaskets.FormLbTest"></class>
+		</classes>
+	</test>
 
 </suite>
 
