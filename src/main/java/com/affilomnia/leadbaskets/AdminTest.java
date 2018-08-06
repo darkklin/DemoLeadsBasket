@@ -54,7 +54,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("admin forget password")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
+	@Test(enabled = false, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest() {
 		open("https://test_staff.leadsbasket.com");
 		adminPage.forgetPassword();
@@ -64,7 +64,7 @@ public class AdminTest extends BaseTest {
 	}
 
 	@Video
-	@Test(enabled = true, description = "Test Accept dispute", groups = { "adminDispute" }, priority = 1)
+	@Test(enabled = false, description = "Test Accept dispute", groups = { "adminDispute" }, priority = 1)
 	@Feature("Dispute")
 	@Story("Admin accept Disputed leads")
 	@Description("Seller send lead -> buyer dispute that lead -> admin accept disputed lead ")
@@ -78,7 +78,7 @@ public class AdminTest extends BaseTest {
 	}
 
 	@Video
-	@Test(enabled = true, description = "Test Declined dispute", groups = { "adminDispute" }, priority = 2)
+	@Test(enabled = false, description = "Test Declined dispute", groups = { "adminDispute" }, priority = 2)
 	@Feature("Dispute")
 	@Story("Admin declined Disputed leads")
 	@Description("Seller send lead -> buyer dispute that lead -> admin declined lead ")
@@ -94,7 +94,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("seller LB Revenue")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Test  our LB Revenue from seller 462 ", groups = {
+	@Test(enabled = false, description = "Test  our LB Revenue from seller 462 ", groups = {
 			"adminStatistic" }, priority = 1)
 	public void sellerLbRevenue() {
 		open("https://test_staff.leadsbasket.com");
@@ -128,7 +128,7 @@ public class AdminTest extends BaseTest {
 		open("https://test_staff.leadsbasket.com");
 		adminPage.updateQuality("90", "ctrlv+scroll", "-20");
 		adminPage.checkRateScore("ctrlv", "60", "yes");
-		Reporter.log("user didn't use Scroll!", true);
+		Reporter.log("user didn't use Scroll!", false);
 
 		open("https://test_staff.leadsbasket.com");
 		adminPage.updateQuality("90", "reg_duration", "-20");
@@ -154,7 +154,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
+	@Test(enabled = false, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
 	public String couponGenerator() throws Exception {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login(email, password);
@@ -167,7 +167,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("SMS Verification")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Test sms Verification", groups = { "Verification" }, priority = 1)
+	@Test(enabled = false, description = "Test sms Verification", groups = { "Verification" }, priority = 1)
 	public void smsVerification() {
 		adminPage.turnOnOfferVerfication("314","Phone Text Verification",0);
 		mongo.updateQuary();
@@ -178,7 +178,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Email Verification")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Test Email Verification", groups = { "Verification" }, priority = 2)
+	@Test(enabled = false, description = "Test Email Verification", groups = { "Verification" }, priority = 2)
 	public void emailVerification() {
 		adminPage.turnOnOfferVerfication("314","Email Verification",1);
 		mongo.updateQuary();
