@@ -243,7 +243,6 @@ public class BuyerPage {
 		$("div.choose_industry_text")
 				.shouldHave(Condition.text("Get ready to be bombarded with some top quality leads!"));
 		$("a.link").shouldBe(Condition.visible).click();
-		confirm();
 		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));
 		back();
 		btnSubmit.shouldBe(Condition.disabled);

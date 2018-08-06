@@ -83,7 +83,7 @@ public class BuyerTest extends BaseTest {
 	@Severity(SeverityLevel.NORMAL)
 	@Test(enabled = true, description = "Download PDF integrtion API  ", groups = { "BuyerReg" }, priority = 2)
 	public void testdownloadIntegrtionPDF() throws Exception {
-		open("/register/integration");
+		open("https://app.leadsbasket.com/register/integration");
 		buyerPage.downalodPdf();
 	}
 	@Video
