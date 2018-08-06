@@ -155,7 +155,7 @@ public class FormLbPage {
 			submitBtn.click();
 			$("div[class='email_verification']").waitUntil(Condition.appear, 5000);
 			open("https://10minutemail.net");
-			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 30000).click();
+			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 50000).click();
 			Reporter.log("Email Verification sent ", true);
 			$(byText("Click here")).click();
 			switchTo().window(1);

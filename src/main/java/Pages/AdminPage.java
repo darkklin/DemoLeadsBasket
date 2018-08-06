@@ -123,10 +123,7 @@ public class AdminPage {
 
 	}
 
-	public void logOut() {
-		profile.click();
-		logOut.shouldBe(Condition.visible).click();
-	}
+
 
 	public void sellerLbRevenue() {
 		Double totatSellerrCpl = (double) 0;
@@ -357,7 +354,12 @@ public class AdminPage {
 		wait.waitUntilAngularPageLoaded();
 		$$("button[ng-click='showLeadData(lead)']").get(0).click();
 		String smsCodeText = smsCode.getText();
+		$(byText("Close")).click();logOut();
 		switchTo().window(0);
 		return smsCodeText;
+	}
+	public void logOut() {
+		profile.click();
+		logOut.shouldBe(Condition.visible).click();
 	}
 }
