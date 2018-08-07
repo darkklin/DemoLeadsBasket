@@ -268,7 +268,6 @@ public class BuyerPage {
 		switchTo().window(1).close();
 		switchTo().window(0);
 		$(byText("Login")).shouldBe(Condition.visible).click();
-		confirm();
 		$("div.auth>h2").shouldHave(Condition.text("Login to LeadsBasket"));
 		back();
 		wait.waitUntilAngularPageLoaded();

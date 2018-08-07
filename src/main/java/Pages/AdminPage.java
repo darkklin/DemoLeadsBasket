@@ -318,6 +318,7 @@ public class AdminPage {
 		loginPage.login("kirill3@gmx.com", "Test123456@");
 
 		$("a[href*='offers']").click();
+		wait.waitUntilAngularPageLoaded();
 		searchField.sendKeys(offerId);
 		searchField.pressEnter();
 		wait.waitUntilAngularPageLoaded();
@@ -355,6 +356,7 @@ public class AdminPage {
 		$$("button[ng-click='showLeadData(lead)']").get(0).click();
 		String smsCodeText = smsCode.getText();
 		$(byText("Close")).click();logOut();
+		switchTo().window(1).close();
 		switchTo().window(0);
 		return smsCodeText;
 	}

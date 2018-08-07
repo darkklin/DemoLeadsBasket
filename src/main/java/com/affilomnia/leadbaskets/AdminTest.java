@@ -154,7 +154,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
-	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 1)
+	@Test(enabled = true, description = "Just create coupon in the system", groups = { "Coupon" }, priority = 2)
 	public String couponGenerator() throws Exception {
 		open("https://test_staff.leadsbasket.com");
 		loginPage.login(email, password);
