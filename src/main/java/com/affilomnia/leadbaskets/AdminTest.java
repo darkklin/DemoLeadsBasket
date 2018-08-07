@@ -150,7 +150,6 @@ public class AdminTest extends BaseTest {
 		$("div[class*='ui-notification']").waitUntil(Condition.disappears, 10000);
 		adminPage.logOut();
 	}
-
 	@Video
 	@Feature("Coupon")
 	@Severity(SeverityLevel.TRIVIAL)
@@ -161,9 +160,7 @@ public class AdminTest extends BaseTest {
 		String coupon = adminPage.createCoupon();
 		adminPage.logOut();
 		return coupon;
-
 	}
-
 	@Video
 	@Feature("SMS Verification")
 	@Severity(SeverityLevel.TRIVIAL)
@@ -171,10 +168,8 @@ public class AdminTest extends BaseTest {
 	public void smsVerification() {
 		adminPage.turnOnOfferVerfication("314","Phone Text Verification",0);
 		mongo.updateQuary();
-		formLBpage.smsVerification("SMS");
-
+		formLBpage.verification("SMS");
 	}
-	
 	@Video
 	@Feature("Email Verification")
 	@Severity(SeverityLevel.TRIVIAL)
@@ -182,7 +177,7 @@ public class AdminTest extends BaseTest {
 	public void emailVerification() {
 		adminPage.turnOnOfferVerfication("314","Email Verification",1);
 		mongo.updateQuary();
-		formLBpage.smsVerification("Email");
+		formLBpage.verification("Email");
 
 	}
 

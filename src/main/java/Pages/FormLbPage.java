@@ -38,6 +38,8 @@ public class FormLbPage {
 	private SelenideElement phone = $("input[type='tel']");
 	private SelenideElement submitBtn = $("input[type='submit']");
 	private SelenideElement errorMessage = $("p[class='error']");
+	private SelenideElement smsWindowVrification = $("div[class='phone_sms_verification']");
+	private SelenideElement emailWindowVrification = $("div[class='email_verification']");
 
 	public String regLead(String emailDomain, String ruleTest) {
 		String nm = generateEmail("12345554467890", 7);
@@ -109,13 +111,43 @@ public class FormLbPage {
 	}
 
 	public void duplicationTest(String email, String phoneNumber) {
+		regForm(email, phoneNumber);
+		$("p").waitUntil(Condition.text("You already signed up"), 5000);
+	}
+
+	public void verification(String typeVerification) {
+
+		if (typeVerification == "SMS") {
+			open("http://52.17.171.159/verification");
+			String email = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + "@smsVerification.com";
+			regForm(email, "0528895514");
+			smsWindowVrification.waitUntil(Condition.appear, 5000);
+			$("input[placeholder='Type your code']").setValue(adminPage.getSMScodeFromLeadReport());
+			$(byText("Send")).click();
+			$("div[id='app1']").waitUntil(Condition.text("Registration done!")
+					.because("Lead typed SMS code into the field and the lead created"), 6000);
+		} else {
+			String email = sellerPage.tenMinutEmail();
+			open("http://52.17.171.159/verification");
+			regForm(email, "0528895514");
+			emailWindowVrification.waitUntil(Condition.appear, 5000);
+			sleep(500);
+			open("https://10minutemail.net");
+			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 50000).click();
+			Reporter.log("Email Verification sent ", true);
+			$(byText("Click here")).click();
+			switchTo().window(1);
+			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
+		}
+
+	}
+
+	public void regForm(String email, String phoneNumber) {
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
 		fieldEmail.setValue(email);
 		phone.setValue(phoneNumber);
 		submitBtn.click();
-		$("p").waitUntil(Condition.text("You already signed up"), 5000);
-
 	}
 
 	public String generateEmail(String characters, int length) {
@@ -126,44 +158,6 @@ public class FormLbPage {
 
 		}
 		return new String(randomText);
-	}
-
-	public void smsVerification(String typeVerification) {
-
-		if (typeVerification == "SMS") {
-			open("http://52.17.171.159/verification");
-
-			String email = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + "@smsVerification.com";
-			firstName.setValue("AutomationLead");
-			lastName.setValue("selenide");
-			fieldEmail.setValue(email);
-			phone.setValue("0528895514");
-			submitBtn.click();
-			$("div[class='phone_sms_verification']").waitUntil(Condition.appear, 5000);
-			$("input[placeholder='Type your code']").setValue(adminPage.getSMScodeFromLeadReport());
-			$(byText("Send")).click();
-			$("div[id='app1']").waitUntil(Condition.text("Registration done!")
-					.because("Lead typed SMS code into the field and the lead created"), 6000);
-		}
-		else {
-			String email = sellerPage.tenMinutEmail();
-			open("http://52.17.171.159/verification");
-			firstName.setValue("AutomationLead");
-			lastName.setValue("selenide");
-			fieldEmail.setValue(email);
-			phone.setValue("0528895514");
-			submitBtn.click();
-			$("div[class='email_verification']").waitUntil(Condition.appear, 5000);
-			open("https://10minutemail.net");
-			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 50000).click();
-			Reporter.log("Email Verification sent ", true);
-			$(byText("Click here")).click();
-			switchTo().window(1);
-			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
-
-
-
-		}
 	}
 
 }
