@@ -138,6 +138,7 @@ public class FormLbPage {
 			$(byText("Click here")).click();
 			switchTo().window(1);
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
+			close();
 		}
 
 	}

@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="statistic Regression TestSuite ">
-<!-- 	<test name="create lead  test ">
+	<test name="create lead  test ">
 		<groups>
 			<run>
 				<include name="createLead" />
@@ -23,7 +23,7 @@
 			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
 
 		</classes>
-	</test> -->
+	</test>
 	<test name="seller statistic check ">
 		<groups>
 			<run>
