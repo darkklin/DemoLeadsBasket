@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Regression TestSuite ">
-<!-- 	<test name="seller test ">
+	<test name="seller test ">
 		<groups>
 			<run>
 				<include name="sellerRegistrtion" />
@@ -24,7 +24,7 @@
 		<classes>
 			<class name="com.affilomnia.leadbaskets.BuyerTest"></class>
 		</classes>
-	</test> -->
+	</test>
 	<test name="admin test ">
 		<groups>
 			<run>
@@ -32,8 +32,6 @@
 				<include name="Quality" />
 				<include name="Coupon" />
 				<include name="Verification" />
-
-
 			</run>
 		</groups>
 		<classes>
@@ -43,7 +41,7 @@
 		
 
 	</test>
-<!-- 	<test name="Duplication test ">
+	<test name="Duplication test ">
 		<groups>
 			<run>
 				<include name="Duplication" />
@@ -52,7 +50,7 @@
 		<classes>
 			<class name="com.affilomnia.leadbaskets.FormLbTest"></class>
 		</classes>
-	</test> -->
+	</test>
 
 </suite>
 
