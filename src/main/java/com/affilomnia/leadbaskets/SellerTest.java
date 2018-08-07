@@ -39,7 +39,7 @@ public class SellerTest extends BaseTest {
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
 			"sellerStatistic" }, priority = 1)
-	public void testTotalLeadTotalCpl() throws Exception {
+	public void testTotalLeadTotalCpl() {
 		open("");
 		loginPage.login(email, password);
 		$(byText("Report")).click();
@@ -52,7 +52,7 @@ public class SellerTest extends BaseTest {
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
-	public void testStatisticParOffer() throws Exception {
+	public void testStatisticParOffer()  {
 		open("");
 		loginPage.login(email, password);
 		sellerPage.checkstatParOffer();
@@ -62,7 +62,7 @@ public class SellerTest extends BaseTest {
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
-	public void sellerAccountingStatistic() throws Exception {
+	public void sellerAccountingStatistic() {
 		open("");
 		loginPage.login(email, password);
 		sellerPage.accountingStatistic();

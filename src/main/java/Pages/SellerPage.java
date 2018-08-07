@@ -70,7 +70,7 @@ public class SellerPage {
 	 * @throws Exception
 	 */
 
-	public Double[] calcTotalRevenueLeadActualAvgCpl() throws Exception {
+	public Double[] calcTotalRevenueLeadActualAvgCpl() {
 		wait.waitUntilAngularPageLoaded();
 		perPage200.waitUntil(Condition.visible, 20000).click();
 		wait.waitUntilAngularPageLoaded();
@@ -146,7 +146,7 @@ public class SellerPage {
 	 * 
 	 * @throws Exception
 	 */
-	public void checkstatParOffer() throws Exception {
+	public void checkstatParOffer()  {
 		String offerName;
 		Double totalClicks = (double) 0;
 		Double revenue = null, leads, clicks, avgCpl, webEpc;
