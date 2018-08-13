@@ -131,7 +131,7 @@ public class FormLbPage {
 			open("http://52.17.171.159/verification");
 			regForm(email, "0528895514");
 			emailWindowVrification.waitUntil(Condition.appear, 5000);
-			sleep(500);
+			sleep(2000);
 			open("https://10minutemail.net");
 			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 50000).click();
 			Reporter.log("Email Verification sent ", true);
