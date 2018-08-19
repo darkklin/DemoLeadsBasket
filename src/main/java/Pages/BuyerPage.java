@@ -130,7 +130,7 @@ public class BuyerPage {
 	public void checkTotalSpentAndTotalLeads(Float totalspent, Float totalLeads) {
 		openDashBoardPage.click();
 		selectDate("13/11/16", "Dashboard");
-		loader.shouldBe(Condition.disappear);
+		loader.waitUntil(Condition.disappear, 10000);
 		softAssert.assertEquals(convertWebElementToNm(webTotalSpend), totalspent, "Totalspend");
 		softAssert.assertEquals(convertWebElementToNm(webTotalLeads), totalLeads, "TotalLeads");
 		softAssert.assertAll();
