@@ -175,7 +175,7 @@ public class AdminTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Test(enabled = true, description = "Test Email Verification", groups = { "Verification" }, priority = 2)
 	public void emailVerification() {
-//		adminPage.turnOnOfferVerfication("314","Email Verification",1);
+		adminPage.turnOnOfferVerfication("314","Email Verification",1);
 		mongo.updateQuary();
 		formLBpage.verification("Email");
 
