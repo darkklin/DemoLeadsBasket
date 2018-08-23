@@ -99,7 +99,6 @@ public class GMail {
 
 		return containedUrls;
 	}
-
 	private static String getTextFromMimeMultipart(MimeMultipart mimeMultipart) throws Exception {
 		String result = "";
 		int partCount = mimeMultipart.getCount();
