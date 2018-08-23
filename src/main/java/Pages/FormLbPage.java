@@ -4,12 +4,12 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 import java.util.Random;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.logging.Logs;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import libry.GMail;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -116,27 +116,23 @@ public class FormLbPage {
 	}
 
 	public void verification(String typeVerification) {
+		String email = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 8);
 
 		if (typeVerification == "SMS") {
 			open("http://52.17.171.159/verification");
-			String email = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 10) + "@smsVerification.com";
-			regForm(email, "0528895514");
+			regForm(email+"@smsVerification.com", "0528895514");
 			smsWindowVrification.waitUntil(Condition.appear, 5000);
 			$("input[placeholder='Type your code']").setValue(adminPage.getSMScodeFromLeadReport());
 			$(byText("Send")).click();
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!")
 					.because("Lead typed SMS code into the field and the lead created"), 6000);
 		} else {
-			String email = sellerPage.tenMinutEmail();
 			open("http://52.17.171.159/verification");
-			regForm(email, "0528895514");
+			regForm("lbdemo234+"+email+"@gmail.com", "0528895514");
 			emailWindowVrification.waitUntil(Condition.appear, 5000);
 			sleep(2000);
-			open("https://10minutemail.net");
-			$(byText("verify@lbpolicy.com")).waitUntil((Condition.visible), 50000).click();
-			Reporter.log("Email Verification sent ", true);
-			$(byText("Click here")).click();
-			switchTo().window(1);
+			String emaiBody = GMail.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com");
+			open(GMail.extractUrls(emaiBody).get(0));
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
 			close();
 		}
