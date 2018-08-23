@@ -9,7 +9,7 @@ import org.openqa.selenium.logging.Logs;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import libry.mailerTest;
+import libry.MailerTest;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -131,8 +131,8 @@ public class FormLbPage {
 			regForm("lbdemo234+"+email+"@gmail.com", "0528895514");
 			emailWindowVrification.waitUntil(Condition.appear, 5000);
 			sleep(2000);
-			String emaiBody = mailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com");
-			open(mailerTest.extractUrls(emaiBody).get(0));
+			String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com");
+			open(MailerTest.extractUrls(emaiBody).get(0));
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
 			close();
 		}

@@ -20,7 +20,7 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class mailerTest {
+public class MailerTest {
 
 	public static String  checkMail(String username, String password,String fromAdress) {
 		Object body = null;
