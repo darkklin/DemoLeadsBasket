@@ -29,6 +29,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/LeadBasketsVr2/affilomnia.leadbaskets/DB/mysql-connector-java-5.1.46-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/kiril/Downloads/javax.mail.jar"/>
+	<classpathentry kind="lib" path="DB/javax.mail.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
