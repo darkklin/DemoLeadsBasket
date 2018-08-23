@@ -68,7 +68,7 @@ public class SellerTest extends BaseTest {
 		sellerPage.accountingStatistic();
 		sellerPage.logOut();
 	}
-	
+
 	@Video
 	@Feature("Seller Registrtion + Forget password")
 	@Severity(SeverityLevel.CRITICAL)
