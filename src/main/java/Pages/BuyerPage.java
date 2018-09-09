@@ -93,8 +93,9 @@ public class BuyerPage {
 		Float totalLeads = (float) 0;
 		Float totaleadBuyCpl = (float) 0;
 		openLeadListPage.click();
-
 		wait.waitUntilAngularPageLoaded();
+		selectDate("13/11/16", "LeadList");
+
 		perPage200.click();
 		loader.shouldBe(Condition.visible);
 		wait.waitUntilAngularPageLoaded();
@@ -119,7 +120,6 @@ public class BuyerPage {
 			wait.waitUntilAngularPageLoaded();
 			sleep(2000);
 		}
-
 		checkTotalSpentAndTotalLeads(totaleadBuyCpl, totalLeads);
 		// return new Float[] { totalLeads, totaleadBuyCpl };
 	}
@@ -219,12 +219,19 @@ public class BuyerPage {
 			startDate.clear();
 			startDate.setValue(Date);
 			applyDate.click();
-		} else {
+		} else if (page == "Report") {
 			$$("div[class=title]").get(2).scrollIntoView(true);
 			$("input[st-search='date_range']").shouldBe(Condition.enabled).click();
 			$$("input[name='daterangepicker_start']").get(1).clear();
 			$$("input[name='daterangepicker_start']").get(1).setValue(Date);
 			$$("button[class*='btn-success']").get(1).click();
+		}
+		else if(page == "LeadList")
+		{
+			$("input[st-search='date_range']").shouldBe(Condition.enabled).click();
+			$("input[name='daterangepicker_start']").clear();
+			$("input[name='daterangepicker_start']").setValue(Date);
+			$("button[class*='btn-success']").click();
 		}
 
 	}
@@ -258,7 +265,7 @@ public class BuyerPage {
 	 */
 	public void registerPage() {
 		FormLbPage rendom = new FormLbPage();
-		String text = rendom.generateEmail("abcdfddDd23%2", 8);
+		String text = rendom.generateEmail("abcdfddDd23%2", 5);
 		String rdBname = rendom.generateEmail("abcdfg", 4);
 		$("h4").shouldHave(Condition.text("100% Self-service Platform for Quality Lead Generation"));
 		btnSubmit.shouldBe(Condition.disabled);

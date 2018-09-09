@@ -69,16 +69,22 @@ public class SellerTest extends BaseTest {
 		sellerPage.logOut();
 	}
 	@Video
-	@Feature("Seller Registrtion + Forget password")
+	@Feature("Seller Registrtion")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Seller Registion + forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = true, description = "Seller Registion", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
-		String sellerEmail = sellerPage.tenMinutEmail();
 		open("/register-seller-start?r=lb");
-		sellerPage.startRegister(sellerEmail);
+		sellerPage.startRegister();
 		sellerPage.verifyEmail();
 		sellerPage.billingInformation();
-		sellerPage.forgetPassword(sellerEmail);
 	}
-
+	@Video
+	@Feature("Forget password")
+	@Severity(SeverityLevel.NORMAL)
+	@Test(enabled = true, description = " forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	public void sellerRestorPasword() throws Exception {
+		open("");
+		sellerPage.forgetPassword("lbdemo234+d2d3adbf@gmail.com");
+	}
+	
 }

@@ -6,8 +6,6 @@ import static com.codeborne.selenide.Selenide.*;
 import java.util.Random;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.logging.Logs;
-import org.testng.Reporter;
-import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import libry.MailerTest;
 
@@ -15,7 +13,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.google.inject.Inject;
-import com.google.inject.Key;
 
 public class FormLbPage {
 	private SoftAssert softAssert;
@@ -28,7 +25,6 @@ public class FormLbPage {
 	public FormLbPage() {
 		Configuration.browser = "chrome";
 		this.softAssert = new SoftAssert();
-
 		page(this);
 	}
 
@@ -47,7 +43,6 @@ public class FormLbPage {
 		firstName.setValue("AutomationLead");
 		lastName.setValue("selenide");
 		fieldEmail.setValue(email1);
-
 		qualityTest(ruleTest);
 
 		if ($$("div[title*='Israel']").size() != 0) {
@@ -131,7 +126,7 @@ public class FormLbPage {
 			regForm("lbdemo234+"+email+"@gmail.com", "0528895514");
 			emailWindowVrification.waitUntil(Condition.appear, 5000);
 			sleep(2000);
-			String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com");
+			String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com","email test 123");
 			open(MailerTest.extractUrls(emaiBody).get(0));
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
 			close();

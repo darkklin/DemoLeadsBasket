@@ -13,16 +13,16 @@ import javax.mail.search.AndTerm;
 import javax.mail.search.FlagTerm;
 import javax.mail.search.SearchTerm;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class MailerTest {
 
-	public static String  checkMail(String username, String password,String fromAdress) {
+	public static String  checkMail(String username, String password,String fromAdress,String subject) {
 		Object body = null;
 
 		Properties props = new Properties();
@@ -31,6 +31,7 @@ public class MailerTest {
 			Session session = Session.getInstance(props, null);
 			Store store = session.getStore();
 			store.connect("imap.gmail.com", username, password);
+			sleep(6000); // just for waiting for mail arrive 100% 
 			Folder inbox = store.getFolder("INBOX");
 			inbox.open(Folder.READ_WRITE);
 
@@ -48,12 +49,10 @@ public class MailerTest {
 					for (Address address : in) {
 
 //						System.out.println("FROM:" + address.toString());
-						from = address.toString();
-						
+						from = address.toString();						
 					}
-					if(from.contains(fromAdress))
+					if(from.contains(fromAdress) && msg.getSubject().contains(subject))
 					{
-
 					 body = msg.getContent();
 					if (body instanceof MimeMultipart) {
 						MimeMultipart multipart = (MimeMultipart) body;

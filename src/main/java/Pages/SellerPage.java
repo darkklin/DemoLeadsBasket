@@ -2,12 +2,14 @@ package Pages;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
+import libry.MailerTest;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -28,7 +30,6 @@ public class SellerPage {
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
 		page(this);
-
 
 	}
 
@@ -146,7 +147,7 @@ public class SellerPage {
 	 * 
 	 * @throws Exception
 	 */
-	public void checkstatParOffer()  {
+	public void checkstatParOffer() {
 		String offerName;
 		Double totalClicks = (double) 0;
 		Double revenue = null, leads, clicks, avgCpl, webEpc;
@@ -182,7 +183,7 @@ public class SellerPage {
 		buyerPage.selectDate("13/11/16", "Dashboard");
 		wait.waitUntilAngularPageLoaded();
 		Double avgEpc = convertWebElementToNm(webStastic.get(3)) / totalClicks;
-		avgEpc =  (Math.round(avgEpc * 100.0) / 100.0);
+		avgEpc = (Math.round(avgEpc * 100.0) / 100.0);
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(0)), totalClicks, "DashBoard Total clicks");
 		softAssert.assertEquals(convertWebElementToNm(webStastic.get(6)), avgEpc, "DashBoard Avg. EPC");
 		softAssert.assertAll();
@@ -202,7 +203,7 @@ public class SellerPage {
 			totalInvoice += saleCpl;
 			nmLeads++;
 		}
-		totalInvoice =  (Math.round(totalInvoice * 100.0) / 100.0);
+		totalInvoice = (Math.round(totalInvoice * 100.0) / 100.0);
 		Double popUpwebTotalSaleCpl = convertWebElementToNm($$("p[class='ng-binding']").get(0).getText());
 		Double popUpwebTotalLeads = convertWebElementToNm($$("p[class='ng-binding']").get(1).getText());
 		softAssert.assertEquals(totalInvoice, popUpwebTotalSaleCpl, "popUp total invoice");
@@ -281,7 +282,7 @@ public class SellerPage {
 		return $("input[class='mailtext']").getAttribute("value");
 	}
 
-	public void startRegister(String tenEmail) {
+	public void startRegister() {
 		FormLbPage rendom = new FormLbPage();
 		String text = rendom.generateEmail("abcdfddDd23%2", 8);
 		String rdBname = rendom.generateEmail("abcdfg", 4);
@@ -305,7 +306,7 @@ public class SellerPage {
 		lastName.setValue("automtic" + rdBname);
 		phoneNumber.setValue(phoneNumber.getAttribute("placeholder"));
 		companyName.setValue("selenide");
-		email.setValue(tenEmail);
+		email.setValue("lbdemo234+" + text + "@gmail.com");
 		skype.setValue("dsadas535435");
 		password.setValue("D%1" + text);
 		confirmPassword.setValue("D%1" + text);
@@ -317,36 +318,21 @@ public class SellerPage {
 		if (WebDriverRunner.url().contains("https://leadsbasket.com/")) {
 			Reporter.log("New seller Create", true);
 		}
+		close();
 
 	}
 
-	// public void verifyEmail() {
-	// open("https://mail.google.com/mail/u/0/h/1qjzsgv9p5fzq/?f=1");
-	// $("input[type='email']").setValue("lbdemo234@gmail.com");
-	// $("span[class='RveJvd snByac']").click();
-	// $("input[type='password']").setValue("0546474985");
-	// $("span[class='RveJvd snByac']").click();
-	// $("div[class='qclxzb']").click();
-	// $$("[role='option']").get(4).scrollIntoView(true).click();
-	// $("input[type='tel']").setValue("0528895514");
-	// $("span[class='RveJvd snByac']").click();
-	// $("input[title='Search']").waitUntil(Condition.visible,
-	// 20000).setValue("verification required");
-	// $("input[type='submit']").click();
-	// $$("table[class='th']>tbody>tr[bgcolor='#ffffff']").get(0).click();
-	// $("img[src*='New-Email-Template_approved.jpg']").shouldBe(Condition.visible);
-	// String verifyLink = $(byText("Click Here")).getAttribute("href");
-	// $(byText("Delete")).click();
-	// open(verifyLink);
-	// $("h4").shouldHave(Condition.text("Email Verified Successfully!"));
-	// }
 	public void verifyEmail() {
-		open("https://10minutemail.net");
-		$(byText("Welcome to LeadsBasket - Verification Required")).waitUntil((Condition.visible), 30000).click();
-		Reporter.log("Email Verification Required ", true);
-		$(byText("Click Here")).click();
-		switchTo().window(1);
+
+		String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "info@leadsbasket.com",
+				"Welcome to LeadsBasket - Verification Required");
+		String verificationEmail = MailerTest.extractUrls(emaiBody).get(1);
+		System.out.println(verificationEmail);
+		open(verificationEmail);
+		softAssert.assertTrue(verificationEmail.contains("u6431966"),"somthing wrong with verification Email");
 		$("h4").waitUntil(Condition.text("Email Verified Successfully!"), 20000);
+		softAssert.assertAll();
+
 	}
 
 	public void billingInformation() {
@@ -373,10 +359,12 @@ public class SellerPage {
 		btnSubmit.shouldBe(Condition.enabled).click();
 		$("h4").waitUntil(Condition.text("Hold on!"), 10000);
 		$("a.btn").waitUntil(Condition.visible, 10000).click();
-		;
-		switchTo().window(0);
-		$(byText("Welcome to LeadsBasket")).waitUntil((Condition.visible), 15000).click();
-		Reporter.log("Email Welcome to LeadsBasket sent ", true);
+
+		String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "info@leadsbasket.com",
+				"Welcome to LeadsBasket");
+		assertTrue(emaiBody.contains("Thank you for applying as a seller at Leadsbasket."));
+
+		Reporter.log("Email Welcome to LeadsBasket send", true);
 
 	}
 
@@ -387,11 +375,14 @@ public class SellerPage {
 		$("input[type='email']").setValue(email);
 		$("button[type='submit']").click();
 		$("h2").shouldHave(Condition.text("Reset Your Password"));
-		open("https://10minutemail.net");
-		$(byText("LeadsBasket – Reset Password")).waitUntil((Condition.visible), 20000).click();
-		Reporter.log("Email reset password sent", true);
-		$(byText("Reset Password")).waitUntil((Condition.visible), 20000).click();
-		switchTo().window(2);
+		sleep(2000);
+		close();
+		String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "info@leadsbasket.com",
+				"LeadsBasket – Reset Password");
+		System.out.println(emaiBody);
+
+		String urlPassword = MailerTest.extractUrls(emaiBody).get(1);
+		open(urlPassword);
 		$("h2").shouldHave(Condition.text("Reset Your Password"));
 		$$("input[type='password']").get(0).setValue("Test123456@");
 		$$("input[type='password']").get(1).setValue("Test123456@");
