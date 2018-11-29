@@ -113,23 +113,32 @@ public class FormLbPage {
 	public void verification(String typeVerification) {
 		String email = generateEmail("ABCDEFGHIJKLMNOPQR1321STbvbvbwUVWXYZ", 8);
 
-		if (typeVerification == "SMS") {
+		String verification = typeVerification;
+
+		switch (verification) {
+		case "SMS":
 			open("http://52.17.171.159/verification");
-			regForm(email+"@smsVerification.com", "0528895514");
+			regForm(email + "@smsVerification.com", "0528895514");
 			smsWindowVrification.waitUntil(Condition.appear, 5000);
 			$("input[placeholder='Type your code']").setValue(adminPage.getSMScodeFromLeadReport());
 			$(byText("Send")).click();
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!")
 					.because("Lead typed SMS code into the field and the lead created"), 6000);
-		} else {
+			break;
+		case "Email Verification":
 			open("http://52.17.171.159/verification");
-			regForm("lbdemo234+"+email+"@gmail.com", "0528895514");
+			regForm("lbdemo234+" + email + "@gmail.com", "0528895514");
 			emailWindowVrification.waitUntil(Condition.appear, 5000);
 			sleep(2000);
-			String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com","email test 123");
+			String emaiBody = MailerTest.checkMail("lbdemo234@gmail.com", "0546474985", "verify@lbpolicy.com",
+					"email test 123");
 			open(MailerTest.extractUrls(emaiBody).get(0));
 			$("div[id='app1']").waitUntil(Condition.text("Registration done!"), 6000);
 			close();
+			break;
+		case " SMS link Verification":
+			
+			break;
 		}
 
 	}

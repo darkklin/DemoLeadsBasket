@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.junit.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -37,10 +38,11 @@ public class DatabaseMongoDB {
 		
 		try {
 			MongoCollection<Document> collection = db.getCollection("leads");
-			Document newDocument = new Document();
-			newDocument.put("phone_number", "31415926");
-			BasicDBObject searchQuary = new BasicDBObject().append("phone_number", "+9720528895514");
-			collection.replaceOne(searchQuary, newDocument);
+
+			Bson filter = new Document("phone_number", "+9720528895514");
+			Bson newValue = new Document("phone_number", 31415926);
+			Bson updateOperationDocument = new Document("$set", newValue);
+			collection.updateOne(filter, updateOperationDocument);
 	
 		} catch (Exception e) {
 			// Handle errors for Class.forName

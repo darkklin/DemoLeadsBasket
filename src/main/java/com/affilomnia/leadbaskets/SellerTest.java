@@ -37,7 +37,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "How much seller have leads and Total CPl", groups = {
+	@Test(enabled = false, description = "How much seller have leads and Total CPl", groups = {
 			"sellerStatistic" }, priority = 1)
 	public void testTotalLeadTotalCpl() {
 		open("");
@@ -51,7 +51,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
+	@Test(enabled = false, description = "Test Statistic Par offer ", groups = { "sellerStatistic" }, priority = 3)
 	public void testStatisticParOffer()  {
 		open("");
 		loginPage.login(email, password);
@@ -61,7 +61,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Statistic")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
+	@Test(enabled = false, description = "Test seller accounting statistic ", groups = { "sellerStatistic" }, priority = 2)
 	public void sellerAccountingStatistic() {
 		open("");
 		loginPage.login(email, password);
@@ -81,7 +81,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Forget password")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = true, description = " forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = false, description = " forget password test", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRestorPasword() throws Exception {
 		open("");
 		sellerPage.forgetPassword("lbdemo234+d2d3adbf@gmail.com");

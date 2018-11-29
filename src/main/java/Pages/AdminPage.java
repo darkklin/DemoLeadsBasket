@@ -324,18 +324,11 @@ public class AdminPage {
 		wait.waitUntilAngularPageLoaded();
 		$("a[href*='" + offerId + "']").click();
 		wait.waitUntilAngularPageLoaded();
+		System.out.println(			verification.get(1).isSelected());
 		if(!$(By.xpath("//label[@class='checkbox_empty group_check_btn ng-scope check_chk']//span[text()='"+verificationType+"']")).exists())
 		{
-			if(nmVerify==0)
-			{
-				verification.get(1).click();
 
-			}
-			else
-			{
-				verification.get(0).click();
-
-			}
+			$$x("//label[@class='checkbox_empty group_check_btn ng-scope check_chk']").get(1).click();
 			sleep(500);
 			verification.get(nmVerify).click();
 			$(byText("Save")).click();
