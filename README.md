@@ -1,6 +1,6 @@
 ## Leadsbasket
 
-A Web application based on angular and PHP.Leadsbasket is a 100% Self-Serve CPL Network, 
+A Web application based on angular and PHP. Leadsbasket is a 100% Self-Serve CPL Network, 
 that allows companies all over the world to start getting top notch leads, in just a few minutes. 
 cutting edge platform, makes it simple for lead buyers to get top quality leads fast, and offers campaign management,
 advanced targeting, bidding and scheduling.
