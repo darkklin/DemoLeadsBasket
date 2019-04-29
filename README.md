@@ -1,14 +1,14 @@
-# Leadsbasket
+## Leadsbasket
 
 A Web application based on angular and PHP.Leadsbasket is a 100% Self-Serve CPL Network, 
 that allows companies all over the world to start getting top notch leads, in just a few minutes. 
 cutting edge platform, makes it simple for lead buyers to get top quality leads fast, and offers campaign management,
 advanced targeting, bidding and scheduling.
 
-# Technology
+## Technology
 This is an automation project based on selenium, testing, maven, java, Allura report.
 
-*# What I Learned* 
+## What I Learned 
 
 * improving my code writing skills (JAVA OOP)
 * Page object factory design pattern
