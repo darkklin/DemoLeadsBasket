@@ -10,7 +10,7 @@ This is an automation project based on selenium, testing, maven, java, Allura re
 
 ## What I Learned 
 
-* improving my code writing skills (JAVA OOP)
+* Improving my code writing skills (JAVA OOP)
 * Page object factory design pattern
 * Framework "selenide"  
 * How to test Emails with javax.mail 
