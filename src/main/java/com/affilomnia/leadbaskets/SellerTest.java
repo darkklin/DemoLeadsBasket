@@ -71,7 +71,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Seller Registrtion")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Seller Registion", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = false, description = "Seller Registion", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRegistrtion() throws Exception {
 		open("/register-seller-start?r=lb");
 		sellerPage.startRegister();
@@ -81,7 +81,7 @@ public class SellerTest extends BaseTest {
 	@Video
 	@Feature("Forget password")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = false, description = " forget password test", groups = { "sellerRegistrtion" }, priority = 1)
+	@Test(enabled = true, description = " forget password test", groups = { "sellerRegistrtion" }, priority = 1)
 	public void sellerRestorPasword() throws Exception {
 		open("");
 		sellerPage.forgetPassword("lbdemo234+d2d3adbf@gmail.com");

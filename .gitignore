@@ -3,3 +3,6 @@ video
 build
 allure-results
 test-output
+.settings
+DB
+test-output

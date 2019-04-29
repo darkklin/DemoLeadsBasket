@@ -54,7 +54,7 @@ public class AdminTest extends BaseTest {
 	@Video
 	@Feature("admin forget password")
 	@Severity(SeverityLevel.NORMAL)
-	@Test(enabled = false, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
+	@Test(enabled = true, description = "Test forget Password", groups = { "forgetPassword" }, priority = 1)
 	public void forgetPasswordTest() {
 		open("https://test_staff.leadsbasket.com");
 		adminPage.forgetPassword();
@@ -64,7 +64,7 @@ public class AdminTest extends BaseTest {
 	}
 
 	@Video
-	@Test(enabled = false, description = "Test Accept dispute", groups = { "adminDispute" }, priority = 1)
+	@Test(enabled = true, description = "Test Accept dispute", groups = { "adminDispute" }, priority = 1)
 	@Feature("Dispute")
 	@Story("Admin accept Disputed leads")
 	@Description("Seller send lead -> buyer dispute that lead -> admin accept disputed lead ")

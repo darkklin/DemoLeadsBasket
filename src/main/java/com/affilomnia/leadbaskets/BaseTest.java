@@ -15,6 +15,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -33,12 +34,32 @@ public class BaseTest {
 	@BeforeSuite(alwaysRun=true)
 	@Description("start")
 	public void beforeTest() throws Exception {
-//		String urlToRemoteWD = "http://localhost:4446/wd/hub";
+		String urlToRemoteWD = "http://192.168.10.39:4444/wd/hub";
 //		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
+//		
 //		WebDriverRunner.setWebDriver(driver);
+		
+		
+//		RemoteWebDriver driver ;
+
+		
+//		final DesiredCapabilities browser = DesiredCapabilities.chrome();
+//		
+//		browser.setCapability("enableVNC", true);
+//		browser.setCapability("enableVideo", false);
+//		
+//		RemoteWebDriver driver = new RemoteWebDriver(new URL(urlToRemoteWD),browser);
+//		driver.manage().window().maximize();
+//
+//		WebDriverRunner.setWebDriver(driver);
+	
+		
+		
+	
 		Configuration.browser = "chrome";
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 		Configuration.startMaximized = true;
+
 		Configuration.screenshots = true;
 		Configuration.headless = false;
 		Configuration.holdBrowserOpen = false;

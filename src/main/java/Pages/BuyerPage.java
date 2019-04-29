@@ -31,7 +31,7 @@ public class BuyerPage {
 	public BuyerPage() {
 		this.softAssert = new SoftAssert();
 		wait = new WaitAngularPageLoaded();
-		page(this);
+//		page(this);
 		
 
 

@@ -1,21 +1,15 @@
 package libry;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.junit.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
-import com.mongodb.BasicDBObject;
+
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 // Download Driver - http://mongodb.github.io/mongo-java-driver/3.0/driver/getting-started/installation-guide/

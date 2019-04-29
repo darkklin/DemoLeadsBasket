@@ -23,9 +23,7 @@ public class FormLbPage {
 
 	@Inject
 	public FormLbPage() {
-		Configuration.browser = "chrome";
 		this.softAssert = new SoftAssert();
-		page(this);
 	}
 
 	private SelenideElement firstName = $("input[id*='first_name']");

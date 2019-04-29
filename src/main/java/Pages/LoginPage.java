@@ -20,7 +20,7 @@ public class LoginPage {
 
 		Configuration.browser = "chrome";
 
-		page(this);
+//		page(this);
 	}
 
 	private SelenideElement email = $("input[name='email']");

@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import com.automation.remarks.testng.VideoListener;
 import com.automation.remarks.video.annotations.Video;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.testng.annotations.Report;
 import com.google.inject.Inject;
@@ -37,23 +38,7 @@ public class FormLbTest extends BaseTest {
 	@Inject
 	FormLbPage formLbPage;
 
-	// public static final String USERNAME = "darkklin";
-	// public static final String ACCESS_KEY =
-	// "7efbfcf7-2327-4098-919f-35d3bfdcb047";
-	// public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY +
-	// "@ondemand.saucelabs.com:80/wd/hub";
-	// @BeforeTest
-	// public void beforeTest() throws Exception {
-	// WebDriver driver;
-	//
-	// DesiredCapabilities caps = DesiredCapabilities.chrome();
-	// caps.setCapability("platform", "Windows 10");
-	// caps.setCapability("version", "64.0");
-	// driver = new RemoteWebDriver(new URL(URL), caps);
-	// WebDriverRunner.setWebDriver(driver);
-	//
-	// }
-
+	
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(enabled = false, description = "seller send one lead thought offer 543 ", groups = {
@@ -73,7 +58,7 @@ public class FormLbTest extends BaseTest {
 	@Video
 	@Feature("FormLb")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
+	@Test(enabled = false, description = "Sent lead through embedded form ", groups = { "createLead" }, priority = 2)
 	public void EmbeddedForm() throws Exception {
 		open("http://52.17.171.159/EmbeddedOffer/");
 		formLbPage.regLead("@lb.com", "");
@@ -92,7 +77,7 @@ public class FormLbTest extends BaseTest {
 	@Video
 	@Feature("Duplication")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(enabled = true, description = "Try to create lead with existing phoneNumber in the system from the same industry", groups = {
+	@Test(enabled = false, description = "Try to create lead with existing phoneNumber in the system from the same industry", groups = {
 			"Duplication" }, priority = 2)
 	public void phoneDuplication() {
 		open("http://52.17.171.159/seleniumOfferDontUse/");

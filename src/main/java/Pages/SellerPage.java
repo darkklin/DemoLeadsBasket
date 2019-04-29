@@ -29,7 +29,7 @@ public class SellerPage {
 
 		wait = new WaitAngularPageLoaded();
 		this.softAssert = new SoftAssert();
-		page(this);
+//		page(this);
 
 	}
 
