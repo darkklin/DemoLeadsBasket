@@ -34,32 +34,9 @@ public class BaseTest {
 	@BeforeSuite(alwaysRun=true)
 	@Description("start")
 	public void beforeTest() throws Exception {
-		String urlToRemoteWD = "http://192.168.10.39:4444/wd/hub";
-//		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
-//		
-//		WebDriverRunner.setWebDriver(driver);
-		
-		
-//		RemoteWebDriver driver ;
-
-		
-//		final DesiredCapabilities browser = DesiredCapabilities.chrome();
-//		
-//		browser.setCapability("enableVNC", true);
-//		browser.setCapability("enableVideo", false);
-//		
-//		RemoteWebDriver driver = new RemoteWebDriver(new URL(urlToRemoteWD),browser);
-//		driver.manage().window().maximize();
-//
-//		WebDriverRunner.setWebDriver(driver);
-	
-		
-		
-	
 		Configuration.browser = "chrome";
 		Configuration.baseUrl = "https://test_app.leadsbasket.com";
 		Configuration.startMaximized = true;
-
 		Configuration.screenshots = true;
 		Configuration.headless = false;
 		Configuration.holdBrowserOpen = false;
@@ -69,7 +46,6 @@ public class BaseTest {
 		TextReport.onFailedTest = true;
 		
 	}
-
 	@AfterMethod(alwaysRun=true)
 	public void logs(ITestResult testResult) throws Exception {
 		logOutput(Reporter.getOutput(testResult));
