@@ -40,8 +40,8 @@ public class BuyerTest extends BaseTest {
 	@Inject
 	DataBaseConnect db;
 
-	private String buyerEmail = "kirilk+bidder@affilomania.com";
-	private String password = "0546474985ko";
+	private String buyerEmail = "--";
+	private String password = "--";
 	
 	@Video
 	@Feature("Buyer Statistic")
