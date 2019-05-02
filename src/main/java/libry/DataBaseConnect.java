@@ -16,7 +16,7 @@ public class DataBaseConnect {
 	// Result Set
 	public ResultSet results = null;
 	// Constant for Database URL
-	public static String DB_URL = "jdbc:mysql://leadsbusket-test.cdo3zcxhpibd.eu-west-1.rds.amazonaws.com/leadsbasket_db"; // ORacle
+	public static String DB_URL = ""; // ORacle
 																															// "jdbc:oracle:thin:@localhost:1521/sid"
 
 	// Constant for Database Username
