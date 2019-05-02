@@ -21,8 +21,8 @@ public class DatabaseMongoDB {
 	public void updateQuary() {
 		
 		try {
-			MongoCredential credential = MongoCredential.createCredential("lbtestadmin", "admin", "TTmQX6c4Cc4xUBaX".toCharArray());
-			mongoClient = new MongoClient(new ServerAddress("52.213.82.43", 27017), Arrays.asList(credential));
+			MongoCredential credential = MongoCredential.createCredential("lbtestadmin", "admin", "".toCharArray());
+			mongoClient = new MongoClient(new ServerAddress("", 27017), Arrays.asList(credential));
 			db = mongoClient.getDatabase( "leadsbasket_db" );
 
 		} catch (Exception e) {
