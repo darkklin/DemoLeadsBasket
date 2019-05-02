@@ -48,8 +48,8 @@ public class AdminTest extends BaseTest {
 	FormLbPage formLBpage;
 	@Inject
 	DatabaseMongoDB mongo;
-	private String email = "kirill3@gmx.com";
-	private String password = "Test123456@";
+	private String email = "--";
+	private String password = "--";
 
 	@Video
 	@Feature("admin forget password")
